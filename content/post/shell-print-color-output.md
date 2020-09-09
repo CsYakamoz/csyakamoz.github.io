@@ -44,7 +44,7 @@ echo ""
 
 ## 参考
 
-以下表格皆来自：[ANSI 转义序列](https://zh.wikipedia.org/wiki/ANSI 转义序列)
+以下表格皆来自：[ANSI 转义序列](https://zh.wikipedia.org/wiki/ANSI转义序列)
 
 ### 代码所对应的控制内容
 

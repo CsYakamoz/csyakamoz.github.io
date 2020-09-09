@@ -14,18 +14,17 @@ MacOS 用户建议使用 iTerm2 的 Tmux 特性
 
 **Notice**: 远程服务器也能使用，但 tmux 版本至少为 **1.8**, 但推荐 2.3 及之后
 
-<!--
-   - ## 配置
-   - 有时候需要使用原生 tmux, 此时使用该[配置](tmux.conf)
-   -
-   - ## 安装
-   -
-   - ```sh
-   - curl 'https://raw.githubusercontent.com/CsYakamoz/blog/master/article/tmux/tmux.conf' -o "${HOME}/.tmux.conf"
-   - ```
-   -->
+## 配置
 
-## 常用快捷键
+有时候需要使用原生 tmux, 此时使用该[配置](https://github.com/CsYakamoz/config/blob/master/tmux/.tmux.conf)
+
+## 安装
+
+```sh
+curl 'https://raw.githubusercontent.com/CsYakamoz/config/master/tmux/.tmux.conf' -o "${HOME}/.tmux.conf"
+```
+
+## 常用命令和快捷键
 
 `prefix-` 则意味着需要先按 `prefix` 键
 
