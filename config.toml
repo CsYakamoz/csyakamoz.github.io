@@ -1,0 +1,57 @@
+baseURL = "https://csyakamoz.github.io"
+title = "CsYakamoz`s Blog"
+languageCode = "zh-cn"
+hasCJKLanguage = true
+theme = "mogege"
+
+paginate = 11
+enableEmoji = true
+enableRobotsTXT = true
+
+
+preserveTaxonomyNames = true
+
+[blackfriday]
+  hrefTargetBlank = true
+  nofollowLinks = true
+  noreferrerLinks = true
+
+[Permalinks]
+  posts = "/:year/:filename/"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/post/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+
+[params]
+    since = 2020
+    author = "CsYakamoz"                          # Author's name
+    avatar = ""           # Author's avatar
+    subtitle = "Legen - wait for it - dary! Legendary!"                  # Subtitle
+    home_mode = ""
+    enableGitalk = false
+
+    google_verification = ""
+
+    description = "CsYakamoz 的个人博客"
+    keywords = "" # site keywords
+
+    beian = ""
+    baiduAnalytics = ""
