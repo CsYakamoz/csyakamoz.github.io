@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on CsYakamoz`s Blog</title>
+    <link>https://csyakamoz.github.io/tags/git/</link>
+    <description>Recent content in git on CsYakamoz`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Sep 2020 16:29:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://csyakamoz.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git 笔记</title>
+      <link>https://csyakamoz.github.io/post/git-note/</link>
+      <pubDate>Wed, 09 Sep 2020 16:29:42 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/git-note/</guid>
+      <description>初始化 git config --global user.name &amp;#34;your name&amp;#34; git config --global user.email &amp;#34;yourEmail@example.com&amp;#34; 文件的状态 未跟踪 (untracked) 已跟踪 (tracked) 未修改 (unmodified) 已修改 (modified) 已暂存 (staged) 已提交 (committed) 未修改和已提交本质上是同一种状态 三个工作区域 工作目录 (Working</description>
+    </item>
+    
+  </channel>
+</rss>

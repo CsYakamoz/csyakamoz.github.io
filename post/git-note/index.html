@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noodp"/>
+    <meta name="author" content="CsYakamoz">
+    <meta name="description" content="CsYakamoz 的个人博客">
+    
+    
+    <link rel="prev" href="https://csyakamoz.github.io/post/javascript-this/" />
+    <link rel="next" href="https://csyakamoz.github.io/post/rabbitmq-note/" />
+    <link rel="canonical" href="https://csyakamoz.github.io/post/git-note/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>
+        
+        
+            Git 笔记 | CsYakamoz`s Blog
+        
+    </title>
+    <meta name="title" content="Git 笔记 | CsYakamoz`s Blog">
+    
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+    
+    
+ 
+
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/csyakamoz.github.io"
+    },
+    "articleSection" : "post",
+    "name" : "Git 笔记",
+    "headline" : "Git 笔记",
+    "description" : "初始化 git config --global user.name \u0026#34;your name\u0026#34; git config --global user.email \u0026#34;yourEmail@example.com\u0026#34; 文件的状态 未跟踪 (untracked) 已跟踪 (tracked) 未修改 (unmodified) 已修改 (modified) 已暂存 (staged) 已提交 (committed) 未修改和已提交本质上是同一种状态 三个工作区域 工作目录 (Working",
+    "inLanguage" : "zh-cn",
+    "author" : "CsYakamoz",
+    "creator" : "CsYakamoz",
+    "publisher": "CsYakamoz",
+    "accountablePerson" : "CsYakamoz",
+    "copyrightHolder" : "CsYakamoz",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-09 16:29:42 \u002b0800 CST",
+    "dateModified" : "2020-09-09 16:29:42 \u002b0800 CST",
+    "url" : "https:\/\/csyakamoz.github.io\/post\/git-note\/",
+    "wordCount" : "495",
+    "keywords" : [ "git", "CsYakamoz`s Blog"]
+}
+</script>
+
+  </head>
+    <body class="">
+        <div class="wrapper">
+            <nav class="navbar">
+    
+        <progress class="content_progress" max="0" value="0"></progress>
+    
+    <div class="container">
+        
+            <div class="navbar-header header-back2home-logo">
+                <span class="logo_mark" >>$</span>
+                <a href="https://csyakamoz.github.io">
+                    <span class="logo_text" >cd /home/</span>
+                    <span class="logo_cursor" ></span>
+                </a>
+            </div>
+        
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/post/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <span class="divide"></span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                </span>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+    
+        <progress class="content_progress" max="0" value="0"></progress>
+    
+     <div class="container">
+        <div class="navbar">
+            <div class="navbar-header header-logo">
+                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
+            </div>
+            <div class="navbar-right">
+                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                <nav class="mb-md">
+                    
+                    
+                        <a class="menu-item" href="/post/" title="">
+                            <h3>Blog</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/categories/" title="">
+                            <h3>Categories</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/tags/" title="">
+                            <h3>Tags</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/about/" title="">
+                            <h3>About</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                </nav>
+        </div>
+    </div>
+</nav>
+            <main class="main">
+                <div class="container">
+                    
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Git 笔记</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
+                <span class="post-time">
+                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
+                </span>
+                in
+                
+                <span class="post-word-count">495 words</span>
+        </div>
+    </header>
+
+    <div class="post-content">
+        
+
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <h2 id="初始化">初始化</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global user.name <span style="color:#e6db74">&#34;your name&#34;</span>
+git config --global user.email <span style="color:#e6db74">&#34;yourEmail@example.com&#34;</span>
+</code></pre></div><h2 id="文件的状态">文件的状态</h2>
+<ul>
+<li>未跟踪 (untracked)</li>
+<li>已跟踪 (tracked)
+<ul>
+<li>未修改 (unmodified)</li>
+<li>已修改 (modified)</li>
+<li>已暂存 (staged)</li>
+<li>已提交 (committed)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>未修改和已提交本质上是同一种状态</p>
+</blockquote>
+<h2 id="三个工作区域">三个工作区域</h2>
+<ul>
+<li>工作目录 (Working Directory)</li>
+<li>暂存区域 (Staging Area)</li>
+<li>仓库 (Repository)</li>
+</ul>
+<h2 id="gitignore">gitignore</h2>
+<ol>
+<li>
+<p>开头结尾皆无 <code>/</code>, 表示忽略所有符合规则的文件或目录；</p>
+</li>
+<li>
+<p>以 <code>/</code> 结尾表示忽略目录，<code>dist/</code> 即忽略所有 dist 目录；</p>
+</li>
+<li>
+<p>以 <code>/</code> 开头表示忽略相对于根目录的目标，<code>/.setting</code> 即忽略根目录下的 .setting 文件，<code>/dist/</code> 即忽略根目录下的 dist 目录；</p>
+</li>
+<li>
+<p><code>!</code> 开头表示取反，即忽略指定模式以外的文件或目录；</p>
+</li>
+</ol>
+<h3 id="glob">glob</h3>
+<ol>
+<li>
+<p><code>*</code> 匹配任意数量的任意字符：</p>
+<p><code>Law*</code>, 匹配 <code>Law</code>, <code>Laws</code>, <code>Lawyer</code>, 但不匹配 <code>GrokLaw</code>, <code>La</code>, <code>aw</code></p>
+</li>
+<li>
+<p><code>?</code> 匹配任意一个字符：</p>
+<p><code>?at</code> 匹配 <code>Cat</code>, <code>cat</code>, <code>Bat</code>, <code>bat</code>, 但不匹配 <code>at</code></p>
+</li>
+<li>
+<p><code>[]</code> 匹配给定字符集里的一个字符：</p>
+<p><code>[CB]at</code> 匹配 <code>Cat</code>, <code>Bat</code>, 但不匹配 <code>cat</code>, <code>bat</code></p>
+</li>
+</ol>
+<h2 id="查看提交信息-git-log">查看提交信息 (git log)</h2>
+<ul>
+<li><code>-p</code> 用来显示每次提交的内容差异</li>
+<li><code>-n</code> n 为数字，意味着仅显示最近 n 次提交</li>
+<li><code>--stat</code> 查看每次提交的简略统计信息</li>
+</ul>
+<h2 id="修改最新提交的信息">修改最新提交的信息</h2>
+<p>常用于修改 commit-message</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git commit --amend --only
+<span style="color:#75715e"># or</span>
+git commit --amend --only -m <span style="color:#e6db74">&#39;xxxxxxx&#39;</span>
+</code></pre></div><h2 id="回滚-git-reset">回滚 (git reset)</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 回滚，并忽略所有改动</span>
+git reset commit-id --hard
+
+<span style="color:#75715e"># 回滚，但暂存所有改动</span>
+git reset commit-id --soft
+</code></pre></div><h2 id="储藏-git-stash">储藏 (git stash)</h2>
+<p>储藏所有已跟踪文件的改动</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 储藏当前改动，储藏信息为当前提交信息 (commit message)</span>
+git stash <span style="color:#f92672">[</span>push<span style="color:#f92672">]</span>
+
+<span style="color:#75715e"># 储藏当前改动，并指定储藏信息</span>
+git stash push <span style="color:#e6db74">&#39;message&#39;</span>
+
+<span style="color:#75715e"># 储藏当前改动（包括未跟踪的文件）</span>
+git stash push -u
+
+<span style="color:#75715e"># 仅储藏已暂存的文件</span>
+git stash push --keep-index
+</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>CsYakamoz </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://csyakamoz.github.io/post/git-note/>https://csyakamoz.github.io/post/git-note/</span>
+            </p>
+            
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://csyakamoz.github.io/tags/git/">
+                    #git</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://csyakamoz.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://csyakamoz.github.io/post/javascript-this/" class="prev" rel="prev" title="Javascript this 的指向"><i class="iconfont icon-left"></i>&nbsp;Javascript this 的指向</a>
+        
+        
+        <a href="https://csyakamoz.github.io/post/rabbitmq-note/" class="next" rel="next" title="RabbitMQ 笔记">RabbitMQ 笔记&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+        
+            
+        
+    </div>
+</article>
+                </div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i>
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+<script defer src="/js/vendor_main.min.js"></script>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script> pangu.spacingPage();</script>
+
+
+
+
+
+        </div>
+    </body>
+</html>

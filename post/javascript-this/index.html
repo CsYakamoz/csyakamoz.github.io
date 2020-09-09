@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noodp"/>
+    <meta name="author" content="CsYakamoz">
+    <meta name="description" content="CsYakamoz 的个人博客">
+    
+    
+    <link rel="prev" href="https://csyakamoz.github.io/post/javascript-foreach-with-async-func/" />
+    <link rel="next" href="https://csyakamoz.github.io/post/git-note/" />
+    <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-this/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>
+        
+        
+            Javascript this 的指向 | CsYakamoz`s Blog
+        
+    </title>
+    <meta name="title" content="Javascript this 的指向 | CsYakamoz`s Blog">
+    
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+    
+    
+ 
+
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/csyakamoz.github.io"
+    },
+    "articleSection" : "post",
+    "name" : "Javascript this 的指向",
+    "headline" : "Javascript this 的指向",
+    "description" : "\/\/ Notice: the environment is Node.js global.val = \u0026#34;global\u0026#34;; this.val = \u0026#34;exports\u0026#34;; function normalFun() { console.log(this.val); } const funcExpression = function () { console.log(this.val); }; const arrowFun = () =\u0026gt; { console.log(this.val); }; const scope = { val: \u0026#34;obj\u0026#34;, a: function () { console.log(this.val); }, b: () =\u0026gt; { console.log(this.val); }, c: function () { return () =\u0026gt; { console.log(this.val); }; }, d: function () { return function () {",
+    "inLanguage" : "zh-cn",
+    "author" : "CsYakamoz",
+    "creator" : "CsYakamoz",
+    "publisher": "CsYakamoz",
+    "accountablePerson" : "CsYakamoz",
+    "copyrightHolder" : "CsYakamoz",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-09 16:14:29 \u002b0800 CST",
+    "dateModified" : "2020-09-09 16:14:29 \u002b0800 CST",
+    "url" : "https:\/\/csyakamoz.github.io\/post\/javascript-this\/",
+    "wordCount" : "113",
+    "keywords" : [ "javascript", "CsYakamoz`s Blog"]
+}
+</script>
+
+  </head>
+    <body class="">
+        <div class="wrapper">
+            <nav class="navbar">
+    
+        <progress class="content_progress" max="0" value="0"></progress>
+    
+    <div class="container">
+        
+            <div class="navbar-header header-back2home-logo">
+                <span class="logo_mark" >>$</span>
+                <a href="https://csyakamoz.github.io">
+                    <span class="logo_text" >cd /home/</span>
+                    <span class="logo_cursor" ></span>
+                </a>
+            </div>
+        
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/post/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <span class="divide"></span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                </span>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+    
+        <progress class="content_progress" max="0" value="0"></progress>
+    
+     <div class="container">
+        <div class="navbar">
+            <div class="navbar-header header-logo">
+                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
+            </div>
+            <div class="navbar-right">
+                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                <nav class="mb-md">
+                    
+                    
+                        <a class="menu-item" href="/post/" title="">
+                            <h3>Blog</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/categories/" title="">
+                            <h3>Categories</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/tags/" title="">
+                            <h3>Tags</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/about/" title="">
+                            <h3>About</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                </nav>
+        </div>
+    </div>
+</nav>
+            <main class="main">
+                <div class="container">
+                    
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Javascript this 的指向</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
+                <span class="post-time">
+                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
+                </span>
+                in
+                
+                <span class="post-word-count">113 words</span>
+        </div>
+    </header>
+
+    <div class="post-content">
+        
+
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Notice: the environment is Node.js
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;global&#34;</span>;
+<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;exports&#34;</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">normalFun</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">funcExpression</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arrowFun</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scope</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;obj&#34;</span>,
+
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
+  },
+
+  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> () =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
+  },
+
+  <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> () =&gt; {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
+    };
+  },
+
+  <span style="color:#a6e22e">d</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
+    };
+  },
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">c</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">d</span>;
+
+<span style="color:#a6e22e">normalFun</span>(); <span style="color:#75715e">// global
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">funcExpression</span>(); <span style="color:#75715e">// global
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">arrowFun</span>(); <span style="color:#75715e">// exports
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">a</span>(); <span style="color:#75715e">// obj
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">b</span>(); <span style="color:#75715e">// exports
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">c</span>()(); <span style="color:#75715e">// obj
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">d</span>()(); <span style="color:#75715e">// global
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">_c</span>()(); <span style="color:#75715e">// global
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">_d</span>()(); <span style="color:#75715e">// global
+</span></code></pre></div><h2 id="参考">参考</h2>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this">MDN this</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>CsYakamoz </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://csyakamoz.github.io/post/javascript-this/>https://csyakamoz.github.io/post/javascript-this/</span>
+            </p>
+            
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://csyakamoz.github.io/tags/javascript/">
+                    #javascript</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://csyakamoz.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://csyakamoz.github.io/post/javascript-foreach-with-async-func/" class="prev" rel="prev" title="forEach With Async Function in Js"><i class="iconfont icon-left"></i>&nbsp;forEach With Async Function in Js</a>
+        
+        
+        <a href="https://csyakamoz.github.io/post/git-note/" class="next" rel="next" title="Git 笔记">Git 笔记&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+        
+            
+        
+    </div>
+</article>
+                </div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i>
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+<script defer src="/js/vendor_main.min.js"></script>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script> pangu.spacingPage();</script>
+
+
+
+
+
+        </div>
+    </body>
+</html>

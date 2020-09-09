@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rabbitmq on CsYakamoz`s Blog</title>
+    <link>https://csyakamoz.github.io/tags/rabbitmq/</link>
+    <description>Recent content in rabbitmq on CsYakamoz`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Sep 2020 16:38:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://csyakamoz.github.io/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RabbitMQ 交换机类型</title>
+      <link>https://csyakamoz.github.io/post/rabbitmq-exchange-type/</link>
+      <pubDate>Wed, 09 Sep 2020 16:38:46 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/rabbitmq-exchange-type/</guid>
+      <description>RabbitMQ 的交换机共有四种类型。 fanout - 扇形 direct - 直连 topic - 主题 headers - 头（尚未了解，此文不说明） /** * 发布消息到指定交换机 * @param {string} exchange - 交换机名 * @param {string} routingKey - 该消息的路</description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ 笔记</title>
+      <link>https://csyakamoz.github.io/post/rabbitmq-note/</link>
+      <pubDate>Wed, 09 Sep 2020 16:35:55 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/rabbitmq-note/</guid>
+      <description>RabbitMQ 官方教程 名词 生产者 (Producing): 发送消息到交换机 路由键 (Routing Key): 消息属性，由生产者在发送消息时声明 交换机 (Exchange): 接受来自生产者的消息，并将消息分发给满足条件的队列</description>
+    </item>
+    
+  </channel>
+</rss>

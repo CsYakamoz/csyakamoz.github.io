@@ -6,10 +6,19 @@
     <description>Recent content in javascript on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 09 Sep 2020 14:05:20 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2020 16:14:29 +0800</lastBuildDate>
     
 	<atom:link href="https://csyakamoz.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Javascript this 的指向</title>
+      <link>https://csyakamoz.github.io/post/javascript-this/</link>
+      <pubDate>Wed, 09 Sep 2020 16:14:29 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/javascript-this/</guid>
+      <description>// Notice: the environment is Node.js global.val = &amp;#34;global&amp;#34;; this.val = &amp;#34;exports&amp;#34;; function normalFun() { console.log(this.val); } const funcExpression = function () { console.log(this.val); }; const arrowFun = () =&amp;gt; { console.log(this.val); }; const scope = { val: &amp;#34;obj&amp;#34;, a: function () { console.log(this.val); }, b: () =&amp;gt; { console.log(this.val); }, c: function () { return () =&amp;gt; { console.log(this.val); }; }, d: function () { return function () {</description>
+    </item>
     
     <item>
       <title>forEach With Async Function in Js</title>
