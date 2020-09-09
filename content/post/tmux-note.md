@@ -1,5 +1,5 @@
 ---
-title: "Tmux 记录"
+title: "Tmux 笔记"
 date: 2020-09-09T11:26:08+08:00
 tags: ["tmux", "software"]
 ---
@@ -10,9 +10,9 @@ tags: ["tmux", "software"]
 
 MacOS 用户建议使用 iTerm2 的 Tmux 特性
 
-使用方法, 请看文档: https://www.iterm2.com/documentation-tmux-integration.html
+使用方法，请看文档：https://www.iterm2.com/documentation-tmux-integration.html
 
-**Notice**: 远程服务器也能使用, 但 tmux 版本至少为 **1.8**, 但推荐 2.3 及之后
+**Notice**: 远程服务器也能使用，但 tmux 版本至少为 **1.8**, 但推荐 2.3 及之后
 
 <!--
    - ## 配置
@@ -83,11 +83,11 @@ prefix-n
 # 重命名当前 window
 prefix-,
 
-# 调整 window 排序 source 默认是当前窗口序号, target 是目标窗口序号
+# 调整 window 排序 source 默认是当前窗口序号，target 是目标窗口序号
 prefix-:swap-window [-s source] -t target
 
 # 跳转到第 n 个 window
-prefix-n(数字)
+prefix-n（数字）
 ```
 
 ### Pane
@@ -108,10 +108,10 @@ prefix-q
 # 切换 pane 布局
 prefix-<space>
 
-# 光标移动到左, 下, 上, 右方的 pane
+# 光标移动到左，下，上，右方的 pane
 prefix-h, j, k, l
 
-# 当前窗格往左, 下, 上, 右方扩大 5 格, ^ 为 Ctrl
+# 当前窗格往左，下，上，右方扩大 5 格，^ 为 Ctrl
 prefix-^h, ^j, ^k, ^l
 
 # 临时最大化当前 pane, 再次使用则恢复
@@ -133,7 +133,7 @@ prefix-!
 
 `prefix-?` 显示快捷键帮助文档
 
-`join-pane -s [session-name:]window-index.pane-index` 将(其它 session 下的) window 中的 pane 合并到当前 window
+`join-pane -s [session-name:]window-index.pane-index` 将（其它 session 下的） window 中的 pane 合并到当前 window
 
 其中 window-index 也可以用 window-name
 

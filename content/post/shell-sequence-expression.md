@@ -4,9 +4,9 @@ date: 2020-09-09T11:18:01+08:00
 tags: ["shell"]
 ---
 
-格式: `{FIRST..LAST[..INCREMENT]}`
+格式：`{FIRST..LAST[..INCREMENT]}`
 
-`FIRST` 和 `LAST` 是必需的, 用 `..` 分隔, 中间没有空格, `INCREMENT` 是可选滴
+`FIRST` 和 `LAST` 是必需的，用 `..` 分隔，中间没有空格，`INCREMENT` 是可选滴
 
 ## Example
 

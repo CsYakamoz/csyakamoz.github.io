@@ -32,7 +32,7 @@ request.post(
         options: {
           // 必须有 filename, 值可任意但不能为空串
           filename: "default",
-          // contentType 可有可无, 且值任意
+          // contentType 可有可无，且值任意
           contentType: "image/jpeg",
         },
       },
@@ -52,11 +52,11 @@ request.post(
 );
 ```
 
-方法 1, 2 的使用场景: 文件在本地
+方法 1, 2 的使用场景：文件在本地
 
-方法 3 的使用场景: 参数是图片的 base64 内容, 在调用微信接口前, 将其转换成 Buffer
+方法 3 的使用场景：参数是图片的 base64 内容，在调用微信接口前，将其转换成 Buffer
 
-方法 4 的使用场景: 知道图片资源的 uri
+方法 4 的使用场景：知道图片资源的 uri
 
 ## 参考
 
@@ -64,4 +64,4 @@ request.post(
 
 [npm request](https://www.npmjs.com/package/request#multipartform-data-multipart-form-uploads)
 
-[后端使用 nodejs, API 接口: security.imgSecCheck 如何才能正确调用?](https://developers.weixin.qq.com/community/develop/doc/000486c0fbc558719d89a281c51800)
+[后端使用 nodejs, API 接口：security.imgSecCheck 如何才能正确调用？](https://developers.weixin.qq.com/community/develop/doc/000486c0fbc558719d89a281c51800)

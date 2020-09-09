@@ -12,7 +12,7 @@ cd public
 git add -A
 
 # Commit changes.
-msg="rebuilding site $(date)"
+msg="rebuilding site $(date +"%Y-%m-%d %H:%M:%S") CST"
 if [ $# -eq 1 ]
   then msg="$1"
 fi

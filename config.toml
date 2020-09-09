@@ -4,7 +4,7 @@ languageCode = "zh-cn"
 hasCJKLanguage = true
 theme = "mogege"
 
-paginate = 11
+paginate = 10
 enableEmoji = true
 enableRobotsTXT = true
 
@@ -42,9 +42,9 @@ preserveTaxonomyNames = true
 
 [params]
     since = 2020
-    author = "CsYakamoz"                          # Author's name
-    avatar = ""           # Author's avatar
-    subtitle = "Legen - wait for it - dary! Legendary!"                  # Subtitle
+    author = "CsYakamoz"
+    avatar = ""
+    subtitle = "Legen - wait for it - dary! Legendary!"
     home_mode = ""
     enableGitalk = false
 
@@ -54,4 +54,3 @@ preserveTaxonomyNames = true
     keywords = "" # site keywords
 
     beian = ""
-    baiduAnalytics = ""

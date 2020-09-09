@@ -35,16 +35,16 @@ Alt + f, 光标向右移动一个单词
 
 ---
 
-Ctrl + c, 结束当前命令/进程
+Ctrl + c, 结束当前命令 / 进程
 
 Ctrl + l, 清屏
 
 Ctrl + z, 暂停前台进程返回 shell, 需要切换回前台进程时可使用 `fg`
 
-Ctrl + r, 历史命令反向搜索, 使用 `Ctrl + g` or `Ctrl + c` 退出搜索
+Ctrl + r, 历史命令反向搜索，使用 `Ctrl + g` or `Ctrl + c` 退出搜索
 
 ---
 
-Ctrl + x, Ctrl + e, 使用指定编辑器编辑当前命令, 常用在编辑长命令
+Ctrl + x, Ctrl + e, 使用指定编辑器编辑当前命令，常用在编辑长命令
 
 > 默认编辑器由环境变量 `EDITOR` 指定

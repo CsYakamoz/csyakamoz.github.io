@@ -8,27 +8,27 @@ tags: ["javascript", "coding-style"]
 
 > [ESLint](https://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
 
-以下风格都会尽量补充对应的 eslint 规则(如果有且被我发现的话 😑
+以下风格都会尽量补充对应的 eslint 规则（如果有且被我发现的话 😑
 
 **Notice**: 请优先以团队约定为准!!!
 
 ## 缩进使用空格而不是制表符
 
-尽管制表符更省空间, 但还是更喜欢空格
+尽管制表符更省空间，但还是更喜欢空格
 
 > one tab is equal to 2, 4, 8 space
 
 ## 坚持使用分号
 
-纵然很多人依旧坚持不使用分号, 但我就喜欢加分号, 就这么滴.
+纵然很多人依旧坚持不使用分号，但我就喜欢加分号，就这么滴。
 
 - `semi`
 
 ## 坚持使用大括号
 
-即使只有一条语句, 也依旧要使用大括号;
+即使只有一条语句，也依旧要使用大括号；
 
-同时, `else` 与 `if` 的 `}` 处在统一行;
+同时，`else` 与 `if` 的 `}` 处在统一行；
 
 <!-- prettier-ignore -->
 ```javascript
@@ -64,15 +64,15 @@ if (test) {
 
 ## const 优于 let, 弃用 var
 
-`var` 的坏处, 此处不一一阐述;
+`var` 的坏处，此处不一一阐述；
 
-`let` 声明的变量, 其生存周期只在其声明时所在的代码块有效, 且不存在 "变量提升" 现象, 当然还有其它好处, 此处也不一一阐述;
+`let` 声明的变量，其生存周期只在其声明时所在的代码块有效，且不存在 "变量提升" 现象，当然还有其它好处，此处也不一一阐述；
 
-`const` 与 `let` 最大区别是: `const` 声明时必须就为其赋值, 且该值不能改变;
+`const` 与 `let` 最大区别是：`const` 声明时必须就为其赋值，且该值不能改变；
 
-使用 `const` 能减少程序的不确定性, 因为我们能确保其值不会改变, 因此如果一个变量在声明时被赋值, 且后续逻辑中并没有改变其值, 我们应当将其变成常量.
+使用 `const` 能减少程序的不确定性，因为我们能确保其值不会改变，因此如果一个变量在声明时被赋值，且后续逻辑中并没有改变其值，我们应当将其变成常量。
 
-目前个人遇到的绝大部分情况, 都可以用 `const` 代替 `let`, 下面是一个场景:
+目前个人遇到的绝大部分情况，都可以用 `const` 代替 `let`，下面是一个场景：
 
 ```javascript
 // bad
@@ -115,9 +115,9 @@ const discount = getDiscount({ isLoggedIn, isValuedCustomer, cartTotal });
 - `no-const-assign`
 - `no-var`
 
-## 多个变量声明或赋值, 则每个变量分开声明或赋值
+## 多个变量声明或赋值，则每个变量分开声明或赋值
 
-`let` 声明放在一组, `const` 则放在另外一组
+`let` 声明放在一组，`const` 则放在另外一组
 
 <!-- prettier-ignore -->
 ```javascript
@@ -162,7 +162,7 @@ let length;
 
 - `one-var`
 
-## 在需要时, 才声明变量
+## 在需要时，才声明变量
 
 而不是一开始就声明可能用到的变量
 
@@ -239,22 +239,22 @@ var { type, ...coords } = data;
 // 'coords' is now the 'data' object without its 'type' property.
 ```
 
-## 变量, 常量, 函数和类的命名约定
+## 变量，常量，函数和类的命名约定
 
-当命名变量和方法的时候, 使用 **lowerCamelCase**;
+当命名变量和方法的时候，使用 **lowerCamelCase**;
 
-当命名类的时候, 使用 **UpperCamelCase** (首字母大写);
+当命名类的时候，使用 **UpperCamelCase** （首字母大写）;
 
-对于常量, 则 **UPPERCASE with Underscore**;
+对于常量，则 **UPPERCASE with Underscore**;
 
-这将帮助您轻松地区分普通变量 / 函数和需要实例化的类; 使用描述性名称, 但使它们尽量简短.
+这将帮助您轻松地区分普通变量 / 函数和需要实例化的类；使用描述性名称，但使它们尽量简短。
 
 - `camelcase`
 - `new-cap`
 
 ## if...elif...else 的注释
 
-因为 `else` 与 `if` 的 `}` 处在同一行, 其注释写法可以如下
+因为 `else` 与 `if` 的 `}` 处在同一行，其注释写法可以如下
 
 ```javascript
 /**
@@ -271,7 +271,7 @@ if (condition1) {
 }
 ```
 
-## 对象属性/方法名仅在需要时才加上引号
+## 对象属性或方法名仅在需要时才加上引号
 
 <!-- prettier-ignore -->
 ```javascript
@@ -294,10 +294,10 @@ const good = {
 
 ## 优先使用对象字面量简写语法
 
-简写语法:
+简写语法：
 
 1. 方法不需要加 `function`
-2. 同名属性/方法不需要 `key: key,`, 写成 `key,` 即可
+2. 同名属性 / 方法不需要 `key: key,`，写成 `key,` 即可
 
 简写语法应当放在对象声明的开头
 
@@ -336,7 +336,7 @@ const atom = {
 
 - `object-shorthand`
 
-## 优先通过扩展运算符来浅拷贝对象, 数组
+## 优先通过扩展运算符来浅拷贝对象，数组
 
 ```javascript
 /* 对象 */
@@ -418,7 +418,7 @@ const foo = "'this' is \"quoted\"";
 const foo = `my name is '${name}'`;
 ```
 
-## 如果函数返回值有多个, 且意义不一样, 优先考虑对象
+## 如果函数返回值有多个，且意义不一样，优先考虑对象
 
 > Why? You can add new properties over time or change the order of things without breaking call sites.
 
@@ -494,11 +494,11 @@ new Date(...[2016, 8, 5]);
 
 ## 限制函数参数个数
 
-函数如果有许多参数的话, 会难以阅读和书写, 因为要记住每个参数是什么, 它的类型以及它们出现顺序;
+函数如果有许多参数的话，会难以阅读和书写，因为要记住每个参数是什么，它的类型以及它们出现顺序；
 
-因此建议, 约定一个函数中参数个数的上限.
+因此建议，约定一个函数中参数个数的上限。
 
-如果函数参数个数无法缩减, 可以将这些参数合并成一个对象, 然后在函数实现中使用对象解构.
+如果函数参数个数无法缩减，可以将这些参数合并成一个对象，然后在函数实现中使用对象解构。
 
 ```javascript
 // bad
@@ -516,13 +516,13 @@ function foo({ bar, baz, qux, xyz }) {
 
 ## 禁止对函数参数再赋值
 
-上文提到过 `const` 的好处, 对于函数参数, 道理是一样滴.
+上文提到过 `const` 的好处，对于函数参数，道理是一样滴。
 
 - `no-param-reassign`
 
 ## 函数表达式优于函数声明
 
-理由请见: [https://github.com/airbnb/javascript#functions--declarations](https://github.com/airbnb/javascript#functions--declarations)
+理由请见：[https://github.com/airbnb/javascript#functions--declarations](https://github.com/airbnb/javascript#functions--declarations)
 
 ```javascript
 // bad
@@ -546,7 +546,7 @@ const short = function longUniqueMoreDescriptiveLexicalFoo() {
 
 ## 建议使用剩余参数代替 arguments
 
-`arguments` 没有 `Array.prototype` 方法，所以有点不方便.
+`arguments` 没有 `Array.prototype` 方法，所以有点不方便。
 
 - `prefer-rest-params`
 
@@ -565,26 +565,26 @@ function concatenateAll(...args) {
 
 ## 避免使用不带 await 表达式的 async 函数
 
-JavaScript 中的异步函数与其他函数在两个重要方面表现不同:
+JavaScript 中的异步函数与其他函数在两个重要方面表现不同：
 
 1. 返回值总是一个  `Promise`
 2. 你可以在其中使用  `await`  操作符
 
-不使用 `await` 的异步函数可能不需要是异步函数(但函数返回值却是`Promise`) , 也可能是重构的意外结果.
+不使用 `await` 的异步函数可能不需要是异步函数（但函数返回值却是`Promise`) , 也可能是重构的意外结果。
 
 - `require-await`
 
 ## 避免不必要的 return await
 
-在 `async function`, `return await` 很少有用;
+在 `async function`, `return await` 很少有用；
 
-因为 `async function` 的返回值总是封装在 `Promise.resolve`, `return await` 实际上并没有做任何事情，只是在 Promise resolve 或 reject 之前增加了额外的时间;
+因为 `async function` 的返回值总是封装在 `Promise.resolve`, `return await` 实际上并没有做任何事情，只是在 Promise resolve 或 reject 之前增加了额外的时间；
 
-唯一有效是, 如果 try/catch 语句中使用 `return await` 来捕获另一个基于 Promise 的函数的错误, 则会出现异常.
+唯一有效是，如果 try/catch 语句中使用 `return await` 来捕获另一个基于 Promise 的函数的错误，则会出现异常。
 
 - `no-return-await`
 
-## 函数表达式或箭头函数如果只有一个参数, 也加上括号
+## 函数表达式或箭头函数如果只有一个参数，也加上括号
 
 > Why? Minimizes diff churn when adding or removing arguments.
 
@@ -621,23 +621,23 @@ JavaScript 中的异步函数与其他函数在两个重要方面表现不同:
 
 - `arrow-parens`
 
-## 不使用魔术数字(Magic Number)
+## 不使用魔术数字 (Magic Number)
 
-[魔术数字](<https://en.wikipedia.org/wiki/Magic_number_(programming)>)可以是指硬编码在代码里的具体数值(如 “10”“123” 等以数字直接写出的值);
+[魔术数字](<https://en.wikipedia.org/wiki/Magic_number_(programming)>) 可以是指硬编码在代码里的具体数值（如 “10”“123” 等以数字直接写出的值）;
 
-虽然程序作者写的时候自己能了解数值的意义, 但对其他程序员而言, 甚至制作者本人经过一段时间后, 会难以了解这个数值的用途, 只能苦笑讽刺 "这个数值的意义虽然不懂, 不过至少程序能够运行，真是个魔术般的数字" 而得名.
+虽然程序作者写的时候自己能了解数值的意义，但对其他程序员而言，甚至制作者本人经过一段时间后，会难以了解这个数值的用途，只能苦笑讽刺 "这个数值的意义虽然不懂，不过至少程序能够运行，真是个魔术般的数字" 而得名。
 
-> 本人已在团队中遇到过这种情况(自己写的和他人写的都有!!!), 所以这个规则是很重要滴!
+> 本人已在团队中遇到过这种情况（自己写的和他人写的都有！!!), 所以这个规则是很重要滴！
 
 - `no-magic-numbers`
 
 ## 使用严格比较运算符
 
-严格比较运算符不会尝试转换它们为恰当的类型来比较.
+严格比较运算符不会尝试转换它们为恰当的类型来比较。
 
 - `eqeqeq`
 
-## 条件语句中的条件需写清楚比较对象, 除了布尔值
+## 条件语句中的条件需写清楚比较对象，除了布尔值
 
 - **Objects** evaluate to **true**
 - **Undefined** evaluates to **false**
@@ -680,9 +680,9 @@ if (collection.length > 0) {
 
 ## 避免在 switch 的 case 中出现词法声明
 
-词法声明(let, const, function, class)在整个 switch 语句块中是可见的, 但是它只有在运行到它定义的 case 语句时, 才会进行初始化操作
+词法声明 (let, const, function, class) 在整个 switch 语句块中是可见的，但是它只有在运行到它定义的 case 语句时，才会进行初始化操作
 
-为了保证词法声明语句只在当前 case 语句中有效, 将你子句包裹在块中
+为了保证词法声明语句只在当前 case 语句中有效，将你子句包裹在块中
 
 ```javascript
 // bad
@@ -729,27 +729,27 @@ switch (foo) {
 
 ## 避免长文件
 
-根据个人经验, 一个特别长的代码文件, 很难理解, 和维护;
+根据个人经验，一个特别长的代码文件，很难理解，和维护；
 
-因此建议将大文件拆分成更细粒度的模块.
+因此建议将大文件拆分成更细粒度的模块。
 
 - `max-lines`
 
 ## 避免长函数
 
-程序复杂度的一个来源是漫长而复杂的函数, 很难推理;
+程序复杂度的一个来源是漫长而复杂的函数，很难推理；
 
-而且函数职责太多, 很难测试.
+而且函数职责太多，很难测试。
 
 - `max-lines-per-function`
 
 ## 避免复杂函数
 
-复杂函数往往就是长函数, 反之亦然;
+复杂函数往往就是长函数，反之亦然；
 
-函数之所以变复杂可能有很多因素, 但其中嵌套回调和圈复杂度较高都是比较容易解决的.
+函数之所以变复杂可能有很多因素，但其中嵌套回调和圈复杂度较高都是比较容易解决的。
 
-> 圈复杂度: 它指的是给定函数中的语句(逻辑)数, 诸如 if 语句, 循环和 switch 语句
+> 圈复杂度：它指的是给定函数中的语句（逻辑）数，诸如 if 语句，循环和 switch 语句
 
 - `complexity`
 - `max-nested-callbacks`
@@ -757,28 +757,28 @@ switch (foo) {
 
 ## 禁止抛出异常字面量
 
-当抛错时, 仅抛出 `Error` 类, 或者以 `Error` 为父类的继承类的错误;
+当抛错时，仅抛出 `Error` 类，或者以 `Error` 为父类的继承类的错误；
 
-使用 `Error` 类对象最基本的好处是它们能自动地追踪到异常产生和起源的地方.
+使用 `Error` 类对象最基本的好处是它们能自动地追踪到异常产生和起源的地方。
 
-同时, 传递给 `Promise` 的 `reject` 也应该是 `Error` 类对象
+同时，传递给 `Promise` 的 `reject` 也应该是 `Error` 类对象
 
 - `no-throw-literal`
 - `prefer-promise-reject-errors`
 
 ## 避免不必要的 catch 子句
 
-只重新抛出原始错误的 catch 子句是冗余的, 对程序的运行时行为没有影响;
+只重新抛出原始错误的 catch 子句是冗余的，对程序的运行时行为没有影响；
 
-这些冗余子句可能会导致混乱和代码膨胀, 所以最好不要使用这些不必要的 catch 子句.
+这些冗余子句可能会导致混乱和代码膨胀，所以最好不要使用这些不必要的 catch 子句。
 
 - `no-useless-catch`
 
 ## 建议在正则表达式中使用命名捕获组
 
-随着 ECMAScript 2018 的发布, 命名捕获组可以用于正则表达式中, 这可以提高正则表达式的可读性.
+随着 ECMAScript 2018 的发布，命名捕获组可以用于正则表达式中，这可以提高正则表达式的可读性。
 
-格式: `/(?<name>pattern)/`
+格式：`/(?<name>pattern)/`
 
 ```javascript
 // bad
@@ -800,7 +800,7 @@ foo.exec("bar").groups.id; // Retrieve the group result.
 
 ## 变量命名习惯
 
-- 布尔相关命名加上 is, can, should, has 等前缀, 或者 [a]ble 后缀
+- 布尔相关命名加上 is, can, should, has 等前缀，或者 [a]ble 后缀
 - 用 min, max 表示数量范围
 - 用 first, last 表示闭区间
 - 用 begin, end 表示左闭右开区间
