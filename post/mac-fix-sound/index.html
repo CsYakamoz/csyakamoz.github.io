@@ -9,9 +9,9 @@
     <meta name="description" content="CsYakamoz 的个人博客">
     
     
-    
-    
-    <link rel="canonical" href="https://csyakamoz.github.io/tags/" />
+    <link rel="prev" href="https://csyakamoz.github.io/post/tmux-note/" />
+    <link rel="next" href="https://csyakamoz.github.io/post/shell-note/" />
+    <link rel="canonical" href="https://csyakamoz.github.io/post/mac-fix-sound/" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,25 +22,51 @@
     <title>
         
         
-            Tags | CsYakamoz`s Blog
+            MacOS 修复音视频无法正常播放问题 | CsYakamoz`s Blog
         
     </title>
-    <meta name="title" content="Tags | CsYakamoz`s Blog">
+    <meta name="title" content="MacOS 修复音视频无法正常播放问题 | CsYakamoz`s Blog">
     
 <link rel="stylesheet" href="/css/main.min.css">
 
 
     
-    <link rel="alternate" href="/tags/index.xml" type="application/rss+xml" title="CsYakamoz`s Blog">
-    <link rel="feed" href="/tags/index.xml" type="application/rss+xml" title="CsYakamoz`s Blog">
-    
     
  
+
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/csyakamoz.github.io"
+    },
+    "articleSection" : "post",
+    "name" : "MacOS 修复音视频无法正常播放问题",
+    "headline" : "MacOS 修复音视频无法正常播放问题",
+    "description" : "内容来源：mac 音频及视频均无法正常播放，怎么解决？ 表现现象： 音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常 BiliBili 也无法播放",
+    "inLanguage" : "zh-cn",
+    "author" : "CsYakamoz",
+    "creator" : "CsYakamoz",
+    "publisher": "CsYakamoz",
+    "accountablePerson" : "CsYakamoz",
+    "copyrightHolder" : "CsYakamoz",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-09 11:32:06 \u002b0800 CST",
+    "dateModified" : "2020-09-09 11:32:06 \u002b0800 CST",
+    "url" : "https:\/\/csyakamoz.github.io\/post\/mac-fix-sound\/",
+    "wordCount" : "127",
+    "keywords" : [ "mac", "CsYakamoz`s Blog"]
+}
+</script>
 
   </head>
     <body class="">
         <div class="wrapper">
             <nav class="navbar">
+    
+        <progress class="content_progress" max="0" value="0"></progress>
     
     <div class="container">
         
@@ -60,7 +86,7 @@
                 
                 <a class="menu-item" href="/categories/" title="">Categories</a>
                 
-                <a class="menu-item active" href="/tags/" title="">Tags</a>
+                <a class="menu-item" href="/tags/" title="">Tags</a>
                 
                 <a class="menu-item" href="/about/" title="">About</a>
                 
@@ -71,6 +97,8 @@
     </div>
 </nav>
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
+    
+        <progress class="content_progress" max="0" value="0"></progress>
     
      <div class="container">
         <div class="navbar">
@@ -99,7 +127,7 @@
                             <div class="menu-active"></div>
                         </a>
                     
-                        <a class="menu-item active" href="/tags/" title="">
+                        <a class="menu-item" href="/tags/" title="">
                             <h3>Tags</h3>
                             <div class="menu-active"></div>
                         </a>
@@ -116,51 +144,105 @@
             <main class="main">
                 <div class="container">
                     
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">MacOS 修复音视频无法正常播放问题</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
+                <span class="post-time">
+                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
+                </span>
+                in
+                
+                <span class="post-word-count">127 words</span>
+        </div>
+    </header>
 
+    <div class="post-content">
+        
 
+        
+        
 
+        
+        
+        
+        
+        
 
+        
+        
+        
 
+        <p>内容来源：<a href="https://www.v2ex.com/t/492109">mac 音频及视频均无法正常播放，怎么解决？</a></p>
+<p>表现现象：</p>
+<ol>
+<li>
+<p>音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常</p>
+</li>
+<li>
+<p>BiliBili 也无法播放音频，进度条同上，但网络是正常</p>
+</li>
+<li>
+<p>任何可以让 mac 发出声音的行为均不出声</p>
+</li>
+<li>
+<p>重启一切正常</p>
+</li>
+</ol>
+<p>解决办法：terminal 下输入 <code>sudo killall coreaudiod</code></p>
 
-<div class="post-warp tags">
-    <h2 class="post-title" style="text-align:right;padding-bottom:2em">-&nbsp;Tags&nbsp;-</h2>
+    </div>
 
-    <div class="tag-cloud-tags">
-    
-        
-        <a href="/tags/javascript/"> javascript <small>(7)</small></a>
-        
-    
-        
-        <a href="/tags/shell/"> shell <small>(6)</small></a>
-        
-    
-        
-        <a href="/tags/software/"> software <small>(2)</small></a>
-        
-    
-        
-        <a href="/tags/algorithm/"> algorithm <small>(1)</small></a>
-        
-    
-        
-        <a href="/tags/coding-style/"> coding-style <small>(1)</small></a>
-        
-    
-        
-        <a href="/tags/mac/"> mac <small>(1)</small></a>
-        
-    
-        
-        <a href="/tags/tmux/"> tmux <small>(1)</small></a>
-        
-    
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>CsYakamoz </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://csyakamoz.github.io/post/mac-fix-sound/>https://csyakamoz.github.io/post/mac-fix-sound/</span>
+            </p>
+            
+            
     </div>
 
 
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://csyakamoz.github.io/tags/mac/">
+                    #mac</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://csyakamoz.github.io">home</a></span>
+        </section>
+    </div>
 
-</div>
+    <div class="post-nav">
+        
+        <a href="https://csyakamoz.github.io/post/tmux-note/" class="prev" rel="prev" title="Tmux 笔记"><i class="iconfont icon-left"></i>&nbsp;Tmux 笔记</a>
+        
+        
+        <a href="https://csyakamoz.github.io/post/shell-note/" class="next" rel="next" title="Shell 笔记">Shell 笔记&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
 
+    <div class="post-comment">
+        
+            
+        
+    </div>
+</article>
                 </div>
             </main>
             <footer class="footer">

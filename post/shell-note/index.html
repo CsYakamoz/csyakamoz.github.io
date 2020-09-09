@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noodp"/>
+    <meta name="author" content="CsYakamoz">
+    <meta name="description" content="CsYakamoz 的个人博客">
+    
+    
+    <link rel="prev" href="https://csyakamoz.github.io/post/mac-fix-sound/" />
+    <link rel="next" href="https://csyakamoz.github.io/post/xor-cipher/" />
+    <link rel="canonical" href="https://csyakamoz.github.io/post/shell-note/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>
+        
+        
+            Shell 笔记 | CsYakamoz`s Blog
+        
+    </title>
+    <meta name="title" content="Shell 笔记 | CsYakamoz`s Blog">
+    
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+    
+    
+ 
+
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/csyakamoz.github.io"
+    },
+    "articleSection" : "post",
+    "name" : "Shell 笔记",
+    "headline" : "Shell 笔记",
+    "description" : "Lint ShellCheck, a static analysis tool for shell scripts 建议使用 ShellCheck, 以检查脚本中潜在的问题 Shebang shebang 即 #! , 其后面跟的是解释当前脚本的解释器路径 e.g. #!\/bin\/bash #!\/usr\/bin\/bash #!\/usr\/bin\/env bash 个人习惯用 #!\/usr\/bin\/env NAME 而不是 #!\/usr\/bin\/NAME 原因请看此：",
+    "inLanguage" : "zh-cn",
+    "author" : "CsYakamoz",
+    "creator" : "CsYakamoz",
+    "publisher": "CsYakamoz",
+    "accountablePerson" : "CsYakamoz",
+    "copyrightHolder" : "CsYakamoz",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-09 11:35:19 \u002b0800 CST",
+    "dateModified" : "2020-09-09 11:35:19 \u002b0800 CST",
+    "url" : "https:\/\/csyakamoz.github.io\/post\/shell-note\/",
+    "wordCount" : "1976",
+    "keywords" : [ "shell", "CsYakamoz`s Blog"]
+}
+</script>
+
+  </head>
+    <body class="">
+        <div class="wrapper">
+            <nav class="navbar">
+    
+        <progress class="content_progress" max="0" value="0"></progress>
+    
+    <div class="container">
+        
+            <div class="navbar-header header-back2home-logo">
+                <span class="logo_mark" >>$</span>
+                <a href="https://csyakamoz.github.io">
+                    <span class="logo_text" >cd /home/</span>
+                    <span class="logo_cursor" ></span>
+                </a>
+            </div>
+        
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/post/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <span class="divide"></span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                </span>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+    
+        <progress class="content_progress" max="0" value="0"></progress>
+    
+     <div class="container">
+        <div class="navbar">
+            <div class="navbar-header header-logo">
+                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
+            </div>
+            <div class="navbar-right">
+                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                <nav class="mb-md">
+                    
+                    
+                        <a class="menu-item" href="/post/" title="">
+                            <h3>Blog</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/categories/" title="">
+                            <h3>Categories</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/tags/" title="">
+                            <h3>Tags</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                        <a class="menu-item" href="/about/" title="">
+                            <h3>About</h3>
+                            <div class="menu-active"></div>
+                        </a>
+                    
+                </nav>
+        </div>
+    </div>
+</nav>
+            <main class="main">
+                <div class="container">
+                    
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Shell 笔记</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
+                <span class="post-time">
+                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
+                </span>
+                in
+                
+                <span class="post-word-count">1976 words</span>
+        </div>
+    </header>
+
+    <div class="post-content">
+        
+
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <h2 id="lint">Lint</h2>
+<blockquote>
+<p><a href="https://github.com/koalaman/shellcheck">ShellCheck</a>, a static analysis tool for shell scripts</p>
+</blockquote>
+<p>建议使用 <code>ShellCheck</code>, 以检查脚本中潜在的问题</p>
+<h2 id="shebang">Shebang</h2>
+<p><strong><a href="https://zh.wikipedia.org/wiki/Shebang">shebang</a></strong> 即 <code>#!</code> , 其后面跟的是解释当前脚本的解释器路径</p>
+<p>e.g.</p>
+<ol>
+<li><code>#!/bin/bash</code></li>
+<li><code>#!/usr/bin/bash</code></li>
+<li><code>#!/usr/bin/env bash</code></li>
+</ol>
+<p>个人习惯用 <code>#!/usr/bin/env NAME</code> 而不是 <code>#!/usr/bin/NAME</code></p>
+<p>原因请看此：<a href="https://unix.stackexchange.com/questions/29608/why-is-it-better-to-use-usr-bin-env-name-instead-of-path-to-name-as-my">Why is it better to use “#!/usr/bin/env NAME” instead of “#!/path/to/NAME” as my shebang?</a></p>
+<h2 id="变量">变量</h2>
+<h3 id="定义">定义</h3>
+<p><code>variable=value</code></p>
+<ol>
+<li>不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等</li>
+<li>等号两侧不能有空格</li>
+</ol>
+<h3 id="使用">使用</h3>
+<ol>
+<li><code>$variable</code></li>
+<li><code>${variable}</code></li>
+</ol>
+<p><code>{}</code> 是可选的，但建议都加上，加 <code>{}</code> 是为了帮助解释器识别变量的边界</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">for</span> skill in Ada Coffe Action Java; <span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;I am good at </span><span style="color:#e6db74">${</span>skill<span style="color:#e6db74">}</span><span style="color:#e6db74">Script&#34;</span>
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>如果不给 <code>skill</code> 加上花括号，解释器会把 <code>skillScript</code> 当作变量，在上面的情况下，其值为空</p>
+<h3 id="只读变量删除变量">只读变量，删除变量</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 将变量变为只读</span>
+readonly variable
+
+<span style="color:#75715e"># 删除变量，但不能删除只读变量</span>
+unset variable
+</code></pre></div><h3 id="三种变量类型">三种变量类型</h3>
+<h4 id="全局变量">全局变量</h4>
+<p>在 Shell 中定义的变量，默认都是全局变量</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">function</span> func<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    var<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
+<span style="color:#f92672">}</span>
+
+func
+
+echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><h4 id="局部变量">局部变量</h4>
+<p>当想要变量的作用域仅限于函数内部时，在定义时加上 <code>local</code> 即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">function</span> func<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    local var<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
+<span style="color:#f92672">}</span>
+
+func
+
+echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><h4 id="环境变量">环境变量</h4>
+<p>全局变量只在当前 Shell 进程中有效，对其它 Shell 进程和子进程都无效</p>
+<p>如果使用 <code>export</code> 命令将全局变量导出，那么它就在所有的子进程中也有效了，这称为<strong>环境变量</strong></p>
+<p>环境变量被创建时所处的 Shell 进程称为父进程，如果在父进程中再创建一个新的进程来执行 Shell 命令，那么这个新的进程被称作 Shell 子进程</p>
+<p>当 Shell 子进程产生时，它会继承父进程的环境变量为自己所用，所以说环境变量可从父进程传给子进程</p>
+<p>不难理解，环境变量还可以传递给孙进程</p>
+<p>注意：两个没有父子关系的 Shell 进程是不能传递环境变量的，并且环境变量只能向下传递而不能向上传递，即<strong>传子不传父</strong></p>
+<h2 id="字符串">字符串</h2>
+<p>字符串可使用单引号 <code>'</code> 或者双引号 <code>&quot;</code></p>
+<p>区别：</p>
+<ul>
+<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的</li>
+<li>双引号里可以有变量，以及转义字符</li>
+</ul>
+<h3 id="使用-1">使用</h3>
+<p>获取字符串长度：<code>${#string}</code></p>
+<p>提取子字符串：<code>${string:start:length}</code></p>
+<h2 id="数组">数组</h2>
+<p>Shell 支持一维数组，并且没有限制数组大小</p>
+<p>类似于大多数编程语言，数组下标从 0 开始</p>
+<h3 id="定义-1">定义</h3>
+<p>在 Shell 中，用括号来表示数组，数组元素用空格符号分割开</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">array<span style="color:#f92672">=(</span>value_1 value_2 ... value_n<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># or</span>
+
+array<span style="color:#f92672">=(</span>
+    value_1
+    value_2
+    ...
+    value_n
+<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="使用-2">使用</h3>
+<p>获取指定下标元素：<code>${array[index]}</code></p>
+<p>更新指定下标元素：<code>array[index]=value</code></p>
+<p>获取数组长度：<code>${#array[*]}</code> 或者 <code>${#array[@]}</code></p>
+<h2 id="参数">参数</h2>
+<h3 id="特殊参数">特殊参数</h3>
+<ul>
+<li><code>$0</code>, 为当前脚本文件名</li>
+<li><code>$?</code>, 上一个命令的退出状态，或函数的返回值</li>
+<li><code>$$</code>, 当前 Shell 进程 ID</li>
+</ul>
+<h3 id="脚本或函数参数">脚本或函数参数</h3>
+<p><code>$n</code>, n 代表数字，从 1 开始，1 代表第一个参数，2 代表第二个参数，以此类推&hellip;</p>
+<ul>
+<li><code>$#</code>, 传递到脚本或函数的参数个数</li>
+<li><code>$@</code>, 传递给脚本或函数的所有参数，<code>&quot;$1&quot; &quot;$2&quot; ... &quot;$n&quot;</code></li>
+<li><code>$*</code>, 传递给脚本或函数的所有参数，与 <code>$@</code> 类似，但被 <code>&quot;</code> 包含时，与 <code>$@</code> 不同</li>
+</ul>
+<h3 id="-与--的区别">$* 与 $@ 的区别</h3>
+<p>当它们不被 <code>&quot;</code> 包含时，它们都相当于 <code>&quot;$1&quot; &quot;$2&quot; ... &quot;$n&quot;</code></p>
+<p>当它们被 <code>&quot;</code> 包含时，<code>&quot;$*&quot;</code> 相当于 <code>&quot;$1 $2 ... $n&quot;</code>, <code>&quot;$@&quot;</code> 则不变</p>
+<h2 id="if--while-语句">if &amp; while 语句</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> condition <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+    statement
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#66d9ef">while</span> <span style="color:#f92672">[[</span> condition <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">do</span>
+    statement
+<span style="color:#66d9ef">done</span>
+</code></pre></div><table>
+<thead>
+<tr>
+<th align="center">数字运算符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">-eq</td>
+<td align="center">等于</td>
+</tr>
+<tr>
+<td align="center">-ne</td>
+<td align="center">不等于</td>
+</tr>
+<tr>
+<td align="center">-gt</td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">-lt</td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">-ge</td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center">-le</td>
+<td align="center">小于等于</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">关系运算符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">!</td>
+<td align="center">非</td>
+</tr>
+<tr>
+<td align="center">&amp;&amp;</td>
+<td align="center">与</td>
+</tr>
+<tr>
+<td align="center">||</td>
+<td align="center">或</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">字符串运算符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">==</td>
+<td align="center">等于</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">不等于</td>
+</tr>
+<tr>
+<td align="center">-z</td>
+<td align="center">是否为空串</td>
+</tr>
+<tr>
+<td align="center">-n</td>
+<td align="center">是否非空串</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">文件测试运算符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">-d</td>
+<td align="center">是否目录</td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td align="center">是否普通文件（既不是目录，也不是设备文件）</td>
+</tr>
+<tr>
+<td align="center">-e</td>
+<td align="center">是否存在</td>
+</tr>
+<tr>
+<td align="center">-L</td>
+<td align="center">是否存在并且是个符号链接</td>
+</tr>
+</tbody>
+</table>
+<h2 id="算术运算符">算术运算符</h2>
+<p>格式：<code>$(（表达式）)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">a<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+b<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+
+echo <span style="color:#66d9ef">$((</span>a <span style="color:#f92672">+</span> b<span style="color:#66d9ef">))</span> <span style="color:#75715e"># 25</span>
+echo <span style="color:#66d9ef">$((</span>a <span style="color:#f92672">-</span> b<span style="color:#66d9ef">))</span> <span style="color:#75715e"># 15</span>
+echo <span style="color:#66d9ef">$((</span>a <span style="color:#f92672">*</span> b<span style="color:#66d9ef">))</span> <span style="color:#75715e"># 100</span>
+echo <span style="color:#66d9ef">$((</span>a <span style="color:#f92672">/</span> b<span style="color:#66d9ef">))</span> <span style="color:#75715e"># 4</span>
+</code></pre></div><p>不优先使用 <code>expr</code> 的原因：</p>
+<ol>
+<li>运算符号两边要有空格</li>
+<li>引用变量时需要使用 <code>$</code></li>
+<li><code>*</code> 需要额外加个 <code>\</code></li>
+<li><a href="https://github.com/koalaman/shellcheck/wiki/SC2003">expr is antiquated. Consider rewriting this using $((..)), ${} or</a></li>
+</ol>
+<h2 id="for-语句">for 语句</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span> i <span style="color:#f92672">=</span> 0; i &lt; count; i++ <span style="color:#f92672">))</span>; <span style="color:#66d9ef">do</span>
+    statement
+<span style="color:#66d9ef">done</span>
+
+<span style="color:#66d9ef">for</span> i in words; <span style="color:#66d9ef">do</span>
+    statement
+<span style="color:#66d9ef">done</span>
+</code></pre></div><h2 id="重定向">重定向</h2>
+<table>
+<thead>
+<tr>
+<th align="center">文件描述符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">输入文件 - 标准输入</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">输出文件 - 标准输出</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">错误输出文件 - 标准错误输出</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">&lt;, &gt;</h3>
+<p><code>&lt;</code> 是输入重定向</p>
+<p><code>&gt;</code> 是输出重定向</p>
+<h3 id="-filename">&lt; filename</h3>
+<p>输入从 filename 中读取</p>
+<h3 id="n">&lt;&amp;N</h3>
+<p>N 是一个文件描述符</p>
+<p>输入从 N 中读取</p>
+<h3 id="m--filename">[M] &gt; filename</h3>
+<p>M 是一个文件描述符，省略则默认是 1</p>
+<p>将 M 的输出重定向到 filename, 若 filename 不存在，则创建，否则覆盖</p>
+<h3 id="m--filename-1">[M] &gt;&gt; filename</h3>
+<p>M 是一个文件描述符，省略则默认是 1</p>
+<p>将 M 的输出重定向到 filename; 若 filename 不存在，则创建，否则追加到 N 的最后</p>
+<h3 id="mn">[M]&gt;&amp;N</h3>
+<p>M 是一个文件描述符，省略则默认是 1</p>
+<p>N 是另外一个文件描述符</p>
+<p>即将 M 的输出重定向到 N</p>
+<h3 id="样例">样例</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># command 的标准输出重定向到 filename</span>
+command &gt; filename
+<span style="color:#75715e"># or</span>
+command <span style="color:#ae81ff">1</span> &gt; filename
+
+<span style="color:#75715e"># command 的标准输出重定向到 filename（追加形式）</span>
+command &gt;&gt; filename
+<span style="color:#75715e"># or</span>
+command <span style="color:#ae81ff">1</span> &gt;&gt; filename
+
+<span style="color:#75715e"># command 的标准输出重定向到 filename, 同时标准错误也重定向到标准输出</span>
+command &gt; filename 2&gt;&amp;<span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># command 的输出重定向到 /dev/null, 相当于禁止输出的效果</span>
+command &gt; /dev/null
+
+<span style="color:#75715e"># 屏蔽 command 的输出以及错误输出</span>
+command &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
+</code></pre></div><h3 id="为何-21-要写在后面">为何 <code>2&gt;&amp;1</code> 要写在后面？</h3>
+<p>内容来源：<a href="https://www.cnblogs.com/caolisong/archive/2007/04/25/726896.html">linux shell 中 &ldquo;2&gt;&amp;1&rdquo; 含义</a></p>
+<p>对于 <code>command &gt; filename 2&gt;&amp;1</code></p>
+<p>command &gt; filename, 将标准输出重定向到 filename</p>
+<p>2&gt;&amp;1 则将标准错误重定向到标准输出，但此时标准输出指向 filename, 故标准错误输出也指向 filename</p>
+<p>对于 <code>command 2&gt;&amp;1 &gt; filename</code></p>
+<p>2&gt;&amp;1 将标准错误输出重定向到标准输出，但此时标准输出指向终端，故标准错误输出也指向终端</p>
+<p>&gt; filename, 将标准输出重定向到 filename, 但并没有更改标准错误输出的行为，故标准错误输出还是指向终端</p>
+<h2 id="管道">管道</h2>
+<p>两个命令之间使用 |（竖线）运算符，将第一个命令的 stdout 定向到第二个命令的 stdin</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">command1 | command2 paramater1 | command3 parameter1 - parameter2 | command4
+</code></pre></div><h2 id="参考">参考</h2>
+<p><a href="https://www.runoob.com/linux/linux-shell.html">Shell 教程</a></p>
+<p><a href="http://c.biancheng.net/view/773.html">Shell 变量的作用域：Shell 全局变量、环境变量和局部变量</a></p>
+<p><a href="https://blog.csdn.net/win_turn/article/details/50379465">linux 重定向（shell 重定向，输入重定向，输出重定向）</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>CsYakamoz </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://csyakamoz.github.io/post/shell-note/>https://csyakamoz.github.io/post/shell-note/</span>
+            </p>
+            
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://csyakamoz.github.io/tags/shell/">
+                    #shell</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://csyakamoz.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://csyakamoz.github.io/post/mac-fix-sound/" class="prev" rel="prev" title="MacOS 修复音视频无法正常播放问题"><i class="iconfont icon-left"></i>&nbsp;MacOS 修复音视频无法正常播放问题</a>
+        
+        
+        <a href="https://csyakamoz.github.io/post/xor-cipher/" class="next" rel="next" title="Xor Cipher - 异或加密的应用场景之一">Xor Cipher - 异或加密的应用场景之一&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+        
+            
+        
+    </div>
+</article>
+                </div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i>
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+<script defer src="/js/vendor_main.min.js"></script>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script> pangu.spacingPage();</script>
+
+
+
+
+
+        </div>
+    </body>
+</html>

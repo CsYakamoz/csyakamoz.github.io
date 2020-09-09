@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mac on CsYakamoz`s Blog</title>
+    <link>https://csyakamoz.github.io/tags/mac/</link>
+    <description>Recent content in mac on CsYakamoz`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Sep 2020 11:32:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://csyakamoz.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MacOS 修复音视频无法正常播放问题</title>
+      <link>https://csyakamoz.github.io/post/mac-fix-sound/</link>
+      <pubDate>Wed, 09 Sep 2020 11:32:06 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/mac-fix-sound/</guid>
+      <description>内容来源：mac 音频及视频均无法正常播放，怎么解决？ 表现现象： 音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常 BiliBili 也无法播放</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tmux on CsYakamoz`s Blog</title>
+    <link>https://csyakamoz.github.io/tags/tmux/</link>
+    <description>Recent content in tmux on CsYakamoz`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Sep 2020 11:26:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://csyakamoz.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tmux 笔记</title>
+      <link>https://csyakamoz.github.io/post/tmux-note/</link>
+      <pubDate>Wed, 09 Sep 2020 11:26:08 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/tmux-note/</guid>
+      <description>Tmux with iTerm2 iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence. MacOS 用户建议使用 iTerm2 的 Tmux 特性 使用方法，请看文档：https://www.iterm2.com/do</description>
+    </item>
+    
+  </channel>
+</rss>

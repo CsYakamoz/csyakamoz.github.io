@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on CsYakamoz`s Blog</title>
+    <link>https://csyakamoz.github.io/tags/shell/</link>
+    <description>Recent content in shell on CsYakamoz`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Sep 2020 11:35:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shell 笔记</title>
+      <link>https://csyakamoz.github.io/post/shell-note/</link>
+      <pubDate>Wed, 09 Sep 2020 11:35:19 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/shell-note/</guid>
+      <description>Lint ShellCheck, a static analysis tool for shell scripts 建议使用 ShellCheck, 以检查脚本中潜在的问题 Shebang shebang 即 #! , 其后面跟的是解释当前脚本的解释器路径 e.g. #!/bin/bash #!/usr/bin/bash #!/usr/bin/env bash 个人习惯用 #!/usr/bin/env NAME 而不是 #!/usr/bin/NAME 原因请看此：</description>
+    </item>
+    
+    <item>
+      <title>Shell 序列表达式</title>
+      <link>https://csyakamoz.github.io/post/shell-sequence-expression/</link>
+      <pubDate>Wed, 09 Sep 2020 11:18:01 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/shell-sequence-expression/</guid>
+      <description>格式：{FIRST..LAST[..INCREMENT]} FIRST 和 LAST 是必需的，用 .. 分隔，中间没有空格，INCREMENT 是可选滴 Example echo {1..3} # 1 2 3 echo</description>
+    </item>
+    
+    <item>
+      <title>Shell 按行处理文本</title>
+      <link>https://csyakamoz.github.io/post/shell-handle-text-by-line/</link>
+      <pubDate>Wed, 09 Sep 2020 11:15:00 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/shell-handle-text-by-line/</guid>
+      <description>内容来源：【Shell 脚本】逐行处理文本文件 read cat data.dat | while read line do echo &amp;#34;${line}&amp;#34; done # or while read line do echo &amp;#34;${line}&amp;#34; done &amp;lt; data.dat awk cat data.dat | awk &amp;#39;{print $0}&amp;#39; for &amp;hellip; in &amp;hellip; for var in content 表示变量 var 在 content 中循环取</description>
+    </item>
+    
+    <item>
+      <title>Shell 使用模板文件生成文件</title>
+      <link>https://csyakamoz.github.io/post/shell-build-file-from-template/</link>
+      <pubDate>Wed, 09 Sep 2020 11:13:35 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/shell-build-file-from-template/</guid>
+      <description>需求来源 有个模板文件，其占位符格式为：${variable} 现需要使用 shell 脚本来动态生成对应文件 实现 假设模板文件内容如下： #!/usr/bin/env bash version=&amp;#34;${version}&amp;#34; path=&amp;#34;${path}&amp;#34; 则动态生成对</description>
+    </item>
+    
+    <item>
+      <title>Shell 打印彩色输出</title>
+      <link>https://csyakamoz.github.io/post/shell-print-color-output/</link>
+      <pubDate>Wed, 09 Sep 2020 11:12:07 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/shell-print-color-output/</guid>
+      <description>格式说明 ESC[{attr1};...;{attrN}m ESC: 转义字符，可选项为 \033, \x1b, \e 表示 m: 母鸡 attr: 控制代码（参见下方表格） 样例 简单的 echo -e &amp;#34;\033[0;31mRed\033[0m&amp;#34; echo -e &amp;#34;\033[0;32mGreen\033[0m&amp;#34; echo -e &amp;#34;\033[1;31mHighlight Red\033[0m&amp;#34; echo -e &amp;#34;\033[1;3;31mHighlight Italic Red\033[0m&amp;#34; echo -e &amp;#34;\033[1;3;4;31mHighlight Italic Underline Red\033[0m&amp;#34; 完整的 # https://askubuntu.com/questions/27314/script-to-display-all-terminal-colors for x in</description>
+    </item>
+    
+    <item>
+      <title>Shell 常用快捷键</title>
+      <link>https://csyakamoz.github.io/post/shell-keyboard-shortcut/</link>
+      <pubDate>Wed, 09 Sep 2020 11:06:40 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/shell-keyboard-shortcut/</guid>
+      <description>Up, Ctrl + p, 显示上一条命令 Down, Ctrl + n, 显示下一条命令 Left, Ctrl + b, 光标向左移动一个字符 Right, Ctrl + f, 光标向右移动一个字符 BS, Ctrl + h, 删除光标左边的字符 Del, Ctrl + d, 删除光</description>
+    </item>
+    
+  </channel>
+</rss>

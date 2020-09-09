@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on CsYakamoz`s Blog</title>
+    <link>https://csyakamoz.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on CsYakamoz`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Sep 2020 14:05:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://csyakamoz.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>forEach With Async Function in Js</title>
+      <link>https://csyakamoz.github.io/post/javascript-foreach-with-async-func/</link>
+      <pubDate>Wed, 09 Sep 2020 14:05:20 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/javascript-foreach-with-async-func/</guid>
+      <description>const sleep = (ms) =&amp;gt; new Promise((resolve) =&amp;gt; setTimeout(() =&amp;gt; resolve(ms), ms * 1000)); 假设我们需要对数组中的三个元素进行异步操作，而且要按顺序。 即，对数组中的元素按顺序调用异步函数（本文为 sleep</description>
+    </item>
+    
+    <item>
+      <title>Node.js 创建本地模块</title>
+      <link>https://csyakamoz.github.io/post/nodejs-crate-local-package/</link>
+      <pubDate>Wed, 09 Sep 2020 11:00:07 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/nodejs-crate-local-package/</guid>
+      <description>问题来源 在编写代码时，个人习惯会把通用实用模块放在项目根目录下 因为是通用实用模块，若项目层级较多，那么层级较深的文件引用该模块时，会出现这样</description>
+    </item>
+    
+    <item>
+      <title>Javascript 函数传参类型</title>
+      <link>https://csyakamoz.github.io/post/javascript-function-parameter-type/</link>
+      <pubDate>Wed, 09 Sep 2020 10:54:59 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/javascript-function-parameter-type/</guid>
+      <description>曾经我一度将 javascript 函数传参类型分为两种： 基本类型：值传递 引用类型：引用传递 后来我发现，其实都是值传递; 先说明为啥曾经认为引用类型，是引用传递： function</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 遍历对象属性顺序</title>
+      <link>https://csyakamoz.github.io/post/javascript-iterate-object-property-order/</link>
+      <pubDate>Wed, 09 Sep 2020 10:37:51 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/javascript-iterate-object-property-order/</guid>
+      <description>问题来源 /** * @param {object} obj * @returns {any[]} */ function getValues(obj) { // some code or none return Object.values(obj); } const [val0, val1, ..., valN] = getValues(obj); doSomethingFor0(val0); doSomethingFor1(val1); ... doSomethingForN(valN); getValues 函数参数是对象，返回值是数组 调用者传入对象，再对函数返回的数组，进行</description>
+    </item>
+    
+    <item>
+      <title>编码风格</title>
+      <link>https://csyakamoz.github.io/post/coding-style/</link>
+      <pubDate>Wed, 09 Sep 2020 10:32:18 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/coding-style/</guid>
+      <description>ESLint ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs. 以下风格都会尽量补充对应的 eslint 规则（如果有且被我发现的话 😑 Notice: 请优先以团队约定为准!!! 缩进</description>
+    </item>
+    
+    <item>
+      <title>Node.js 调用微信小程序图片校验接口</title>
+      <link>https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/</link>
+      <pubDate>Wed, 09 Sep 2020 10:21:33 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/</guid>
+      <description>const fs = require(&amp;#34;fs&amp;#34;); const request = require(&amp;#34;request&amp;#34;); request.post( { uri: &amp;#34;https://api.weixin.qq.com/wxa/img_sec_check?access_token=ACCESS_TOKEN&amp;#34;, formData: { // 方法 1 media: fs.createReadStream(&amp;#34;path_to_img&amp;#34;), // 方法 2 attachments: [ // 只认下标为 0 的 fs.createReadStream(&amp;#34;path_to_img&amp;#34;), // 下标 1 及之后的会被微信忽略 ..., ], // 方法 3 media: { value: buffer, options: { // 必须有 filename, 值可任意</description>
+    </item>
+    
+    <item>
+      <title>Node.js 支持的编码</title>
+      <link>https://csyakamoz.github.io/post/nodejs-supported-encoding/</link>
+      <pubDate>Wed, 09 Sep 2020 10:19:07 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/nodejs-supported-encoding/</guid>
+      <description>ascii utf8 utf16le ucs2: alias of utf16le base64 latin1 binary: alias for latin1 hex 参考 List of encodings that Node.js supports Buffers and Character Encodings</description>
+    </item>
+    
+  </channel>
+</rss>
