@@ -1,7 +1,7 @@
 ---
 title: "编码风格"
 date: 2020-09-09T10:32:18+08:00
-tags: ["javascript"]
+tags: ["javascript", "coding-style"]
 ---
 
 ## ESLint
