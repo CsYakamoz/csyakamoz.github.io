@@ -34,7 +34,7 @@ git config --global user.email "yourEmail@example.com"
 
 2. 以 `/` 结尾表示忽略目录，`dist/` 即忽略所有 dist 目录；
 
-3. 以 `/` 开头表示忽略相对于根目录的目标，`/.setting` 即忽略根目录下的 .setting 文件，`/dist/` 即忽略根目录下的 dist 目录；
+3. 以 `/` 开头表示忽略相对于根目录的目标，`/.setting` 即忽略根目录下的 .setting 文件或目录，`/dist/` 即忽略根目录下的 dist 目录；
 
 4. `!` 开头表示取反，即忽略指定模式以外的文件或目录；
 
