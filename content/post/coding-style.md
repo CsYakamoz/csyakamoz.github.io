@@ -10,13 +10,15 @@ tags: ["javascript", "coding-style"]
 
 以下风格都会尽量补充对应的 eslint 规则（如果有且被我发现的话 😑
 
-**Notice**: 请优先以团队约定为准!!!
+**Notice**: 请优先以团队约定为准！
 
 ## 缩进使用空格而不是制表符
 
 尽管制表符更省空间，但还是更喜欢空格
 
 > one tab is equal to 2, 4, 8 space
+
+- `no-tabs`
 
 ## 坚持使用分号
 
@@ -239,6 +241,8 @@ var { type, ...coords } = data;
 // 'coords' is now the 'data' object without its 'type' property.
 ```
 
+- `no-unused-vars`
+
 ## 变量，常量，函数和类的命名约定
 
 当命名变量和方法的时候，使用 **lowerCamelCase**;
@@ -417,6 +421,8 @@ const foo = "'this' is \"quoted\"";
 const foo = "'this' is \"quoted\"";
 const foo = `my name is '${name}'`;
 ```
+
+- `no-useless-escape`
 
 ## 如果函数返回值有多个，且意义不一样，优先考虑对象
 
@@ -727,6 +733,8 @@ switch (foo) {
 }
 ```
 
+- `no-case-declarations`
+
 ## 避免长文件
 
 根据个人经验，一个特别长的代码文件，很难理解，和维护；
@@ -754,6 +762,65 @@ switch (foo) {
 - `complexity`
 - `max-nested-callbacks`
 - `max-depth`
+
+## 避免嵌套层级过深
+
+```javascript
+// bad
+for (let i = 0; i < 10; i++) {
+  if (condition) {
+    // 一层嵌套
+    // ...
+  }
+}
+
+// good
+for (let i = 0; i < 10; i++) {
+  if (!condition) {
+    continue;
+  }
+  // 没有额外的嵌套
+  // ...
+}
+```
+
+```javascript
+// bad
+function pow(x, n) {
+  if (n < 0) {
+    alert("Negative 'n' not supported");
+  } else {
+    // 一层嵌套
+    let result = 1;
+
+    for (let i = 0; i < n; i++) {
+      result *= x;
+    }
+
+    return result;
+  }
+}
+
+// good
+function pow(x, n) {
+  if (n < 0) {
+    alert("Negative 'n' not supported");
+    return;
+  }
+
+  // 没有额外的嵌套
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+```
+
+- `max-depth`
+- `no-else-return`
 
 ## 禁止抛出异常字面量
 
@@ -804,6 +871,50 @@ foo.exec("bar").groups.id; // Retrieve the group result.
 - 用 min, max 表示数量范围
 - 用 first, last 表示闭区间
 - 用 begin, end 表示左闭右开区间
+
+## 辅助函数的位置
+
+如果你正在写“辅助”函数和这些函数的调用代码，那么有下列这几种方式来处理调用代码的位置。
+
+1. 调用代码处于函数中，则辅助函数放在下方
+
+   ```javascript
+   const caller = () => {
+     helper1();
+     helper2();
+   };
+
+   const helper1 = () => {
+     // ...
+   };
+
+   const helper2 = () => {
+     // ...
+   };
+   ```
+
+2. 调用代码不处于函数中，则辅助函数放在上方
+
+   ```javascript
+   const helper1 = () => {
+     // ...
+   };
+
+   const helper2 = () => {
+     // ...
+   };
+
+   helper1();
+   helper2();
+   ```
+
+> 注意：即使上面的辅助函数是函数声明或者函数表达式，辅助函数的位置也不变。
+
+大多数情况下，我都是用第一种。 因为模块在大部分情况下都是导出函数；
+
+其次，自己或别人在阅读该模块时，首先看到的就是该模块的主要逻辑，即能知道该模块做了什么（当然，这依赖辅助函数的命名是否足够好）；
+
+当知道该模块的主要逻辑后，我们可能就不需要去看辅助函数了。
 
 ## 参考
 

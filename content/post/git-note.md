@@ -68,6 +68,14 @@ git commit --amend --only
 git commit --amend --only -m 'xxxxxxx'
 ```
 
+但个人习惯这么做：
+
+```sh
+git reset HEAD^ --soft
+
+git commit -m 'xxxxxxx'
+```
+
 ## 回滚 (git reset)
 
 ```sh
@@ -94,4 +102,16 @@ git stash push -u
 
 # 仅储藏已暂存的文件
 git stash push --keep-index
+
+# 应用并删除最新的储藏
+git stash pop
+
+# 应用特定的储藏
+git stash apply stash@{n}
+
+# 删除特定的储藏, n 为数字
+git stash drop stash@{n}
+
+# 查看所有储藏
+git stash list
 ```
