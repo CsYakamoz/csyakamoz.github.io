@@ -62,6 +62,10 @@ tags: ["software"]
 
 [LICEcap](https://www.cockos.com/licecap/): simple animated screen captures.
 
+[Hidden Bar](https://github.com/dwarvesf/hidden): An ultra-light MacOS utility that helps hide menu bar icons.
+
+[Stats](https://github.com/exelban/stats): macOS system monitor in your menu bar.
+
 ## Command Line Tool
 
 ### Non-Built-In
@@ -145,6 +149,8 @@ watch
 pbcopy, pbpaste (MacOS Only)
 
 open (MacOS Only)
+
+xxd
 
 ## 参考
 
