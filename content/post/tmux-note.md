@@ -16,7 +16,7 @@ MacOS 用户建议使用 iTerm2 的 Tmux 特性
 
 ## 配置
 
-有时候需要使用原生 tmux, 此时使用该[配置](https://github.com/CsYakamoz/config/blob/master/tmux/.tmux.conf)
+有时候需要使用原生 tmux, 此时使用该[配置](https://github.com/CsYakamoz/config/blob/master/tmux/tmux.conf)
 
 ## 安装
 
