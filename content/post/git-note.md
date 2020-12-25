@@ -115,3 +115,37 @@ git stash drop stash@{n}
 # 查看所有储藏
 git stash list
 ```
+
+## 找回已删除的 stash
+
+原文: https://gist.github.com/joseluisq/7f0f1402f05c45bac10814a9e38f81bf
+
+这里仅做一份副本:
+
+1. Find the stash commits
+
+   ```sh
+   git log --graph --oneline --decorate $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )
+   ```
+
+2. Once you know the hash of the commit you want, you can apply it as a stash
+
+   ```sh
+   git stash apply YOUR_WIP_COMMIT_HASH_HERE
+   ```
+
+## 将其它分支的某个(些)提交的改动应用于当前分支
+
+```sh
+git cherry-pick <commitHash>...
+```
+
+Notice: 新提交的哈希值与原来的不同
+
+个人常用的选项:
+
+`-x`: 在提交信息的末尾追加一行 `(cherry picked from commit ...)`, 方便以后查到这个提交是如何产生的;
+
+`-s`: 在提交信息的末尾追加一行操作者的签名, 表示是谁进行了这个操作;
+
+其它使用方法可参考: [阮一峰的网络日志 - git cherry-pick 教程](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html) 或者 `git cherry-pick --help`
