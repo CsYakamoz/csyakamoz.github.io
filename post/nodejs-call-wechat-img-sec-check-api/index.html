@@ -1,222 +1,126 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noodp"/>
-    <meta name="author" content="CsYakamoz">
-    <meta name="description" content="CsYakamoz 的个人博客">
-    
-    
-    <link rel="prev" href="https://csyakamoz.github.io/post/nodejs-supported-encoding/" />
-    <link rel="next" href="https://csyakamoz.github.io/post/coding-style/" />
-    <link rel="canonical" href="https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>
-        
-        
-            Node.js 调用微信小程序图片校验接口 | CsYakamoz`s Blog
-        
-    </title>
-    <meta name="title" content="Node.js 调用微信小程序图片校验接口 | CsYakamoz`s Blog">
-    
-<link rel="stylesheet" href="/css/main.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
 
+  <title> Node.js 调用微信小程序图片校验接口 |  CsYakamoz`s Blog</title>
+  <meta name="description" content="Nothing to say">
+  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
+  <link rel="canonical" href="https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/">
+  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> Home</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/CsYakamoz" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">Nothing to say</div>
+  
+</header>
+
+<article class="article">
+  <header>
+    <h1 style="text-align: center;" >Node.js 调用微信小程序图片校验接口</h1>
+
+    <div class="post-meta">
+    
+      <time datetime="2020-09-09T10:21:33&#43;08:00">September 09, 2020</time> &nbsp; 
+    
+
+     &nbsp;
 
     
     
- 
-
-<script type="application/ld+json">
-{
-    "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "https:\/\/csyakamoz.github.io"
-    },
-    "articleSection" : "post",
-    "name" : "Node.js 调用微信小程序图片校验接口",
-    "headline" : "Node.js 调用微信小程序图片校验接口",
-    "description" : "const fs = require(\u0026#34;fs\u0026#34;); const request = require(\u0026#34;request\u0026#34;); request.post( { uri: \u0026#34;https:\/\/api.weixin.qq.com\/wxa\/img_sec_check?access_token=ACCESS_TOKEN\u0026#34;, formData: { \/\/ 方法 1 media: fs.createReadStream(\u0026#34;path_to_img\u0026#34;), \/\/ 方法 2 attachments: [ \/\/ 只认下标为 0 的 fs.createReadStream(\u0026#34;path_to_img\u0026#34;), \/\/ 下标 1 及之后的会被微信忽略 ..., ], \/\/ 方法 3 media: { value: buffer, options: { \/\/ 必须有 filename, 值可任意",
-    "inLanguage" : "zh-cn",
-    "author" : "CsYakamoz",
-    "creator" : "CsYakamoz",
-    "publisher": "CsYakamoz",
-    "accountablePerson" : "CsYakamoz",
-    "copyrightHolder" : "CsYakamoz",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-09-09 10:21:33 \u002b0800 CST",
-    "dateModified" : "2020-09-09 10:21:33 \u002b0800 CST",
-    "url" : "https:\/\/csyakamoz.github.io\/post\/nodejs-call-wechat-img-sec-check-api\/",
-    "wordCount" : "225",
-    "keywords" : [ "javascript", "CsYakamoz`s Blog"]
-}
-</script>
-
-  </head>
-    <body class="">
-        <div class="wrapper">
-            <nav class="navbar">
     
-        <progress class="content_progress" max="0" value="0"></progress>
+
     
-    <div class="container">
-        
-            <div class="navbar-header header-back2home-logo">
-                <span class="logo_mark" >>$</span>
-                <a href="https://csyakamoz.github.io">
-                    <span class="logo_text" >cd /home/</span>
-                    <span class="logo_cursor" ></span>
-                </a>
-            </div>
-        
-        <div class="navbar-right">
-                
-                <span class="menu">
-                
-                <a class="menu-item" href="/post/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-                <span class="divide"></span>
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
-                </span>
-        </div>
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        1 min
+      
+      1 second
+      &nbsp;
+    
+
+    
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-    
-        <progress class="content_progress" max="0" value="0"></progress>
-    
-     <div class="container">
-        <div class="navbar">
-            <div class="navbar-header header-logo">
-                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
-            </div>
-            <div class="navbar-right">
-                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
-                <div class="menu-toggle">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                <nav class="mb-md">
-                    
-                    
-                        <a class="menu-item" href="/post/" title="">
-                            <h3>Blog</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/categories/" title="">
-                            <h3>Categories</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/tags/" title="">
-                            <h3>Tags</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/about/" title="">
-                            <h3>About</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                </nav>
-        </div>
-    </div>
-</nav>
-            <main class="main">
-                <div class="container">
-                    
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Node.js 调用微信小程序图片校验接口</h1>
-        <div class="post-meta">
-                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
-                <span class="post-time">
-                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
-                </span>
-                in
-                
-                <span class="post-word-count">225 words</span>
-        </div>
-    </header>
+  </header>
 
-    <div class="post-content">
-        
+   
 
-        
-        
+  <div class="text">
+    <div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#859900">const</span> <span style="color:#268bd2">fs</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#34;fs&#34;</span>);
+<span style="color:#859900">const</span> <span style="color:#268bd2">request</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#34;request&#34;</span>);
 
-        
-        
-        
-        
-        
-
-        
-        
-        
-
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;fs&#34;</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;request&#34;</span>);
-
-<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">post</span>(
+<span style="color:#268bd2">request</span>.<span style="color:#268bd2">post</span>(
   {
-    <span style="color:#a6e22e">uri</span><span style="color:#f92672">:</span>
-      <span style="color:#e6db74">&#34;https://api.weixin.qq.com/wxa/img_sec_check?access_token=ACCESS_TOKEN&#34;</span>,
+    <span style="color:#268bd2">uri</span>:
+      <span style="color:#2aa198">&#34;https://api.weixin.qq.com/wxa/img_sec_check?access_token=ACCESS_TOKEN&#34;</span>,
 
-    <span style="color:#a6e22e">formData</span><span style="color:#f92672">:</span> {
-      <span style="color:#75715e">// 方法 1
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">media</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">createReadStream</span>(<span style="color:#e6db74">&#34;path_to_img&#34;</span>),
+    <span style="color:#268bd2">formData</span>: {
+      <span style="color:#93a1a1;font-style:italic">// 方法 1
+</span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#268bd2">media</span>: <span style="color:#268bd2">fs</span>.<span style="color:#268bd2">createReadStream</span>(<span style="color:#2aa198">&#34;path_to_img&#34;</span>),
 
-      <span style="color:#75715e">// 方法 2
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">attachments</span><span style="color:#f92672">:</span> [
-        <span style="color:#75715e">// 只认下标为 0 的
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">createReadStream</span>(<span style="color:#e6db74">&#34;path_to_img&#34;</span>),
+      <span style="color:#93a1a1;font-style:italic">// 方法 2
+</span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#268bd2">attachments</span>: [
+        <span style="color:#93a1a1;font-style:italic">// 只认下标为 0 的
+</span><span style="color:#93a1a1;font-style:italic"></span>        <span style="color:#268bd2">fs</span>.<span style="color:#268bd2">createReadStream</span>(<span style="color:#2aa198">&#34;path_to_img&#34;</span>),
 
-        <span style="color:#75715e">// 下标 1 及之后的会被微信忽略
-</span><span style="color:#75715e"></span>        ...,
+        <span style="color:#93a1a1;font-style:italic">// 下标 1 及之后的会被微信忽略
+</span><span style="color:#93a1a1;font-style:italic"></span>        ...,
       ],
 
-      <span style="color:#75715e">// 方法 3
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">media</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">buffer</span>,
-        <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> {
-          <span style="color:#75715e">// 必须有 filename, 值可任意但不能为空串
-</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;default&#34;</span>,
-          <span style="color:#75715e">// contentType 可有可无，且值任意
-</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">contentType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image/jpeg&#34;</span>,
+      <span style="color:#93a1a1;font-style:italic">// 方法 3
+</span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#268bd2">media</span>: {
+        <span style="color:#268bd2">value</span>: <span style="color:#268bd2">buffer</span>,
+        <span style="color:#268bd2">options</span>: {
+          <span style="color:#93a1a1;font-style:italic">// 必须有 filename, 值可任意但不能为空串
+</span><span style="color:#93a1a1;font-style:italic"></span>          <span style="color:#268bd2">filename</span>: <span style="color:#2aa198">&#34;default&#34;</span>,
+          <span style="color:#93a1a1;font-style:italic">// contentType 可有可无，且值任意
+</span><span style="color:#93a1a1;font-style:italic"></span>          <span style="color:#268bd2">contentType</span>: <span style="color:#2aa198">&#34;image/jpeg&#34;</span>,
         },
       },
 
-      <span style="color:#75715e">// 方法 4
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">media</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;uri_to_img&#34;</span>),
+      <span style="color:#93a1a1;font-style:italic">// 方法 4
+</span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#268bd2">media</span>: <span style="color:#268bd2">request</span>.<span style="color:#268bd2">get</span>(<span style="color:#2aa198">&#34;uri_to_img&#34;</span>),
     },
   },
-  (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">resp</span>, <span style="color:#a6e22e">body</span>) =&gt; {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
-      <span style="color:#66d9ef">return</span>;
+  (<span style="color:#268bd2">error</span>, <span style="color:#268bd2">resp</span>, <span style="color:#268bd2">body</span>) =&gt; {
+    <span style="color:#859900">if</span> (<span style="color:#268bd2">error</span>) {
+      <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">error</span>);
+      <span style="color:#859900">return</span>;
     }
 
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">body</span>);
+    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">body</span>);
   }
 );
 </code></pre></div><p>方法 1, 2 的使用场景：文件在本地</p>
@@ -227,97 +131,63 @@
 <p><a href="https://www.npmjs.com/package/request#multipartform-data-multipart-form-uploads">npm request</a></p>
 <p><a href="https://developers.weixin.qq.com/community/develop/doc/000486c0fbc558719d89a281c51800">后端使用 nodejs, API 接口：security.imgSecCheck 如何才能正确调用？</a></p>
 
-    </div>
+  </div>
 
-    <div class="post-copyright">
-            
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>CsYakamoz </span>
-                </p>
-            
+  <footer>
+    <hr class="end-line">
 
-            
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/>https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/</span>
-            </p>
-            
-            
-    </div>
+    
 
-
+    
     <div class="post-tags">
-        
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s):
-            
-            <span class="tag"><a href="https://csyakamoz.github.io/tags/javascript/">
-                    #javascript</a></span>
-            
-            </section>
-        
-        <section>
-                <a href="javascript:window.history.back();">back</a></span> ·
-                <span><a href="https://csyakamoz.github.io">home</a></span>
-        </section>
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/javascript">javascript</a>
+        &nbsp;
+      
     </div>
+    
 
-    <div class="post-nav">
-        
-        <a href="https://csyakamoz.github.io/post/nodejs-supported-encoding/" class="prev" rel="prev" title="Node.js 支持的编码"><i class="iconfont icon-left"></i>&nbsp;Node.js 支持的编码</a>
-        
-        
-        <a href="https://csyakamoz.github.io/post/coding-style/" class="next" rel="next" title="编码风格">编码风格&nbsp;<i class="iconfont icon-right"></i></a>
-        
+    
+    
+    <div class="releated-posts">
+      <h3>Related Posts</h3>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/nodejs-supported-encoding/">Node.js 支持的编码</a>
+      <br>
+      
     </div>
+    
+  </footer>
 
-    <div class="post-comment">
-        
-            
-        
-    </div>
+  <div class="comments">
+
+
+
+</div>
+
 </article>
-                </div>
-            </main>
-            <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2020</span>
-        
-        <span class="with-love">
-    	 <i class="iconfont icon-love"></i>
-         </span>
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
-         
-
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
-    </div>
-</footer>
 
 
+</body>
+<div class="foot">
+  
+  
+    &copy; 2020 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
 
 
-
-
-<script defer src="/js/vendor_main.min.js"></script>
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
-<script> pangu.spacingPage();</script>
-
-
-
-
-
-        </div>
-    </body>
 </html>

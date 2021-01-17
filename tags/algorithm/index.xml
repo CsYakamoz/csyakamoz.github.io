@@ -6,6 +6,7 @@
     <description>Recent content in algorithm on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Wed, 09 Sep 2020 13:24:09 +0800</lastBuildDate>
     
 	<atom:link href="https://csyakamoz.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +18,16 @@
       <pubDate>Wed, 09 Sep 2020 13:24:09 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/post/xor-cipher/</guid>
-      <description>异或加密是一种简单的加密算法。 具体内容请看下列文章： XOR cipher XOR 加密简介 本文只讨论个人所应用到的场景。 需求 在工作中，个人经常遇到使用 UUID 作为各种对象</description>
+      <description>异或加密是一种简单的加密算法。
+具体内容请看下列文章：
+ XOR cipher XOR 加密简介  本文只讨论个人所应用到的场景。
+需求 在工作中，个人经常遇到使用 UUID 作为各种对象 ID 的场景。
+例如：对于每一个 song，我们都为其生成唯一的 quiz，song &amp;amp; quiz 的 ID 都是 uuid；因此，每一个 song 都和其唯一的 quiz 绑定。
+需求是：songId &amp;amp; quizId 可以双向查找；即，可通过 songId 查找到对应的 quizId，也可通过 quizId 查找到对应的 songId。
+解决方案 方案 0 - 数据库存储映射 两种存储方式：
+ song 表添加 quizId 列，quiz 表则添加 songId 列 建立新表 song-quiz, songId 和 quizId 作为联合主键  方案 2 - 异或加密当作映射 如果不想将映射关系存到数据库中，则可以使用异或加密。
+使用异或后，我们所需存储的仅有 key。
+Wiki 上有 python 的实现方案，这里则展示 Node.</description>
     </item>
     
   </channel>

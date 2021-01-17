@@ -1,194 +1,98 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noodp"/>
-    <meta name="author" content="CsYakamoz">
-    <meta name="description" content="CsYakamoz 的个人博客">
-    
-    
-    <link rel="prev" href="https://csyakamoz.github.io/post/coding-style/" />
-    <link rel="next" href="https://csyakamoz.github.io/post/javascript-function-parameter-type/" />
-    <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-iterate-object-property-order/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>
-        
-        
-            JavaScript 遍历对象属性顺序 | CsYakamoz`s Blog
-        
-    </title>
-    <meta name="title" content="JavaScript 遍历对象属性顺序 | CsYakamoz`s Blog">
-    
-<link rel="stylesheet" href="/css/main.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
 
+  <title> JavaScript 遍历对象属性顺序 |  CsYakamoz`s Blog</title>
+  <meta name="description" content="Nothing to say">
+  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
+  <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-iterate-object-property-order/">
+  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> Home</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/CsYakamoz" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">Nothing to say</div>
+  
+</header>
+
+<article class="article">
+  <header>
+    <h1 style="text-align: center;" >JavaScript 遍历对象属性顺序</h1>
+
+    <div class="post-meta">
+    
+      <time datetime="2020-09-09T10:37:51&#43;08:00">September 09, 2020</time> &nbsp; 
+    
+
+     &nbsp;
 
     
     
- 
-
-<script type="application/ld+json">
-{
-    "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "https:\/\/csyakamoz.github.io"
-    },
-    "articleSection" : "post",
-    "name" : "JavaScript 遍历对象属性顺序",
-    "headline" : "JavaScript 遍历对象属性顺序",
-    "description" : "问题来源 \/** * @param {object} obj * @returns {any[]} *\/ function getValues(obj) { \/\/ some code or none return Object.values(obj); } const [val0, val1, ..., valN] = getValues(obj); doSomethingFor0(val0); doSomethingFor1(val1); ... doSomethingForN(valN); getValues 函数参数是对象，返回值是数组 调用者传入对象，再对函数返回的数组，进行",
-    "inLanguage" : "zh-cn",
-    "author" : "CsYakamoz",
-    "creator" : "CsYakamoz",
-    "publisher": "CsYakamoz",
-    "accountablePerson" : "CsYakamoz",
-    "copyrightHolder" : "CsYakamoz",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-09-09 10:37:51 \u002b0800 CST",
-    "dateModified" : "2020-09-09 10:37:51 \u002b0800 CST",
-    "url" : "https:\/\/csyakamoz.github.io\/post\/javascript-iterate-object-property-order\/",
-    "wordCount" : "766",
-    "keywords" : [ "javascript", "CsYakamoz`s Blog"]
-}
-</script>
-
-  </head>
-    <body class="">
-        <div class="wrapper">
-            <nav class="navbar">
     
-        <progress class="content_progress" max="0" value="0"></progress>
+
     
-    <div class="container">
-        
-            <div class="navbar-header header-back2home-logo">
-                <span class="logo_mark" >>$</span>
-                <a href="https://csyakamoz.github.io">
-                    <span class="logo_text" >cd /home/</span>
-                    <span class="logo_cursor" ></span>
-                </a>
-            </div>
-        
-        <div class="navbar-right">
-                
-                <span class="menu">
-                
-                <a class="menu-item" href="/post/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-                <span class="divide"></span>
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
-                </span>
-        </div>
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        3 min
+      
+      28 s
+      &nbsp;
+    
+
+    
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-    
-        <progress class="content_progress" max="0" value="0"></progress>
-    
-     <div class="container">
-        <div class="navbar">
-            <div class="navbar-header header-logo">
-                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
-            </div>
-            <div class="navbar-right">
-                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
-                <div class="menu-toggle">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                <nav class="mb-md">
-                    
-                    
-                        <a class="menu-item" href="/post/" title="">
-                            <h3>Blog</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/categories/" title="">
-                            <h3>Categories</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/tags/" title="">
-                            <h3>Tags</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/about/" title="">
-                            <h3>About</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                </nav>
-        </div>
-    </div>
-</nav>
-            <main class="main">
-                <div class="container">
-                    
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">JavaScript 遍历对象属性顺序</h1>
-        <div class="post-meta">
-                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
-                <span class="post-time">
-                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
-                </span>
-                in
-                
-                <span class="post-word-count">766 words</span>
-        </div>
-    </header>
+  </header>
 
-    <div class="post-content">
-        
+   
 
-        
-        
-
-        
-        
-        
-        
-        
-
-        
-        
-        
-
-        <h2 id="问题来源">问题来源</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * @param {object} obj
-</span><span style="color:#75715e"> * @returns {any[]}
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getValues</span>(<span style="color:#a6e22e">obj</span>) {
-    <span style="color:#75715e">// some code or none
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">obj</span>);
+  <div class="text">
+    <h2 id="问题来源">问题来源</h2>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#93a1a1;font-style:italic">/**
+</span><span style="color:#93a1a1;font-style:italic"> * @param {object} obj
+</span><span style="color:#93a1a1;font-style:italic"> * @returns {any[]}
+</span><span style="color:#93a1a1;font-style:italic"> */</span>
+<span style="color:#859900">function</span> <span style="color:#268bd2">getValues</span>(<span style="color:#268bd2">obj</span>) {
+    <span style="color:#93a1a1;font-style:italic">// some code or none
+</span><span style="color:#93a1a1;font-style:italic"></span>    <span style="color:#859900">return</span> <span style="color:#cb4b16">Object</span>.<span style="color:#268bd2">values</span>(<span style="color:#268bd2">obj</span>);
 }
 
-<span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">val0</span>, <span style="color:#a6e22e">val1</span>, ..., <span style="color:#a6e22e">valN</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">getValues</span>(<span style="color:#a6e22e">obj</span>);
-<span style="color:#a6e22e">doSomethingFor0</span>(<span style="color:#a6e22e">val0</span>);
-<span style="color:#a6e22e">doSomethingFor1</span>(<span style="color:#a6e22e">val1</span>);
+<span style="color:#859900">const</span> [<span style="color:#268bd2">val0</span>, <span style="color:#268bd2">val1</span>, ..., <span style="color:#268bd2">valN</span>] = <span style="color:#268bd2">getValues</span>(<span style="color:#268bd2">obj</span>);
+<span style="color:#268bd2">doSomethingFor0</span>(<span style="color:#268bd2">val0</span>);
+<span style="color:#268bd2">doSomethingFor1</span>(<span style="color:#268bd2">val1</span>);
 ...
-<span style="color:#a6e22e">doSomethingForN</span>(<span style="color:#a6e22e">valN</span>);
+<span style="color:#268bd2">doSomethingForN</span>(<span style="color:#268bd2">valN</span>);
 </code></pre></div><p><code>getValues</code> 函数参数是对象，返回值是数组</p>
 <p>调用者传入对象，再对函数返回的数组，进行如下操作：</p>
 <ul>
@@ -207,40 +111,40 @@
 <li>普通的属性名区间，按照声明（插入）顺序排序</li>
 <li>Symbol 区间，按照声明（插入）顺序排序</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Object.values()
-</span><span style="color:#75715e"> * Object.entries()
-</span><span style="color:#75715e"> * for...in
-</span><span style="color:#75715e"> * JSON.stringify()
-</span><span style="color:#75715e"> * Object.keys() 得到的顺序与上面的相同
-</span><span style="color:#75715e"> **/</span>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#93a1a1;font-style:italic">/**
+</span><span style="color:#93a1a1;font-style:italic"> * Object.values()
+</span><span style="color:#93a1a1;font-style:italic"> * Object.entries()
+</span><span style="color:#93a1a1;font-style:italic"> * for...in
+</span><span style="color:#93a1a1;font-style:italic"> * JSON.stringify()
+</span><span style="color:#93a1a1;font-style:italic"> * Object.keys() 得到的顺序与上面的相同
+</span><span style="color:#93a1a1;font-style:italic"> **/</span>
 
-<span style="color:#75715e">// Object.keys() is [1, foo, bar]
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bar&#34;</span> };
+<span style="color:#93a1a1;font-style:italic">// Object.keys() is [1, foo, bar]
+</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">const</span> <span style="color:#268bd2">obj</span> = { <span style="color:#268bd2">foo</span>: <span style="color:#2aa198">&#34;foo&#34;</span>, <span style="color:#2aa198">&#34;1&#34;</span>: <span style="color:#2aa198">&#34;1&#34;</span>, <span style="color:#268bd2">bar</span>: <span style="color:#2aa198">&#34;bar&#34;</span> };
 
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Object.keys() is
-</span><span style="color:#75715e"> * [
-</span><span style="color:#75715e"> * &#39;0&#39;, &#39;1&#39;, &#39;2&#39;,
-</span><span style="color:#75715e"> * &#39;10&#39;, &#39;m&#39;, &#39;b&#39;,
-</span><span style="color:#75715e"> * &#39;-1&#39;, &#39;a&#39;, &#39;0.0&#39;
-</span><span style="color:#75715e"> * ]
-</span><span style="color:#75715e"> *
-</span><span style="color:#75715e"> * 注意：symbol 无法通过 keys() 得到，因为其是不可枚举
-</span><span style="color:#75715e"> * 需要通过遍历 “Object.getOwnPropertySymbols()” 返回的数组来引用
-</span><span style="color:#75715e"> * 但直接通过 console.log 打印该对象，可看到 symbol 排在最后
-</span><span style="color:#75715e"> **/</span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">someObj</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">m</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {}, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-  <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2&#34;</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-  <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-  [<span style="color:#a6e22e">Symbol</span>()]<span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sym&#34;</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> },
-  <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-  <span style="color:#e6db74">&#34;-1&#34;</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;-1&#34;</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-  <span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-  <span style="color:#e6db74">&#34;0.0&#34;</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.0</span>, <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
+<span style="color:#93a1a1;font-style:italic">/**
+</span><span style="color:#93a1a1;font-style:italic"> * Object.keys() is
+</span><span style="color:#93a1a1;font-style:italic"> * [
+</span><span style="color:#93a1a1;font-style:italic"> * &#39;0&#39;, &#39;1&#39;, &#39;2&#39;,
+</span><span style="color:#93a1a1;font-style:italic"> * &#39;10&#39;, &#39;m&#39;, &#39;b&#39;,
+</span><span style="color:#93a1a1;font-style:italic"> * &#39;-1&#39;, &#39;a&#39;, &#39;0.0&#39;
+</span><span style="color:#93a1a1;font-style:italic"> * ]
+</span><span style="color:#93a1a1;font-style:italic"> *
+</span><span style="color:#93a1a1;font-style:italic"> * 注意：symbol 无法通过 keys() 得到，因为其是不可枚举
+</span><span style="color:#93a1a1;font-style:italic"> * 需要通过遍历 “Object.getOwnPropertySymbols()” 返回的数组来引用
+</span><span style="color:#93a1a1;font-style:italic"> * 但直接通过 console.log 打印该对象，可看到 symbol 排在最后
+</span><span style="color:#93a1a1;font-style:italic"> **/</span>
+<span style="color:#859900">const</span> <span style="color:#268bd2">someObj</span> = {
+  <span style="color:#268bd2">m</span>: { <span style="color:#268bd2">value</span>: <span style="color:#859900">function</span> () {}, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+  <span style="color:#2aa198;font-weight:bold">2</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;2&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+  <span style="color:#268bd2">b</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;b&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+  <span style="color:#2aa198;font-weight:bold">0</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+  [<span style="color:#268bd2">Symbol</span>()]: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;sym&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">false</span> },
+  <span style="color:#2aa198;font-weight:bold">1</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;1&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+  <span style="color:#2aa198">&#34;-1&#34;</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;-1&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+  <span style="color:#268bd2">a</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;a&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+  <span style="color:#2aa198">&#34;10&#34;</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198;font-weight:bold">10</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+  <span style="color:#2aa198">&#34;0.0&#34;</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198;font-weight:bold">0.0</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
 };
 </code></pre></div><h2 id="解决方案">解决方案</h2>
 <ol>
@@ -256,25 +160,25 @@
 <li>
 <p>在插入的时候，额外增加一个字段以作排序根据</p>
 <p>插入的元素结构可以为：<code>{ createdAt: 时间戳 value: ... }</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj1</span> <span style="color:#f92672">=</span> {};
-<span style="color:#a6e22e">obj1</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span>;
-<span style="color:#a6e22e">obj1</span>[<span style="color:#e6db74">&#34;1&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>;
-<span style="color:#a6e22e">obj1</span>[<span style="color:#e6db74">&#34;0&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span>;
-<span style="color:#a6e22e">obj1</span>[<span style="color:#e6db74">&#34;3&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;3&#34;</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">obj1</span>)); <span style="color:#75715e">// [ &#39;0&#39;, &#39;1&#39;, &#39;3&#39;, &#39;a&#39; ]
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">R</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;ramda&#34;</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getValues</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">pipe</span>(
-  <span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">toPairs</span>,
-  <span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">ascend</span>(<span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">path</span>([<span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;createdAt&#34;</span>]))),
-  <span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">last</span>, <span style="color:#a6e22e">R</span>.<span style="color:#a6e22e">prop</span>(<span style="color:#e6db74">&#34;value&#34;</span>)))
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#859900">const</span> <span style="color:#268bd2">obj1</span> = {};
+<span style="color:#268bd2">obj1</span>.<span style="color:#268bd2">a</span> = <span style="color:#2aa198">&#34;a&#34;</span>;
+<span style="color:#268bd2">obj1</span>[<span style="color:#2aa198">&#34;1&#34;</span>] = <span style="color:#2aa198">&#34;1&#34;</span>;
+<span style="color:#268bd2">obj1</span>[<span style="color:#2aa198">&#34;0&#34;</span>] = <span style="color:#2aa198">&#34;0&#34;</span>;
+<span style="color:#268bd2">obj1</span>[<span style="color:#2aa198">&#34;3&#34;</span>] = <span style="color:#2aa198">&#34;3&#34;</span>;
+<span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#cb4b16">Object</span>.<span style="color:#268bd2">values</span>(<span style="color:#268bd2">obj1</span>)); <span style="color:#93a1a1;font-style:italic">// [ &#39;0&#39;, &#39;1&#39;, &#39;3&#39;, &#39;a&#39; ]
+</span><span style="color:#93a1a1;font-style:italic"></span>
+<span style="color:#859900">const</span> <span style="color:#268bd2">R</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#34;ramda&#34;</span>);
+<span style="color:#859900">const</span> <span style="color:#268bd2">getValues</span> = <span style="color:#268bd2">R</span>.<span style="color:#268bd2">pipe</span>(
+  <span style="color:#268bd2">R</span>.<span style="color:#268bd2">toPairs</span>,
+  <span style="color:#268bd2">R</span>.<span style="color:#268bd2">sort</span>(<span style="color:#268bd2">R</span>.<span style="color:#268bd2">ascend</span>(<span style="color:#268bd2">R</span>.<span style="color:#268bd2">path</span>([<span style="color:#2aa198">&#34;1&#34;</span>, <span style="color:#2aa198">&#34;createdAt&#34;</span>]))),
+  <span style="color:#268bd2">R</span>.<span style="color:#268bd2">map</span>(<span style="color:#268bd2">R</span>.<span style="color:#268bd2">pipe</span>(<span style="color:#268bd2">R</span>.<span style="color:#268bd2">last</span>, <span style="color:#268bd2">R</span>.<span style="color:#268bd2">prop</span>(<span style="color:#2aa198">&#34;value&#34;</span>)))
 );
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj2</span> <span style="color:#f92672">=</span> {};
-<span style="color:#a6e22e">obj2</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;a&#34;</span> };
-<span style="color:#a6e22e">obj2</span>[<span style="color:#e6db74">&#34;1&#34;</span>] <span style="color:#f92672">=</span> { <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1&#34;</span> };
-<span style="color:#a6e22e">obj2</span>[<span style="color:#e6db74">&#34;0&#34;</span>] <span style="color:#f92672">=</span> { <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0&#34;</span> };
-<span style="color:#a6e22e">obj2</span>[<span style="color:#e6db74">&#34;3&#34;</span>] <span style="color:#f92672">=</span> { <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3&#34;</span> };
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">getValues</span>(<span style="color:#a6e22e">obj2</span>)); <span style="color:#75715e">// [ &#39;a&#39;, &#39;1&#39;, &#39;0&#39;, &#39;3&#39; ]
+<span style="color:#859900">const</span> <span style="color:#268bd2">obj2</span> = {};
+<span style="color:#268bd2">obj2</span>.<span style="color:#268bd2">a</span> = { <span style="color:#268bd2">createdAt</span>: <span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;a&#34;</span> };
+<span style="color:#268bd2">obj2</span>[<span style="color:#2aa198">&#34;1&#34;</span>] = { <span style="color:#268bd2">createdAt</span>: <span style="color:#2aa198;font-weight:bold">2</span>, <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;1&#34;</span> };
+<span style="color:#268bd2">obj2</span>[<span style="color:#2aa198">&#34;0&#34;</span>] = { <span style="color:#268bd2">createdAt</span>: <span style="color:#2aa198;font-weight:bold">3</span>, <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;0&#34;</span> };
+<span style="color:#268bd2">obj2</span>[<span style="color:#2aa198">&#34;3&#34;</span>] = { <span style="color:#268bd2">createdAt</span>: <span style="color:#2aa198;font-weight:bold">4</span>, <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;3&#34;</span> };
+<span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">getValues</span>(<span style="color:#268bd2">obj2</span>)); <span style="color:#93a1a1;font-style:italic">// [ &#39;a&#39;, &#39;1&#39;, &#39;0&#39;, &#39;3&#39; ]
 </span></code></pre></div></li>
 </ol>
 <h2 id="参考">参考</h2>
@@ -284,97 +188,71 @@
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol">MDN Symbol</a></li>
 </ul>
 
-    </div>
+  </div>
 
-    <div class="post-copyright">
-            
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>CsYakamoz </span>
-                </p>
-            
+  <footer>
+    <hr class="end-line">
 
-            
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://csyakamoz.github.io/post/javascript-iterate-object-property-order/>https://csyakamoz.github.io/post/javascript-iterate-object-property-order/</span>
-            </p>
-            
-            
-    </div>
+    
 
-
+    
     <div class="post-tags">
-        
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s):
-            
-            <span class="tag"><a href="https://csyakamoz.github.io/tags/javascript/">
-                    #javascript</a></span>
-            
-            </section>
-        
-        <section>
-                <a href="javascript:window.history.back();">back</a></span> ·
-                <span><a href="https://csyakamoz.github.io">home</a></span>
-        </section>
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/javascript">javascript</a>
+        &nbsp;
+      
     </div>
+    
 
-    <div class="post-nav">
-        
-        <a href="https://csyakamoz.github.io/post/coding-style/" class="prev" rel="prev" title="编码风格"><i class="iconfont icon-left"></i>&nbsp;编码风格</a>
-        
-        
-        <a href="https://csyakamoz.github.io/post/javascript-function-parameter-type/" class="next" rel="next" title="Javascript 函数传参类型">Javascript 函数传参类型&nbsp;<i class="iconfont icon-right"></i></a>
-        
+    
+    
+    <div class="releated-posts">
+      <h3>Related Posts</h3>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/coding-style/">编码风格</a>
+      <br>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/nodejs-call-wechat-img-sec-check-api/">Node.js 调用微信小程序图片校验接口</a>
+      <br>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/nodejs-supported-encoding/">Node.js 支持的编码</a>
+      <br>
+      
     </div>
+    
+  </footer>
 
-    <div class="post-comment">
-        
-            
-        
-    </div>
+  <div class="comments">
+
+
+
+</div>
+
 </article>
-                </div>
-            </main>
-            <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2020</span>
-        
-        <span class="with-love">
-    	 <i class="iconfont icon-love"></i>
-         </span>
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
-         
-
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
-    </div>
-</footer>
 
 
+</body>
+<div class="foot">
+  
+  
+    &copy; 2020 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
 
 
-
-
-<script defer src="/js/vendor_main.min.js"></script>
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
-<script> pangu.spacingPage();</script>
-
-
-
-
-
-        </div>
-    </body>
 </html>

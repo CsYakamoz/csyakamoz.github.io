@@ -1,185 +1,89 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noodp"/>
-    <meta name="author" content="CsYakamoz">
-    <meta name="description" content="CsYakamoz 的个人博客">
-    
-    
-    <link rel="prev" href="https://csyakamoz.github.io/post/git-note/" />
-    <link rel="next" href="https://csyakamoz.github.io/post/rabbitmq-exchange-type/" />
-    <link rel="canonical" href="https://csyakamoz.github.io/post/rabbitmq-note/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>
-        
-        
-            RabbitMQ 笔记 | CsYakamoz`s Blog
-        
-    </title>
-    <meta name="title" content="RabbitMQ 笔记 | CsYakamoz`s Blog">
-    
-<link rel="stylesheet" href="/css/main.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
 
+  <title> RabbitMQ 笔记 |  CsYakamoz`s Blog</title>
+  <meta name="description" content="Nothing to say">
+  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
+  <link rel="canonical" href="https://csyakamoz.github.io/post/rabbitmq-note/">
+  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> Home</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/CsYakamoz" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">Nothing to say</div>
+  
+</header>
+
+<article class="article">
+  <header>
+    <h1 style="text-align: center;" >RabbitMQ 笔记</h1>
+
+    <div class="post-meta">
+    
+      <time datetime="2020-09-09T16:35:55&#43;08:00">September 09, 2020</time> &nbsp; 
+    
+
+     &nbsp;
 
     
     
- 
-
-<script type="application/ld+json">
-{
-    "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "https:\/\/csyakamoz.github.io"
-    },
-    "articleSection" : "post",
-    "name" : "RabbitMQ 笔记",
-    "headline" : "RabbitMQ 笔记",
-    "description" : "RabbitMQ 官方教程 名词 生产者 (Producing): 发送消息到交换机 路由键 (Routing Key): 消息属性，由生产者在发送消息时声明 交换机 (Exchange): 接受来自生产者的消息，并将消息分发给满足条件的队列",
-    "inLanguage" : "zh-cn",
-    "author" : "CsYakamoz",
-    "creator" : "CsYakamoz",
-    "publisher": "CsYakamoz",
-    "accountablePerson" : "CsYakamoz",
-    "copyrightHolder" : "CsYakamoz",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-09-09 16:35:55 \u002b0800 CST",
-    "dateModified" : "2020-09-09 16:35:55 \u002b0800 CST",
-    "url" : "https:\/\/csyakamoz.github.io\/post\/rabbitmq-note\/",
-    "wordCount" : "510",
-    "keywords" : [ "rabbitmq", "CsYakamoz`s Blog"]
-}
-</script>
-
-  </head>
-    <body class="">
-        <div class="wrapper">
-            <nav class="navbar">
     
-        <progress class="content_progress" max="0" value="0"></progress>
+
     
-    <div class="container">
-        
-            <div class="navbar-header header-back2home-logo">
-                <span class="logo_mark" >>$</span>
-                <a href="https://csyakamoz.github.io">
-                    <span class="logo_text" >cd /home/</span>
-                    <span class="logo_cursor" ></span>
-                </a>
-            </div>
-        
-        <div class="navbar-right">
-                
-                <span class="menu">
-                
-                <a class="menu-item" href="/post/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-                <span class="divide"></span>
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
-                </span>
-        </div>
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        2 min
+      
+      19 s
+      &nbsp;
+    
+
+    
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-    
-        <progress class="content_progress" max="0" value="0"></progress>
-    
-     <div class="container">
-        <div class="navbar">
-            <div class="navbar-header header-logo">
-                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
-            </div>
-            <div class="navbar-right">
-                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
-                <div class="menu-toggle">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                <nav class="mb-md">
-                    
-                    
-                        <a class="menu-item" href="/post/" title="">
-                            <h3>Blog</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/categories/" title="">
-                            <h3>Categories</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/tags/" title="">
-                            <h3>Tags</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/about/" title="">
-                            <h3>About</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                </nav>
-        </div>
-    </div>
-</nav>
-            <main class="main">
-                <div class="container">
-                    
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">RabbitMQ 笔记</h1>
-        <div class="post-meta">
-                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
-                <span class="post-time">
-                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
-                </span>
-                in
-                
-                <span class="post-word-count">510 words</span>
-        </div>
-    </header>
+  </header>
 
-    <div class="post-content">
-        
+   
 
-        
-        
-
-        
-        
-        
-        
-        
-
-        
-        
-        
-
-        <p><a href="https://www.rabbitmq.com/getstarted.html">RabbitMQ 官方教程</a></p>
+  <div class="text">
+    <p><a href="https://www.rabbitmq.com/getstarted.html">RabbitMQ 官方教程</a></p>
 <h2 id="名词">名词</h2>
 <p>生产者 (Producing): 发送消息到交换机</p>
 <p>路由键 (Routing Key): 消息属性，由生产者在发送消息时声明</p>
 <p>交换机 (Exchange): 接受来自生产者的消息，并将消息分发给满足条件的队列</p>
-<p>绑定路由 (Binding Key: 用于绑定交换机与队列</p>
+<p>绑定路由 (Binding Key): 用于绑定交换机与队列</p>
 <p>队列 (Queue): 消息存储的地方；接受来自交换机的消息，并在存有消费者的情况下，将消息发给消费者</p>
 <p>消费者 (Consuming): 从队列中接收消息，并做对应的处理</p>
 <h2 id="消息传递流程">消息传递流程</h2>
@@ -198,146 +102,103 @@
 </li>
 </ul>
 <h2 id="代码样例">代码样例</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Producing
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">amqp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;amqplib&#34;</span>);
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#93a1a1;font-style:italic">// Producing
+</span><span style="color:#93a1a1;font-style:italic"></span>
+<span style="color:#859900">const</span> <span style="color:#268bd2">amqp</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#34;amqplib&#34;</span>);
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ExchangeName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;exchange-name&#34;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ExchangeType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;exchange-type&#34;</span>; <span style="color:#75715e">// fanout | direct | topic | headers
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MsgRoutingKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;msg-routing-key&#34;</span>;
+<span style="color:#859900">const</span> <span style="color:#268bd2">ExchangeName</span> = <span style="color:#2aa198">&#34;exchange-name&#34;</span>;
+<span style="color:#859900">const</span> <span style="color:#268bd2">ExchangeType</span> = <span style="color:#2aa198">&#34;exchange-type&#34;</span>; <span style="color:#93a1a1;font-style:italic">// fanout | direct | topic | headers
+</span><span style="color:#93a1a1;font-style:italic"></span>
+<span style="color:#859900">const</span> <span style="color:#268bd2">MsgRoutingKey</span> = <span style="color:#2aa198">&#34;msg-routing-key&#34;</span>;
 
-(<span style="color:#a6e22e">async</span> () =&gt; {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">amqp</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#e6db74">&#34;amqp://127.0.0.1:5672&#34;</span>);
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">channel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">createChannel</span>();
+(<span style="color:#268bd2">async</span> () =&gt; {
+  <span style="color:#859900">const</span> <span style="color:#268bd2">connection</span> = <span style="color:#268bd2">await</span> <span style="color:#268bd2">amqp</span>.<span style="color:#268bd2">connect</span>(<span style="color:#2aa198">&#34;amqp://127.0.0.1:5672&#34;</span>);
+  <span style="color:#859900">const</span> <span style="color:#268bd2">channel</span> = <span style="color:#268bd2">await</span> <span style="color:#268bd2">connection</span>.<span style="color:#268bd2">createChannel</span>();
 
-  <span style="color:#75715e">// 创建交换机
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">assertExchange</span>(<span style="color:#a6e22e">ExchangeName</span>, <span style="color:#a6e22e">ExchangeType</span>);
+  <span style="color:#93a1a1;font-style:italic">// 创建交换机
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#268bd2">await</span> <span style="color:#268bd2">channel</span>.<span style="color:#268bd2">assertExchange</span>(<span style="color:#268bd2">ExchangeName</span>, <span style="color:#268bd2">ExchangeType</span>);
 
-  <span style="color:#75715e">// 发布消息到指定交换机
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">publish</span>(<span style="color:#a6e22e">ExchangeName</span>, <span style="color:#a6e22e">MsgRoutingKey</span>, <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#34;Hello, World.&#34;</span>));
-})().<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">e</span>) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>));
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Consuming
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">amqp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;amqplib&#34;</span>);
+  <span style="color:#93a1a1;font-style:italic">// 发布消息到指定交换机
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#268bd2">channel</span>.<span style="color:#268bd2">publish</span>(<span style="color:#268bd2">ExchangeName</span>, <span style="color:#268bd2">MsgRoutingKey</span>, <span style="color:#268bd2">Buffer</span>.<span style="color:#268bd2">from</span>(<span style="color:#2aa198">&#34;Hello, World.&#34;</span>));
+})().<span style="color:#859900">catch</span>((<span style="color:#268bd2">e</span>) =&gt; <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">e</span>));
+</code></pre></div><div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#93a1a1;font-style:italic">// Consuming
+</span><span style="color:#93a1a1;font-style:italic"></span>
+<span style="color:#859900">const</span> <span style="color:#268bd2">amqp</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#34;amqplib&#34;</span>);
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ExchangeName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;exchange-name&#34;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ExchangeType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;exchange-type&#34;</span>; <span style="color:#75715e">// fanout | direct | topic | headers
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">QueueName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;queue-name&#34;</span>;
+<span style="color:#859900">const</span> <span style="color:#268bd2">ExchangeName</span> = <span style="color:#2aa198">&#34;exchange-name&#34;</span>;
+<span style="color:#859900">const</span> <span style="color:#268bd2">ExchangeType</span> = <span style="color:#2aa198">&#34;exchange-type&#34;</span>; <span style="color:#93a1a1;font-style:italic">// fanout | direct | topic | headers
+</span><span style="color:#93a1a1;font-style:italic"></span>
+<span style="color:#859900">const</span> <span style="color:#268bd2">QueueName</span> = <span style="color:#2aa198">&#34;queue-name&#34;</span>;
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BindingKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;binding-key&#34;</span>;
+<span style="color:#859900">const</span> <span style="color:#268bd2">BindingKey</span> = <span style="color:#2aa198">&#34;binding-key&#34;</span>;
 
-(<span style="color:#a6e22e">async</span> () =&gt; {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">amqp</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#e6db74">&#34;amqp://127.0.0.1:5672&#34;</span>);
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">channel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">createChannel</span>();
+(<span style="color:#268bd2">async</span> () =&gt; {
+  <span style="color:#859900">const</span> <span style="color:#268bd2">connection</span> = <span style="color:#268bd2">await</span> <span style="color:#268bd2">amqp</span>.<span style="color:#268bd2">connect</span>(<span style="color:#2aa198">&#34;amqp://127.0.0.1:5672&#34;</span>);
+  <span style="color:#859900">const</span> <span style="color:#268bd2">channel</span> = <span style="color:#268bd2">await</span> <span style="color:#268bd2">connection</span>.<span style="color:#268bd2">createChannel</span>();
 
-  <span style="color:#75715e">// 创建交换机
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">assertExchange</span>(<span style="color:#a6e22e">ExchangeName</span>, <span style="color:#a6e22e">ExchangeType</span>);
+  <span style="color:#93a1a1;font-style:italic">// 创建交换机
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#268bd2">await</span> <span style="color:#268bd2">channel</span>.<span style="color:#268bd2">assertExchange</span>(<span style="color:#268bd2">ExchangeName</span>, <span style="color:#268bd2">ExchangeType</span>);
 
-  <span style="color:#75715e">// 创建队列
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">assertQueue</span>(<span style="color:#a6e22e">QueueName</span>);
+  <span style="color:#93a1a1;font-style:italic">// 创建队列
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#268bd2">await</span> <span style="color:#268bd2">channel</span>.<span style="color:#268bd2">assertQueue</span>(<span style="color:#268bd2">QueueName</span>);
 
-  <span style="color:#75715e">// 将交换机与队列进行绑定
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">bindQueue</span>(<span style="color:#a6e22e">QueueName</span>, <span style="color:#a6e22e">ExchangeName</span>, <span style="color:#a6e22e">BindingKey</span>);
+  <span style="color:#93a1a1;font-style:italic">// 将交换机与队列进行绑定
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#268bd2">await</span> <span style="color:#268bd2">channel</span>.<span style="color:#268bd2">bindQueue</span>(<span style="color:#268bd2">QueueName</span>, <span style="color:#268bd2">ExchangeName</span>, <span style="color:#268bd2">BindingKey</span>);
 
-  <span style="color:#75715e">// 监听队列，并指定处理函数
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">consume</span>(<span style="color:#a6e22e">QueueName</span>, (<span style="color:#a6e22e">msg</span>) =&gt; {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">msg</span>.<span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">toString</span>());
+  <span style="color:#93a1a1;font-style:italic">// 监听队列，并指定处理函数
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#268bd2">await</span> <span style="color:#268bd2">channel</span>.<span style="color:#268bd2">consume</span>(<span style="color:#268bd2">QueueName</span>, (<span style="color:#268bd2">msg</span>) =&gt; {
+    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">msg</span>.<span style="color:#268bd2">content</span>.<span style="color:#268bd2">toString</span>());
   });
-})().<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">e</span>) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>));
+})().<span style="color:#859900">catch</span>((<span style="color:#268bd2">e</span>) =&gt; <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">e</span>));
 </code></pre></div>
-    </div>
+  </div>
 
-    <div class="post-copyright">
-            
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>CsYakamoz </span>
-                </p>
-            
+  <footer>
+    <hr class="end-line">
 
-            
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://csyakamoz.github.io/post/rabbitmq-note/>https://csyakamoz.github.io/post/rabbitmq-note/</span>
-            </p>
-            
-            
-    </div>
+    
 
-
+    
     <div class="post-tags">
-        
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s):
-            
-            <span class="tag"><a href="https://csyakamoz.github.io/tags/rabbitmq/">
-                    #rabbitmq</a></span>
-            
-            </section>
-        
-        <section>
-                <a href="javascript:window.history.back();">back</a></span> ·
-                <span><a href="https://csyakamoz.github.io">home</a></span>
-        </section>
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/rabbitmq">rabbitmq</a>
+        &nbsp;
+      
     </div>
+    
 
-    <div class="post-nav">
-        
-        <a href="https://csyakamoz.github.io/post/git-note/" class="prev" rel="prev" title="Git 笔记"><i class="iconfont icon-left"></i>&nbsp;Git 笔记</a>
-        
-        
-        <a href="https://csyakamoz.github.io/post/rabbitmq-exchange-type/" class="next" rel="next" title="RabbitMQ 交换机类型">RabbitMQ 交换机类型&nbsp;<i class="iconfont icon-right"></i></a>
-        
-    </div>
+    
+    
+  </footer>
 
-    <div class="post-comment">
-        
-            
-        
-    </div>
+  <div class="comments">
+
+
+
+</div>
+
 </article>
-                </div>
-            </main>
-            <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2020</span>
-        
-        <span class="with-love">
-    	 <i class="iconfont icon-love"></i>
-         </span>
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
-         
-
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
-    </div>
-</footer>
 
 
+</body>
+<div class="foot">
+  
+  
+    &copy; 2020 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
 
 
-
-
-<script defer src="/js/vendor_main.min.js"></script>
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
-<script> pangu.spacingPage();</script>
-
-
-
-
-
-        </div>
-    </body>
 </html>

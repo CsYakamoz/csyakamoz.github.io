@@ -1,245 +1,149 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noodp"/>
-    <meta name="author" content="CsYakamoz">
-    <meta name="description" content="CsYakamoz 的个人博客">
-    
-    
-    <link rel="prev" href="https://csyakamoz.github.io/post/xor-cipher/" />
-    <link rel="next" href="https://csyakamoz.github.io/post/javascript-this/" />
-    <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-foreach-with-async-func/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>
-        
-        
-            forEach With Async Function in Js | CsYakamoz`s Blog
-        
-    </title>
-    <meta name="title" content="forEach With Async Function in Js | CsYakamoz`s Blog">
-    
-<link rel="stylesheet" href="/css/main.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
 
+  <title> forEach With Async Function in Js |  CsYakamoz`s Blog</title>
+  <meta name="description" content="Nothing to say">
+  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
+  <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-foreach-with-async-func/">
+  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> Home</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/CsYakamoz" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">Nothing to say</div>
+  
+</header>
+
+<article class="article">
+  <header>
+    <h1 style="text-align: center;" >forEach With Async Function in Js</h1>
+
+    <div class="post-meta">
+    
+      <time datetime="2020-09-09T14:05:20&#43;08:00">September 09, 2020</time> &nbsp; 
+    
+
+     &nbsp;
 
     
     
- 
-
-<script type="application/ld+json">
-{
-    "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "https:\/\/csyakamoz.github.io"
-    },
-    "articleSection" : "post",
-    "name" : "forEach With Async Function in Js",
-    "headline" : "forEach With Async Function in Js",
-    "description" : "const sleep = (ms) =\u0026gt; new Promise((resolve) =\u0026gt; setTimeout(() =\u0026gt; resolve(ms), ms * 1000)); 假设我们需要对数组中的三个元素进行异步操作，而且要按顺序。 即，对数组中的元素按顺序调用异步函数（本文为 sleep",
-    "inLanguage" : "zh-cn",
-    "author" : "CsYakamoz",
-    "creator" : "CsYakamoz",
-    "publisher": "CsYakamoz",
-    "accountablePerson" : "CsYakamoz",
-    "copyrightHolder" : "CsYakamoz",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-09-09 14:05:20 \u002b0800 CST",
-    "dateModified" : "2020-09-09 14:05:20 \u002b0800 CST",
-    "url" : "https:\/\/csyakamoz.github.io\/post\/javascript-foreach-with-async-func\/",
-    "wordCount" : "433",
-    "keywords" : [ "javascript", "CsYakamoz`s Blog"]
-}
-</script>
-
-  </head>
-    <body class="">
-        <div class="wrapper">
-            <nav class="navbar">
     
-        <progress class="content_progress" max="0" value="0"></progress>
+
     
-    <div class="container">
-        
-            <div class="navbar-header header-back2home-logo">
-                <span class="logo_mark" >>$</span>
-                <a href="https://csyakamoz.github.io">
-                    <span class="logo_text" >cd /home/</span>
-                    <span class="logo_cursor" ></span>
-                </a>
-            </div>
-        
-        <div class="navbar-right">
-                
-                <span class="menu">
-                
-                <a class="menu-item" href="/post/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-                <span class="divide"></span>
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
-                </span>
-        </div>
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        1 min
+      
+      58 s
+      &nbsp;
+    
+
+    
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-    
-        <progress class="content_progress" max="0" value="0"></progress>
-    
-     <div class="container">
-        <div class="navbar">
-            <div class="navbar-header header-logo">
-                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
-            </div>
-            <div class="navbar-right">
-                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
-                <div class="menu-toggle">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                <nav class="mb-md">
-                    
-                    
-                        <a class="menu-item" href="/post/" title="">
-                            <h3>Blog</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/categories/" title="">
-                            <h3>Categories</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/tags/" title="">
-                            <h3>Tags</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/about/" title="">
-                            <h3>About</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                </nav>
-        </div>
-    </div>
-</nav>
-            <main class="main">
-                <div class="container">
-                    
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">forEach With Async Function in Js</h1>
-        <div class="post-meta">
-                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
-                <span class="post-time">
-                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
-                </span>
-                in
-                
-                <span class="post-word-count">433 words</span>
-        </div>
-    </header>
+  </header>
 
-    <div class="post-content">
-        
+   
 
-        
-        
-
-        
-        
-        
-        
-        
-
-        
-        
-        
-
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sleep</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">ms</span>) =&gt;
-  <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>) =&gt; <span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">ms</span>), <span style="color:#a6e22e">ms</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>));
+  <div class="text">
+    <div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#859900">const</span> <span style="color:#268bd2">sleep</span> = (<span style="color:#268bd2">ms</span>) =&gt;
+  <span style="color:#859900">new</span> <span style="color:#cb4b16">Promise</span>((<span style="color:#268bd2">resolve</span>) =&gt; <span style="color:#268bd2">setTimeout</span>(() =&gt; <span style="color:#268bd2">resolve</span>(<span style="color:#268bd2">ms</span>), <span style="color:#268bd2">ms</span> * <span style="color:#2aa198;font-weight:bold">1000</span>));
 </code></pre></div><p>假设我们需要对数组中的三个元素进行<strong>异步</strong>操作，而且要按顺序。</p>
 <p>即，对数组中的元素按<strong>顺序</strong>调用异步函数（本文为 <code>sleep</code>)，我们也许会用 <code>Array.prototype.forEach</code> 写出下面的代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#a6e22e">async</span> () =&gt; {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">begin</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>();
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
-  <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">async</span> (<span style="color:#a6e22e">num</span>) =&gt; {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">sleep</span>(<span style="color:#a6e22e">num</span>));
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#268bd2">async</span> () =&gt; {
+  <span style="color:#859900">const</span> <span style="color:#268bd2">begin</span> = <span style="color:#cb4b16">Date</span>.<span style="color:#268bd2">now</span>();
+  <span style="color:#859900">const</span> <span style="color:#268bd2">arr</span> = [<span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#2aa198;font-weight:bold">2</span>, <span style="color:#2aa198;font-weight:bold">3</span>];
+  <span style="color:#268bd2">arr</span>.<span style="color:#268bd2">forEach</span>(<span style="color:#268bd2">async</span> (<span style="color:#268bd2">num</span>) =&gt; {
+    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">await</span> <span style="color:#268bd2">sleep</span>(<span style="color:#268bd2">num</span>));
   });
 
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;finish&#34;</span>);
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">end</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>();
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`time: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">end</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">begin</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+  <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#2aa198">&#34;finish&#34;</span>);
+  <span style="color:#859900">const</span> <span style="color:#268bd2">end</span> = <span style="color:#cb4b16">Date</span>.<span style="color:#268bd2">now</span>();
+  <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#2aa198">`time: </span><span style="color:#2aa198">${</span><span style="color:#268bd2">end</span> - <span style="color:#268bd2">begin</span><span style="color:#2aa198">}</span><span style="color:#2aa198">`</span>);
 })();
 </code></pre></div><p>我们期待的结果为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1
 2
 3
 finish
 time: x    //  x &gt;= 6000
 </code></pre></div><p>但执行上述代码后，你将获得如下结果：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">finish
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">finish
 time: x    // x &lt; 1000
 1
 2
 3
 </code></pre></div><p>我们先看看 <code>Array.forEach</code> 的类似原理：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">forEach</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">callback</span>) {
-  <span style="color:#75715e">// this point to our array
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>) {
-    <span style="color:#75715e">// We call the callback for each entry
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">callback</span>(<span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">index</span>], <span style="color:#a6e22e">index</span>, <span style="color:#66d9ef">this</span>); <span style="color:#75715e">// no await!!!
-</span><span style="color:#75715e"></span>  }
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#cb4b16">Array</span>.<span style="color:#268bd2">prototype</span>.<span style="color:#268bd2">forEach</span> = <span style="color:#859900">function</span> (<span style="color:#268bd2">callback</span>) {
+  <span style="color:#93a1a1;font-style:italic">// this point to our array
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#859900">for</span> (<span style="color:#859900">let</span> <span style="color:#268bd2">index</span> = <span style="color:#2aa198;font-weight:bold">0</span>; <span style="color:#268bd2">index</span> &lt; <span style="color:#859900">this</span>.<span style="color:#268bd2">length</span>; <span style="color:#268bd2">index</span>++) {
+    <span style="color:#93a1a1;font-style:italic">// We call the callback for each entry
+</span><span style="color:#93a1a1;font-style:italic"></span>    <span style="color:#268bd2">callback</span>(<span style="color:#859900">this</span>[<span style="color:#268bd2">index</span>], <span style="color:#268bd2">index</span>, <span style="color:#859900">this</span>); <span style="color:#93a1a1;font-style:italic">// no await!!!
+</span><span style="color:#93a1a1;font-style:italic"></span>  }
 };
 </code></pre></div><blockquote>
 <p>ECMA-262 第 5 版中指定的算法：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach#Polyfill">Array.prototype.forEach()</a></p>
 </blockquote>
 <p>如你所见，<code>callback</code> 函数是被调用，但并没有等待 ( <code>await</code> ) <code>callback</code> 函数结束。</p>
 <p>正确的做法是不使用 <code>forEach()</code>，而是使用 <code>for</code> or <code>for of</code> 循环 or <code>reduce</code>（误）：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#a6e22e">async</span> () =&gt; {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">begin</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>();
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#268bd2">async</span> () =&gt; {
+  <span style="color:#859900">const</span> <span style="color:#268bd2">begin</span> = <span style="color:#cb4b16">Date</span>.<span style="color:#268bd2">now</span>();
+  <span style="color:#859900">const</span> <span style="color:#268bd2">arr</span> = [<span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#2aa198;font-weight:bold">2</span>, <span style="color:#2aa198;font-weight:bold">3</span>];
 
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">sleep</span>(<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span>]));
+  <span style="color:#859900">for</span> (<span style="color:#859900">let</span> <span style="color:#268bd2">i</span> = <span style="color:#2aa198;font-weight:bold">0</span>; <span style="color:#268bd2">i</span> &lt; <span style="color:#268bd2">arr</span>.<span style="color:#268bd2">length</span>; <span style="color:#268bd2">i</span>++) {
+    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">await</span> <span style="color:#268bd2">sleep</span>(<span style="color:#268bd2">arr</span>[<span style="color:#268bd2">i</span>]));
   }
-  <span style="color:#75715e">// or
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">arr</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">sleep</span>(<span style="color:#a6e22e">num</span>));
+  <span style="color:#93a1a1;font-style:italic">// or
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#859900">for</span> (<span style="color:#859900">const</span> <span style="color:#268bd2">num</span> <span style="color:#859900">of</span> <span style="color:#268bd2">arr</span>) {
+    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">await</span> <span style="color:#268bd2">sleep</span>(<span style="color:#268bd2">num</span>));
   }
-  <span style="color:#75715e">// or
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">reduce</span>(
-    (<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">curr</span>) =&gt;
-      <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">async</span> () =&gt; {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">sleep</span>(<span style="color:#a6e22e">curr</span>));
+  <span style="color:#93a1a1;font-style:italic">// or
+</span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#268bd2">await</span> <span style="color:#268bd2">arr</span>.<span style="color:#268bd2">reduce</span>(
+    (<span style="color:#268bd2">acc</span>, <span style="color:#268bd2">curr</span>) =&gt;
+      <span style="color:#268bd2">acc</span>.<span style="color:#268bd2">then</span>(<span style="color:#268bd2">async</span> () =&gt; {
+        <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">await</span> <span style="color:#268bd2">sleep</span>(<span style="color:#268bd2">curr</span>));
       }),
-    Promise.<span style="color:#a6e22e">resolve</span>()
+    <span style="color:#cb4b16">Promise</span>.<span style="color:#268bd2">resolve</span>()
   );
 
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;finish&#34;</span>);
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">end</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>();
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`time: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">end</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">begin</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+  <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#2aa198">&#34;finish&#34;</span>);
+  <span style="color:#859900">const</span> <span style="color:#268bd2">end</span> = <span style="color:#cb4b16">Date</span>.<span style="color:#268bd2">now</span>();
+  <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#2aa198">`time: </span><span style="color:#2aa198">${</span><span style="color:#268bd2">end</span> - <span style="color:#268bd2">begin</span><span style="color:#2aa198">}</span><span style="color:#2aa198">`</span>);
 })();
 </code></pre></div><p>执行上述代码，可以得到预期的结果：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1
 2
 3
 finish
@@ -248,97 +152,79 @@ time: x    // x &gt;= 6000
 <p><a href="https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404?gi=704caa41d94">javascript async await with foreach</a></p>
 <p><a href="https://blog.lavrton.com/javascript-loops-how-to-handle-async-await-6252dd3c795">JavaScript loops — how to handle async/await</a></p>
 
-    </div>
+  </div>
 
-    <div class="post-copyright">
-            
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>CsYakamoz </span>
-                </p>
-            
+  <footer>
+    <hr class="end-line">
 
-            
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://csyakamoz.github.io/post/javascript-foreach-with-async-func/>https://csyakamoz.github.io/post/javascript-foreach-with-async-func/</span>
-            </p>
-            
-            
-    </div>
+    
 
-
+    
     <div class="post-tags">
-        
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s):
-            
-            <span class="tag"><a href="https://csyakamoz.github.io/tags/javascript/">
-                    #javascript</a></span>
-            
-            </section>
-        
-        <section>
-                <a href="javascript:window.history.back();">back</a></span> ·
-                <span><a href="https://csyakamoz.github.io">home</a></span>
-        </section>
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/javascript">javascript</a>
+        &nbsp;
+      
     </div>
+    
 
-    <div class="post-nav">
-        
-        <a href="https://csyakamoz.github.io/post/xor-cipher/" class="prev" rel="prev" title="Xor Cipher - 异或加密的应用场景之一"><i class="iconfont icon-left"></i>&nbsp;Xor Cipher - 异或加密的应用场景之一</a>
-        
-        
-        <a href="https://csyakamoz.github.io/post/javascript-this/" class="next" rel="next" title="Javascript this 的指向">Javascript this 的指向&nbsp;<i class="iconfont icon-right"></i></a>
-        
+    
+    
+    <div class="releated-posts">
+      <h3>Related Posts</h3>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/nodejs-crate-local-package/">Node.js 创建本地模块</a>
+      <br>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/javascript-function-parameter-type/">Javascript 函数传参类型</a>
+      <br>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/javascript-iterate-object-property-order/">JavaScript 遍历对象属性顺序</a>
+      <br>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/coding-style/">编码风格</a>
+      <br>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/nodejs-call-wechat-img-sec-check-api/">Node.js 调用微信小程序图片校验接口</a>
+      <br>
+      
     </div>
+    
+  </footer>
 
-    <div class="post-comment">
-        
-            
-        
-    </div>
+  <div class="comments">
+
+
+
+</div>
+
 </article>
-                </div>
-            </main>
-            <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2020</span>
-        
-        <span class="with-love">
-    	 <i class="iconfont icon-love"></i>
-         </span>
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
-         
-
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
-    </div>
-</footer>
 
 
+</body>
+<div class="foot">
+  
+  
+    &copy; 2020 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
 
 
-
-
-<script defer src="/js/vendor_main.min.js"></script>
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
-<script> pangu.spacingPage();</script>
-
-
-
-
-
-        </div>
-    </body>
 </html>

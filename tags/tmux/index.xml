@@ -6,6 +6,7 @@
     <description>Recent content in tmux on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Wed, 09 Sep 2020 11:26:08 +0800</lastBuildDate>
     
 	<atom:link href="https://csyakamoz.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +18,13 @@
       <pubDate>Wed, 09 Sep 2020 11:26:08 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/post/tmux-note/</guid>
-      <description>Tmux with iTerm2 iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence. MacOS 用户建议使用 iTerm2 的 Tmux 特性 使用方法，请看文档：https://www.iterm2.com/do</description>
+      <description>Tmux with iTerm2  iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence.
+ MacOS 用户建议使用 iTerm2 的 Tmux 特性
+使用方法，请看文档：https://www.iterm2.com/documentation-tmux-integration.html
+Notice: 远程服务器也能使用，但 tmux 版本至少为 1.8, 但推荐 2.3 及之后
+配置 有时候需要使用原生 tmux, 此时使用该配置
+安装 curl &amp;#39;https://raw.githubusercontent.com/CsYakamoz/config/master/tmux/.tmux.conf&amp;#39; -o &amp;#34;${HOME}/.tmux.conf&amp;#34; 常用命令和快捷键 prefix- 则意味着需要先按 prefix 键
+Session # 创建新 session tmux [new -s session-name] # 恢复 session tmux a [-t session-name] # 列出所有 session tmux ls # 关闭特定的 session tmux kill-session -t session-name # 关闭所有 session tmux kill-server # 创建新 session prefix-:new [-s session-name] # 列出所有 session prefix-s # 重命名当前 session prefix-$ # 退出当前 session prefix-d Window # 创建新 window prefix-c # 列出所有 window prefix-w # 关闭当前 window prefix-&amp;amp; # 前一个 window prefix-p # 后一个 window prefix-n # 重命名当前 window prefix-, # 调整 window 排序 source 默认是当前窗口序号，target 是目标窗口序号 prefix-:swap-window [-s source] -t target # 跳转到第 n 个 window prefix-n（数字） Pane # 垂直分割 prefix-| # 水平分割 prefix-- # 关闭当前 pane prefix-x # 显示 pane 编号，在编号消失前输入对应的数字可切换到相应的 pane prefix-q # 切换 pane 布局 prefix-&amp;lt;space&amp;gt; # 光标移动到左，下，上，右方的 pane prefix-h, j, k, l # 当前窗格往左，下，上，右方扩大 5 格，^ 为 Ctrl prefix-^h, ^j, ^k, ^l # 临时最大化当前 pane, 再次使用则恢复 prefix-z # 当前 pane 与上一个 pane 交换位置 prefix-{ # 当前 pane 与下一个 pane 交换位置 prefix-} # 当前 pane 移到新的 window 中 prefix-!</description>
     </item>
     
   </channel>

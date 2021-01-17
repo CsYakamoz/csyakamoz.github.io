@@ -1,296 +1,174 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noodp"/>
-    <meta name="author" content="CsYakamoz">
-    <meta name="description" content="CsYakamoz 的个人博客">
-    
-    
-    <link rel="prev" href="https://csyakamoz.github.io/post/shell-build-file-from-template/" />
-    <link rel="next" href="https://csyakamoz.github.io/post/shell-sequence-expression/" />
-    <link rel="canonical" href="https://csyakamoz.github.io/post/shell-handle-text-by-line/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>
-        
-        
-            Shell 按行处理文本 | CsYakamoz`s Blog
-        
-    </title>
-    <meta name="title" content="Shell 按行处理文本 | CsYakamoz`s Blog">
-    
-<link rel="stylesheet" href="/css/main.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
 
+  <title> Shell 按行处理文本 |  CsYakamoz`s Blog</title>
+  <meta name="description" content="Nothing to say">
+  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
+  <link rel="canonical" href="https://csyakamoz.github.io/post/shell-handle-text-by-line/">
+  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> Home</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/CsYakamoz" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">Nothing to say</div>
+  
+</header>
+
+<article class="article">
+  <header>
+    <h1 style="text-align: center;" >Shell 按行处理文本</h1>
+
+    <div class="post-meta">
+    
+      <time datetime="2020-09-09T11:15:00&#43;08:00">September 09, 2020</time> &nbsp; 
+    
+
+     &nbsp;
 
     
     
- 
-
-<script type="application/ld+json">
-{
-    "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "https:\/\/csyakamoz.github.io"
-    },
-    "articleSection" : "post",
-    "name" : "Shell 按行处理文本",
-    "headline" : "Shell 按行处理文本",
-    "description" : "内容来源：【Shell 脚本】逐行处理文本文件 read cat data.dat | while read line do echo \u0026#34;${line}\u0026#34; done # or while read line do echo \u0026#34;${line}\u0026#34; done \u0026lt; data.dat awk cat data.dat | awk \u0026#39;{print $0}\u0026#39; for \u0026hellip; in \u0026hellip; for var in content 表示变量 var 在 content 中循环取",
-    "inLanguage" : "zh-cn",
-    "author" : "CsYakamoz",
-    "creator" : "CsYakamoz",
-    "publisher": "CsYakamoz",
-    "accountablePerson" : "CsYakamoz",
-    "copyrightHolder" : "CsYakamoz",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-09-09 11:15:00 \u002b0800 CST",
-    "dateModified" : "2020-09-09 11:15:00 \u002b0800 CST",
-    "url" : "https:\/\/csyakamoz.github.io\/post\/shell-handle-text-by-line\/",
-    "wordCount" : "226",
-    "keywords" : [ "shell", "CsYakamoz`s Blog"]
-}
-</script>
-
-  </head>
-    <body class="">
-        <div class="wrapper">
-            <nav class="navbar">
     
-        <progress class="content_progress" max="0" value="0"></progress>
+
     
-    <div class="container">
-        
-            <div class="navbar-header header-back2home-logo">
-                <span class="logo_mark" >>$</span>
-                <a href="https://csyakamoz.github.io">
-                    <span class="logo_text" >cd /home/</span>
-                    <span class="logo_cursor" ></span>
-                </a>
-            </div>
-        
-        <div class="navbar-right">
-                
-                <span class="menu">
-                
-                <a class="menu-item" href="/post/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-                <span class="divide"></span>
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
-                </span>
-        </div>
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        1 min
+      
+      1 second
+      &nbsp;
+    
+
+    
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-    
-        <progress class="content_progress" max="0" value="0"></progress>
-    
-     <div class="container">
-        <div class="navbar">
-            <div class="navbar-header header-logo">
-                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
-            </div>
-            <div class="navbar-right">
-                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
-                <div class="menu-toggle">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                <nav class="mb-md">
-                    
-                    
-                        <a class="menu-item" href="/post/" title="">
-                            <h3>Blog</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/categories/" title="">
-                            <h3>Categories</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/tags/" title="">
-                            <h3>Tags</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/about/" title="">
-                            <h3>About</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                </nav>
-        </div>
-    </div>
-</nav>
-            <main class="main">
-                <div class="container">
-                    
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Shell 按行处理文本</h1>
-        <div class="post-meta">
-                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
-                <span class="post-time">
-                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
-                </span>
-                in
-                
-                <span class="post-word-count">226 words</span>
-        </div>
-    </header>
+  </header>
 
-    <div class="post-content">
-        
+   
 
-        
-        
-
-        
-        
-        
-        
-        
-
-        
-        
-        
-
-        <p>内容来源：<a href="https://www.cnblogs.com/dwdxdy/archive/2012/07/25/2608816.html">【Shell 脚本】逐行处理文本文件</a></p>
+  <div class="text">
+    <p>内容来源：<a href="https://www.cnblogs.com/dwdxdy/archive/2012/07/25/2608816.html">【Shell 脚本】逐行处理文本文件</a></p>
 <h2 id="read">read</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat data.dat | <span style="color:#66d9ef">while</span> read line
-<span style="color:#66d9ef">do</span>
-    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>line<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">done</span>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat data.dat | <span style="color:#859900">while</span> <span style="color:#cb4b16">read</span> line
+<span style="color:#859900">do</span>
+    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#859900">done</span>
 
-<span style="color:#75715e"># or</span>
+<span style="color:#93a1a1;font-style:italic"># or</span>
 
-<span style="color:#66d9ef">while</span> read line
-<span style="color:#66d9ef">do</span>
-    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>line<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">done</span> &lt; data.dat
+<span style="color:#859900">while</span> <span style="color:#cb4b16">read</span> line
+<span style="color:#859900">do</span>
+    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#859900">done</span> &lt; data.dat
 </code></pre></div><h2 id="awk">awk</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat data.dat | awk <span style="color:#e6db74">&#39;{print $0}&#39;</span>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat data.dat | awk <span style="color:#2aa198">&#39;{print $0}&#39;</span>
 </code></pre></div><h2 id="for--in-">for &hellip; in &hellip;</h2>
 <p><code>for var in content</code> 表示变量 <code>var</code> 在 <code>content</code> 中循环取值，取值的分隔符由 <code>${IFS}</code> 确定</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">for</span> line in <span style="color:#66d9ef">$(</span>cat data.dat<span style="color:#66d9ef">)</span>
-<span style="color:#66d9ef">do</span>
-    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>line<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">done</span>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#859900">for</span> line in <span style="color:#859900">$(</span>cat data.dat<span style="color:#859900">)</span>
+<span style="color:#859900">do</span>
+    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#859900">done</span>
 </code></pre></div><p>如果输入文本每行中没有空格，则 <code>line</code> 在输入文本中按换行符分隔符循环取值。</p>
 <p>如果输入文本中包括空格或制表符，则不是换行读取，<code>line</code> 在输入文本中按空格分隔符或制表符或换行符循环取值。</p>
 <p>可以通过把 <code>${IFS}</code> 设置为换行符来达到逐行读取的功能。</p>
 <p><strong><code>${IFS}</code> 的默认值为：空白 （包括：空格，制表符，换行符）</strong>.</p>
 
-    </div>
+  </div>
 
-    <div class="post-copyright">
-            
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>CsYakamoz </span>
-                </p>
-            
+  <footer>
+    <hr class="end-line">
 
-            
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://csyakamoz.github.io/post/shell-handle-text-by-line/>https://csyakamoz.github.io/post/shell-handle-text-by-line/</span>
-            </p>
-            
-            
-    </div>
+    
 
-
+    
     <div class="post-tags">
-        
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s):
-            
-            <span class="tag"><a href="https://csyakamoz.github.io/tags/shell/">
-                    #shell</a></span>
-            
-            </section>
-        
-        <section>
-                <a href="javascript:window.history.back();">back</a></span> ·
-                <span><a href="https://csyakamoz.github.io">home</a></span>
-        </section>
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/shell">shell</a>
+        &nbsp;
+      
     </div>
+    
 
-    <div class="post-nav">
-        
-        <a href="https://csyakamoz.github.io/post/shell-build-file-from-template/" class="prev" rel="prev" title="Shell 使用模板文件生成文件"><i class="iconfont icon-left"></i>&nbsp;Shell 使用模板文件生成文件</a>
-        
-        
-        <a href="https://csyakamoz.github.io/post/shell-sequence-expression/" class="next" rel="next" title="Shell 序列表达式">Shell 序列表达式&nbsp;<i class="iconfont icon-right"></i></a>
-        
+    
+    
+    <div class="releated-posts">
+      <h3>Related Posts</h3>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/shell-build-file-from-template/">Shell 使用模板文件生成文件</a>
+      <br>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/shell-print-color-output/">Shell 打印彩色输出</a>
+      <br>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/shell-keyboard-shortcut/">Shell 常用快捷键</a>
+      <br>
+      
     </div>
+    
+  </footer>
 
-    <div class="post-comment">
-        
-            
-        
-    </div>
+  <div class="comments">
+
+
+
+</div>
+
 </article>
-                </div>
-            </main>
-            <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2020</span>
-        
-        <span class="with-love">
-    	 <i class="iconfont icon-love"></i>
-         </span>
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
-         
-
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
-    </div>
-</footer>
 
 
+</body>
+<div class="foot">
+  
+  
+    &copy; 2020 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
 
 
-
-
-<script defer src="/js/vendor_main.min.js"></script>
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
-<script> pangu.spacingPage();</script>
-
-
-
-
-
-        </div>
-    </body>
 </html>

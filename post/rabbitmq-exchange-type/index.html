@@ -1,211 +1,113 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noodp"/>
-    <meta name="author" content="CsYakamoz">
-    <meta name="description" content="CsYakamoz 的个人博客">
-    
-    
-    <link rel="prev" href="https://csyakamoz.github.io/post/rabbitmq-note/" />
-    
-    <link rel="canonical" href="https://csyakamoz.github.io/post/rabbitmq-exchange-type/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>
-        
-        
-            RabbitMQ 交换机类型 | CsYakamoz`s Blog
-        
-    </title>
-    <meta name="title" content="RabbitMQ 交换机类型 | CsYakamoz`s Blog">
-    
-<link rel="stylesheet" href="/css/main.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.74.3" />
 
+  <title> RabbitMQ 交换机类型 |  CsYakamoz`s Blog</title>
+  <meta name="description" content="Nothing to say">
+  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
+  <link rel="canonical" href="https://csyakamoz.github.io/post/rabbitmq-exchange-type/">
+  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> Home</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/CsYakamoz" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">Nothing to say</div>
+  
+</header>
+
+<article class="article">
+  <header>
+    <h1 style="text-align: center;" >RabbitMQ 交换机类型</h1>
+
+    <div class="post-meta">
+    
+      <time datetime="2020-09-09T16:38:46&#43;08:00">September 09, 2020</time> &nbsp; 
+    
+
+     &nbsp;
 
     
     
- 
-
-<script type="application/ld+json">
-{
-    "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "https:\/\/csyakamoz.github.io"
-    },
-    "articleSection" : "post",
-    "name" : "RabbitMQ 交换机类型",
-    "headline" : "RabbitMQ 交换机类型",
-    "description" : "RabbitMQ 的交换机共有四种类型。 fanout - 扇形 direct - 直连 topic - 主题 headers - 头（尚未了解，此文不说明） \/** * 发布消息到指定交换机 * @param {string} exchange - 交换机名 * @param {string} routingKey - 该消息的路",
-    "inLanguage" : "zh-cn",
-    "author" : "CsYakamoz",
-    "creator" : "CsYakamoz",
-    "publisher": "CsYakamoz",
-    "accountablePerson" : "CsYakamoz",
-    "copyrightHolder" : "CsYakamoz",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-09-09 16:38:46 \u002b0800 CST",
-    "dateModified" : "2020-09-09 16:38:46 \u002b0800 CST",
-    "url" : "https:\/\/csyakamoz.github.io\/post\/rabbitmq-exchange-type\/",
-    "wordCount" : "678",
-    "keywords" : [ "rabbitmq", "CsYakamoz`s Blog"]
-}
-</script>
-
-  </head>
-    <body class="">
-        <div class="wrapper">
-            <nav class="navbar">
     
-        <progress class="content_progress" max="0" value="0"></progress>
+
     
-    <div class="container">
-        
-            <div class="navbar-header header-back2home-logo">
-                <span class="logo_mark" >>$</span>
-                <a href="https://csyakamoz.github.io">
-                    <span class="logo_text" >cd /home/</span>
-                    <span class="logo_cursor" ></span>
-                </a>
-            </div>
-        
-        <div class="navbar-right">
-                
-                <span class="menu">
-                
-                <a class="menu-item" href="/post/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-                <span class="divide"></span>
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
-                </span>
-        </div>
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        3 min
+      
+      4 s
+      &nbsp;
+    
+
+    
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-    
-        <progress class="content_progress" max="0" value="0"></progress>
-    
-     <div class="container">
-        <div class="navbar">
-            <div class="navbar-header header-logo">
-                    <a href="https://csyakamoz.github.io">CsYakamoz`s Blog</a>
-            </div>
-            <div class="navbar-right">
-                <div><a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a></div>
-                <div class="menu-toggle">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                <nav class="mb-md">
-                    
-                    
-                        <a class="menu-item" href="/post/" title="">
-                            <h3>Blog</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/categories/" title="">
-                            <h3>Categories</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/tags/" title="">
-                            <h3>Tags</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                        <a class="menu-item" href="/about/" title="">
-                            <h3>About</h3>
-                            <div class="menu-active"></div>
-                        </a>
-                    
-                </nav>
-        </div>
-    </div>
-</nav>
-            <main class="main">
-                <div class="container">
-                    
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">RabbitMQ 交换机类型</h1>
-        <div class="post-meta">
-                Written by <a itemprop="name" href="https://csyakamoz.github.io" rel="author">CsYakamoz</a> with ♥
-                <span class="post-time">
-                on <time datetime=2020-09-09 itemprop="datePublished">September 9, 2020</time>
-                </span>
-                in
-                
-                <span class="post-word-count">678 words</span>
-        </div>
-    </header>
+  </header>
 
-    <div class="post-content">
-        
+   
 
-        
-        
-            
-        
-
-        
-        
-        
-        
-        
-
-        
-        
-        
-
-        <p>RabbitMQ 的交换机共有四种类型。</p>
+  <div class="text">
+    <p>RabbitMQ 的交换机共有四种类型。</p>
 <ul>
 <li>fanout - 扇形</li>
 <li>direct - 直连</li>
 <li>topic - 主题</li>
 <li>headers - 头（尚未了解，此文不说明）</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * 发布消息到指定交换机
-</span><span style="color:#75715e"> * @param {string} exchange - 交换机名
-</span><span style="color:#75715e"> * @param {string} routingKey - 该消息的路由键
-</span><span style="color:#75715e"> * @param {string} content - 消息内容
-</span><span style="color:#75715e"> */</span>
-<span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">publish</span>(<span style="color:#a6e22e">exchange</span>, <span style="color:#a6e22e">routingKey</span>, <span style="color:#a6e22e">content</span>);
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#93a1a1;font-style:italic">/**
+</span><span style="color:#93a1a1;font-style:italic"> * 发布消息到指定交换机
+</span><span style="color:#93a1a1;font-style:italic"> * @param {string} exchange - 交换机名
+</span><span style="color:#93a1a1;font-style:italic"> * @param {string} routingKey - 该消息的路由键
+</span><span style="color:#93a1a1;font-style:italic"> * @param {string} content - 消息内容
+</span><span style="color:#93a1a1;font-style:italic"> */</span>
+<span style="color:#268bd2">channel</span>.<span style="color:#268bd2">publish</span>(<span style="color:#268bd2">exchange</span>, <span style="color:#268bd2">routingKey</span>, <span style="color:#268bd2">content</span>);
 
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * 将队列与交换机进行绑定
-</span><span style="color:#75715e"> * @param {string} queue - 队列名
-</span><span style="color:#75715e"> * @param {string} exchange - 交换机名
-</span><span style="color:#75715e"> * @param {string} bindingKey - 绑定路由
-</span><span style="color:#75715e"> */</span>
-<span style="color:#a6e22e">change</span>.<span style="color:#a6e22e">bindQueue</span>(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">exchange</span>, <span style="color:#a6e22e">bindingKey</span>);
+<span style="color:#93a1a1;font-style:italic">/**
+</span><span style="color:#93a1a1;font-style:italic"> * 将队列与交换机进行绑定
+</span><span style="color:#93a1a1;font-style:italic"> * @param {string} queue - 队列名
+</span><span style="color:#93a1a1;font-style:italic"> * @param {string} exchange - 交换机名
+</span><span style="color:#93a1a1;font-style:italic"> * @param {string} bindingKey - 绑定路由
+</span><span style="color:#93a1a1;font-style:italic"> */</span>
+<span style="color:#268bd2">change</span>.<span style="color:#268bd2">bindQueue</span>(<span style="color:#268bd2">queue</span>, <span style="color:#268bd2">exchange</span>, <span style="color:#268bd2">bindingKey</span>);
 </code></pre></div><h2 id="fanout">fanout</h2>
 <p>fanout 翻译成扇形，如同其外形，该类型交换机只是将接收到的所有消息广播给与它绑定的所有队列</p>
 <p>对于 fanout 交换机，<code>publish</code> 会无视 <code>routingKey</code> 参数，<code>bindQueue</code> 会无视 <code>bindingKey</code> 参数</p>
-<p><img src="https://www.rabbitmq.com/img/tutorials/exchanges.png" alt="exchanges.png" loading="lazy" ></p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/exchanges.png" alt="exchanges.png"></p>
 <p>X 会将收到的消息，无条件转发到所有与其绑定的队列</p>
 <h2 id="direct">direct</h2>
 <p>该类型交换机将会对绑定路由 (bindingKey) 和路由键 (routingKey) 进行精确匹配，从而确定消息该分发到哪个队列</p>
-<p><img src="https://www.rabbitmq.com/img/tutorials/direct-exchange.png" alt="direct-exchange.png" loading="lazy" ></p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/direct-exchange.png" alt="direct-exchange.png"></p>
 <p>X 有两个队列与其绑定，Q1 用 <code>orange</code> 绑定，Q2 则同时用 <code>black</code>, <code>green</code> 绑定</p>
 <p>此时，所有发送到 X 交换机的消息有以下四种结果：</p>
 <ol>
@@ -214,7 +116,7 @@
 <li>路由键为 <code>green</code> 的消息转发到 Q2</li>
 <li>路由键为其它的消息则丢弃，因为没有满足条件的队列</li>
 </ol>
-<p><img src="https://www.rabbitmq.com/img/tutorials/direct-exchange-multiple.png" alt="direct-exchange-multiple.png" loading="lazy" ></p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/direct-exchange-multiple.png" alt="direct-exchange-multiple.png"></p>
 <p>多个队列使用相同的绑定键是合法的。</p>
 <p>图例中，X 与 Q1 的绑定路由为 <code>black</code>, X 与 Q2 的绑定路由也为 <code>black</code></p>
 <p>路由键为 <code>black</code> 的消息会同时转发到 Q1 和 Q2 中</p>
@@ -225,7 +127,7 @@
 <li><code>*</code> 代表一个单词 (word)</li>
 <li><code>#</code> 代表零个或多个单词 (word)</li>
 </ul>
-<p><img src="https://www.rabbitmq.com/img/tutorials/python-five.png" alt="python-five" loading="lazy" ></p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/python-five.png" alt="python-five"></p>
 <p>X 与 Q1 的绑定路由为 <code>*.orange.*</code>, X 与 Q2 的绑定路由为 <code>*.*.rabbit</code> 和 <code>lazy.#</code></p>
 <ol>
 <li>路由键为 <code>quick.orange.rabbit</code> 的消息转发到 Q1 和 Q2</li>
@@ -241,95 +143,63 @@
 <li>当绑定路由不包含 <code>*</code> 和 <code>#</code> 时，它表现行为与 direct 一样</li>
 </ul>
 
-    </div>
+  </div>
 
-    <div class="post-copyright">
-            
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>CsYakamoz </span>
-                </p>
-            
+  <footer>
+    <hr class="end-line">
 
-            
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://csyakamoz.github.io/post/rabbitmq-exchange-type/>https://csyakamoz.github.io/post/rabbitmq-exchange-type/</span>
-            </p>
-            
-            
-    </div>
+    
 
-
+    
     <div class="post-tags">
-        
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s):
-            
-            <span class="tag"><a href="https://csyakamoz.github.io/tags/rabbitmq/">
-                    #rabbitmq</a></span>
-            
-            </section>
-        
-        <section>
-                <a href="javascript:window.history.back();">back</a></span> ·
-                <span><a href="https://csyakamoz.github.io">home</a></span>
-        </section>
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/rabbitmq">rabbitmq</a>
+        &nbsp;
+      
     </div>
+    
 
-    <div class="post-nav">
-        
-        <a href="https://csyakamoz.github.io/post/rabbitmq-note/" class="prev" rel="prev" title="RabbitMQ 笔记"><i class="iconfont icon-left"></i>&nbsp;RabbitMQ 笔记</a>
-        
-        
+    
+    
+    <div class="releated-posts">
+      <h3>Related Posts</h3>
+      
+      <i class="fas fa-paperclip"></i>
+      <a href="/post/rabbitmq-note/">RabbitMQ 笔记</a>
+      <br>
+      
     </div>
+    
+  </footer>
 
-    <div class="post-comment">
-        
-            
-        
-    </div>
+  <div class="comments">
+
+
+
+</div>
+
 </article>
-                </div>
-            </main>
-            <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2020</span>
-        
-        <span class="with-love">
-    	 <i class="iconfont icon-love"></i>
-         </span>
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://csyakamoz.github.io">CsYakamoz</a> | </span>
-         
-
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/Mogeko/Mogege" target="_blank" rel="external nofollow">Mogege</a></span>
-    </div>
-</footer>
 
 
+</body>
+<div class="foot">
+  
+  
+    &copy; 2020 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
 
 
-
-
-<script defer src="/js/vendor_main.min.js"></script>
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
-<script> pangu.spacingPage();</script>
-
-
-
-
-
-        </div>
-    </body>
 </html>
