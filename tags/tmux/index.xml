@@ -6,12 +6,7 @@
     <description>Recent content in tmux on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Wed, 09 Sep 2020 11:26:08 +0800</lastBuildDate>
-    
-	<atom:link href="https://csyakamoz.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 09 Sep 2020 11:26:08 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmux 笔记</title>
       <link>https://csyakamoz.github.io/post/tmux-note/</link>

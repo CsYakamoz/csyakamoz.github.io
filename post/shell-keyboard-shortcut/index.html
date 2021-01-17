@@ -1,84 +1,137 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
-  <title> Shell 常用快捷键 |  CsYakamoz`s Blog</title>
-  <meta name="description" content="Nothing to say">
-  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
-  <link rel="canonical" href="https://csyakamoz.github.io/post/shell-keyboard-shortcut/">
-  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="CsYakamoz" />
+  <meta property="og:url" content="https://csyakamoz.github.io/post/shell-keyboard-shortcut/" />
+  <link rel="canonical" href="https://csyakamoz.github.io/post/shell-keyboard-shortcut/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://csyakamoz.github.ioindex.xml" title="CsYakamoz`s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/csyakamoz.github.io"
+      },
+      "articleSection" : "post",
+      "name" : "Shell 常用快捷键",
+      "headline" : "Shell 常用快捷键",
+      "description" : "Up, Ctrl \u002b p, 向上移动光标或显示上一条命令\nDown, Ctrl \u002b n, 向下移动或显示下一条命令\nLeft, Ctrl \u002b b, 光标向左移动一个字符\nRight, Ctrl \u002b f, 光标向右移动一个字符\nBS, Ctrl \u002b h, 删除光标左边的字符\nDel, Ctrl \u002b d, 删除光标右边的字符\nHome, Ctrl \u002b a, 跳转到行首\nEnd, Ctrl \u002b e, 跳转到行尾\n 以上快捷键可在 Mac 中的大多数文本编辑区域使用\ne.g.\n Google Chrome 的地址栏 Wechat 的聊天内容输入框   Ctrl \u002b w, 删除光标左边一个单词\nAlt \u002b b, 光标向左移动一个单词\nAlt \u002b f, 光标向右移动一个单词\nAlt \u002b d, 删除光标右边的一个单词\nAlt \u002b BS, 删除光标左边的一个单词",
+      "inLanguage" : "en-US",
+      "author" : "CsYakamoz",
+      "creator" : "CsYakamoz",
+      "publisher": "CsYakamoz",
+      "accountablePerson" : "CsYakamoz",
+      "copyrightHolder" : "CsYakamoz",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-09-09 11:06:40 \u002b0800 CST",
+      "dateModified" : "2020-09-09 11:06:40 \u002b0800 CST",
+      "url" : "https:\/\/csyakamoz.github.io\/post\/shell-keyboard-shortcut\/",
+      "keywords" : [ "shell", ]
+  }
+</script>
+<title>Shell 常用快捷键 - CsYakamoz`s Blog</title>
+  <meta property="og:title" content="Shell 常用快捷键 - CsYakamoz`s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="Up, Ctrl &#43; p, 向上移动光标或显示上一条命令
+Down, Ctrl &#43; n, 向下移动或显示下一条命令
+Left, Ctrl &#43; b, 光标向左移动一个字符
+Right, Ctrl &#43; f, 光标向右移动一个字符
+BS, Ctrl &#43; h, 删除光标左边的字符
+Del, Ctrl &#43; d, 删除光标右边的字符
+Home, Ctrl &#43; a, 跳转到行首
+End, Ctrl &#43; e, 跳转到行尾
+ 以上快捷键可在 Mac 中的大多数文本编辑区域使用
+e.g.
+ Google Chrome 的地址栏 Wechat 的聊天内容输入框   Ctrl &#43; w, 删除光标左边一个单词
+Alt &#43; b, 光标向左移动一个单词
+Alt &#43; f, 光标向右移动一个单词
+Alt &#43; d, 删除光标右边的一个单词
+Alt &#43; BS, 删除光标左边的一个单词" />
+  <meta name="description" content="Up, Ctrl &#43; p, 向上移动光标或显示上一条命令
+Down, Ctrl &#43; n, 向下移动或显示下一条命令
+Left, Ctrl &#43; b, 光标向左移动一个字符
+Right, Ctrl &#43; f, 光标向右移动一个字符
+BS, Ctrl &#43; h, 删除光标左边的字符
+Del, Ctrl &#43; d, 删除光标右边的字符
+Home, Ctrl &#43; a, 跳转到行首
+End, Ctrl &#43; e, 跳转到行尾
+ 以上快捷键可在 Mac 中的大多数文本编辑区域使用
+e.g.
+ Google Chrome 的地址栏 Wechat 的聊天内容输入框   Ctrl &#43; w, 删除光标左边一个单词
+Alt &#43; b, 光标向左移动一个单词
+Alt &#43; f, 光标向右移动一个单词
+Alt &#43; d, 删除光标右边的一个单词
+Alt &#43; BS, 删除光标左边的一个单词" />
+  <meta property="og:locale" content="zh-cn" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="CsYakamoz`s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
   
   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+  
+  
 </head>
 
+
 <body>
-  <header class="menus">
-  
-
-  <nav >
-    
-    <a href="/"> Home</a>
-    
-    <a href="/tags/"> Tags</a>
-    
-    <a href="/about/"> About</a>
-    
-  </nav>
-
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/CsYakamoz" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-  </nav>
-  
-  
-  <div class="hidden description">Nothing to say</div>
-  
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">CsYakamoz</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
-<article class="article">
-  <header>
-    <h1 style="text-align: center;" >Shell 常用快捷键</h1>
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Shell 常用快捷键</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-09-09 11:06:40 CST">
+                09 Sep 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@CsYakamoz</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
 
-    <div class="post-meta">
-    
-      <time datetime="2020-09-09T11:06:40&#43;08:00">September 09, 2020</time> &nbsp; 
-    
-
-     &nbsp;
-
-    
-    
-    
-
-    
-      <i class="far fa-clock"></i>
-      
-      
-      
-
-      
-        1 min
-      
-      35 s
-      &nbsp;
-    
-
-    
-    </div>
-  </header>
-
-   
-
-  <div class="text">
-    <p>Up, Ctrl + p, 向上移动光标或显示上一条命令</p>
+        <div class="post-content markdown-body">
+          
+          <p>Up, Ctrl + p, 向上移动光标或显示上一条命令</p>
 <p>Down, Ctrl + n, 向下移动或显示下一条命令</p>
 <p>Left, Ctrl + b, 光标向左移动一个字符</p>
 <p>Right, Ctrl + f, 光标向右移动一个字符</p>
@@ -114,54 +167,85 @@
 <h2 id="参考">参考</h2>
 <p><a href="https://github.com/chzyer/readline/blob/master/doc/shortcut.md">Readline Shortcut</a></p>
 
-  </div>
+        </div>
 
-  <footer>
-    <hr class="end-line">
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
 
-    
-
-    
-    <div class="post-tags">
-      <i class="fas fa-tags"></i>
-      
-        <a href="/tags/shell">shell</a>
-        &nbsp;
-      
-    </div>
-    
-
-    
-    
-  </footer>
-
-  <div class="comments">
+          
 
 
 
-</div>
-
-</article>
-
-
-</body>
-<div class="foot">
-  
-  
-    &copy; 2020 - 2021 &#183; 
-    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/js/lazyload.min.js"></script>
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://csyakamoz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   });
 </script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
 
+          </div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/CsYakamoz" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://leetcode.com/CsYakamoz/" target="_blank">LeetCode</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
 
 </html>

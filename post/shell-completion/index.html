@@ -1,159 +1,209 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
-  <title> Shell 命令补全 |  CsYakamoz`s Blog</title>
-  <meta name="description" content="Nothing to say">
-  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
-  <link rel="canonical" href="https://csyakamoz.github.io/post/shell-completion/">
-  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="CsYakamoz" />
+  <meta property="og:url" content="https://csyakamoz.github.io/post/shell-completion/" />
+  <link rel="canonical" href="https://csyakamoz.github.io/post/shell-completion/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://csyakamoz.github.ioindex.xml" title="CsYakamoz`s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/csyakamoz.github.io"
+      },
+      "articleSection" : "post",
+      "name" : "Shell 命令补全",
+      "headline" : "Shell 命令补全",
+      "description" : "Bash 官方文档: man bash, 按 \/, 输入 Programmable Completion 回车\n团子的小窝 - 编写 Bash 补全脚本\n如何编写 bash 自动补全脚本",
+      "inLanguage" : "en-US",
+      "author" : "CsYakamoz",
+      "creator" : "CsYakamoz",
+      "publisher": "CsYakamoz",
+      "accountablePerson" : "CsYakamoz",
+      "copyrightHolder" : "CsYakamoz",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-10-27 18:50:16 \u002b0800 CST",
+      "dateModified" : "2020-10-27 18:50:16 \u002b0800 CST",
+      "url" : "https:\/\/csyakamoz.github.io\/post\/shell-completion\/",
+      "keywords" : [ "shell", ]
+  }
+</script>
+<title>Shell 命令补全 - CsYakamoz`s Blog</title>
+  <meta property="og:title" content="Shell 命令补全 - CsYakamoz`s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="Bash 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
+团子的小窝 - 编写 Bash 补全脚本
+如何编写 bash 自动补全脚本" />
+  <meta name="description" content="Bash 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
+团子的小窝 - 编写 Bash 补全脚本
+如何编写 bash 自动补全脚本" />
+  <meta property="og:locale" content="zh-cn" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="CsYakamoz`s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
   
   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+  
+  
 </head>
 
+
 <body>
-  <header class="menus">
-  
-
-  <nav >
-    
-    <a href="/"> Home</a>
-    
-    <a href="/tags/"> Tags</a>
-    
-    <a href="/about/"> About</a>
-    
-  </nav>
-
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/CsYakamoz" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-  </nav>
-  
-  
-  <div class="hidden description">Nothing to say</div>
-  
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">CsYakamoz</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
-<article class="article">
-  <header>
-    <h1 style="text-align: center;" >Shell 命令补全</h1>
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Shell 命令补全</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-10-27 18:50:16 CST">
+                27 Oct 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@CsYakamoz</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
 
-    <div class="post-meta">
-    
-      <time datetime="2020-10-27T18:50:16&#43;08:00">October 27, 2020</time> &nbsp; 
-    
-
-     &nbsp;
-
-    
-    
-    
-
-    
-      <i class="far fa-clock"></i>
-      
-      
-      
-
-      
-      10 s
-      &nbsp;
-    
-
-    
-    </div>
-  </header>
-
-   
-
-  <div class="text">
-    <h2 id="bash">Bash</h2>
+        <div class="post-content markdown-body">
+          
+          <h2 id="bash">Bash</h2>
 <p>官方文档: <code>man bash</code>, 按 <code>/</code>, 输入 <code>Programmable Completion</code> 回车</p>
 <p><a href="https://kodango.com/bash-competion-programming">团子的小窝 - 编写 Bash 补全脚本</a></p>
 <p><a href="https://www.infoq.cn/article/bash-programmable-completion-tutorial">如何编写 bash 自动补全脚本</a></p>
 
-  </div>
+        </div>
 
-  <footer>
-    <hr class="end-line">
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
 
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
     
-
+    <li><a href="/post/shell-note/">Shell 笔记</a></li>
     
-    <div class="post-tags">
-      <i class="fas fa-tags"></i>
-      
-        <a href="/tags/shell">shell</a>
-        &nbsp;
-      
-    </div>
+    <li><a href="/post/shell-sequence-expression/">Shell 序列表达式</a></li>
     
-
+    <li><a href="/post/shell-handle-text-by-line/">Shell 按行处理文本</a></li>
     
-    
-    <div class="releated-posts">
-      <h3>Related Posts</h3>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/shell-note/">Shell 笔记</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/shell-sequence-expression/">Shell 序列表达式</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/shell-handle-text-by-line/">Shell 按行处理文本</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/shell-build-file-from-template/">Shell 使用模板文件生成文件</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/shell-print-color-output/">Shell 打印彩色输出</a>
-      <br>
-      
-    </div>
-    
-  </footer>
-
-  <div class="comments">
-
-
-
+  </ul>
 </div>
 
-</article>
 
 
-</body>
-<div class="foot">
-  
-  
-    &copy; 2020 - 2021 &#183; 
-    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/js/lazyload.min.js"></script>
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://csyakamoz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   });
 </script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
 
+          </div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/CsYakamoz" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://leetcode.com/CsYakamoz/" target="_blank">LeetCode</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
 
 </html>

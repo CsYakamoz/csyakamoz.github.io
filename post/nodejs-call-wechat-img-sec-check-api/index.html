@@ -1,126 +1,151 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
-  <title> Node.js 调用微信小程序图片校验接口 |  CsYakamoz`s Blog</title>
-  <meta name="description" content="Nothing to say">
-  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
-  <link rel="canonical" href="https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/">
-  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="CsYakamoz" />
+  <meta property="og:url" content="https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/" />
+  <link rel="canonical" href="https://csyakamoz.github.io/post/nodejs-call-wechat-img-sec-check-api/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://csyakamoz.github.ioindex.xml" title="CsYakamoz`s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/csyakamoz.github.io"
+      },
+      "articleSection" : "post",
+      "name" : "Node.js 调用微信小程序图片校验接口",
+      "headline" : "Node.js 调用微信小程序图片校验接口",
+      "description" : "const fs = require(\u0026#34;fs\u0026#34;); const request = require(\u0026#34;request\u0026#34;); request.post( { uri: \u0026#34;https:\/\/api.weixin.qq.com\/wxa\/img_sec_check?access_token=ACCESS_TOKEN\u0026#34;, formData: { \/\/ 方法 1  media: fs.createReadStream(\u0026#34;path_to_img\u0026#34;), \/\/ 方法 2  attachments: [ \/\/ 只认下标为 0 的  fs.createReadStream(\u0026#34;path_to_img\u0026#34;), \/\/ 下标 1 及之后的会被微信忽略  ..., ], \/\/ 方法 3  media: { value: buffer, options: { \/\/ 必须有 filename, 值可任意但不能为空串  filename: \u0026#34;default\u0026#34;, \/\/ contentType 可有可无，且值任意  contentType: \u0026#34;image\/jpeg\u0026#34;, }, }, \/\/ 方法 4  media: request.get(\u0026#34;uri_to_img\u0026#34;), }, }, (error, resp, body) =\u0026gt; { if (error) { console.",
+      "inLanguage" : "en-US",
+      "author" : "CsYakamoz",
+      "creator" : "CsYakamoz",
+      "publisher": "CsYakamoz",
+      "accountablePerson" : "CsYakamoz",
+      "copyrightHolder" : "CsYakamoz",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-09-09 10:21:33 \u002b0800 CST",
+      "dateModified" : "2020-09-09 10:21:33 \u002b0800 CST",
+      "url" : "https:\/\/csyakamoz.github.io\/post\/nodejs-call-wechat-img-sec-check-api\/",
+      "keywords" : [ "javascript", ]
+  }
+</script>
+<title>Node.js 调用微信小程序图片校验接口 - CsYakamoz`s Blog</title>
+  <meta property="og:title" content="Node.js 调用微信小程序图片校验接口 - CsYakamoz`s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="const fs = require(&#34;fs&#34;); const request = require(&#34;request&#34;); request.post( { uri: &#34;https://api.weixin.qq.com/wxa/img_sec_check?access_token=ACCESS_TOKEN&#34;, formData: { // 方法 1  media: fs.createReadStream(&#34;path_to_img&#34;), // 方法 2  attachments: [ // 只认下标为 0 的  fs.createReadStream(&#34;path_to_img&#34;), // 下标 1 及之后的会被微信忽略  ..., ], // 方法 3  media: { value: buffer, options: { // 必须有 filename, 值可任意但不能为空串  filename: &#34;default&#34;, // contentType 可有可无，且值任意  contentType: &#34;image/jpeg&#34;, }, }, // 方法 4  media: request.get(&#34;uri_to_img&#34;), }, }, (error, resp, body) =&gt; { if (error) { console." />
+  <meta name="description" content="const fs = require(&#34;fs&#34;); const request = require(&#34;request&#34;); request.post( { uri: &#34;https://api.weixin.qq.com/wxa/img_sec_check?access_token=ACCESS_TOKEN&#34;, formData: { // 方法 1  media: fs.createReadStream(&#34;path_to_img&#34;), // 方法 2  attachments: [ // 只认下标为 0 的  fs.createReadStream(&#34;path_to_img&#34;), // 下标 1 及之后的会被微信忽略  ..., ], // 方法 3  media: { value: buffer, options: { // 必须有 filename, 值可任意但不能为空串  filename: &#34;default&#34;, // contentType 可有可无，且值任意  contentType: &#34;image/jpeg&#34;, }, }, // 方法 4  media: request.get(&#34;uri_to_img&#34;), }, }, (error, resp, body) =&gt; { if (error) { console." />
+  <meta property="og:locale" content="zh-cn" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="CsYakamoz`s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
   
   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+  
+  
 </head>
 
+
 <body>
-  <header class="menus">
-  
-
-  <nav >
-    
-    <a href="/"> Home</a>
-    
-    <a href="/tags/"> Tags</a>
-    
-    <a href="/about/"> About</a>
-    
-  </nav>
-
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/CsYakamoz" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-  </nav>
-  
-  
-  <div class="hidden description">Nothing to say</div>
-  
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">CsYakamoz</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
-<article class="article">
-  <header>
-    <h1 style="text-align: center;" >Node.js 调用微信小程序图片校验接口</h1>
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Node.js 调用微信小程序图片校验接口</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-09-09 10:21:33 CST">
+                09 Sep 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@CsYakamoz</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
 
-    <div class="post-meta">
-    
-      <time datetime="2020-09-09T10:21:33&#43;08:00">September 09, 2020</time> &nbsp; 
-    
+        <div class="post-content markdown-body">
+          
+          <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;fs&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">request</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;request&#34;</span>);
 
-     &nbsp;
-
-    
-    
-    
-
-    
-      <i class="far fa-clock"></i>
-      
-      
-      
-
-      
-        1 min
-      
-      1 second
-      &nbsp;
-    
-
-    
-    </div>
-  </header>
-
-   
-
-  <div class="text">
-    <div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#859900">const</span> <span style="color:#268bd2">fs</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#34;fs&#34;</span>);
-<span style="color:#859900">const</span> <span style="color:#268bd2">request</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#34;request&#34;</span>);
-
-<span style="color:#268bd2">request</span>.<span style="color:#268bd2">post</span>(
+<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">post</span>(
   {
-    <span style="color:#268bd2">uri</span>:
-      <span style="color:#2aa198">&#34;https://api.weixin.qq.com/wxa/img_sec_check?access_token=ACCESS_TOKEN&#34;</span>,
+    <span style="color:#a6e22e">uri</span><span style="color:#f92672">:</span>
+      <span style="color:#e6db74">&#34;https://api.weixin.qq.com/wxa/img_sec_check?access_token=ACCESS_TOKEN&#34;</span>,
 
-    <span style="color:#268bd2">formData</span>: {
-      <span style="color:#93a1a1;font-style:italic">// 方法 1
-</span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#268bd2">media</span>: <span style="color:#268bd2">fs</span>.<span style="color:#268bd2">createReadStream</span>(<span style="color:#2aa198">&#34;path_to_img&#34;</span>),
+    <span style="color:#a6e22e">formData</span><span style="color:#f92672">:</span> {
+      <span style="color:#75715e">// 方法 1
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">media</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">createReadStream</span>(<span style="color:#e6db74">&#34;path_to_img&#34;</span>),
 
-      <span style="color:#93a1a1;font-style:italic">// 方法 2
-</span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#268bd2">attachments</span>: [
-        <span style="color:#93a1a1;font-style:italic">// 只认下标为 0 的
-</span><span style="color:#93a1a1;font-style:italic"></span>        <span style="color:#268bd2">fs</span>.<span style="color:#268bd2">createReadStream</span>(<span style="color:#2aa198">&#34;path_to_img&#34;</span>),
+      <span style="color:#75715e">// 方法 2
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">attachments</span><span style="color:#f92672">:</span> [
+        <span style="color:#75715e">// 只认下标为 0 的
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">createReadStream</span>(<span style="color:#e6db74">&#34;path_to_img&#34;</span>),
 
-        <span style="color:#93a1a1;font-style:italic">// 下标 1 及之后的会被微信忽略
-</span><span style="color:#93a1a1;font-style:italic"></span>        ...,
+        <span style="color:#75715e">// 下标 1 及之后的会被微信忽略
+</span><span style="color:#75715e"></span>        ...,
       ],
 
-      <span style="color:#93a1a1;font-style:italic">// 方法 3
-</span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#268bd2">media</span>: {
-        <span style="color:#268bd2">value</span>: <span style="color:#268bd2">buffer</span>,
-        <span style="color:#268bd2">options</span>: {
-          <span style="color:#93a1a1;font-style:italic">// 必须有 filename, 值可任意但不能为空串
-</span><span style="color:#93a1a1;font-style:italic"></span>          <span style="color:#268bd2">filename</span>: <span style="color:#2aa198">&#34;default&#34;</span>,
-          <span style="color:#93a1a1;font-style:italic">// contentType 可有可无，且值任意
-</span><span style="color:#93a1a1;font-style:italic"></span>          <span style="color:#268bd2">contentType</span>: <span style="color:#2aa198">&#34;image/jpeg&#34;</span>,
+      <span style="color:#75715e">// 方法 3
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">media</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">buffer</span>,
+        <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> {
+          <span style="color:#75715e">// 必须有 filename, 值可任意但不能为空串
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;default&#34;</span>,
+          <span style="color:#75715e">// contentType 可有可无，且值任意
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">contentType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;image/jpeg&#34;</span>,
         },
       },
 
-      <span style="color:#93a1a1;font-style:italic">// 方法 4
-</span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#268bd2">media</span>: <span style="color:#268bd2">request</span>.<span style="color:#268bd2">get</span>(<span style="color:#2aa198">&#34;uri_to_img&#34;</span>),
+      <span style="color:#75715e">// 方法 4
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">media</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;uri_to_img&#34;</span>),
     },
   },
-  (<span style="color:#268bd2">error</span>, <span style="color:#268bd2">resp</span>, <span style="color:#268bd2">body</span>) =&gt; {
-    <span style="color:#859900">if</span> (<span style="color:#268bd2">error</span>) {
-      <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">error</span>);
-      <span style="color:#859900">return</span>;
+  (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">resp</span>, <span style="color:#a6e22e">body</span>) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
+      <span style="color:#66d9ef">return</span>;
     }
 
-    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">body</span>);
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">body</span>);
   }
 );
 </code></pre></div><p>方法 1, 2 的使用场景：文件在本地</p>
@@ -131,63 +156,94 @@
 <p><a href="https://www.npmjs.com/package/request#multipartform-data-multipart-form-uploads">npm request</a></p>
 <p><a href="https://developers.weixin.qq.com/community/develop/doc/000486c0fbc558719d89a281c51800">后端使用 nodejs, API 接口：security.imgSecCheck 如何才能正确调用？</a></p>
 
-  </div>
+        </div>
 
-  <footer>
-    <hr class="end-line">
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
 
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
     
-
+    <li><a href="/post/nodejs-supported-encoding/">Node.js 支持的编码</a></li>
     
-    <div class="post-tags">
-      <i class="fas fa-tags"></i>
-      
-        <a href="/tags/javascript">javascript</a>
-        &nbsp;
-      
-    </div>
-    
-
-    
-    
-    <div class="releated-posts">
-      <h3>Related Posts</h3>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/nodejs-supported-encoding/">Node.js 支持的编码</a>
-      <br>
-      
-    </div>
-    
-  </footer>
-
-  <div class="comments">
-
-
-
+  </ul>
 </div>
 
-</article>
 
 
-</body>
-<div class="foot">
-  
-  
-    &copy; 2020 - 2021 &#183; 
-    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/js/lazyload.min.js"></script>
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://csyakamoz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   });
 </script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
 
+          </div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/CsYakamoz" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://leetcode.com/CsYakamoz/" target="_blank">LeetCode</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
 
 </html>

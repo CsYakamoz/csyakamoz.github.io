@@ -1,210 +1,256 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
-  <title> Javascript this 的指向 |  CsYakamoz`s Blog</title>
-  <meta name="description" content="Nothing to say">
-  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
-  <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-this/">
-  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="CsYakamoz" />
+  <meta property="og:url" content="https://csyakamoz.github.io/post/javascript-this/" />
+  <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-this/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://csyakamoz.github.ioindex.xml" title="CsYakamoz`s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/csyakamoz.github.io"
+      },
+      "articleSection" : "post",
+      "name" : "Javascript this 的指向",
+      "headline" : "Javascript this 的指向",
+      "description" : "\/\/ Notice: the environment is Node.js  global.val = \u0026#34;global\u0026#34;; this.val = \u0026#34;exports\u0026#34;; function normalFun() { console.log(this.val); } const funcExpression = function () { console.log(this.val); }; const arrowFun = () =\u0026gt; { console.log(this.val); }; const scope = { val: \u0026#34;obj\u0026#34;, a: function () { console.log(this.val); }, b: () =\u0026gt; { console.log(this.val); }, c: function () { return () =\u0026gt; { console.log(this.val); }; }, d: function () { return function () { console.",
+      "inLanguage" : "en-US",
+      "author" : "CsYakamoz",
+      "creator" : "CsYakamoz",
+      "publisher": "CsYakamoz",
+      "accountablePerson" : "CsYakamoz",
+      "copyrightHolder" : "CsYakamoz",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-09-09 16:14:29 \u002b0800 CST",
+      "dateModified" : "2020-09-09 16:14:29 \u002b0800 CST",
+      "url" : "https:\/\/csyakamoz.github.io\/post\/javascript-this\/",
+      "keywords" : [ "javascript", ]
+  }
+</script>
+<title>Javascript this 的指向 - CsYakamoz`s Blog</title>
+  <meta property="og:title" content="Javascript this 的指向 - CsYakamoz`s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="// Notice: the environment is Node.js  global.val = &#34;global&#34;; this.val = &#34;exports&#34;; function normalFun() { console.log(this.val); } const funcExpression = function () { console.log(this.val); }; const arrowFun = () =&gt; { console.log(this.val); }; const scope = { val: &#34;obj&#34;, a: function () { console.log(this.val); }, b: () =&gt; { console.log(this.val); }, c: function () { return () =&gt; { console.log(this.val); }; }, d: function () { return function () { console." />
+  <meta name="description" content="// Notice: the environment is Node.js  global.val = &#34;global&#34;; this.val = &#34;exports&#34;; function normalFun() { console.log(this.val); } const funcExpression = function () { console.log(this.val); }; const arrowFun = () =&gt; { console.log(this.val); }; const scope = { val: &#34;obj&#34;, a: function () { console.log(this.val); }, b: () =&gt; { console.log(this.val); }, c: function () { return () =&gt; { console.log(this.val); }; }, d: function () { return function () { console." />
+  <meta property="og:locale" content="zh-cn" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="CsYakamoz`s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
   
   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+  
+  
 </head>
 
+
 <body>
-  <header class="menus">
-  
-
-  <nav >
-    
-    <a href="/"> Home</a>
-    
-    <a href="/tags/"> Tags</a>
-    
-    <a href="/about/"> About</a>
-    
-  </nav>
-
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/CsYakamoz" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-  </nav>
-  
-  
-  <div class="hidden description">Nothing to say</div>
-  
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">CsYakamoz</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
-<article class="article">
-  <header>
-    <h1 style="text-align: center;" >Javascript this 的指向</h1>
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Javascript this 的指向</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-09-09 16:14:29 CST">
+                09 Sep 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@CsYakamoz</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
 
-    <div class="post-meta">
-    
-      <time datetime="2020-09-09T16:14:29&#43;08:00">September 09, 2020</time> &nbsp; 
-    
+        <div class="post-content markdown-body">
+          
+          <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Notice: the environment is Node.js
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;global&#34;</span>;
+<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;exports&#34;</span>;
 
-     &nbsp;
-
-    
-    
-    
-
-    
-      <i class="far fa-clock"></i>
-      
-      
-      
-
-      
-      30 s
-      &nbsp;
-    
-
-    
-    </div>
-  </header>
-
-   
-
-  <div class="text">
-    <div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#93a1a1;font-style:italic">// Notice: the environment is Node.js
-</span><span style="color:#93a1a1;font-style:italic"></span>
-<span style="color:#268bd2">global</span>.<span style="color:#268bd2">val</span> = <span style="color:#2aa198">&#34;global&#34;</span>;
-<span style="color:#859900">this</span>.<span style="color:#268bd2">val</span> = <span style="color:#2aa198">&#34;exports&#34;</span>;
-
-<span style="color:#859900">function</span> <span style="color:#268bd2">normalFun</span>() {
-  <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#859900">this</span>.<span style="color:#268bd2">val</span>);
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">normalFun</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
 }
 
-<span style="color:#859900">const</span> <span style="color:#268bd2">funcExpression</span> = <span style="color:#859900">function</span> () {
-  <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#859900">this</span>.<span style="color:#268bd2">val</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">funcExpression</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
 };
 
-<span style="color:#859900">const</span> <span style="color:#268bd2">arrowFun</span> = () =&gt; {
-  <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#859900">this</span>.<span style="color:#268bd2">val</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arrowFun</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
 };
 
-<span style="color:#859900">const</span> <span style="color:#268bd2">scope</span> = {
-  <span style="color:#268bd2">val</span>: <span style="color:#2aa198">&#34;obj&#34;</span>,
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scope</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;obj&#34;</span>,
 
-  <span style="color:#268bd2">a</span>: <span style="color:#859900">function</span> () {
-    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#859900">this</span>.<span style="color:#268bd2">val</span>);
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
   },
 
-  <span style="color:#268bd2">b</span>: () =&gt; {
-    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#859900">this</span>.<span style="color:#268bd2">val</span>);
+  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> () =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
   },
 
-  <span style="color:#268bd2">c</span>: <span style="color:#859900">function</span> () {
-    <span style="color:#859900">return</span> () =&gt; {
-      <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#859900">this</span>.<span style="color:#268bd2">val</span>);
+  <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> () =&gt; {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
     };
   },
 
-  <span style="color:#268bd2">d</span>: <span style="color:#859900">function</span> () {
-    <span style="color:#859900">return</span> <span style="color:#859900">function</span> () {
-      <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#859900">this</span>.<span style="color:#268bd2">val</span>);
+  <span style="color:#a6e22e">d</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
     };
   },
 };
 
-<span style="color:#859900">const</span> <span style="color:#268bd2">_c</span> = <span style="color:#268bd2">scope</span>.<span style="color:#268bd2">c</span>;
-<span style="color:#859900">const</span> <span style="color:#268bd2">_d</span> = <span style="color:#268bd2">scope</span>.<span style="color:#268bd2">d</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">c</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">d</span>;
 
-<span style="color:#268bd2">normalFun</span>(); <span style="color:#93a1a1;font-style:italic">// global
-</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">funcExpression</span>(); <span style="color:#93a1a1;font-style:italic">// global
-</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">arrowFun</span>(); <span style="color:#93a1a1;font-style:italic">// exports
-</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">scope</span>.<span style="color:#268bd2">a</span>(); <span style="color:#93a1a1;font-style:italic">// obj
-</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">scope</span>.<span style="color:#268bd2">b</span>(); <span style="color:#93a1a1;font-style:italic">// exports
-</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">scope</span>.<span style="color:#268bd2">c</span>()(); <span style="color:#93a1a1;font-style:italic">// obj
-</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">scope</span>.<span style="color:#268bd2">d</span>()(); <span style="color:#93a1a1;font-style:italic">// global
-</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">_c</span>()(); <span style="color:#93a1a1;font-style:italic">// global
-</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">_d</span>()(); <span style="color:#93a1a1;font-style:italic">// global
+<span style="color:#a6e22e">normalFun</span>(); <span style="color:#75715e">// global
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">funcExpression</span>(); <span style="color:#75715e">// global
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">arrowFun</span>(); <span style="color:#75715e">// exports
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">a</span>(); <span style="color:#75715e">// obj
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">b</span>(); <span style="color:#75715e">// exports
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">c</span>()(); <span style="color:#75715e">// obj
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">d</span>()(); <span style="color:#75715e">// global
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">_c</span>()(); <span style="color:#75715e">// global
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">_d</span>()(); <span style="color:#75715e">// global
 </span></code></pre></div><h2 id="参考">参考</h2>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this">MDN this</a></p>
 
-  </div>
+        </div>
 
-  <footer>
-    <hr class="end-line">
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
 
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
     
-
+    <li><a href="/post/javascript-foreach-with-async-func/">forEach With Async Function in Js</a></li>
     
-    <div class="post-tags">
-      <i class="fas fa-tags"></i>
-      
-        <a href="/tags/javascript">javascript</a>
-        &nbsp;
-      
-    </div>
+    <li><a href="/post/nodejs-crate-local-package/">Node.js 创建本地模块</a></li>
     
-
+    <li><a href="/post/javascript-function-parameter-type/">Javascript 函数传参类型</a></li>
     
-    
-    <div class="releated-posts">
-      <h3>Related Posts</h3>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/javascript-foreach-with-async-func/">forEach With Async Function in Js</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/nodejs-crate-local-package/">Node.js 创建本地模块</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/javascript-function-parameter-type/">Javascript 函数传参类型</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/javascript-iterate-object-property-order/">JavaScript 遍历对象属性顺序</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/coding-style/">编码风格</a>
-      <br>
-      
-    </div>
-    
-  </footer>
-
-  <div class="comments">
-
-
-
+  </ul>
 </div>
 
-</article>
 
 
-</body>
-<div class="foot">
-  
-  
-    &copy; 2020 - 2021 &#183; 
-    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/js/lazyload.min.js"></script>
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://csyakamoz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   });
 </script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
 
+          </div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/CsYakamoz" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://leetcode.com/CsYakamoz/" target="_blank">LeetCode</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
 
 </html>

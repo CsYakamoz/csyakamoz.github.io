@@ -1,82 +1,121 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
-  <title> MacOS 修复音视频无法正常播放问题 |  CsYakamoz`s Blog</title>
-  <meta name="description" content="Nothing to say">
-  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
-  <link rel="canonical" href="https://csyakamoz.github.io/post/mac-fix-sound/">
-  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="CsYakamoz" />
+  <meta property="og:url" content="https://csyakamoz.github.io/post/mac-fix-sound/" />
+  <link rel="canonical" href="https://csyakamoz.github.io/post/mac-fix-sound/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://csyakamoz.github.ioindex.xml" title="CsYakamoz`s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/csyakamoz.github.io"
+      },
+      "articleSection" : "post",
+      "name" : "MacOS 修复音视频无法正常播放问题",
+      "headline" : "MacOS 修复音视频无法正常播放问题",
+      "description" : "内容来源：mac 音频及视频均无法正常播放，怎么解决？\n表现现象：\n  音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常\n  BiliBili 也无法播放音频，进度条同上，但网络是正常\n  任何可以让 mac 发出声音的行为均不出声\n  重启一切正常\n  解决办法：terminal 下输入 sudo killall coreaudiod",
+      "inLanguage" : "en-US",
+      "author" : "CsYakamoz",
+      "creator" : "CsYakamoz",
+      "publisher": "CsYakamoz",
+      "accountablePerson" : "CsYakamoz",
+      "copyrightHolder" : "CsYakamoz",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-09-09 11:32:06 \u002b0800 CST",
+      "dateModified" : "2020-09-09 11:32:06 \u002b0800 CST",
+      "url" : "https:\/\/csyakamoz.github.io\/post\/mac-fix-sound\/",
+      "keywords" : [ "mac", ]
+  }
+</script>
+<title>MacOS 修复音视频无法正常播放问题 - CsYakamoz`s Blog</title>
+  <meta property="og:title" content="MacOS 修复音视频无法正常播放问题 - CsYakamoz`s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="内容来源：mac 音频及视频均无法正常播放，怎么解决？
+表现现象：
+  音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常
+  BiliBili 也无法播放音频，进度条同上，但网络是正常
+  任何可以让 mac 发出声音的行为均不出声
+  重启一切正常
+  解决办法：terminal 下输入 sudo killall coreaudiod" />
+  <meta name="description" content="内容来源：mac 音频及视频均无法正常播放，怎么解决？
+表现现象：
+  音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常
+  BiliBili 也无法播放音频，进度条同上，但网络是正常
+  任何可以让 mac 发出声音的行为均不出声
+  重启一切正常
+  解决办法：terminal 下输入 sudo killall coreaudiod" />
+  <meta property="og:locale" content="zh-cn" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="CsYakamoz`s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
   
   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+  
+  
 </head>
 
+
 <body>
-  <header class="menus">
-  
-
-  <nav >
-    
-    <a href="/"> Home</a>
-    
-    <a href="/tags/"> Tags</a>
-    
-    <a href="/about/"> About</a>
-    
-  </nav>
-
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/CsYakamoz" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-  </nav>
-  
-  
-  <div class="hidden description">Nothing to say</div>
-  
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">CsYakamoz</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
-<article class="article">
-  <header>
-    <h1 style="text-align: center;" >MacOS 修复音视频无法正常播放问题</h1>
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">MacOS 修复音视频无法正常播放问题</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-09-09 11:32:06 CST">
+                09 Sep 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@CsYakamoz</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
 
-    <div class="post-meta">
-    
-      <time datetime="2020-09-09T11:32:06&#43;08:00">September 09, 2020</time> &nbsp; 
-    
-
-     &nbsp;
-
-    
-    
-    
-
-    
-      <i class="far fa-clock"></i>
-      
-      
-      
-
-      
-      34 s
-      &nbsp;
-    
-
-    
-    </div>
-  </header>
-
-   
-
-  <div class="text">
-    <p>内容来源：<a href="https://www.v2ex.com/t/492109">mac 音频及视频均无法正常播放，怎么解决？</a></p>
+        <div class="post-content markdown-body">
+          
+          <p>内容来源：<a href="https://www.v2ex.com/t/492109">mac 音频及视频均无法正常播放，怎么解决？</a></p>
 <p>表现现象：</p>
 <ol>
 <li>
@@ -94,54 +133,85 @@
 </ol>
 <p>解决办法：terminal 下输入 <code>sudo killall coreaudiod</code></p>
 
-  </div>
+        </div>
 
-  <footer>
-    <hr class="end-line">
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
 
-    
-
-    
-    <div class="post-tags">
-      <i class="fas fa-tags"></i>
-      
-        <a href="/tags/mac">mac</a>
-        &nbsp;
-      
-    </div>
-    
-
-    
-    
-  </footer>
-
-  <div class="comments">
+          
 
 
 
-</div>
-
-</article>
-
-
-</body>
-<div class="foot">
-  
-  
-    &copy; 2020 - 2021 &#183; 
-    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/js/lazyload.min.js"></script>
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://csyakamoz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   });
 </script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
 
+          </div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/CsYakamoz" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://leetcode.com/CsYakamoz/" target="_blank">LeetCode</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
 
 </html>

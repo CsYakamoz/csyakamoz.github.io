@@ -1,174 +1,236 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
-  <title> Shell 按行处理文本 |  CsYakamoz`s Blog</title>
-  <meta name="description" content="Nothing to say">
-  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
-  <link rel="canonical" href="https://csyakamoz.github.io/post/shell-handle-text-by-line/">
-  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="CsYakamoz" />
+  <meta property="og:url" content="https://csyakamoz.github.io/post/shell-handle-text-by-line/" />
+  <link rel="canonical" href="https://csyakamoz.github.io/post/shell-handle-text-by-line/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://csyakamoz.github.ioindex.xml" title="CsYakamoz`s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/csyakamoz.github.io"
+      },
+      "articleSection" : "post",
+      "name" : "Shell 按行处理文本",
+      "headline" : "Shell 按行处理文本",
+      "description" : "内容来源：【Shell 脚本】逐行处理文本文件\nread cat data.dat | while read line do echo \u0026#34;${line}\u0026#34; done # or while read line do echo \u0026#34;${line}\u0026#34; done \u0026lt; data.dat awk cat data.dat | awk \u0026#39;{print $0}\u0026#39; for \u0026hellip; in \u0026hellip; for var in content 表示变量 var 在 content 中循环取值，取值的分隔符由 ${IFS} 确定\nfor line in $(cat data.dat) do echo \u0026#34;${line}\u0026#34; done 如果输入文本每行中没有空格，则 line 在输入文本中按换行符分隔符循环取值。\n如果输入文本中包括空格或制表符，则不是换行读取，line 在输入文本中按空格分隔符或制表符或换行符循环取值。\n可以通过把 ${IFS} 设置为换行符来达到逐行读取的功能。\n${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）.",
+      "inLanguage" : "en-US",
+      "author" : "CsYakamoz",
+      "creator" : "CsYakamoz",
+      "publisher": "CsYakamoz",
+      "accountablePerson" : "CsYakamoz",
+      "copyrightHolder" : "CsYakamoz",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-09-09 11:15:00 \u002b0800 CST",
+      "dateModified" : "2020-09-09 11:15:00 \u002b0800 CST",
+      "url" : "https:\/\/csyakamoz.github.io\/post\/shell-handle-text-by-line\/",
+      "keywords" : [ "shell", ]
+  }
+</script>
+<title>Shell 按行处理文本 - CsYakamoz`s Blog</title>
+  <meta property="og:title" content="Shell 按行处理文本 - CsYakamoz`s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="内容来源：【Shell 脚本】逐行处理文本文件
+read cat data.dat | while read line do echo &#34;${line}&#34; done # or while read line do echo &#34;${line}&#34; done &lt; data.dat awk cat data.dat | awk &#39;{print $0}&#39; for &hellip; in &hellip; for var in content 表示变量 var 在 content 中循环取值，取值的分隔符由 ${IFS} 确定
+for line in $(cat data.dat) do echo &#34;${line}&#34; done 如果输入文本每行中没有空格，则 line 在输入文本中按换行符分隔符循环取值。
+如果输入文本中包括空格或制表符，则不是换行读取，line 在输入文本中按空格分隔符或制表符或换行符循环取值。
+可以通过把 ${IFS} 设置为换行符来达到逐行读取的功能。
+${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）." />
+  <meta name="description" content="内容来源：【Shell 脚本】逐行处理文本文件
+read cat data.dat | while read line do echo &#34;${line}&#34; done # or while read line do echo &#34;${line}&#34; done &lt; data.dat awk cat data.dat | awk &#39;{print $0}&#39; for &hellip; in &hellip; for var in content 表示变量 var 在 content 中循环取值，取值的分隔符由 ${IFS} 确定
+for line in $(cat data.dat) do echo &#34;${line}&#34; done 如果输入文本每行中没有空格，则 line 在输入文本中按换行符分隔符循环取值。
+如果输入文本中包括空格或制表符，则不是换行读取，line 在输入文本中按空格分隔符或制表符或换行符循环取值。
+可以通过把 ${IFS} 设置为换行符来达到逐行读取的功能。
+${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）." />
+  <meta property="og:locale" content="zh-cn" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="CsYakamoz`s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
   
   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+  
+  
 </head>
 
+
 <body>
-  <header class="menus">
-  
-
-  <nav >
-    
-    <a href="/"> Home</a>
-    
-    <a href="/tags/"> Tags</a>
-    
-    <a href="/about/"> About</a>
-    
-  </nav>
-
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/CsYakamoz" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-  </nav>
-  
-  
-  <div class="hidden description">Nothing to say</div>
-  
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">CsYakamoz</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
-<article class="article">
-  <header>
-    <h1 style="text-align: center;" >Shell 按行处理文本</h1>
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Shell 按行处理文本</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-09-09 11:15:00 CST">
+                09 Sep 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@CsYakamoz</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
 
-    <div class="post-meta">
-    
-      <time datetime="2020-09-09T11:15:00&#43;08:00">September 09, 2020</time> &nbsp; 
-    
-
-     &nbsp;
-
-    
-    
-    
-
-    
-      <i class="far fa-clock"></i>
-      
-      
-      
-
-      
-        1 min
-      
-      1 second
-      &nbsp;
-    
-
-    
-    </div>
-  </header>
-
-   
-
-  <div class="text">
-    <p>内容来源：<a href="https://www.cnblogs.com/dwdxdy/archive/2012/07/25/2608816.html">【Shell 脚本】逐行处理文本文件</a></p>
+        <div class="post-content markdown-body">
+          
+          <p>内容来源：<a href="https://www.cnblogs.com/dwdxdy/archive/2012/07/25/2608816.html">【Shell 脚本】逐行处理文本文件</a></p>
 <h2 id="read">read</h2>
-<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat data.dat | <span style="color:#859900">while</span> <span style="color:#cb4b16">read</span> line
-<span style="color:#859900">do</span>
-    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
-<span style="color:#859900">done</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat data.dat | <span style="color:#66d9ef">while</span> read line
+<span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>line<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">done</span>
 
-<span style="color:#93a1a1;font-style:italic"># or</span>
+<span style="color:#75715e"># or</span>
 
-<span style="color:#859900">while</span> <span style="color:#cb4b16">read</span> line
-<span style="color:#859900">do</span>
-    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
-<span style="color:#859900">done</span> &lt; data.dat
+<span style="color:#66d9ef">while</span> read line
+<span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>line<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">done</span> &lt; data.dat
 </code></pre></div><h2 id="awk">awk</h2>
-<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat data.dat | awk <span style="color:#2aa198">&#39;{print $0}&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat data.dat | awk <span style="color:#e6db74">&#39;{print $0}&#39;</span>
 </code></pre></div><h2 id="for--in-">for &hellip; in &hellip;</h2>
 <p><code>for var in content</code> 表示变量 <code>var</code> 在 <code>content</code> 中循环取值，取值的分隔符由 <code>${IFS}</code> 确定</p>
-<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#859900">for</span> line in <span style="color:#859900">$(</span>cat data.dat<span style="color:#859900">)</span>
-<span style="color:#859900">do</span>
-    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
-<span style="color:#859900">done</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">for</span> line in <span style="color:#66d9ef">$(</span>cat data.dat<span style="color:#66d9ef">)</span>
+<span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>line<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">done</span>
 </code></pre></div><p>如果输入文本每行中没有空格，则 <code>line</code> 在输入文本中按换行符分隔符循环取值。</p>
 <p>如果输入文本中包括空格或制表符，则不是换行读取，<code>line</code> 在输入文本中按空格分隔符或制表符或换行符循环取值。</p>
 <p>可以通过把 <code>${IFS}</code> 设置为换行符来达到逐行读取的功能。</p>
 <p><strong><code>${IFS}</code> 的默认值为：空白 （包括：空格，制表符，换行符）</strong>.</p>
 
-  </div>
+        </div>
 
-  <footer>
-    <hr class="end-line">
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
 
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
     
-
+    <li><a href="/post/shell-build-file-from-template/">Shell 使用模板文件生成文件</a></li>
     
-    <div class="post-tags">
-      <i class="fas fa-tags"></i>
-      
-        <a href="/tags/shell">shell</a>
-        &nbsp;
-      
-    </div>
+    <li><a href="/post/shell-print-color-output/">Shell 打印彩色输出</a></li>
     
-
+    <li><a href="/post/shell-keyboard-shortcut/">Shell 常用快捷键</a></li>
     
-    
-    <div class="releated-posts">
-      <h3>Related Posts</h3>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/shell-build-file-from-template/">Shell 使用模板文件生成文件</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/shell-print-color-output/">Shell 打印彩色输出</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/shell-keyboard-shortcut/">Shell 常用快捷键</a>
-      <br>
-      
-    </div>
-    
-  </footer>
-
-  <div class="comments">
-
-
-
+  </ul>
 </div>
 
-</article>
 
 
-</body>
-<div class="foot">
-  
-  
-    &copy; 2020 - 2021 &#183; 
-    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/js/lazyload.min.js"></script>
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://csyakamoz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   });
 </script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
 
+          </div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/CsYakamoz" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://leetcode.com/CsYakamoz/" target="_blank">LeetCode</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
 
 </html>

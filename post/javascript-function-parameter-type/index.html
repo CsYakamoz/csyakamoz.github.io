@@ -1,116 +1,153 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
 
-  <title> Javascript 函数传参类型 |  CsYakamoz`s Blog</title>
-  <meta name="description" content="Nothing to say">
-  <link rel="stylesheet" href="https://csyakamoz.github.iocss/simpleness.css">
-  <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-function-parameter-type/">
-  <link rel="alternate" type="application/rss+xml" href="" title="CsYakamoz`s Blog">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="CsYakamoz" />
+  <meta property="og:url" content="https://csyakamoz.github.io/post/javascript-function-parameter-type/" />
+  <link rel="canonical" href="https://csyakamoz.github.io/post/javascript-function-parameter-type/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://csyakamoz.github.ioindex.xml" title="CsYakamoz`s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/csyakamoz.github.io"
+      },
+      "articleSection" : "post",
+      "name" : "Javascript 函数传参类型",
+      "headline" : "Javascript 函数传参类型",
+      "description" : "曾经我一度将 javascript 函数传参类型分为两种：\n 基本类型：值传递 引用类型：引用传递  后来我发现，其实都是值传递;\n先说明为啥曾经认为引用类型，是引用传递：\nfunction demo(obj) { obj.foo = \u0026#34;foo\u0026#34;; } let variable = {}; console.log(variable); \/\/ {}  demo(variable); console.log(variable); \/\/ { foo: \u0026#39;foo\u0026#39; } 外部向函数 demo 传递实参 (variable);\n函数进行操作：向形参 (obj) 添加一个属性 (foo), 其值为 foo;\num\u0026hellip;, 函数内部的操作，会影响外部的变量，这是很像引用传递，但我们再看个例子：\nfunction demo(obj) { obj = { foo: \u0026#34;foo\u0026#34; }; obj.bar = \u0026#34;bar\u0026#34;; } let variable = {}; console.log(variable); \/\/ {}  demo(variable); console.log(variable); \/\/ {} 为什么第二个输出依旧是 {} ?",
+      "inLanguage" : "en-US",
+      "author" : "CsYakamoz",
+      "creator" : "CsYakamoz",
+      "publisher": "CsYakamoz",
+      "accountablePerson" : "CsYakamoz",
+      "copyrightHolder" : "CsYakamoz",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-09-09 10:54:59 \u002b0800 CST",
+      "dateModified" : "2020-09-09 10:54:59 \u002b0800 CST",
+      "url" : "https:\/\/csyakamoz.github.io\/post\/javascript-function-parameter-type\/",
+      "keywords" : [ "javascript", ]
+  }
+</script>
+<title>Javascript 函数传参类型 - CsYakamoz`s Blog</title>
+  <meta property="og:title" content="Javascript 函数传参类型 - CsYakamoz`s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="曾经我一度将 javascript 函数传参类型分为两种：
+ 基本类型：值传递 引用类型：引用传递  后来我发现，其实都是值传递;
+先说明为啥曾经认为引用类型，是引用传递：
+function demo(obj) { obj.foo = &#34;foo&#34;; } let variable = {}; console.log(variable); // {}  demo(variable); console.log(variable); // { foo: &#39;foo&#39; } 外部向函数 demo 传递实参 (variable);
+函数进行操作：向形参 (obj) 添加一个属性 (foo), 其值为 foo;
+um&hellip;, 函数内部的操作，会影响外部的变量，这是很像引用传递，但我们再看个例子：
+function demo(obj) { obj = { foo: &#34;foo&#34; }; obj.bar = &#34;bar&#34;; } let variable = {}; console.log(variable); // {}  demo(variable); console.log(variable); // {} 为什么第二个输出依旧是 {} ?" />
+  <meta name="description" content="曾经我一度将 javascript 函数传参类型分为两种：
+ 基本类型：值传递 引用类型：引用传递  后来我发现，其实都是值传递;
+先说明为啥曾经认为引用类型，是引用传递：
+function demo(obj) { obj.foo = &#34;foo&#34;; } let variable = {}; console.log(variable); // {}  demo(variable); console.log(variable); // { foo: &#39;foo&#39; } 外部向函数 demo 传递实参 (variable);
+函数进行操作：向形参 (obj) 添加一个属性 (foo), 其值为 foo;
+um&hellip;, 函数内部的操作，会影响外部的变量，这是很像引用传递，但我们再看个例子：
+function demo(obj) { obj = { foo: &#34;foo&#34; }; obj.bar = &#34;bar&#34;; } let variable = {}; console.log(variable); // {}  demo(variable); console.log(variable); // {} 为什么第二个输出依旧是 {} ?" />
+  <meta property="og:locale" content="zh-cn" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="CsYakamoz`s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
   
   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+  
+  
 </head>
 
+
 <body>
-  <header class="menus">
-  
-
-  <nav >
-    
-    <a href="/"> Home</a>
-    
-    <a href="/tags/"> Tags</a>
-    
-    <a href="/about/"> About</a>
-    
-  </nav>
-
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/CsYakamoz" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-  </nav>
-  
-  
-  <div class="hidden description">Nothing to say</div>
-  
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">CsYakamoz</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
-<article class="article">
-  <header>
-    <h1 style="text-align: center;" >Javascript 函数传参类型</h1>
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Javascript 函数传参类型</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-09-09 10:54:59 CST">
+                09 Sep 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@CsYakamoz</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
 
-    <div class="post-meta">
-    
-      <time datetime="2020-09-09T10:54:59&#43;08:00">September 09, 2020</time> &nbsp; 
-    
-
-     &nbsp;
-
-    
-    
-    
-
-    
-      <i class="far fa-clock"></i>
-      
-      
-      
-
-      
-        2 min
-      
-      15 s
-      &nbsp;
-    
-
-    
-    </div>
-  </header>
-
-   
-
-  <div class="text">
-    <p>曾经我一度将 javascript 函数传参类型分为两种：</p>
+        <div class="post-content markdown-body">
+          
+          <p>曾经我一度将 javascript 函数传参类型分为两种：</p>
 <ol>
 <li>基本类型：值传递</li>
 <li>引用类型：引用传递</li>
 </ol>
 <p>后来我发现，其实都是<strong>值传递</strong>;</p>
 <p>先说明为啥曾经认为引用类型，是引用传递：</p>
-<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#859900">function</span> <span style="color:#268bd2">demo</span>(<span style="color:#268bd2">obj</span>) {
-  <span style="color:#268bd2">obj</span>.<span style="color:#268bd2">foo</span> = <span style="color:#2aa198">&#34;foo&#34;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">demo</span>(<span style="color:#a6e22e">obj</span>) {
+  <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>;
 }
 
-<span style="color:#859900">let</span> <span style="color:#268bd2">variable</span> = {};
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">variable</span> <span style="color:#f92672">=</span> {};
 
-<span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">variable</span>); <span style="color:#93a1a1;font-style:italic">// {}
-</span><span style="color:#93a1a1;font-style:italic"></span>
-<span style="color:#268bd2">demo</span>(<span style="color:#268bd2">variable</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">variable</span>); <span style="color:#75715e">// {}
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">demo</span>(<span style="color:#a6e22e">variable</span>);
 
-<span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">variable</span>); <span style="color:#93a1a1;font-style:italic">// { foo: &#39;foo&#39; }
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">variable</span>); <span style="color:#75715e">// { foo: &#39;foo&#39; }
 </span></code></pre></div><p>外部向函数 <code>demo</code> 传递实参 (<code>variable</code>);</p>
 <p>函数进行操作：向形参 (<code>obj</code>) 添加一个属性 (<code>foo</code>), 其值为 <code>foo</code>;</p>
 <p>um&hellip;, 函数内部的操作，会影响外部的变量，这是很像引用传递，但我们再看个例子：</p>
-<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#859900">function</span> <span style="color:#268bd2">demo</span>(<span style="color:#268bd2">obj</span>) {
-  <span style="color:#268bd2">obj</span> = { <span style="color:#268bd2">foo</span>: <span style="color:#2aa198">&#34;foo&#34;</span> };
-  <span style="color:#268bd2">obj</span>.<span style="color:#268bd2">bar</span> = <span style="color:#2aa198">&#34;bar&#34;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">demo</span>(<span style="color:#a6e22e">obj</span>) {
+  <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;foo&#34;</span> };
+  <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bar&#34;</span>;
 }
 
-<span style="color:#859900">let</span> <span style="color:#268bd2">variable</span> = {};
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">variable</span> <span style="color:#f92672">=</span> {};
 
-<span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">variable</span>); <span style="color:#93a1a1;font-style:italic">// {}
-</span><span style="color:#93a1a1;font-style:italic"></span>
-<span style="color:#268bd2">demo</span>(<span style="color:#268bd2">variable</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">variable</span>); <span style="color:#75715e">// {}
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">demo</span>(<span style="color:#a6e22e">variable</span>);
 
-<span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">variable</span>); <span style="color:#93a1a1;font-style:italic">// {}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">variable</span>); <span style="color:#75715e">// {}
 </span></code></pre></div><p>为什么第二个输出依旧是 <code>{}</code> ???</p>
 <hr>
 <p>后面查了资料，得到与 C/C++ 相同（或许只是类似？) 的概念</p>
@@ -145,75 +182,98 @@
 <li>引用类型：传递该对象在堆中的内存地址，即指针</li>
 </ol>
 
-  </div>
+        </div>
 
-  <footer>
-    <hr class="end-line">
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
 
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
     
-
+    <li><a href="/post/javascript-iterate-object-property-order/">JavaScript 遍历对象属性顺序</a></li>
     
-    <div class="post-tags">
-      <i class="fas fa-tags"></i>
-      
-        <a href="/tags/javascript">javascript</a>
-        &nbsp;
-      
-    </div>
+    <li><a href="/post/coding-style/">编码风格</a></li>
     
-
+    <li><a href="/post/nodejs-call-wechat-img-sec-check-api/">Node.js 调用微信小程序图片校验接口</a></li>
     
-    
-    <div class="releated-posts">
-      <h3>Related Posts</h3>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/javascript-iterate-object-property-order/">JavaScript 遍历对象属性顺序</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/coding-style/">编码风格</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/nodejs-call-wechat-img-sec-check-api/">Node.js 调用微信小程序图片校验接口</a>
-      <br>
-      
-      <i class="fas fa-paperclip"></i>
-      <a href="/post/nodejs-supported-encoding/">Node.js 支持的编码</a>
-      <br>
-      
-    </div>
-    
-  </footer>
-
-  <div class="comments">
-
-
-
+  </ul>
 </div>
 
-</article>
 
 
-</body>
-<div class="foot">
-  
-  
-    &copy; 2020 - 2021 &#183; 
-    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/js/lazyload.min.js"></script>
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://csyakamoz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   });
 </script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
 
+          </div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/CsYakamoz" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://leetcode.com/CsYakamoz/" target="_blank">LeetCode</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
 
 </html>
