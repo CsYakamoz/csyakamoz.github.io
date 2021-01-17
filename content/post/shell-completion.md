@@ -2,7 +2,6 @@
 title: "Shell 命令补全"
 date: 2020-10-27T18:50:16+08:00
 tags: ["shell"]
-draft: true
 ---
 
 ## Bash
