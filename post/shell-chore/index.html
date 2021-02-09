@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="CsYakamoz" />
+  <meta property="og:url" content="https://csyakamoz.github.io/post/shell-chore/" />
+  <link rel="canonical" href="https://csyakamoz.github.io/post/shell-chore/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://csyakamoz.github.ioindex.xml" title="CsYakamoz`s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/csyakamoz.github.io"
+      },
+      "articleSection" : "post",
+      "name" : "Shell 零碎笔记",
+      "headline" : "Shell 零碎笔记",
+      "description" : "命令补全 官方文档: man bash, 按 \/, 输入 Programmable Completion 回车\n团子的小窝 - 编写 Bash 补全脚本\n如何编写 bash 自动补全脚本\n检查某命令是否存在 来源: How can I check if a program exists from a Bash script?\ncommand -v \u0026lt;the_command\u0026gt; 例子:\nif ! command -v COMMAND \u0026amp;\u0026gt; \/dev\/null then echo \u0026#34;COMMAND could not be found\u0026#34; exit fi  \u0026amp;\u0026gt; 的意思可见: What are the shell\u0026rsquo;s control and redirection operators? or What\u0026rsquo;s the accurate meaning of “exec \u0026amp;\u0026gt;\/var\/log\/a.",
+      "inLanguage" : "en-US",
+      "author" : "CsYakamoz",
+      "creator" : "CsYakamoz",
+      "publisher": "CsYakamoz",
+      "accountablePerson" : "CsYakamoz",
+      "copyrightHolder" : "CsYakamoz",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-01-22 00:19:44 \u002b0800 CST",
+      "dateModified" : "2021-01-22 00:19:44 \u002b0800 CST",
+      "url" : "https:\/\/csyakamoz.github.io\/post\/shell-chore\/",
+      "keywords" : [ "shell", ]
+  }
+</script>
+<title>Shell 零碎笔记 - CsYakamoz`s Blog</title>
+  <meta property="og:title" content="Shell 零碎笔记 - CsYakamoz`s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="命令补全 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
+团子的小窝 - 编写 Bash 补全脚本
+如何编写 bash 自动补全脚本
+检查某命令是否存在 来源: How can I check if a program exists from a Bash script?
+command -v &lt;the_command&gt; 例子:
+if ! command -v COMMAND &amp;&gt; /dev/null then echo &#34;COMMAND could not be found&#34; exit fi  &amp;&gt; 的意思可见: What are the shell&rsquo;s control and redirection operators? or What&rsquo;s the accurate meaning of “exec &amp;&gt;/var/log/a." />
+  <meta name="description" content="命令补全 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
+团子的小窝 - 编写 Bash 补全脚本
+如何编写 bash 自动补全脚本
+检查某命令是否存在 来源: How can I check if a program exists from a Bash script?
+command -v &lt;the_command&gt; 例子:
+if ! command -v COMMAND &amp;&gt; /dev/null then echo &#34;COMMAND could not be found&#34; exit fi  &amp;&gt; 的意思可见: What are the shell&rsquo;s control and redirection operators? or What&rsquo;s the accurate meaning of “exec &amp;&gt;/var/log/a." />
+  <meta property="og:locale" content="zh-cn" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="CsYakamoz`s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+  
+</head>
+
+
+<body>
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">CsYakamoz</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Shell 零碎笔记</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2021-01-22 00:19:44 CST">
+                22 Jan 2021
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@CsYakamoz</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <h2 id="命令补全">命令补全</h2>
+<p>官方文档: <code>man bash</code>, 按 <code>/</code>, 输入 <code>Programmable Completion</code> 回车</p>
+<p><a href="https://kodango.com/bash-competion-programming">团子的小窝 - 编写 Bash 补全脚本</a></p>
+<p><a href="https://www.infoq.cn/article/bash-programmable-completion-tutorial">如何编写 bash 自动补全脚本</a></p>
+<h2 id="检查某命令是否存在">检查某命令是否存在</h2>
+<p>来源: <a href="https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script">How can I check if a program exists from a Bash script?</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">command -v &lt;the_command&gt;
+</code></pre></div><p>例子:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">if</span> ! command -v COMMAND &amp;&gt; /dev/null
+<span style="color:#66d9ef">then</span>
+    echo <span style="color:#e6db74">&#34;COMMAND could not be found&#34;</span>
+    exit
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><blockquote>
+<p><code>&amp;&gt;</code> 的意思可见: <a href="https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators">What are the shell&rsquo;s control and redirection operators?</a> or <a href="https://serverfault.com/questions/739009/whats-the-accurate-meaning-of-exec-var-log-a-log-in-a-shell-script">What&rsquo;s the accurate meaning of “exec &amp;&gt;/var/log/a.log” in a shell script?</a></p>
+</blockquote>
+<h2 id="排序版本号">排序版本号</h2>
+<p>使用 <code>sort</code> 命令, 配合 <code>-V</code> 选项</p>
+<blockquote>
+<p>-V, &ndash;version-sort</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 从小到大排序</span>
+echo -e <span style="color:#e6db74">&#39;1.2.100.4\n1.2.3.4\n10.1.2.3\n9.1.2.3&#39;</span> | sort -V
+
+<span style="color:#75715e"># output</span>
+<span style="color:#75715e"># 1.2.3.4</span>
+<span style="color:#75715e"># 1.2.100.4</span>
+<span style="color:#75715e"># 9.1.2.3</span>
+<span style="color:#75715e"># 10.1.2.3</span>
+
+<span style="color:#75715e"># 从大到小排序</span>
+echo -e <span style="color:#e6db74">&#39;1.2.100.4\n1.2.3.4\n10.1.2.3\n9.1.2.3&#39;</span> | sort -rV
+
+<span style="color:#75715e"># output</span>
+<span style="color:#75715e"># 10.1.2.3</span>
+<span style="color:#75715e"># 9.1.2.3</span>
+<span style="color:#75715e"># 1.2.100.4</span>
+<span style="color:#75715e"># 1.2.3.4</span>
+</code></pre></div><h2 id="检查某命令软件的是满足最低版本">检查某命令(软件)的是满足最低版本</h2>
+<p>来源: <a href="https://unix.stackexchange.com/questions/285924/how-to-compare-a-programs-version-in-a-shell-script">How to compare a program&rsquo;s version in a shell script?</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>currentver<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>gcc -dumpversion<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+requiredver<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;5.0.0&#34;</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>printf <span style="color:#e6db74">&#39;%s\n&#39;</span> <span style="color:#e6db74">&#34;</span>$requiredver<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$currentver<span style="color:#e6db74">&#34;</span> | sort -V | head -n1<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span>$requiredver<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+       echo <span style="color:#e6db74">&#34;Greater than or equal to </span><span style="color:#e6db74">${</span>requiredver<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">else</span>
+       echo <span style="color:#e6db74">&#34;Less than </span><span style="color:#e6db74">${</span>requiredver<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><h2 id="快速复制-id_rsapub-到远程服务器">快速复制 id_rsa.pub 到远程服务器</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-copy-id -i identity_file user@hostname
+</code></pre></div><h2 id="快速备份某文件">快速备份某文件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp filename<span style="color:#f92672">{</span>,.bak<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># 等价于 cp filename filename.bak</span>
+</code></pre></div><p>这里使用了 <a href="https://wangdoc.com/bash/expansion.html#%E5%A4%A7%E6%8B%AC%E5%8F%B7%E6%89%A9%E5%B1%95">Bash 的模式扩展</a></p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/shell-note/">Shell 笔记</a></li>
+    
+    <li><a href="/post/shell-sequence-expression/">Shell 序列表达式</a></li>
+    
+    <li><a href="/post/shell-handle-text-by-line/">Shell 按行处理文本</a></li>
+    
+  </ul>
+</div>
+
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/CsYakamoz" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://leetcode.com/CsYakamoz/" target="_blank">LeetCode</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

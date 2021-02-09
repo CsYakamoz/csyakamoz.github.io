@@ -6,16 +6,19 @@
     <description>Recent content in shell on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 27 Oct 2020 18:50:16 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jan 2021 00:19:44 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Shell 命令补全</title>
-      <link>https://csyakamoz.github.io/post/shell-completion/</link>
-      <pubDate>Tue, 27 Oct 2020 18:50:16 +0800</pubDate>
+      <title>Shell 零碎笔记</title>
+      <link>https://csyakamoz.github.io/post/shell-chore/</link>
+      <pubDate>Fri, 22 Jan 2021 00:19:44 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-completion/</guid>
-      <description>Bash 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
+      <guid>https://csyakamoz.github.io/post/shell-chore/</guid>
+      <description>命令补全 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
 团子的小窝 - 编写 Bash 补全脚本
-如何编写 bash 自动补全脚本</description>
+如何编写 bash 自动补全脚本
+检查某命令是否存在 来源: How can I check if a program exists from a Bash script?
+command -v &amp;lt;the_command&amp;gt; 例子:
+if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null then echo &amp;#34;COMMAND could not be found&amp;#34; exit fi  &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
     </item>
     
     <item>
