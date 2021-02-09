@@ -15,8 +15,7 @@ DefaultContentLanguage = "cn"
     weight = 1
 
 [params]
-disqus = "csyakamoz"
-mainSections = ["post"]
+mainSections = ["post", "tags"]
 
 [[params.socials]]
 name = "Github"
