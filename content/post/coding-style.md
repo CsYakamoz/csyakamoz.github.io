@@ -18,13 +18,13 @@ tags: ["javascript", "coding-style"]
 
 > one tab is equal to 2, 4, 8 space
 
-- `no-tabs`
+- [`no-tabs`](https://eslint.org/docs/rules/no-tabs)
 
 ## 坚持使用分号
 
 纵然很多人依旧坚持不使用分号，但我就喜欢加分号，就这么滴。
 
-- `semi`
+- [`semi`](https://eslint.org/docs/rules/semi)
 
 ## 坚持使用大括号
 
@@ -60,9 +60,9 @@ if (test) {
 }
 ```
 
-- `curly`
-- `brace-style`
-- `nonblock-statement-body-position`
+- [`curly`](https://eslint.org/docs/rules/curly)
+- [`brace-style`](https://eslint.org/docs/rules/brace-style)
+- [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
 
 ## const 优于 let, 弃用 var
 
@@ -112,10 +112,10 @@ const getDiscount = ({ isLoggedIn, cartTotal, isValuedCustomer }) => {
 const discount = getDiscount({ isLoggedIn, isValuedCustomer, cartTotal });
 ```
 
-- `no-undef`
-- `prefer-const`
-- `no-const-assign`
-- `no-var`
+- [`no-undef`](https://eslint.org/docs/rules/no-undef)
+- [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
+- [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign)
+- [`no-var`](https://eslint.org/docs/rules/no-var)
 
 ## 多个变量声明或赋值，则每个变量分开声明或赋值
 
@@ -162,7 +162,7 @@ let i;
 let length;
 ```
 
-- `one-var`
+- [`one-var`](https://eslint.org/docs/rules/one-var)
 
 ## 在需要时，才声明变量
 
@@ -241,7 +241,7 @@ var { type, ...coords } = data;
 // 'coords' is now the 'data' object without its 'type' property.
 ```
 
-- `no-unused-vars`
+- [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
 
 ## 变量，常量，函数和类的命名约定
 
@@ -253,8 +253,8 @@ var { type, ...coords } = data;
 
 这将帮助您轻松地区分普通变量 / 函数和需要实例化的类；使用描述性名称，但使它们尽量简短。
 
-- `camelcase`
-- `new-cap`
+- [`camelcase`](https://eslint.org/docs/rules/camelcase)
+- [`new-cap`](https://eslint.org/docs/rules/new-cap)
 
 ## if...elif...else 的注释
 
@@ -294,7 +294,7 @@ const good = {
 };
 ```
 
-- `quote-props`
+- [`quote-props`](https://eslint.org/docs/rules/quote-props)
 
 ## 优先使用对象字面量简写语法
 
@@ -338,7 +338,7 @@ const atom = {
 };
 ```
 
-- `object-shorthand`
+- [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand)
 
 ## 优先通过扩展运算符来浅拷贝对象，数组
 
@@ -373,7 +373,7 @@ for (i = 0; i < len; i += 1) {
 const itemsCopy = [...items];
 ```
 
-- `prefer-object-spread`
+- [`prefer-object-spread`](https://eslint.org/docs/rules/prefer-object-spread)
 
 ## 尽可能使用解构赋值
 
@@ -409,7 +409,7 @@ const second = arr[1];
 const [first, second] = arr;
 ```
 
-- `prefer-destructuring`
+- [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
 
 ## 字符串避免无用的转义
 
@@ -422,7 +422,7 @@ const foo = "'this' is \"quoted\"";
 const foo = `my name is '${name}'`;
 ```
 
-- `no-useless-escape`
+- [`no-useless-escape`](https://eslint.org/docs/rules/no-useless-escape)
 
 ## 如果函数返回值有多个，且意义不一样，优先考虑对象
 
@@ -496,7 +496,7 @@ new Date(...[2016, 8, 5]);
 });
 ```
 
-- `prefer-arrow-callback`
+- [`prefer-arrow-callback`](https://eslint.org/docs/rules/prefer-arrow-callback)
 
 ## 限制函数参数个数
 
@@ -518,13 +518,13 @@ function foo({ bar, baz, qux, xyz }) {
 }
 ```
 
-- `max-params`
+- [`max-params`](https://eslint.org/docs/rules/max-params)
 
 ## 禁止对函数参数再赋值
 
 上文提到过 `const` 的好处，对于函数参数，道理是一样滴。
 
-- `no-param-reassign`
+- [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign)
 
 ## 函数表达式优于函数声明
 
@@ -548,13 +548,13 @@ const short = function longUniqueMoreDescriptiveLexicalFoo() {
 };
 ```
 
-- `func-style`
+- [`func-style`](https://eslint.org/docs/rules/func-style)
 
 ## 建议使用剩余参数代替 arguments
 
 `arguments` 没有 `Array.prototype` 方法，所以有点不方便。
 
-- `prefer-rest-params`
+- [`prefer-rest-params`](https://eslint.org/docs/rules/prefer-rest-params)
 
 ```javascript
 // bad
@@ -578,7 +578,7 @@ JavaScript 中的异步函数与其他函数在两个重要方面表现不同：
 
 不使用 `await` 的异步函数可能不需要是异步函数（但函数返回值却是`Promise`) , 也可能是重构的意外结果。
 
-- `require-await`
+- [`require-await`](https://eslint.org/docs/rules/require-await)
 
 ## 避免不必要的 return await
 
@@ -588,7 +588,7 @@ JavaScript 中的异步函数与其他函数在两个重要方面表现不同：
 
 唯一有效是，如果 try/catch 语句中使用 `return await` 来捕获另一个基于 Promise 的函数的错误，则会出现异常。
 
-- `no-return-await`
+- [`no-return-await`](https://eslint.org/docs/rules/no-return-await)
 
 ## 函数表达式或箭头函数如果只有一个参数，也加上括号
 
@@ -625,7 +625,7 @@ JavaScript 中的异步函数与其他函数在两个重要方面表现不同：
 });
 ```
 
-- `arrow-parens`
+- [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens)
 
 ## 不使用魔术数字 (Magic Number)
 
@@ -635,13 +635,13 @@ JavaScript 中的异步函数与其他函数在两个重要方面表现不同：
 
 > 本人已在团队中遇到过这种情况（自己写的和他人写的都有！), 所以这个规则是很重要滴！
 
-- `no-magic-numbers`
+- [`no-magic-numbers`](https://eslint.org/docs/rules/no-magic-numbers)
 
 ## 使用严格比较运算符
 
 严格比较运算符不会尝试转换它们为恰当的类型来比较。
 
-- `eqeqeq`
+- [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq)
 
 ## 条件语句中的条件需写清楚比较对象，除了布尔值
 
@@ -733,7 +733,7 @@ switch (foo) {
 }
 ```
 
-- `no-case-declarations`
+- [`no-case-declarations`](https://eslint.org/docs/rules/no-case-declarations)
 
 ## 避免长文件
 
@@ -741,7 +741,7 @@ switch (foo) {
 
 因此建议将大文件拆分成更细粒度的模块。
 
-- `max-lines`
+- [`max-lines`](https://eslint.org/docs/rules/max-lines)
 
 ## 避免长函数
 
@@ -749,7 +749,7 @@ switch (foo) {
 
 而且函数职责太多，很难测试。
 
-- `max-lines-per-function`
+- [`max-lines-per-function`](https://eslint.org/docs/rules/max-lines-per-function)
 
 ## 避免复杂函数
 
@@ -759,9 +759,9 @@ switch (foo) {
 
 > 圈复杂度：它指的是给定函数中的语句（逻辑）数，诸如 if 语句，循环和 switch 语句
 
-- `complexity`
-- `max-nested-callbacks`
-- `max-depth`
+- [`complexity`](https://eslint.org/docs/rules/complexity)
+- [`max-nested-callbacks`](https://eslint.org/docs/rules/max-nested-callbacks)
+- [`max-depth`](https://eslint.org/docs/rules/max-depth)
 
 ## 避免嵌套层级过深
 
@@ -819,8 +819,8 @@ function pow(x, n) {
 }
 ```
 
-- `max-depth`
-- `no-else-return`
+- [`max-depth`](https://eslint.org/docs/rules/max-depth)
+- [`no-else-return`](https://eslint.org/docs/rules/no-else-return)
 
 ## 禁止抛出异常字面量
 
@@ -830,8 +830,8 @@ function pow(x, n) {
 
 同时，传递给 `Promise` 的 `reject` 也应该是 `Error` 类对象
 
-- `no-throw-literal`
-- `prefer-promise-reject-errors`
+- [`no-throw-literal`](https://eslint.org/docs/rules/no-throw-literal)
+- [`prefer-promise-reject-errors`](https://eslint.org/docs/rules/prefer-promise-reject-errors)
 
 ## 避免不必要的 catch 子句
 
@@ -839,7 +839,7 @@ function pow(x, n) {
 
 这些冗余子句可能会导致混乱和代码膨胀，所以最好不要使用这些不必要的 catch 子句。
 
-- `no-useless-catch`
+- [`no-useless-catch`](https://eslint.org/docs/rules/no-useless-catch)
 
 ## 建议在正则表达式中使用命名捕获组
 
@@ -863,7 +863,7 @@ const baz = RegExp("(?<id>ba[rz])");
 foo.exec("bar").groups.id; // Retrieve the group result.
 ```
 
-- `prefer-named-capture-group`
+- [`prefer-named-capture-group`](https://eslint.org/docs/rules/prefer-named-capture-group)
 
 ## 变量命名习惯
 
@@ -871,6 +871,9 @@ foo.exec("bar").groups.id; // Retrieve the group result.
 - 用 min, max 表示数量范围
 - 用 first, last 表示闭区间
 - 用 begin, end 表示左闭右开区间
+- 用 prev, curr, next 表示前者，当前，后者
+
+更多信息，请见 [naming-cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
 
 ## 辅助函数的位置
 
@@ -916,6 +919,27 @@ foo.exec("bar").groups.id; // Retrieve the group result.
 
 当知道该模块的主要逻辑后，我们可能就不需要去看辅助函数了。
 
+## 总是添加额外的逗号
+
+```diff
+// bad - git diff without trailing comma
+const hero = {
+     firstName: 'Florence',
+-    lastName: 'Nightingale'
++    lastName: 'Nightingale',
++    inventorOf: ['coxcomb chart', 'modern nursing']
+};
+
+// good - git diff with trailing comma
+const hero = {
+     firstName: 'Florence',
+     lastName: 'Nightingale',
++    inventorOf: ['coxcomb chart', 'modern nursing'],
+};
+```
+
+- [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle): eslint 使用该规则， 但个人是通过 prettier 的 [`trailingComma`](https://prettier.io/docs/en/options.html#trailing-commas) 来控制；
+
 ## 参考
 
 - [JS 代码脏乱差？你需要知道这些优化技巧](https://www.infoq.cn/article/UDsIAw36kwXwkXLNx_QT)
@@ -923,3 +947,4 @@ foo.exec("bar").groups.id; // Retrieve the group result.
 - [Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Cs-Notes](https://github.com/CyC2018/CS-Notes)
+- [naming-cheatsheet](https://github.com/kettanaito/naming-cheatsheet)

@@ -1,5 +1,5 @@
 ---
-title: "Shell 笔记"
+title: "Shell 基础"
 date: 2020-09-09T11:35:19+08:00
 tags: ["shell"]
 ---
