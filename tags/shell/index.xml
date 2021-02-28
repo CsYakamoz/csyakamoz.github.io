@@ -22,11 +22,11 @@ if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null then echo &amp;#34;COMMAND c
     </item>
     
     <item>
-      <title>Shell 笔记</title>
-      <link>https://csyakamoz.github.io/post/shell-note/</link>
+      <title>Shell 基础</title>
+      <link>https://csyakamoz.github.io/post/shell-basic/</link>
       <pubDate>Wed, 09 Sep 2020 11:35:19 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-note/</guid>
+      <guid>https://csyakamoz.github.io/post/shell-basic/</guid>
       <description>Lint  ShellCheck, a static analysis tool for shell scripts
  建议使用 ShellCheck, 以检查脚本中潜在的问题
 Shebang shebang 即 #! , 其后面跟的是解释当前脚本的解释器路径

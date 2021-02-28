@@ -131,12 +131,12 @@ Notice: 请优先以团队约定为准！
 <p>one tab is equal to 2, 4, 8 space</p>
 </blockquote>
 <ul>
-<li><code>no-tabs</code></li>
+<li><a href="https://eslint.org/docs/rules/no-tabs"><code>no-tabs</code></a></li>
 </ul>
 <h2 id="坚持使用分号">坚持使用分号</h2>
 <p>纵然很多人依旧坚持不使用分号，但我就喜欢加分号，就这么滴。</p>
 <ul>
-<li><code>semi</code></li>
+<li><a href="https://eslint.org/docs/rules/semi"><code>semi</code></a></li>
 </ul>
 <h2 id="坚持使用大括号">坚持使用大括号</h2>
 <p>即使只有一条语句，也依旧要使用大括号；</p>
@@ -167,9 +167,9 @@ Notice: 请优先以团队约定为准！
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
 }
 </code></pre></div><ul>
-<li><code>curly</code></li>
-<li><code>brace-style</code></li>
-<li><code>nonblock-statement-body-position</code></li>
+<li><a href="https://eslint.org/docs/rules/curly"><code>curly</code></a></li>
+<li><a href="https://eslint.org/docs/rules/brace-style"><code>brace-style</code></a></li>
+<li><a href="https://eslint.org/docs/rules/nonblock-statement-body-position"><code>nonblock-statement-body-position</code></a></li>
 </ul>
 <h2 id="const-优于-let-弃用-var">const 优于 let, 弃用 var</h2>
 <p><code>var</code> 的坏处，此处不一一阐述；</p>
@@ -211,10 +211,10 @@ Notice: 请优先以团队约定为准！
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">discount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getDiscount</span>({ <span style="color:#a6e22e">isLoggedIn</span>, <span style="color:#a6e22e">isValuedCustomer</span>, <span style="color:#a6e22e">cartTotal</span> });
 </code></pre></div><ul>
-<li><code>no-undef</code></li>
-<li><code>prefer-const</code></li>
-<li><code>no-const-assign</code></li>
-<li><code>no-var</code></li>
+<li><a href="https://eslint.org/docs/rules/no-undef"><code>no-undef</code></a></li>
+<li><a href="https://eslint.org/docs/rules/prefer-const"><code>prefer-const</code></a></li>
+<li><a href="https://eslint.org/docs/rules/no-const-assign"><code>no-const-assign</code></a></li>
+<li><a href="https://eslint.org/docs/rules/no-var"><code>no-var</code></a></li>
 </ul>
 <h2 id="多个变量声明或赋值则每个变量分开声明或赋值">多个变量声明或赋值，则每个变量分开声明或赋值</h2>
 <p><code>let</code> 声明放在一组，<code>const</code> 则放在另外一组</p>
@@ -257,7 +257,7 @@ Notice: 请优先以团队约定为准！
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span>;
 <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">length</span>;
 </code></pre></div><ul>
-<li><code>one-var</code></li>
+<li><a href="https://eslint.org/docs/rules/one-var"><code>one-var</code></a></li>
 </ul>
 <h2 id="在需要时才声明变量">在需要时，才声明变量</h2>
 <p>而不是一开始就声明可能用到的变量</p>
@@ -329,7 +329,7 @@ Notice: 请优先以团队约定为准！
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> { <span style="color:#a6e22e">type</span>, ...<span style="color:#a6e22e">coords</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>;
 <span style="color:#75715e">// &#39;coords&#39; is now the &#39;data&#39; object without its &#39;type&#39; property.
 </span></code></pre></div><ul>
-<li><code>no-unused-vars</code></li>
+<li><a href="https://eslint.org/docs/rules/no-unused-vars"><code>no-unused-vars</code></a></li>
 </ul>
 <h2 id="变量常量函数和类的命名约定">变量，常量，函数和类的命名约定</h2>
 <p>当命名变量和方法的时候，使用 <strong>lowerCamelCase</strong>;</p>
@@ -337,8 +337,8 @@ Notice: 请优先以团队约定为准！
 <p>对于常量，则 <strong>UPPERCASE with Underscore</strong>;</p>
 <p>这将帮助您轻松地区分普通变量 / 函数和需要实例化的类；使用描述性名称，但使它们尽量简短。</p>
 <ul>
-<li><code>camelcase</code></li>
-<li><code>new-cap</code></li>
+<li><a href="https://eslint.org/docs/rules/camelcase"><code>camelcase</code></a></li>
+<li><a href="https://eslint.org/docs/rules/new-cap"><code>new-cap</code></a></li>
 </ul>
 <h2 id="ifelifelse-的注释">if&hellip;elif&hellip;else 的注释</h2>
 <p>因为 <code>else</code> 与 <code>if</code> 的 <code>}</code> 处在同一行，其注释写法可以如下</p>
@@ -370,7 +370,7 @@ Notice: 请优先以团队约定为准！
   <span style="color:#e6db74">&#39;data-blah&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
 };
 </code></pre></div><ul>
-<li><code>quote-props</code></li>
+<li><a href="https://eslint.org/docs/rules/quote-props"><code>quote-props</code></a></li>
 </ul>
 <h2 id="优先使用对象字面量简写语法">优先使用对象字面量简写语法</h2>
 <p>简写语法：</p>
@@ -410,7 +410,7 @@ Notice: 请优先以团队约定为准！
   },
 };
 </code></pre></div><ul>
-<li><code>object-shorthand</code></li>
+<li><a href="https://eslint.org/docs/rules/object-shorthand"><code>object-shorthand</code></a></li>
 </ul>
 <h2 id="优先通过扩展运算符来浅拷贝对象数组">优先通过扩展运算符来浅拷贝对象，数组</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/* 对象 */</span>
@@ -442,7 +442,7 @@ Notice: 请优先以团队约定为准！
 <span style="color:#75715e">// good
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">itemsCopy</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">items</span>];
 </code></pre></div><ul>
-<li><code>prefer-object-spread</code></li>
+<li><a href="https://eslint.org/docs/rules/prefer-object-spread"><code>prefer-object-spread</code></a></li>
 </ul>
 <h2 id="尽可能使用解构赋值">尽可能使用解构赋值</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// bad
@@ -475,7 +475,7 @@ Notice: 请优先以团队约定为准！
 <span style="color:#75715e">// good
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">first</span>, <span style="color:#a6e22e">second</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>;
 </code></pre></div><ul>
-<li><code>prefer-destructuring</code></li>
+<li><a href="https://eslint.org/docs/rules/prefer-destructuring"><code>prefer-destructuring</code></a></li>
 </ul>
 <h2 id="字符串避免无用的转义">字符串避免无用的转义</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// bad
@@ -485,7 +485,7 @@ Notice: 请优先以团队约定为准！
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#39;this&#39; is \&#34;quoted\&#34;&#34;</span>;
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`my name is &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;`</span>;
 </code></pre></div><ul>
-<li><code>no-useless-escape</code></li>
+<li><a href="https://eslint.org/docs/rules/no-useless-escape"><code>no-useless-escape</code></a></li>
 </ul>
 <h2 id="如果函数返回值有多个且意义不一样优先考虑对象">如果函数返回值有多个，且意义不一样，优先考虑对象</h2>
 <blockquote>
@@ -545,7 +545,7 @@ Notice: 请优先以团队约定为准！
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">y</span>;
 });
 </code></pre></div><ul>
-<li><code>prefer-arrow-callback</code></li>
+<li><a href="https://eslint.org/docs/rules/prefer-arrow-callback"><code>prefer-arrow-callback</code></a></li>
 </ul>
 <h2 id="限制函数参数个数">限制函数参数个数</h2>
 <p>函数如果有许多参数的话，会难以阅读和书写，因为要记住每个参数是什么，它的类型以及它们出现顺序；</p>
@@ -561,12 +561,12 @@ Notice: 请优先以团队约定为准！
   <span style="color:#a6e22e">doSomething</span>();
 }
 </code></pre></div><ul>
-<li><code>max-params</code></li>
+<li><a href="https://eslint.org/docs/rules/max-params"><code>max-params</code></a></li>
 </ul>
 <h2 id="禁止对函数参数再赋值">禁止对函数参数再赋值</h2>
 <p>上文提到过 <code>const</code> 的好处，对于函数参数，道理是一样滴。</p>
 <ul>
-<li><code>no-param-reassign</code></li>
+<li><a href="https://eslint.org/docs/rules/no-param-reassign"><code>no-param-reassign</code></a></li>
 </ul>
 <h2 id="函数表达式优于函数声明">函数表达式优于函数声明</h2>
 <p>理由请见：<a href="https://github.com/airbnb/javascript#functions--declarations">https://github.com/airbnb/javascript#functions&ndash;declarations</a></p>
@@ -586,12 +586,12 @@ Notice: 请优先以团队约定为准！
   <span style="color:#75715e">// ...
 </span><span style="color:#75715e"></span>};
 </code></pre></div><ul>
-<li><code>func-style</code></li>
+<li><a href="https://eslint.org/docs/rules/func-style"><code>func-style</code></a></li>
 </ul>
 <h2 id="建议使用剩余参数代替-arguments">建议使用剩余参数代替 arguments</h2>
 <p><code>arguments</code> 没有 <code>Array.prototype</code> 方法，所以有点不方便。</p>
 <ul>
-<li><code>prefer-rest-params</code></li>
+<li><a href="https://eslint.org/docs/rules/prefer-rest-params"><code>prefer-rest-params</code></a></li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// bad
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">concatenateAll</span>() {
@@ -611,14 +611,14 @@ Notice: 请优先以团队约定为准！
 </ol>
 <p>不使用 <code>await</code> 的异步函数可能不需要是异步函数（但函数返回值却是<code>Promise</code>) , 也可能是重构的意外结果。</p>
 <ul>
-<li><code>require-await</code></li>
+<li><a href="https://eslint.org/docs/rules/require-await"><code>require-await</code></a></li>
 </ul>
 <h2 id="避免不必要的-return-await">避免不必要的 return await</h2>
 <p>在 <code>async function</code>, <code>return await</code> 很少有用；</p>
 <p>因为 <code>async function</code> 的返回值总是封装在 <code>Promise.resolve</code>, <code>return await</code> 实际上并没有做任何事情，只是在 Promise resolve 或 reject 之前增加了额外的时间；</p>
 <p>唯一有效是，如果 try/catch 语句中使用 <code>return await</code> 来捕获另一个基于 Promise 的函数的错误，则会出现异常。</p>
 <ul>
-<li><code>no-return-await</code></li>
+<li><a href="https://eslint.org/docs/rules/no-return-await"><code>no-return-await</code></a></li>
 </ul>
 <h2 id="函数表达式或箭头函数如果只有一个参数也加上括号">函数表达式或箭头函数如果只有一个参数，也加上括号</h2>
 <blockquote>
@@ -653,7 +653,7 @@ Notice: 请优先以团队约定为准！
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">y</span>;
 });
 </code></pre></div><ul>
-<li><code>arrow-parens</code></li>
+<li><a href="https://eslint.org/docs/rules/arrow-parens"><code>arrow-parens</code></a></li>
 </ul>
 <h2 id="不使用魔术数字-magic-number">不使用魔术数字 (Magic Number)</h2>
 <p><a href="https://en.wikipedia.org/wiki/Magic_number_(programming)">魔术数字</a> 可以是指硬编码在代码里的具体数值（如 “10”“123” 等以数字直接写出的值）;</p>
@@ -662,12 +662,12 @@ Notice: 请优先以团队约定为准！
 <p>本人已在团队中遇到过这种情况（自己写的和他人写的都有！), 所以这个规则是很重要滴！</p>
 </blockquote>
 <ul>
-<li><code>no-magic-numbers</code></li>
+<li><a href="https://eslint.org/docs/rules/no-magic-numbers"><code>no-magic-numbers</code></a></li>
 </ul>
 <h2 id="使用严格比较运算符">使用严格比较运算符</h2>
 <p>严格比较运算符不会尝试转换它们为恰当的类型来比较。</p>
 <ul>
-<li><code>eqeqeq</code></li>
+<li><a href="https://eslint.org/docs/rules/eqeqeq"><code>eqeqeq</code></a></li>
 </ul>
 <h2 id="条件语句中的条件需写清楚比较对象除了布尔值">条件语句中的条件需写清楚比较对象，除了布尔值</h2>
 <ul>
@@ -751,19 +751,19 @@ Notice: 请优先以团队约定为准！
   }
 }
 </code></pre></div><ul>
-<li><code>no-case-declarations</code></li>
+<li><a href="https://eslint.org/docs/rules/no-case-declarations"><code>no-case-declarations</code></a></li>
 </ul>
 <h2 id="避免长文件">避免长文件</h2>
 <p>根据个人经验，一个特别长的代码文件，很难理解，和维护；</p>
 <p>因此建议将大文件拆分成更细粒度的模块。</p>
 <ul>
-<li><code>max-lines</code></li>
+<li><a href="https://eslint.org/docs/rules/max-lines"><code>max-lines</code></a></li>
 </ul>
 <h2 id="避免长函数">避免长函数</h2>
 <p>程序复杂度的一个来源是漫长而复杂的函数，很难推理；</p>
 <p>而且函数职责太多，很难测试。</p>
 <ul>
-<li><code>max-lines-per-function</code></li>
+<li><a href="https://eslint.org/docs/rules/max-lines-per-function"><code>max-lines-per-function</code></a></li>
 </ul>
 <h2 id="避免复杂函数">避免复杂函数</h2>
 <p>复杂函数往往就是长函数，反之亦然；</p>
@@ -772,9 +772,9 @@ Notice: 请优先以团队约定为准！
 <p>圈复杂度：它指的是给定函数中的语句（逻辑）数，诸如 if 语句，循环和 switch 语句</p>
 </blockquote>
 <ul>
-<li><code>complexity</code></li>
-<li><code>max-nested-callbacks</code></li>
-<li><code>max-depth</code></li>
+<li><a href="https://eslint.org/docs/rules/complexity"><code>complexity</code></a></li>
+<li><a href="https://eslint.org/docs/rules/max-nested-callbacks"><code>max-nested-callbacks</code></a></li>
+<li><a href="https://eslint.org/docs/rules/max-depth"><code>max-depth</code></a></li>
 </ul>
 <h2 id="避免嵌套层级过深">避免嵌套层级过深</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// bad
@@ -826,22 +826,22 @@ Notice: 请优先以团队约定为准！
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>;
 }
 </code></pre></div><ul>
-<li><code>max-depth</code></li>
-<li><code>no-else-return</code></li>
+<li><a href="https://eslint.org/docs/rules/max-depth"><code>max-depth</code></a></li>
+<li><a href="https://eslint.org/docs/rules/no-else-return"><code>no-else-return</code></a></li>
 </ul>
 <h2 id="禁止抛出异常字面量">禁止抛出异常字面量</h2>
 <p>当抛错时，仅抛出 <code>Error</code> 类，或者以 <code>Error</code> 为父类的继承类的错误；</p>
 <p>使用 <code>Error</code> 类对象最基本的好处是它们能自动地追踪到异常产生和起源的地方。</p>
 <p>同时，传递给 <code>Promise</code> 的 <code>reject</code> 也应该是 <code>Error</code> 类对象</p>
 <ul>
-<li><code>no-throw-literal</code></li>
-<li><code>prefer-promise-reject-errors</code></li>
+<li><a href="https://eslint.org/docs/rules/no-throw-literal"><code>no-throw-literal</code></a></li>
+<li><a href="https://eslint.org/docs/rules/prefer-promise-reject-errors"><code>prefer-promise-reject-errors</code></a></li>
 </ul>
 <h2 id="避免不必要的-catch-子句">避免不必要的 catch 子句</h2>
 <p>只重新抛出原始错误的 catch 子句是冗余的，对程序的运行时行为没有影响；</p>
 <p>这些冗余子句可能会导致混乱和代码膨胀，所以最好不要使用这些不必要的 catch 子句。</p>
 <ul>
-<li><code>no-useless-catch</code></li>
+<li><a href="https://eslint.org/docs/rules/no-useless-catch"><code>no-useless-catch</code></a></li>
 </ul>
 <h2 id="建议在正则表达式中使用命名捕获组">建议在正则表达式中使用命名捕获组</h2>
 <p>随着 ECMAScript 2018 的发布，命名捕获组可以用于正则表达式中，这可以提高正则表达式的可读性。</p>
@@ -860,7 +860,7 @@ Notice: 请优先以团队约定为准！
 
 <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;bar&#34;</span>).<span style="color:#a6e22e">groups</span>.<span style="color:#a6e22e">id</span>; <span style="color:#75715e">// Retrieve the group result.
 </span></code></pre></div><ul>
-<li><code>prefer-named-capture-group</code></li>
+<li><a href="https://eslint.org/docs/rules/prefer-named-capture-group"><code>prefer-named-capture-group</code></a></li>
 </ul>
 <h2 id="变量命名习惯">变量命名习惯</h2>
 <ul>
@@ -868,7 +868,9 @@ Notice: 请优先以团队约定为准！
 <li>用 min, max 表示数量范围</li>
 <li>用 first, last 表示闭区间</li>
 <li>用 begin, end 表示左闭右开区间</li>
+<li>用 prev, curr, next 表示前者，当前，后者</li>
 </ul>
+<p>更多信息，请见 <a href="https://github.com/kettanaito/naming-cheatsheet">naming-cheatsheet</a></p>
 <h2 id="辅助函数的位置">辅助函数的位置</h2>
 <p>如果你正在写“辅助”函数和这些函数的调用代码，那么有下列这几种方式来处理调用代码的位置。</p>
 <ol>
@@ -907,6 +909,24 @@ Notice: 请优先以团队约定为准！
 <p>大多数情况下，我都是用第一种。 因为模块在大部分情况下都是导出函数；</p>
 <p>其次，自己或别人在阅读该模块时，首先看到的就是该模块的主要逻辑，即能知道该模块做了什么（当然，这依赖辅助函数的命名是否足够好）；</p>
 <p>当知道该模块的主要逻辑后，我们可能就不需要去看辅助函数了。</p>
+<h2 id="总是添加额外的逗号">总是添加额外的逗号</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">// bad - git diff without trailing comma
+const hero = {
+     firstName: &#39;Florence&#39;,
+<span style="color:#f92672">-    lastName: &#39;Nightingale&#39;
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+    lastName: &#39;Nightingale&#39;,
+</span><span style="color:#a6e22e">+    inventorOf: [&#39;coxcomb chart&#39;, &#39;modern nursing&#39;]
+</span><span style="color:#a6e22e"></span>};
+
+// good - git diff with trailing comma
+const hero = {
+     firstName: &#39;Florence&#39;,
+     lastName: &#39;Nightingale&#39;,
+<span style="color:#a6e22e">+    inventorOf: [&#39;coxcomb chart&#39;, &#39;modern nursing&#39;],
+</span><span style="color:#a6e22e"></span>};
+</code></pre></div><ul>
+<li><a href="https://eslint.org/docs/rules/comma-dangle"><code>comma-dangle</code></a>: eslint 使用该规则， 但个人是通过 prettier 的 <a href="https://prettier.io/docs/en/options.html#trailing-commas"><code>trailingComma</code></a> 来控制；</li>
+</ul>
 <h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://www.infoq.cn/article/UDsIAw36kwXwkXLNx_QT">JS 代码脏乱差？你需要知道这些优化技巧</a></li>
@@ -914,6 +934,7 @@ Notice: 请优先以团队约定为准！
 <li><a href="https://github.com/goldbergyoni/nodebestpractices">Node.js Best Practices</a></li>
 <li><a href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a></li>
 <li><a href="https://github.com/CyC2018/CS-Notes">Cs-Notes</a></li>
+<li><a href="https://github.com/kettanaito/naming-cheatsheet">naming-cheatsheet</a></li>
 </ul>
 
         </div>
