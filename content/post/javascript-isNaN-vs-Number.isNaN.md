@@ -1,6 +1,6 @@
 ---
 title: "JavaScript 中 isNaN 和 Number.isNaN 的区别"
-date: 2020-10-20T23:23:33+08:00
+date: 2021-03-16T14:37:33+08:00
 tags: ["javascript"]
 ---
 
@@ -59,9 +59,9 @@ Number.isNaN(123);
 
 `isFinite` 和 `Number.isFinite` 是否有类似的逻辑呢?
 
-`isFinite`:
+`isFinite`: 判断参数是否为有穷数, 或者可转换为有穷数.
 
-`Number.isFinite`:
+`Number.isFinite`: 仅判断参数是否为有穷数.
 
 ```javascript
 isFinite(Infinity);
