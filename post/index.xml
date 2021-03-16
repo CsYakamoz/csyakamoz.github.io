@@ -6,7 +6,34 @@
     <description>Recent content in Posts on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 22 Jan 2021 00:19:44 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Mar 2021 14:37:33 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 中 isNaN 和 Number.isNaN 的区别</title>
+      <link>https://csyakamoz.github.io/post/javascript-isnan-vs-number.isnan/</link>
+      <pubDate>Tue, 16 Mar 2021 14:37:33 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/javascript-isnan-vs-number.isnan/</guid>
+      <description>isNaN vs Number.isNaN isNaN: 判断参数是否为 NaN 本身, 或者无法转为数字.
+Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
+例如:
+isNaN({}); // &amp;lt;- true, {} is not a number // {} 无法转为数字  isNaN(&amp;#34;ponyfoo&amp;#34;); // &amp;lt;- true, &amp;#34;ponyfoo&amp;#34; is not a number // &amp;#34;ponyfoo&amp;#34; 无法转为数字  isNaN(NaN); // &amp;lt;- true, NaN is not a number // NaN 本身  isNaN(&amp;#34;pony&amp;#34; / &amp;#34;foo&amp;#34;); // &amp;lt;- true, &amp;#34;pony&amp;#34;/&amp;#34;foo&amp;#34; is NaN, NaN is not a number // &amp;#34;pony&amp;#34; 和 &amp;#34;foo&amp;#34; 皆无法转为数字, 故 &amp;#39;/&amp;#39; 操作符的结果是 NaN  isNaN(&amp;#34;123&amp;#34;); // &amp;lt;- false, &amp;#34;123&amp;#34; 可转为数字  Number.</description>
+    </item>
+    
+    <item>
+      <title>面试题目-1</title>
+      <link>https://csyakamoz.github.io/post/interview-question-001/</link>
+      <pubDate>Mon, 15 Mar 2021 23:10:33 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/interview-question-001/</guid>
+      <description>记录一次笔试中的题目
+ MySQL 中 truncate, drop, delete 的区别 摘自 TRUNCATE TABLE vs. DELETE vs. DROP TABLE: Removing Tables and Data in SQL
+ google 关键词: truncate drop delete mysql
+ delete delete 是 DML (Data Manipulation Language) 命令;
+此命令从表中删除记录; 它只用于从表中删除记录, 而不是从数据库中删除表;
+语法:
+-- 删除表 tb_name 中的所有记录 delete from tb_name; -- 删除表 tb_name 中满足 condition 条件的记录 delete from tb_name where condition  如果你不想删除表结构或者仅想删除特定记录, 可使用 delete; 此命令可以删除一个, 一些或全部记录; 该命令执行成功时, 会返回此次执行中被删除记录数; delete 命令在执行中会使用行锁且可回滚; 每个被删除的记录都会被锁; delete 会保持自增 ID(auto-increment ID) 的值; 例如删除了最新的记录, 其 ID 为 20, 然后再次插入新记录, 则该记录的 ID 为 21 - 即使它前面那条记录是 19;  truncate truncate 类似于 delete, 但它是 DDL (Data Definition Language) 命令;</description>
+    </item>
+    
     <item>
       <title>Shell 零碎笔记</title>
       <link>https://csyakamoz.github.io/post/shell-chore/</link>

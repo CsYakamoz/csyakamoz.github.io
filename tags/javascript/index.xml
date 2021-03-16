@@ -6,7 +6,19 @@
     <description>Recent content in javascript on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 09 Sep 2020 16:14:29 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Mar 2021 14:37:33 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 中 isNaN 和 Number.isNaN 的区别</title>
+      <link>https://csyakamoz.github.io/post/javascript-isnan-vs-number.isnan/</link>
+      <pubDate>Tue, 16 Mar 2021 14:37:33 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/javascript-isnan-vs-number.isnan/</guid>
+      <description>isNaN vs Number.isNaN isNaN: 判断参数是否为 NaN 本身, 或者无法转为数字.
+Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
+例如:
+isNaN({}); // &amp;lt;- true, {} is not a number // {} 无法转为数字  isNaN(&amp;#34;ponyfoo&amp;#34;); // &amp;lt;- true, &amp;#34;ponyfoo&amp;#34; is not a number // &amp;#34;ponyfoo&amp;#34; 无法转为数字  isNaN(NaN); // &amp;lt;- true, NaN is not a number // NaN 本身  isNaN(&amp;#34;pony&amp;#34; / &amp;#34;foo&amp;#34;); // &amp;lt;- true, &amp;#34;pony&amp;#34;/&amp;#34;foo&amp;#34; is NaN, NaN is not a number // &amp;#34;pony&amp;#34; 和 &amp;#34;foo&amp;#34; 皆无法转为数字, 故 &amp;#39;/&amp;#39; 操作符的结果是 NaN  isNaN(&amp;#34;123&amp;#34;); // &amp;lt;- false, &amp;#34;123&amp;#34; 可转为数字  Number.</description>
+    </item>
+    
     <item>
       <title>Javascript this 的指向</title>
       <link>https://csyakamoz.github.io/post/javascript-this/</link>
