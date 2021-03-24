@@ -6,7 +6,23 @@
     <description>Recent content in Posts on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 16 Mar 2021 14:37:33 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Mar 2021 00:15:13 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Did the require Do in Node.js</title>
+      <link>https://csyakamoz.github.io/post/what-did-the-require-do-in-nodejs/</link>
+      <pubDate>Thu, 18 Mar 2021 00:15:13 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/what-did-the-require-do-in-nodejs/</guid>
+      <description>Warning: 最新版本的 Node.js 已经更新了 require 的逻辑, 此文章的相关代码已过时, 但逻辑总体上不变;
+或者直接看源码 node/lib/internal/modules/cjs/
+ Environment Node Version: v11.1.0
+Prepare We have two file in /home/csyakamoz/Desktop/test directory.
+index.js
+require(&amp;#34;./a&amp;#34;); a.js
+let i = 0; module.exports = () =&amp;gt; { console.log(++i); }; Start makeRequireFunction Notice:
+ mod is the module object of index.js  function makeRequireFunction(mod) { const Module = mod.constructor; function require(path) { // 👉 start here, and path is &amp;#34;./a&amp;#34;  try { exports.</description>
+    </item>
+    
     <item>
       <title>JavaScript 中 isNaN 和 Number.isNaN 的区别</title>
       <link>https://csyakamoz.github.io/post/javascript-isnan-vs-number.isnan/</link>
@@ -20,7 +36,7 @@ isNaN({}); // &amp;lt;- true, {} is not a number // {} 无法转为数字  isNaN
     </item>
     
     <item>
-      <title>面试题目-1</title>
+      <title>面试题目 - 1</title>
       <link>https://csyakamoz.github.io/post/interview-question-001/</link>
       <pubDate>Mon, 15 Mar 2021 23:10:33 +0800</pubDate>
       
