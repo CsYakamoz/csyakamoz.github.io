@@ -6,7 +6,24 @@
     <description>Recent content on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 18 Mar 2021 00:15:13 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 23:55:18 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nodejs 与 Java 的加解密</title>
+      <link>https://csyakamoz.github.io/post/nodejs-crypto-with-java/</link>
+      <pubDate>Fri, 02 Apr 2021 23:55:18 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/nodejs-crypto-with-java/</guid>
+      <description>问题 最近在对接第三方接口, 对方是用 Java 写的 rsa 加密;
+ 其提供的加解密 Demo 类似于此链接中的 RSAUtils 类
+ 个人选择使用 node-rsa 进行解密;
+然而, 在尝试解密过程中, 总是报各种错误, 且根据错误去 google 也无法找到解决方案;
+最后无意中找到一篇文章, 其说明了为什么解密失败;
+ 吐槽下, google 关键词居然是 Node RSA Java, 难以置信 😑
+ 原因 node-rsa for javascript new NodeRSA([keyData, [format]], [options]); options 参数中的 encryptionScheme 是用来指定 padding;
+其支持两种: pkcs1_oaep 和 pkcs1, 若未指定, 则默认是前者;
+Cipher for Java // Demo 中所指定的加密方案 KeyFactory keyFactory = KeyFactory.getInstance(&amp;#34;RSA&amp;#34;); // keyFactory.getAlgorithm() 返回 &amp;#34;RSA&amp;#34; Cipher cipher = Cipher.</description>
+    </item>
+    
     <item>
       <title>What Did the require Do in Node.js</title>
       <link>https://csyakamoz.github.io/post/what-did-the-require-do-in-nodejs/</link>

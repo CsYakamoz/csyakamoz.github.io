@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nodejs on CsYakamoz`s Blog</title>
-    <link>https://csyakamoz.github.io/tags/nodejs/</link>
-    <description>Recent content in nodejs on CsYakamoz`s Blog</description>
+    <title>crypto on CsYakamoz`s Blog</title>
+    <link>https://csyakamoz.github.io/tags/crypto/</link>
+    <description>Recent content in crypto on CsYakamoz`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 02 Apr 2021 23:55:18 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 23:55:18 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nodejs 与 Java 的加解密</title>
       <link>https://csyakamoz.github.io/post/nodejs-crypto-with-java/</link>
@@ -22,22 +22,6 @@
  原因 node-rsa for javascript new NodeRSA([keyData, [format]], [options]); options 参数中的 encryptionScheme 是用来指定 padding;
 其支持两种: pkcs1_oaep 和 pkcs1, 若未指定, 则默认是前者;
 Cipher for Java // Demo 中所指定的加密方案 KeyFactory keyFactory = KeyFactory.getInstance(&amp;#34;RSA&amp;#34;); // keyFactory.getAlgorithm() 返回 &amp;#34;RSA&amp;#34; Cipher cipher = Cipher.</description>
-    </item>
-    
-    <item>
-      <title>What Did the require Do in Node.js</title>
-      <link>https://csyakamoz.github.io/post/what-did-the-require-do-in-nodejs/</link>
-      <pubDate>Thu, 18 Mar 2021 00:15:13 +0800</pubDate>
-      
-      <guid>https://csyakamoz.github.io/post/what-did-the-require-do-in-nodejs/</guid>
-      <description>Warning: 最新版本的 Node.js 已经更新了 require 的逻辑, 此文章的相关代码已过时, 但逻辑总体上不变;
-或者直接看源码 node/lib/internal/modules/cjs/
- Environment Node Version: v11.1.0
-Prepare We have two file in /home/csyakamoz/Desktop/test directory.
-index.js
-require(&amp;#34;./a&amp;#34;); a.js
-let i = 0; module.exports = () =&amp;gt; { console.log(++i); }; Start makeRequireFunction Notice:
- mod is the module object of index.js  function makeRequireFunction(mod) { const Module = mod.constructor; function require(path) { // 👉 start here, and path is &amp;#34;./a&amp;#34;  try { exports.</description>
     </item>
     
   </channel>
