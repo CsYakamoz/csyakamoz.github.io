@@ -149,3 +149,37 @@ Notice: 新提交的哈希值与原来的不同
 `-s`: 在提交信息的末尾追加一行操作者的签名, 表示是谁进行了这个操作;
 
 其它使用方法可参考: [阮一峰的网络日志 - git cherry-pick 教程](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html) 或者 `git cherry-pick --help`
+
+## 本地分支重命名
+
+```sh
+git branch -m <old-name> <new-name>
+
+git branch -m <new-name>
+```
+
+## Git Worktree
+
+[官方文档](https://git-scm.com/docs/git-worktree)介绍:
+
+> Manage multiple working trees attached to the same repository.
+>
+> A git repository can support multiple working trees, allowing you to check out more than one branch at a time.
+
+### add
+
+`git worktree add [-d] <path> [branch]`: 用于新增 `working tree`.
+
+- `path`: 该 `working tree` 的所处位置;
+- `branch`: 新增 `working tree` 的所属分支. 如果没有 `branch` 参数, 则创建新的分支 - 分支名为 `path` 的最后组成部分;
+- `-d`: 用于新增可随时丢弃(不与任何分支相关联)的 `working tree`;
+
+个人使用如下:
+
+假设项目名叫 `foobar`, 那么个人会将 `master` 分支克隆到 `foobar/master`;
+
+同时, 在 `master` 目录下执行 `git worktree add ../dev dev` 以及 `git worktree add ../main your-feature`;
+
+master/dev 分别管理着正式/测试环境的代码, main 主要用来进行 feature 开发;
+
+> 这三个 `working trees` 都连着同一个 git 仓库, 所以 stash 是**共同的**;
