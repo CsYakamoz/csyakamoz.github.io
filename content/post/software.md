@@ -1,7 +1,7 @@
 ---
 title: "常用软件记录"
-date: 2020-09-09T11:24:18+08:00
-tags: ["software"]
+date: 2021-07-26T00:43:00+08:00
+tags: ["software", "chrome extension"]
 ---
 
 记录个人常用的软件
@@ -151,6 +151,53 @@ pbcopy, pbpaste (MacOS Only)
 open (MacOS Only)
 
 xxd
+
+## Chrome Extension
+
+[Dualsub](https://chrome.google.com/webstore/detail/dualsub/gnlibmlfpencglodjpgnalbdebfhpmfp)
+
+[Gitako - GitHub file tree](https://chrome.google.com/webstore/detail/gitako-github-file-tree/giljefjcheohhamkjphiebfjnlphnokk)
+
+[Grammarly for Chrome](https://chrome.google.com/webstore/detail/grammarly-for-chrome/kbfnbcaeplbcioakkpcpgfkobkghlhen)
+
+[Imagus](https://chrome.google.com/webstore/detail/imagus/immpkjjlgappgfkkfieppnmlhakdmaab)
+
+[JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)
+
+[JSON-handle](https://chrome.google.com/webstore/detail/json-handle/iahnhfdhidomcpggpaimmmahffihkfnj)
+
+[LastPass: Free Password Manager](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd)
+
+[OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall)
+
+[Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
+
+[Saladict - Pop-up Dictionary and Page Translator](https://chrome.google.com/webstore/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D-%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/cdonnmffkdaoajfknoeeecmchibpmkmg)
+
+[Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
+
+- [Baidu Lite 百度轻](https://uso.kkx.one/style/123858)
+- [Simple Zhihu](https://uso.kkx.one/style/142714)
+- [Wikipedia New Light](https://uso.kkx.one/style/139227)
+- [掘金 juejin focus](https://uso.kkx.one/style/157875)
+- [纯净版 淘宝](https://uso.kkx.one/style/168403)
+
+[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+
+- [Bilibili Evolved](https://github.com/the1812/Bilibili-Evolved)
+- [Google Hit Hider by Domain (Search Filter / Block Sites)](https://greasyfork.org/zh-CN/scripts/1682-google-hit-hider-by-domain-search-filter-block-sites)
+- [Toc Bar](https://greasyfork.org/zh-CN/scripts/406337-toc-bar-auto-generating-table-of-content)
+- [Userscript+ : Show Site All UserJS](https://github.com/jae-jae/Userscript-Plus)
+- [知乎免登录](https://greasyfork.org/zh-CN/scripts/415278-%E7%9F%A5%E4%B9%8E%E5%85%8D%E7%99%BB%E5%BD%95)
+- [🔥 持续更新 🔥 CSDN 广告完全过滤、人性化脚本优化：🆕 不用再登录了！让你体验令人惊喜的崭新 CSDN。](https://greasyfork.org/zh-CN/scripts/378351-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0-csdn%E5%B9%BF%E5%91%8A%E5%AE%8C%E5%85%A8%E8%BF%87%E6%BB%A4-%E4%BA%BA%E6%80%A7%E5%8C%96%E8%84%9A%E6%9C%AC%E4%BC%98%E5%8C%96-%E4%B8%8D%E7%94%A8%E5%86%8D%E7%99%BB%E5%BD%95%E4%BA%86-%E8%AE%A9%E4%BD%A0%E4%BD%93%E9%AA%8C%E4%BB%A4%E4%BA%BA%E6%83%8A%E5%96%9C%E7%9A%84%E5%B4%AD%E6%96%B0csdn)
+
+[uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
+
+[Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
+
+[為什麼你們就是不能加個空格呢？](https://chrome.google.com/webstore/detail/%E7%82%BA%E4%BB%80%E9%BA%BC%E4%BD%A0%E5%80%91%E5%B0%B1%E6%98%AF%E4%B8%8D%E8%83%BD%E5%8A%A0%E5%80%8B%E7%A9%BA%E6%A0%BC%E5%91%A2%EF%BC%9F/paphcfdffjnbcgkokihcdjliihicmbpd)
+
+[音乐解锁](https://chrome.google.com/webstore/detail/%E9%9F%B3%E4%B9%90%E8%A7%A3%E9%94%81/gldlhhhmienbhlpkfanjpmffdjblmegd)
 
 ## 参考
 
