@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chrome extension on CsYakamoz`s Blog</title>
+    <link>https://csyakamoz.github.io/tags/chrome-extension/</link>
+    <description>Recent content in chrome extension on CsYakamoz`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 26 Jul 2021 00:43:00 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/chrome-extension/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用软件记录</title>
+      <link>https://csyakamoz.github.io/post/software/</link>
+      <pubDate>Mon, 26 Jul 2021 00:43:00 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/software/</guid>
+      <description>记录个人常用的软件
+Application Typora: Typora is a minimal markdown editor, providing new ways for reading and writing markdown.
+iTerm2: iTerm2 is a replacement for Terminal and the successor to iTerm.
+Snipaste: Snipaste is a simple but powerful snipping tool, and also allows you to pin the screenshot back onto the screen.
+Notion: All-in-one workspace.
+Dash: Dash gives your Mac instant offline access to 200+ API documentation sets.
+Alfred: Alfred is an award-winning app for macOS which boosts your efficiency with hotkeys, keywords, text expansion and more.</description>
+    </item>
+    
+  </channel>
+</rss>
