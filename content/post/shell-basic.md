@@ -4,6 +4,10 @@ date: 2020-09-09T11:35:19+08:00
 tags: ["shell"]
 ---
 
+## Manual
+
+[Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+
 ## Lint
 
 > [ShellCheck](https://github.com/koalaman/shellcheck), a static analysis tool for shell scripts
@@ -31,17 +35,17 @@ e.g.
 `variable=value`
 
 1. 不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等
-2. 等号两侧不能有空格
+2. 等号两侧**不能有空格**
 
 ### 使用
 
 1. `$variable`
 2. `${variable}`
 
-`{}` 是可选的，但建议都加上，加 `{}` 是为了帮助解释器识别变量的边界
+`{}` 是可选的，但建议加上，`{}` 是为了帮助解释器识别变量的边界
 
 ```sh
-for skill in Ada Coffe Action Java; do
+for skill in Ada Coffee Action Java; do
     echo "I am good at ${skill}Script"
 done
 ```
@@ -148,6 +152,14 @@ array=(
 
 获取数组长度：`${#array[*]}` 或者 `${#array[@]}`
 
+获取数组的子数组, 语法类似于 string: `${array[@]:start:length}`
+
+将字符串按空格隔开, 转成数组: `arr=($string)`
+
+添加元素: `array+=("element")` or `array=(${array[@]} "element")`
+
+拼接数组: `array=(${array0[@]} ${array1[@]})`
+
 ## 参数
 
 ### 特殊参数
@@ -182,14 +194,14 @@ while [[ condition ]]; do
 done
 ```
 
-| 数字运算符 |   说明   |
-| :--------: | :------: |
-|    -eq     |   等于   |
-|    -ne     |  不等于  |
-|    -gt     |   大于   |
-|    -lt     |   小于   |
-|    -ge     | 大于等于 |
-|    -le     | 小于等于 |
+| **数字**运算符 |   说明   |
+| :------------: | :------: |
+|      -eq       |   等于   |
+|      -ne       |  不等于  |
+|      -gt       |   大于   |
+|      -lt       |   小于   |
+|      -ge       | 大于等于 |
+|      -le       | 小于等于 |
 
 | 关系运算符 | 说明 |
 | :--------: | :--: |
@@ -197,19 +209,27 @@ done
 |     &&     |  与  |
 |    \|\|    |  或  |
 
-| 字符串运算符 |    说明    |
-| :----------: | :--------: |
-|      ==      |    等于    |
-|      !=      |   不等于   |
-|      -z      | 是否为空串 |
-|      -n      | 是否非空串 |
+| **字符串**运算符 |    说明    |
+| :--------------: | :--------: |
+|        ==        |    等于    |
+|        !=        |   不等于   |
+|        -z        | 是否为空串 |
+|        -n        | 是否非空串 |
+|    `<` or `>`    | 字典序比较 |
 
 | 文件测试运算符 |                    说明                    |
 | :------------: | :----------------------------------------: |
 |       -d       |                  是否目录                  |
 |       -f       | 是否普通文件（既不是目录，也不是设备文件） |
-|       -e       |                  是否存在                  |
-|       -L       |          是否存在并且是个符号链接          |
+|    -e or -a    |                  是否存在                  |
+|    -L or -h    |          是否存在并且是个符号链接          |
+
+| 变量运算符 |                                  说明                                  |
+| :--------: | :--------------------------------------------------------------------: |
+| -v varname | True if the shell variable varname is set (has been assigned a value). |
+| -R varname |   True if the shell variable varname is set and is a name reference.   |
+
+> Tips: [name-reference](https://unix.stackexchange.com/questions/510715/what-is-a-name-reference-variable-attribute)
 
 ## 算术运算符
 

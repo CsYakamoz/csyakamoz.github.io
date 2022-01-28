@@ -93,10 +93,12 @@ echo "out loop, i is ${i}"
 虽然问题解决了, 但是个人还是好奇两点:
 
 1. 为什么样例 1 中的 while 是在子 shell 中执行?
-2. 解决方案中的 `<(your command)` 是什么意思?
-   根据 [Wikipedia - Process substitution](https://en.wikipedia.org/wiki/Process_substitution) 可知, `<(your command)` 相当于
 
-TODO
+   可看 [Command Execution Environment](https://www.gnu.org/software/bash/manual/html_node/Command-Execution-Environment.html)
+
+2. 解决方案中的 `<(your command)` 是什么意思?
+
+   可看 [Wikipedia - Process substitution](https://en.wikipedia.org/wiki/Process_substitution)
 
 [sc2031]: https://github.com/koalaman/shellcheck/wiki/SC2031
 [bashfaq/024]: http://mywiki.wooledge.org/BashFAQ/024
