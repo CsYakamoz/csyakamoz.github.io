@@ -1,21 +1,34 @@
 baseURL = "https://csyakamoz.github.io"
-languageCode = "zh-cn"
-title = "CsYakamoz`s Blog"
+languageCode = "en-us"
+title = "Legen—wait for it—dary! Legendary!"
 theme = "yinyang"
 DefaultContentLanguage = "cn"
+enableRobotsTXT = true
+canonifyURLs = false
 
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+        unsafe = true
+    [markup.highlight]
+        style = "solarized-light"
+        lineNos = true
+        lineNumbersInTable = false
 
 [author]
   name = "CsYakamoz"
 
 [languages]
   [languages.cn]
-    contentDir = "content/"
+    contentDir = "content"
     languageName = "Chinese"
     weight = 1
 
 [params]
+headTitle = "Awesome"
+description = "Suit up!"
 mainSections = ["post", "tags"]
+lazyImage = true
 
 [[params.socials]]
 name = "Github"
