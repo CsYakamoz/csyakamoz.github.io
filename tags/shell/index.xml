@@ -1,63 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell on CsYakamoz`s Blog</title>
+    <title>shell on Legen—wait for it—dary! Legendary!</title>
     <link>https://csyakamoz.github.io/tags/shell/</link>
-    <description>Recent content in shell on CsYakamoz`s Blog</description>
+    <description>Recent content in shell on Legen—wait for it—dary! Legendary!</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Fri, 22 Jan 2021 00:19:44 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Shell 零碎笔记</title>
-      <link>https://csyakamoz.github.io/post/shell-chore/</link>
+      <link>https://csyakamoz.github.io/post/shell/chore/</link>
       <pubDate>Fri, 22 Jan 2021 00:19:44 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-chore/</guid>
+      <guid>https://csyakamoz.github.io/post/shell/chore/</guid>
       <description>命令补全 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
 团子的小窝 - 编写 Bash 补全脚本
 如何编写 bash 自动补全脚本
 检查某命令是否存在 来源: How can I check if a program exists from a Bash script?
-command -v &amp;lt;the_command&amp;gt; 例子:
-if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null then echo &amp;#34;COMMAND could not be found&amp;#34; exit fi  &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
+1command -v &amp;lt;the_command&amp;gt; 例子:
+1if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null 2then 3 echo &amp;#34;COMMAND could not be found&amp;#34; 4 exit 5fi  &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
     </item>
     
     <item>
       <title>Shell 基础</title>
-      <link>https://csyakamoz.github.io/post/shell-basic/</link>
+      <link>https://csyakamoz.github.io/post/shell/basic/</link>
       <pubDate>Wed, 09 Sep 2020 11:35:19 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-basic/</guid>
-      <description>Lint  ShellCheck, a static analysis tool for shell scripts
+      <guid>https://csyakamoz.github.io/post/shell/basic/</guid>
+      <description>Manual Bash Reference Manual
+Lint  ShellCheck, a static analysis tool for shell scripts
  建议使用 ShellCheck, 以检查脚本中潜在的问题
 Shebang shebang 即 #! , 其后面跟的是解释当前脚本的解释器路径
 e.g.
  #!/bin/bash #!/usr/bin/bash #!/usr/bin/env bash  个人习惯用 #!/usr/bin/env NAME 而不是 #!/usr/bin/NAME
 原因请看此：Why is it better to use “#!/usr/bin/env NAME” instead of “#!/path/to/NAME” as my shebang?
 变量 定义 variable=value
- 不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等 等号两侧不能有空格  使用  $variable ${variable}  {} 是可选的，但建议都加上，加 {} 是为了帮助解释器识别变量的边界
-for skill in Ada Coffe Action Java; do echo &amp;#34;I am good at ${skill}Script&amp;#34; done 如果不给 skill 加上花括号，解释器会把 skillScript 当作变量，在上面的情况下，其值为空</description>
+ 不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等 等号两侧不能有空格  使用  $variable ${variable}  {} 是可选的，但建议加上，{} 是为了帮助解释器识别变量的边界
+1for skill in Ada Coffee Action Java; do 2 echo &amp;#34;I am good at ${skill}Script&amp;#34; 3done 如果不给 skill 加上花括号，解释器会把 skillScript 当作变量，在上面的情况下，其值为空</description>
     </item>
     
     <item>
       <title>Shell 序列表达式</title>
-      <link>https://csyakamoz.github.io/post/shell-sequence-expression/</link>
+      <link>https://csyakamoz.github.io/post/shell/sequence-expression/</link>
       <pubDate>Wed, 09 Sep 2020 11:18:01 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-sequence-expression/</guid>
+      <guid>https://csyakamoz.github.io/post/shell/sequence-expression/</guid>
       <description>格式：{FIRST..LAST[..INCREMENT]}
 FIRST 和 LAST 是必需的，用 .. 分隔，中间没有空格，INCREMENT 是可选滴
-Example echo {1..3} # 1 2 3 echo {3..1} # 3 2 1 echo {0..20..5} # 0 5 10 15 20 echo 0{8..10} # 08 09 010 echo {08..10} # 08 09 10 echo {a..f} # a b c d e f echo {f..a} # f e d c b a echo T-{a..f}-T # T-a-T T-b-T T-c-T T-d-T T-e-T T-f-T echo {A..z} # A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z echo {z.</description>
+Example 1echo {1..3} # 1 2 3 2 3echo {3..1} # 3 2 1 4 5echo {0..20..5} # 0 5 10 15 20 6 7echo 0{8..10} # 08 09 010 8 9echo {08..10} # 08 09 10 10 11echo {a..f} # a b c d e f 12 13echo {f..a} # f e d c b a 14 15echo T-{a..f}-T # T-a-T T-b-T T-c-T T-d-T T-e-T T-f-T 16 17echo {A.</description>
     </item>
     
     <item>
       <title>Shell 按行处理文本</title>
-      <link>https://csyakamoz.github.io/post/shell-handle-text-by-line/</link>
+      <link>https://csyakamoz.github.io/post/shell/handle-text-by-line/</link>
       <pubDate>Wed, 09 Sep 2020 11:15:00 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-handle-text-by-line/</guid>
+      <guid>https://csyakamoz.github.io/post/shell/handle-text-by-line/</guid>
       <description>内容来源：【Shell 脚本】逐行处理文本文件
-read cat data.dat | while read line do echo &amp;#34;${line}&amp;#34; done # or while read line do echo &amp;#34;${line}&amp;#34; done &amp;lt; data.dat awk cat data.dat | awk &amp;#39;{print $0}&amp;#39; for &amp;hellip; in &amp;hellip; for var in content 表示变量 var 在 content 中循环取值，取值的分隔符由 ${IFS} 确定
-for line in $(cat data.dat) do echo &amp;#34;${line}&amp;#34; done 如果输入文本每行中没有空格，则 line 在输入文本中按换行符分隔符循环取值。
+read 1cat data.dat | while read line 2do 3 echo &amp;#34;${line}&amp;#34; 4done 5 6# or 7 8while read line 9do 10 echo &amp;#34;${line}&amp;#34; 11done &amp;lt; data.dat awk 1cat data.dat | awk &amp;#39;{print $0}&amp;#39; for &amp;hellip; in &amp;hellip; for var in content 表示变量 var 在 content 中循环取值，取值的分隔符由 ${IFS} 确定
+1for line in $(cat data.dat) 2do 3 echo &amp;#34;${line}&amp;#34; 4done 如果输入文本每行中没有空格，则 line 在输入文本中按换行符分隔符循环取值。
 如果输入文本中包括空格或制表符，则不是换行读取，line 在输入文本中按空格分隔符或制表符或换行符循环取值。
 可以通过把 ${IFS} 设置为换行符来达到逐行读取的功能。
 ${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）.</description>
@@ -65,41 +66,40 @@ ${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）.</
     
     <item>
       <title>Shell 使用模板文件生成文件</title>
-      <link>https://csyakamoz.github.io/post/shell-build-file-from-template/</link>
+      <link>https://csyakamoz.github.io/post/shell/build-file-from-template/</link>
       <pubDate>Wed, 09 Sep 2020 11:13:35 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-build-file-from-template/</guid>
+      <guid>https://csyakamoz.github.io/post/shell/build-file-from-template/</guid>
       <description>需求来源 有个模板文件，其占位符格式为：${variable}
 现需要使用 shell 脚本来动态生成对应文件
 实现 假设模板文件内容如下：
-#!/usr/bin/env bash  version=&amp;#34;${version}&amp;#34; path=&amp;#34;${path}&amp;#34; 则动态生成对应文件的 shell 脚本可以如下：
-#!/usr/bin/env bash  version=&amp;#34;1.0.0&amp;#34; path=&amp;#34;oh my god&amp;#34; sed \  -e &amp;#34;s/\${version}/${version}/g&amp;#34; \  -e &amp;#34;s/\${path}/${path}/g&amp;#34; \  path_to_template_file \  &amp;gt; path_to_output_file 需要注意的坑 一般我们使用 / 作为 sed 的定界符，但若变量值中包含 /, 则会导致 sed 解析失败
+1#!/usr/bin/env bash 2 3version=&amp;#34;${version}&amp;#34; 4path=&amp;#34;${path}&amp;#34; 则动态生成对应文件的 shell 脚本可以如下：
+1#!/usr/bin/env bash 2 3version=&amp;#34;1.0.0&amp;#34; 4path=&amp;#34;oh my god&amp;#34; 5 6sed \ 7 -e &amp;#34;s/\${version}/${version}/g&amp;#34; \ 8 -e &amp;#34;s/\${path}/${path}/g&amp;#34; \ 9 path_to_template_file \ 10 &amp;gt; path_to_output_file 需要注意的坑 一般我们使用 / 作为 sed 的定界符，但若变量值中包含 /, 则会导致 sed 解析失败
 因此我们需要对 / 进行转义
-#!/usr/bin/env bash  function handlingSlash() { echo &amp;#34;$1&amp;#34; | sed -e &amp;#34;s/\//\\\\\//g&amp;#34; } version=&amp;#34;1.0.0&amp;#34; path=$(handlingSlash &amp;#34;${HOME}/Desktop/avatar.jpeg&amp;#34;) sed \  -e &amp;#34;s/\${version}/${version}/g&amp;#34; \  -e &amp;#34;s/\${path}/${path}/g&amp;#34; \  path_to_template_file \  &amp;gt; path_to_output_file 参考 How to replace ${} placeholders in a text file?</description>
+1#!/usr/bin/env bash 2 3function handlingSlash() { 4 echo &amp;#34;$1&amp;#34; | sed -e &amp;#34;s/\//\\\\\//g&amp;#34; 5} 6 7version=&amp;#34;1.0.0&amp;#34; 8path=$(handlingSlash &amp;#34;${HOME}/Desktop/avatar.jpeg&amp;#34;) 9 10sed \ 11 -e &amp;#34;s/\${version}/${version}/g&amp;#34; \ 12 -e &amp;#34;s/\${path}/${path}/g&amp;#34; \ 13 path_to_template_file \ 14 &amp;gt; path_to_output_file 参考 How to replace ${} placeholders in a text file?</description>
     </item>
     
     <item>
       <title>Shell 打印彩色输出</title>
-      <link>https://csyakamoz.github.io/post/shell-print-color-output/</link>
+      <link>https://csyakamoz.github.io/post/shell/print-color-output/</link>
       <pubDate>Wed, 09 Sep 2020 11:12:07 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-print-color-output/</guid>
+      <guid>https://csyakamoz.github.io/post/shell/print-color-output/</guid>
       <description>格式说明 ESC[{attr1};...;{attrN}m
 ESC: 转义字符，可选项为 \033, \x1b, \e 表示
 m: 母鸡
 attr: 控制代码（参见下方表格）
 样例 简单的
-echo -e &amp;#34;\033[0;31mRed\033[0m&amp;#34; echo -e &amp;#34;\033[0;32mGreen\033[0m&amp;#34; echo -e &amp;#34;\033[1;31mHighlight Red\033[0m&amp;#34; echo -e &amp;#34;\033[1;3;31mHighlight Italic Red\033[0m&amp;#34; echo -e &amp;#34;\033[1;3;4;31mHighlight Italic Underline Red\033[0m&amp;#34; 完整的
-# https://askubuntu.com/questions/27314/script-to-display-all-terminal-colors for x in {0..8}; do for i in {30..37}; do for a in {40..47}; do echo -ne &amp;#34;\e[$x;$i;$a&amp;#34;&amp;#34;m\\\e[$x;$i;$a&amp;#34;&amp;#34;m\e[0;37;40m &amp;#34; done echo done done echo &amp;#34;&amp;#34; 参考 以下表格皆来自：ANSI 转义序列
-代码所对应的控制内容    代码 作用 备注     0 重置 / 正常 关闭所有属性   1 粗体或增加强度    2 弱化（降低强度） 未广泛支持   3 斜体 未广泛支持。有时视为反相显示   4 下划线    5 缓慢闪烁 低于每分钟 150 次   6 快速闪烁 MS-DOS ANSI.</description>
+1echo -e &amp;#34;\033[0;31mRed\033[0m&amp;#34; 2echo -e &amp;#34;\033[0;32mGreen\033[0m&amp;#34; 3 4echo -e &amp;#34;\033[1;31mHighlight Red\033[0m&amp;#34; 5echo -e &amp;#34;\033[1;3;31mHighlight Italic Red\033[0m&amp;#34; 6echo -e &amp;#34;\033[1;3;4;31mHighlight Italic Underline Red\033[0m&amp;#34; 完整的
+1# https://askubuntu.com/questions/27314/script-to-display-all-terminal-colors 2for x in {0..8}; do 3 for i in {30..37}; do 4 for a in {40..47}; do 5 echo -ne &amp;#34;\e[$x;$i;$a&amp;#34;&amp;#34;m\\\e[$x;$i;$a&amp;#34;&amp;#34;m\e[0;37;40m &amp;#34; 6 done 7 echo 8 done 9done 10echo &amp;#34;&amp;#34; 参考 以下表格皆来自：ANSI 转义序列</description>
     </item>
     
     <item>
       <title>Shell 常用快捷键</title>
-      <link>https://csyakamoz.github.io/post/shell-keyboard-shortcut/</link>
+      <link>https://csyakamoz.github.io/post/shell/keyboard-shortcut/</link>
       <pubDate>Wed, 09 Sep 2020 11:06:40 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell-keyboard-shortcut/</guid>
+      <guid>https://csyakamoz.github.io/post/shell/keyboard-shortcut/</guid>
       <description>Up, Ctrl + p, 向上移动光标或显示上一条命令
 Down, Ctrl + n, 向下移动或显示下一条命令
 Left, Ctrl + b, 光标向左移动一个字符

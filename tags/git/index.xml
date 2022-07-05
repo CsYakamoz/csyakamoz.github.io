@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on CsYakamoz`s Blog</title>
+    <title>git on Legen—wait for it—dary! Legendary!</title>
     <link>https://csyakamoz.github.io/tags/git/</link>
-    <description>Recent content in git on CsYakamoz`s Blog</description>
+    <description>Recent content in git on Legen—wait for it—dary! Legendary!</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Wed, 09 Sep 2020 16:29:42 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git 笔记</title>
-      <link>https://csyakamoz.github.io/post/git-note/</link>
+      <link>https://csyakamoz.github.io/post/git/note/</link>
       <pubDate>Wed, 09 Sep 2020 16:29:42 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/git-note/</guid>
-      <description>初始化 git config --global user.name &amp;#34;your name&amp;#34; git config --global user.email &amp;#34;yourEmail@example.com&amp;#34; 文件的状态  未跟踪 (untracked) 已跟踪 (tracked)  未修改 (unmodified) 已修改 (modified) 已暂存 (staged) 已提交 (committed)     未修改和已提交本质上是同一种状态
+      <guid>https://csyakamoz.github.io/post/git/note/</guid>
+      <description>初始化 1git config --global user.name &amp;#34;your name&amp;#34; 2git config --global user.email &amp;#34;yourEmail@example.com&amp;#34; 文件的状态  未跟踪 (untracked) 已跟踪 (tracked)  未修改 (unmodified) 已修改 (modified) 已暂存 (staged) 已提交 (committed)     未修改和已提交本质上是同一种状态
  三个工作区域  工作目录 (Working Directory) 暂存区域 (Staging Area) 仓库 (Repository)  gitignore   开头结尾皆无 /, 表示忽略所有符合规则的文件或目录；
   以 / 结尾表示忽略目录，dist/ 即忽略所有 dist 目录；
   以 / 开头表示忽略相对于根目录的目标，/.setting 即忽略根目录下的 .setting 文件或目录，/dist/ 即忽略根目录下的 dist 目录；
