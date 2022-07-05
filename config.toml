@@ -36,3 +36,6 @@ link = "https://github.com/CsYakamoz"
 [[params.socials]]
 name = "LeetCode"
 link = "https://leetcode.com/CsYakamoz/"
+[[params.socials]]
+name = "About"
+link = "./about"
