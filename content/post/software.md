@@ -1,30 +1,28 @@
 ---
 title: "常用软件记录"
 date: 2021-07-26T00:43:00+08:00
-tags: ["software", "chrome extension"]
+tags: ["software", "chrome-extension"]
 ---
 
 记录个人常用的软件
 
 ## Application
 
-[Typora](https://typora.io/): Typora is a minimal markdown editor, providing new ways for reading and writing markdown.
+[WezTerm](https://wezfurlong.org/wezterm/): WezTerm is a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
-[iTerm2](https://www.iterm2.com/): iTerm2 is a replacement for Terminal and the successor to iTerm.
+[Excalidraw](https://github.com/excalidraw/excalidraw): Virtual whiteboard for sketching hand-drawn like diagrams.
 
-[Snipaste](https://www.snipaste.com/): Snipaste is a simple but powerful snipping tool, and also allows you to pin the screenshot back onto the screen.
+[draw.io](https://www.diagrams.net/): diagrams.net (formerly draw.io) is free online diagram software.
+
+[Xnip](https://xnipapp.com/): Handy Screenshot App for Mac
+
+[Raycast](https://www.raycast.com/): Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.
 
 [Notion](https://www.notion.so/): All-in-one workspace.
-
-[Dash](https://kapeli.com/dash): Dash gives your Mac instant offline access to 200+ API documentation sets.
-
-[Alfred](https://www.alfredapp.com/): Alfred is an award-winning app for macOS which boosts your efficiency with hotkeys, keywords, text expansion and more.
 
 [Magnet](https://magnet.crowdcafe.com/): Window manager for Mac.
 
 [Karabiner-Elements](https://karabiner-elements.pqrs.org/): A powerful and stable keyboard customizer for macOS.
-
-[Maccy](https://maccy.app/): Lightweight clipboard manager for macOS.
 
 [Go2Shell](https://zipzapmac.com/Go2Shell): Opens a terminal window to the current directory in Finder.
 
@@ -39,10 +37,6 @@ tags: ["software", "chrome extension"]
 [FireFox](https://www.mozilla.org/en-US/): Get the browser that protects what's important.
 
 [Google Chrome](https://www.google.com/intl/en_us/chrome/): Now more simple, secure, and faster than ever - with Google’s smarts built-in.
-
-[QSpace](https://apps.apple.com/cn/app/qspace/id1469774098?mt=12): QSpace is a clean and efficient Multi-view File Manager, also can be a FTP/SFTP/WebDAV client.
-
-[foobar2000](https://www.foobar2000.org/): foobar2000 is an advanced freeware audio player for the Windows platform.
 
 [IINA](https://iina.io/): The modern media player for macOS.
 
@@ -198,6 +192,24 @@ xxd
 [為什麼你們就是不能加個空格呢？](https://chrome.google.com/webstore/detail/%E7%82%BA%E4%BB%80%E9%BA%BC%E4%BD%A0%E5%80%91%E5%B0%B1%E6%98%AF%E4%B8%8D%E8%83%BD%E5%8A%A0%E5%80%8B%E7%A9%BA%E6%A0%BC%E5%91%A2%EF%BC%9F/paphcfdffjnbcgkokihcdjliihicmbpd)
 
 [音乐解锁](https://chrome.google.com/webstore/detail/%E9%9F%B3%E4%B9%90%E8%A7%A3%E9%94%81/gldlhhhmienbhlpkfanjpmffdjblmegd)
+
+## Deprecated
+
+~~[Typora](https://typora.io/): Typora is a minimal markdown editor, providing new ways for reading and writing markdown.~~
+
+~~[iTerm2](https://www.iterm2.com/): iTerm2 is a replacement for Terminal and the successor to iTerm.~~
+
+~~[Snipaste](https://www.snipaste.com/): Snipaste is a simple but powerful snipping tool, and also allows you to pin the screenshot back onto the screen.~~
+
+~~[Dash](https://kapeli.com/dash): Dash gives your Mac instant offline access to 200+ API documentation sets.~~
+
+~~[Alfred](https://www.alfredapp.com/): Alfred is an award-winning app for macOS which boosts your efficiency with hotkeys, keywords, text expansion and more.~~
+
+~~[Maccy](https://maccy.app/): Lightweight clipboard manager for macOS.~~
+
+~~[QSpace](https://apps.apple.com/cn/app/qspace/id1469774098?mt=12): QSpace is a clean and efficient Multi-view File Manager, also can be a FTP/SFTP/WebDAV client.~~
+
+~~[foobar2000](https://www.foobar2000.org/): foobar2000 is an advanced freeware audio player for the Windows platform.~~
 
 ## 参考
 
