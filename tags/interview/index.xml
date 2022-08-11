@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>interview on Legen—wait for it—dary! Legendary!</title>
+    <title>interview on Awesome</title>
     <link>https://csyakamoz.github.io/tags/interview/</link>
-    <description>Recent content in interview on Legen—wait for it—dary! Legendary!</description>
+    <description>Recent content in interview on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Mar 2021 23:10:33 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>面试题目 - 1</title>
-      <link>https://csyakamoz.github.io/post/interview-question-001/</link>
+      <link>https://csyakamoz.github.io/post/2021/03/15/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE-1/</link>
       <pubDate>Mon, 15 Mar 2021 23:10:33 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/interview-question-001/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/03/15/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE-1/</guid>
       <description>记录一次笔试中的题目
  MySQL 中 truncate, drop, delete 的区别 摘自 TRUNCATE TABLE vs. DELETE vs. DROP TABLE: Removing Tables and Data in SQL
  google 关键词: truncate drop delete mysql

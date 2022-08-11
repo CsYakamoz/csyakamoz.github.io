@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Shell 按行处理文本 - Awesome</title>
+    <meta property="og:title" content="Shell 按行处理文本 - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="内容来源：【Shell 脚本】逐行处理文本文件
+[&amp;hellip;] 1cat data.dat | while read line 2do 3 echo &amp;#34;${line}&amp;#34; 4done 5 6# or 7 8while read line 9do 10 echo &amp;#34;${line}&amp;#34; 11done &amp;lt; data.dat awk 1cat data.dat | &amp;hellip;">
+      <meta property="og:description" content="内容来源：【Shell 脚本】逐行处理文本文件
+[&amp;hellip;] 1cat data.dat | while read line 2do 3 echo &amp;#34;${line}&amp;#34; 4done 5 6# or 7 8while read line 9do 10 echo &amp;#34;${line}&amp;#34; 11done &amp;lt; data.dat awk 1cat data.dat | &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Shell 按行处理文本</h1>
+
+<h3>
+  2020-09-09</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>内容来源：<a href="https://www.cnblogs.com/dwdxdy/archive/2012/07/25/2608816.html">【Shell 脚本】逐行处理文本文件</a></p>
+<h2 id="read">read</h2>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>cat data.dat | <span style="color:#859900">while</span> <span style="color:#cb4b16">read</span> line
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#859900">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#859900">done</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#93a1a1;font-style:italic"># or</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#859900">while</span> <span style="color:#cb4b16">read</span> line
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#859900">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#859900">done</span> &lt; data.dat
+</span></span></code></pre></div><h2 id="awk">awk</h2>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>cat data.dat | awk <span style="color:#2aa198">&#39;{print $0}&#39;</span>
+</span></span></code></pre></div><h2 id="for--in-">for &hellip; in &hellip;</h2>
+<p><code>for var in content</code> 表示变量 <code>var</code> 在 <code>content</code> 中循环取值，取值的分隔符由 <code>${IFS}</code> 确定</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#859900">for</span> line in <span style="color:#859900">$(</span>cat data.dat<span style="color:#859900">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#859900">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#cb4b16">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">line</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#859900">done</span>
+</span></span></code></pre></div><p>如果输入文本每行中没有空格，则 <code>line</code> 在输入文本中按换行符分隔符循环取值。</p>
+<p>如果输入文本中包括空格或制表符，则不是换行读取，<code>line</code> 在输入文本中按空格分隔符或制表符或换行符循环取值。</p>
+<p>可以通过把 <code>${IFS}</code> 设置为换行符来达到逐行读取的功能。</p>
+<p><strong><code>${IFS}</code> 的默认值为：空白 （包括：空格，制表符，换行符）</strong>.</p>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

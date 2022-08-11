@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Xor Cipher - 异或加密的应用场景之一 - Awesome</title>
+    <meta property="og:title" content="Xor Cipher - 异或加密的应用场景之一 - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="异或加密是一种简单的加密算法。
+具体内容请看下列文章：
+[&amp;hellip;] 本文只讨论个人所应用到的场景。
+[&amp;hellip;] 在工作中，个人经常遇到使用 UUID 作为各种对象 ID 的场景。
+例如：对于每一个 song，我们都为其生成唯一的 quiz，song &amp;amp; quiz 的 ID 都是 uuid；因此，每一个 song 都和其唯一的 quiz 绑定。
+需求是：songId &amp;hellip;">
+      <meta property="og:description" content="异或加密是一种简单的加密算法。
+具体内容请看下列文章：
+[&amp;hellip;] 本文只讨论个人所应用到的场景。
+[&amp;hellip;] 在工作中，个人经常遇到使用 UUID 作为各种对象 ID 的场景。
+例如：对于每一个 song，我们都为其生成唯一的 quiz，song &amp;amp; quiz 的 ID 都是 uuid；因此，每一个 song 都和其唯一的 quiz 绑定。
+需求是：songId &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Xor Cipher - 异或加密的应用场景之一</h1>
+
+<h3>
+  2020-09-09</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>异或加密是一种简单的加密算法。</p>
+<p>具体内容请看下列文章：</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/XOR_cipher">XOR cipher</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/05/xor.html">XOR 加密简介</a></li>
+</ul>
+<p>本文只讨论个人所应用到的场景。</p>
+<h2 id="需求">需求</h2>
+<p>在工作中，个人经常遇到使用 <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> 作为各种对象 ID 的场景。</p>
+<p>例如：对于每一个 song，我们都为其生成唯一的 quiz，song &amp; quiz 的 ID 都是 uuid；因此，每一个 song 都和其唯一的 quiz 绑定。</p>
+<p>需求是：songId &amp; quizId 可以双向查找；即，可通过 songId 查找到对应的 quizId，也可通过 quizId 查找到对应的 songId。</p>
+<h2 id="解决方案">解决方案</h2>
+<h3 id="方案-0---数据库存储映射">方案 0 - 数据库存储映射</h3>
+<p>两种存储方式：</p>
+<ol>
+<li>song 表添加 <code>quizId</code> 列，quiz 表则添加 <code>songId</code> 列</li>
+<li>建立新表 <code>song-quiz</code>, songId 和 quizId 作为联合主键</li>
+</ol>
+<h3 id="方案-2---异或加密当作映射">方案 2 - 异或加密当作映射</h3>
+<p>如果不想将映射关系存到数据库中，则可以使用异或加密。</p>
+<p>使用异或后，我们所需存储的仅有 <code>key</code>。</p>
+<p>Wiki 上有 python 的实现方案，这里则展示 Node.js 的实现方案。</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#93a1a1;font-style:italic">/**
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#93a1a1;font-style:italic"> * @param {&#39;ascii&#39; | &#39;utf8&#39; | &#39;utf16le&#39; | &#39;ucs2&#39; | &#39;base64&#39; | &#39;latin1&#39; | &#39;binary&#39; | &#39;hex&#39;} encoding 编码格式
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#93a1a1;font-style:italic"> * @param {string} key  密钥
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#93a1a1;font-style:italic"> * @param {string} text 待加密（解密）的文本
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#93a1a1;font-style:italic"> * @returns {string} 加密（解密）后的文本
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#93a1a1;font-style:italic"> */</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#859900">function</span> <span style="color:#268bd2">XorCipher</span>(<span style="color:#268bd2">encoding</span>, <span style="color:#268bd2">key</span>, <span style="color:#268bd2">text</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  <span style="color:#859900">if</span> (<span style="color:#859900">typeof</span> <span style="color:#268bd2">text</span> !== <span style="color:#2aa198">&#34;string&#34;</span> || <span style="color:#859900">typeof</span> <span style="color:#268bd2">key</span> !== <span style="color:#2aa198">&#34;string&#34;</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#cb4b16">Error</span>(<span style="color:#2aa198">&#34;both of key and text should be string type&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  <span style="color:#859900">const</span> <span style="color:#268bd2">bufKey</span> = <span style="color:#268bd2">Buffer</span>.<span style="color:#268bd2">from</span>(<span style="color:#268bd2">key</span>, <span style="color:#268bd2">encoding</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  <span style="color:#859900">const</span> <span style="color:#268bd2">bufText</span> = <span style="color:#268bd2">Buffer</span>.<span style="color:#268bd2">from</span>(<span style="color:#268bd2">text</span>, <span style="color:#268bd2">encoding</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>  <span style="color:#859900">if</span> (<span style="color:#268bd2">bufText</span>.<span style="color:#268bd2">length</span> === <span style="color:#2aa198;font-weight:bold">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#cb4b16">Error</span>(<span style="color:#2aa198">&#34;after encoding, text&#39;s length should be greater than 0&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>  <span style="color:#859900">if</span> (<span style="color:#268bd2">bufKey</span>.<span style="color:#268bd2">length</span> === <span style="color:#2aa198;font-weight:bold">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#cb4b16">Error</span>(<span style="color:#2aa198">&#34;after encoding, key&#39;s length should be greater than 0&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>  <span style="color:#859900">if</span> (<span style="color:#268bd2">bufText</span>.<span style="color:#268bd2">length</span> &gt; <span style="color:#268bd2">bufKey</span>.<span style="color:#268bd2">length</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#cb4b16">Error</span>(
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>      <span style="color:#2aa198">&#34;after encoding, text&#39;s length should be less than or equal to key&#39;s length&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    );
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>  <span style="color:#859900">let</span> <span style="color:#268bd2">message</span> = <span style="color:#268bd2">Buffer</span>.<span style="color:#268bd2">alloc</span>(<span style="color:#2aa198;font-weight:bold">0</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>  <span style="color:#859900">for</span> (<span style="color:#859900">let</span> <span style="color:#268bd2">i</span> = <span style="color:#2aa198;font-weight:bold">0</span>; <span style="color:#268bd2">i</span> &lt; <span style="color:#268bd2">bufText</span>.<span style="color:#268bd2">length</span>; <span style="color:#268bd2">i</span>++) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    <span style="color:#859900">const</span> <span style="color:#268bd2">c</span> = <span style="color:#268bd2">bufKey</span>[<span style="color:#268bd2">i</span>] ^ <span style="color:#268bd2">bufText</span>[<span style="color:#268bd2">i</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>    <span style="color:#268bd2">message</span> = <span style="color:#268bd2">Buffer</span>.<span style="color:#268bd2">concat</span>([<span style="color:#268bd2">message</span>, <span style="color:#268bd2">Buffer</span>.<span style="color:#268bd2">from</span>([<span style="color:#268bd2">c</span>])]);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>  <span style="color:#859900">return</span> <span style="color:#268bd2">message</span>.<span style="color:#268bd2">toString</span>(<span style="color:#268bd2">encoding</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>}
+</span></span></code></pre></div><p>使用案例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#859900">const</span> <span style="color:#268bd2">songId</span> = <span style="color:#2aa198">&#34;8e5c1e81a29143efb2cefefe08259a13&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#859900">const</span> <span style="color:#268bd2">key</span> = <span style="color:#2aa198">&#34;fc5c69ef3e874082a25448e925df1364&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#859900">const</span> <span style="color:#268bd2">quizId</span> = <span style="color:#268bd2">XorCipher</span>(<span style="color:#2aa198">&#34;hex&#34;</span>, <span style="color:#268bd2">key</span>, <span style="color:#268bd2">songId</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">quizId</span>); <span style="color:#93a1a1;font-style:italic">// &#34;7200776e9c16036d109ab6172dfa8977&#34;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">XorCipher</span>(<span style="color:#2aa198">&#34;hex&#34;</span>, <span style="color:#268bd2">key</span>, <span style="color:#268bd2">quizId</span>) === <span style="color:#268bd2">songId</span>); <span style="color:#93a1a1;font-style:italic">// true
+</span></span></span></code></pre></div><h2 id="总结">总结</h2>
+<p>利用异或，我们只需要还记得 <strong>key</strong>, 就能做到各种各样的映射（当然数据库也行）。</p>
+<p>例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>          key1               key2              key3
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>id1 &lt;============&gt; id2 &lt;============&gt; id3 &lt;============&gt; id4
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>or
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>     k1  id2
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>      ↗
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>id1
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>      ↘
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>     k2  id3
+</span></span></code></pre></div>
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

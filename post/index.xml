@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Legen—wait for it—dary! Legendary!</title>
+    <title>Posts on Awesome</title>
     <link>https://csyakamoz.github.io/post/</link>
-    <description>Recent content in Posts on Legen—wait for it—dary! Legendary!</description>
+    <description>Recent content in Posts on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 26 Jul 2021 00:43:00 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用软件记录</title>
-      <link>https://csyakamoz.github.io/post/software/</link>
+      <link>https://csyakamoz.github.io/post/2021/07/26/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 26 Jul 2021 00:43:00 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/software/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/07/26/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E8%AE%B0%E5%BD%95/</guid>
       <description>记录个人常用的软件
 Application WezTerm: WezTerm is a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Excalidraw: Virtual whiteboard for sketching hand-drawn like diagrams.
@@ -25,10 +25,10 @@ Magnet: Window manager for Mac.</description>
     
     <item>
       <title>Favorite</title>
-      <link>https://csyakamoz.github.io/post/favorite/</link>
+      <link>https://csyakamoz.github.io/post/2021/05/04/favorite/</link>
       <pubDate>Tue, 04 May 2021 02:32:42 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/favorite/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/05/04/favorite/</guid>
       <description>My Favorite
  Movies The Intouchables - 触不可及
 Green Book - 绿皮书
@@ -37,10 +37,10 @@ Begin Again</description>
     
     <item>
       <title>Nodejs 与 Java 的加解密</title>
-      <link>https://csyakamoz.github.io/post/javascript/crypto-with-java/</link>
+      <link>https://csyakamoz.github.io/post/2021/04/02/nodejs-%E4%B8%8E-java-%E7%9A%84%E5%8A%A0%E8%A7%A3%E5%AF%86/</link>
       <pubDate>Fri, 02 Apr 2021 23:55:18 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/crypto-with-java/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/04/02/nodejs-%E4%B8%8E-java-%E7%9A%84%E5%8A%A0%E8%A7%A3%E5%AF%86/</guid>
       <description>问题 最近在对接第三方接口, 对方是用 Java 写的 rsa 加密;
  其提供的加解密 Demo 类似于此链接中的 RSAUtils 类
  个人选择使用 node-rsa 进行解密;
@@ -54,10 +54,10 @@ Cipher for Java 1// Demo 中所指定的加密方案 2KeyFactory keyFactory = Ke
     
     <item>
       <title>What Did the require Do in Node.js</title>
-      <link>https://csyakamoz.github.io/post/what-did-the-require-do-in-nodejs/</link>
+      <link>https://csyakamoz.github.io/post/2021/03/18/what-did-the-require-do-in-node.js/</link>
       <pubDate>Thu, 18 Mar 2021 00:15:13 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/what-did-the-require-do-in-nodejs/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/03/18/what-did-the-require-do-in-node.js/</guid>
       <description>Warning: 最新版本的 Node.js 已经更新了 require 的逻辑, 此文章的相关代码已过时, 但逻辑总体上不变;
 或者直接看源码 node/lib/internal/modules/cjs/
  Environment Node Version: v11.1.0
@@ -70,10 +70,10 @@ index.js
     
     <item>
       <title>JavaScript 中 isNaN 和 Number.isNaN 的区别</title>
-      <link>https://csyakamoz.github.io/post/javascript/isnan-vs-number.isnan/</link>
+      <link>https://csyakamoz.github.io/post/2021/03/16/javascript-%E4%B8%AD-isnan-%E5%92%8C-number.isnan-%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Tue, 16 Mar 2021 14:37:33 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/isnan-vs-number.isnan/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/03/16/javascript-%E4%B8%AD-isnan-%E5%92%8C-number.isnan-%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
       <description>isNaN vs Number.isNaN isNaN: 判断参数是否为 NaN 本身, 或者无法转为数字.
 Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
 例如:
@@ -82,10 +82,10 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
     
     <item>
       <title>面试题目 - 1</title>
-      <link>https://csyakamoz.github.io/post/interview-question-001/</link>
+      <link>https://csyakamoz.github.io/post/2021/03/15/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE-1/</link>
       <pubDate>Mon, 15 Mar 2021 23:10:33 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/interview-question-001/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/03/15/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE-1/</guid>
       <description>记录一次笔试中的题目
  MySQL 中 truncate, drop, delete 的区别 摘自 TRUNCATE TABLE vs. DELETE vs. DROP TABLE: Removing Tables and Data in SQL
  google 关键词: truncate drop delete mysql
@@ -97,10 +97,10 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
     
     <item>
       <title>Shell 零碎笔记</title>
-      <link>https://csyakamoz.github.io/post/shell/chore/</link>
+      <link>https://csyakamoz.github.io/post/2021/01/22/shell-%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 22 Jan 2021 00:19:44 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell/chore/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/01/22/shell-%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/</guid>
       <description>命令补全 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
 团子的小窝 - 编写 Bash 补全脚本
 如何编写 bash 自动补全脚本
@@ -111,20 +111,20 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
     
     <item>
       <title>RabbitMQ 交换机类型</title>
-      <link>https://csyakamoz.github.io/post/rabbitmq/exchange-type/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Wed, 09 Sep 2020 16:38:46 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/rabbitmq/exchange-type/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%B1%BB%E5%9E%8B/</guid>
       <description>RabbitMQ 的交换机共有四种类型。
  fanout - 扇形 direct - 直连 topic - 主题 headers - 头（尚未了解，此文不说明）  1/** 2* 发布消息到指定交换机 3* @param {string} exchange - 交换机名 4* @param {string} routingKey - 该消息的路由键 5* @param {string} content - 消息内容 6*/ 7channel.publish(exchange, routingKey, content); 8 9/** 10* 将队列与交换机进行绑定 11* @param {string} queue - 队列名 12* @param {string} exchange - 交换机名 13* @param {string} bindingKey - 绑定路由 14*/ 15change.bindQueue(queue, exchange, bindingKey); fanout fanout 翻译成扇形，如同其外形，该类型交换机只是将接收到的所有消息广播给与它绑定的所有队列</description>
     </item>
     
     <item>
       <title>RabbitMQ 笔记</title>
-      <link>https://csyakamoz.github.io/post/rabbitmq/note/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 09 Sep 2020 16:35:55 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/rabbitmq/note/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E7%AC%94%E8%AE%B0/</guid>
       <description>RabbitMQ 官方教程
 名词 生产者 (Producing): 发送消息到交换机
 路由键 (Routing Key): 消息属性，由生产者在发送消息时声明
@@ -143,10 +143,10 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
     
     <item>
       <title>Git 笔记</title>
-      <link>https://csyakamoz.github.io/post/git/note/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/git-%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 09 Sep 2020 16:29:42 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/git/note/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/git-%E7%AC%94%E8%AE%B0/</guid>
       <description>初始化 1git config --global user.name &amp;#34;your name&amp;#34; 2git config --global user.email &amp;#34;yourEmail@example.com&amp;#34; 文件的状态  未跟踪 (untracked) 已跟踪 (tracked)  未修改 (unmodified) 已修改 (modified) 已暂存 (staged) 已提交 (committed)     未修改和已提交本质上是同一种状态
  三个工作区域  工作目录 (Working Directory) 暂存区域 (Staging Area) 仓库 (Repository)  gitignore   开头结尾皆无 /, 表示忽略所有符合规则的文件或目录；
   以 / 结尾表示忽略目录，dist/ 即忽略所有 dist 目录；
@@ -156,19 +156,19 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
     
     <item>
       <title>Javascript this 的指向</title>
-      <link>https://csyakamoz.github.io/post/javascript/this/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/javascript-this-%E7%9A%84%E6%8C%87%E5%90%91/</link>
       <pubDate>Wed, 09 Sep 2020 16:14:29 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/this/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/javascript-this-%E7%9A%84%E6%8C%87%E5%90%91/</guid>
       <description>1// Notice: the environment is Node.js 2 3global.val = &amp;#34;global&amp;#34;; 4this.val = &amp;#34;exports&amp;#34;; 5 6function normalFun() { 7 console.log(this.val); 8} 9 10const funcExpression = function () { 11 console.log(this.val); 12}; 13 14const arrowFun = () =&amp;gt; { 15 console.log(this.val); 16}; 17 18const scope = { 19 val: &amp;#34;obj&amp;#34;, 20 21 a: function () { 22 console.log(this.val); 23 }, 24 25 b: () =&amp;gt; { 26 console.log(this.val); 27 }, 28 29 c: function () { 30 return () =&amp;gt; { 31 console.</description>
     </item>
     
     <item>
       <title>forEach With Async Function in Js</title>
-      <link>https://csyakamoz.github.io/post/javascript/foreach-with-async-func/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/foreach-with-async-function-in-js/</link>
       <pubDate>Wed, 09 Sep 2020 14:05:20 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/foreach-with-async-func/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/foreach-with-async-function-in-js/</guid>
       <description>1const sleep = (ms) =&amp;gt; 2 new Promise((resolve) =&amp;gt; setTimeout(() =&amp;gt; resolve(ms), ms * 1000)); 假设我们需要对数组中的三个元素进行异步操作，而且要按顺序。
 即，对数组中的元素按顺序调用异步函数（本文为 sleep)，我们也许会用 Array.prototype.forEach 写出下面的代码：
 1(async () =&amp;gt; { 2 const begin = Date.now(); 3 const arr = [1, 2, 3]; 4 arr.forEach(async (num) =&amp;gt; { 5 console.log(await sleep(num)); 6 }); 7 8 console.log(&amp;#34;finish&amp;#34;); 9 const end = Date.now(); 10 console.log(`time: ${end - begin}`); 11})(); 我们期待的结果为：
@@ -177,10 +177,10 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
     
     <item>
       <title>Xor Cipher - 异或加密的应用场景之一</title>
-      <link>https://csyakamoz.github.io/post/xor-cipher/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/xor-cipher-%E5%BC%82%E6%88%96%E5%8A%A0%E5%AF%86%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B9%8B%E4%B8%80/</link>
       <pubDate>Wed, 09 Sep 2020 13:24:09 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/xor-cipher/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/xor-cipher-%E5%BC%82%E6%88%96%E5%8A%A0%E5%AF%86%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B9%8B%E4%B8%80/</guid>
       <description>异或加密是一种简单的加密算法。
 具体内容请看下列文章：
  XOR cipher XOR 加密简介  本文只讨论个人所应用到的场景。
@@ -195,10 +195,10 @@ Wiki 上有 python 的实现方案，这里则展示 Node.</description>
     
     <item>
       <title>Shell 基础</title>
-      <link>https://csyakamoz.github.io/post/shell/basic/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Wed, 09 Sep 2020 11:35:19 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell/basic/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%9F%BA%E7%A1%80/</guid>
       <description>Manual Bash Reference Manual
 Lint  ShellCheck, a static analysis tool for shell scripts
  建议使用 ShellCheck, 以检查脚本中潜在的问题
@@ -213,10 +213,10 @@ e.g.
     
     <item>
       <title>MacOS 修复音视频无法正常播放问题</title>
-      <link>https://csyakamoz.github.io/post/mac-fix-sound/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/macos-%E4%BF%AE%E5%A4%8D%E9%9F%B3%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 09 Sep 2020 11:32:06 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/mac-fix-sound/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/macos-%E4%BF%AE%E5%A4%8D%E9%9F%B3%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%E9%97%AE%E9%A2%98/</guid>
       <description>内容来源：mac 音频及视频均无法正常播放，怎么解决？
 表现现象：
   音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常
@@ -228,10 +228,10 @@ e.g.
     
     <item>
       <title>Tmux 笔记</title>
-      <link>https://csyakamoz.github.io/post/tmux-note/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/tmux-%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 09 Sep 2020 11:26:08 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/tmux-note/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/tmux-%E7%AC%94%E8%AE%B0/</guid>
       <description>Tmux with iTerm2  iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence.
  MacOS 用户建议使用 iTerm2 的 Tmux 特性
 使用方法，请看文档：https://www.iterm2.com/documentation-tmux-integration.html
@@ -243,10 +243,10 @@ Session 1# 创建新 session 2tmux [new -s session-name] 3 4# 恢复 session 5tm
     
     <item>
       <title>Shell 序列表达式</title>
-      <link>https://csyakamoz.github.io/post/shell/sequence-expression/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%BA%8F%E5%88%97%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
       <pubDate>Wed, 09 Sep 2020 11:18:01 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell/sequence-expression/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%BA%8F%E5%88%97%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
       <description>格式：{FIRST..LAST[..INCREMENT]}
 FIRST 和 LAST 是必需的，用 .. 分隔，中间没有空格，INCREMENT 是可选滴
 Example 1echo {1..3} # 1 2 3 2 3echo {3..1} # 3 2 1 4 5echo {0..20..5} # 0 5 10 15 20 6 7echo 0{8..10} # 08 09 010 8 9echo {08..10} # 08 09 10 10 11echo {a..f} # a b c d e f 12 13echo {f..a} # f e d c b a 14 15echo T-{a..f}-T # T-a-T T-b-T T-c-T T-d-T T-e-T T-f-T 16 17echo {A.</description>
@@ -254,10 +254,10 @@ Example 1echo {1..3} # 1 2 3 2 3echo {3..1} # 3 2 1 4 5echo {0..20..5} # 0 5 10 
     
     <item>
       <title>Shell 按行处理文本</title>
-      <link>https://csyakamoz.github.io/post/shell/handle-text-by-line/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E6%8C%89%E8%A1%8C%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC/</link>
       <pubDate>Wed, 09 Sep 2020 11:15:00 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell/handle-text-by-line/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E6%8C%89%E8%A1%8C%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC/</guid>
       <description>内容来源：【Shell 脚本】逐行处理文本文件
 read 1cat data.dat | while read line 2do 3 echo &amp;#34;${line}&amp;#34; 4done 5 6# or 7 8while read line 9do 10 echo &amp;#34;${line}&amp;#34; 11done &amp;lt; data.dat awk 1cat data.dat | awk &amp;#39;{print $0}&amp;#39; for &amp;hellip; in &amp;hellip; for var in content 表示变量 var 在 content 中循环取值，取值的分隔符由 ${IFS} 确定
 1for line in $(cat data.dat) 2do 3 echo &amp;#34;${line}&amp;#34; 4done 如果输入文本每行中没有空格，则 line 在输入文本中按换行符分隔符循环取值。
@@ -268,10 +268,10 @@ ${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）.</
     
     <item>
       <title>Shell 使用模板文件生成文件</title>
-      <link>https://csyakamoz.github.io/post/shell/build-file-from-template/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 09 Sep 2020 11:13:35 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell/build-file-from-template/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6/</guid>
       <description>需求来源 有个模板文件，其占位符格式为：${variable}
 现需要使用 shell 脚本来动态生成对应文件
 实现 假设模板文件内容如下：
@@ -283,10 +283,10 @@ ${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）.</
     
     <item>
       <title>Shell 打印彩色输出</title>
-      <link>https://csyakamoz.github.io/post/shell/print-color-output/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E6%89%93%E5%8D%B0%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</link>
       <pubDate>Wed, 09 Sep 2020 11:12:07 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell/print-color-output/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E6%89%93%E5%8D%B0%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</guid>
       <description>格式说明 ESC[{attr1};...;{attrN}m
 ESC: 转义字符，可选项为 \033, \x1b, \e 表示
 m: 母鸡
@@ -298,10 +298,10 @@ attr: 控制代码（参见下方表格）
     
     <item>
       <title>Shell 常用快捷键</title>
-      <link>https://csyakamoz.github.io/post/shell/keyboard-shortcut/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Wed, 09 Sep 2020 11:06:40 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/shell/keyboard-shortcut/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>Up, Ctrl + p, 向上移动光标或显示上一条命令
 Down, Ctrl + n, 向下移动或显示下一条命令
 Left, Ctrl + b, 光标向左移动一个字符
@@ -321,10 +321,10 @@ Alt + BS, 删除光标左边的一个单词</description>
     
     <item>
       <title>Node.js 创建本地模块</title>
-      <link>https://csyakamoz.github.io/post/javascript/crate-local-package/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/node.js-%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Wed, 09 Sep 2020 11:00:07 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/crate-local-package/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/node.js-%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9D%97/</guid>
       <description>问题来源 在编写代码时，个人习惯会把通用实用模块放在项目根目录下
 因为是通用实用模块，若项目层级较多，那么层级较深的文件引用该模块时，会出现这样的代码：
 1const Utils = require(&amp;#34;../../../../../../../utils&amp;#34;); 这么多的 .., 如果写少或写多一个 .., 就会报错
@@ -343,10 +343,10 @@ Solution Two npm 和 yarn 现已支持安装本地模块
     
     <item>
       <title>Javascript 函数传参类型</title>
-      <link>https://csyakamoz.github.io/post/javascript/function-parameter-type/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/javascript-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Wed, 09 Sep 2020 10:54:59 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/function-parameter-type/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/javascript-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E7%B1%BB%E5%9E%8B/</guid>
       <description>曾经我一度将 javascript 函数传参类型分为两种：
  基本类型：值传递 引用类型：引用传递  后来我发现，其实都是值传递;
 先说明为啥曾经认为引用类型，是引用传递：
@@ -358,10 +358,10 @@ um&amp;hellip;, 函数内部的操作，会影响外部的变量，这是很像�
     
     <item>
       <title>JavaScript 遍历对象属性顺序</title>
-      <link>https://csyakamoz.github.io/post/javascript/iterate-object-property-order/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/javascript-%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E9%A1%BA%E5%BA%8F/</link>
       <pubDate>Wed, 09 Sep 2020 10:37:51 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/iterate-object-property-order/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/javascript-%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E9%A1%BA%E5%BA%8F/</guid>
       <description>问题来源 1/** 2* @param {object} obj 3* @returns {any[]} 4*/ 5function getValues(obj) { 6 // some code or none 7 return Object.values(obj); 8} 9 10const [val0, val1, ..., valN] = getValues(obj); 11doSomethingFor0(val0); 12doSomethingFor1(val1); 13... 14doSomethingForN(valN); getValues 函数参数是对象，返回值是数组
 调用者传入对象，再对函数返回的数组，进行如下操作：
  对下标为 0 的元素做某事 0 对下标为 1 的元素做某事 1 &amp;hellip; 对下标为 N 的元素做某事 N  在这里，调用者认为，该数组元素排序顺序会如预期所想（声明顺序，插入顺序等等）
@@ -373,10 +373,10 @@ um&amp;hellip;, 函数内部的操作，会影响外部的变量，这是很像�
     
     <item>
       <title>编码风格</title>
-      <link>https://csyakamoz.github.io/post/coding-style/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</link>
       <pubDate>Wed, 09 Sep 2020 10:32:18 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/coding-style/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</guid>
       <description>ESLint  ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
  以下风格都会尽量补充对应的 eslint 规则（如果有且被我发现的话 😑
 Notice: 请优先以团队约定为准！
@@ -390,19 +390,19 @@ Notice: 请优先以团队约定为准！
     
     <item>
       <title>Node.js 调用微信小程序图片校验接口</title>
-      <link>https://csyakamoz.github.io/post/javascript/call-wechat-img-sec-check-api/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/node.js-%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E7%89%87%E6%A0%A1%E9%AA%8C%E6%8E%A5%E5%8F%A3/</link>
       <pubDate>Wed, 09 Sep 2020 10:21:33 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/call-wechat-img-sec-check-api/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/node.js-%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E7%89%87%E6%A0%A1%E9%AA%8C%E6%8E%A5%E5%8F%A3/</guid>
       <description>1const fs = require(&amp;#34;fs&amp;#34;); 2const request = require(&amp;#34;request&amp;#34;); 3 4request.post( 5 { 6 uri: 7 &amp;#34;https://api.weixin.qq.com/wxa/img_sec_check?access_token=ACCESS_TOKEN&amp;#34;, 8 9 formData: { 10 // 方法 1 11 media: fs.createReadStream(&amp;#34;path_to_img&amp;#34;), 12 13 // 方法 2 14 attachments: [ 15 // 只认下标为 0 的 16 fs.createReadStream(&amp;#34;path_to_img&amp;#34;), 17 18 // 下标 1 及之后的会被微信忽略 19 ..., 20 ], 21 22 // 方法 3 23 media: { 24 value: buffer, 25 options: { 26 // 必须有 filename, 值可任意但不能为空串 27 filename: &amp;#34;default&amp;#34;, 28 // contentType 可有可无，且值任意 29 contentType: &amp;#34;image/jpeg&amp;#34;, 30 }, 31 }, 32 33 // 方法 4 34 media: request.</description>
     </item>
     
     <item>
       <title>Node.js 支持的编码</title>
-      <link>https://csyakamoz.github.io/post/javascript/supported-encoding/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/node.js-%E6%94%AF%E6%8C%81%E7%9A%84%E7%BC%96%E7%A0%81/</link>
       <pubDate>Wed, 09 Sep 2020 10:19:07 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/javascript/supported-encoding/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/node.js-%E6%94%AF%E6%8C%81%E7%9A%84%E7%BC%96%E7%A0%81/</guid>
       <description> ascii utf8 utf16le ucs2: alias of utf16le base64 latin1 binary: alias for latin1 hex  参考  List of encodings that Node.js supports Buffers and Character Encodings  </description>
     </item>
     

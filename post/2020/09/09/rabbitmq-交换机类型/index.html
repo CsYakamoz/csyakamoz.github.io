@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>RabbitMQ 交换机类型 - Awesome</title>
+    <meta property="og:title" content="RabbitMQ 交换机类型 - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="RabbitMQ 的交换机共有四种类型。
+[&amp;hellip;] 1/** 2* 发布消息到指定交换机 3* @param {string} exchange - 交换机名 4* @param {string} routingKey - 该消息的路由键 5* @param {string} content - 消息内容 6*/ 7channel.publish(exchange, &amp;hellip;">
+      <meta property="og:description" content="RabbitMQ 的交换机共有四种类型。
+[&amp;hellip;] 1/** 2* 发布消息到指定交换机 3* @param {string} exchange - 交换机名 4* @param {string} routingKey - 该消息的路由键 5* @param {string} content - 消息内容 6*/ 7channel.publish(exchange, &amp;hellip;">
+      
+    
+
+    
+    
+    <meta name="twitter:image" content="https://www.rabbitmq.com/img/tutorials/exchanges.png">
+    
+    
+
+    
+
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>RabbitMQ 交换机类型</h1>
+
+<h3>
+  2020-09-09</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>RabbitMQ 的交换机共有四种类型。</p>
+<ul>
+<li>fanout - 扇形</li>
+<li>direct - 直连</li>
+<li>topic - 主题</li>
+<li>headers - 头（尚未了解，此文不说明）</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#93a1a1;font-style:italic">/**
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#93a1a1;font-style:italic"> * 发布消息到指定交换机
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#93a1a1;font-style:italic"> * @param {string} exchange - 交换机名
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#93a1a1;font-style:italic"> * @param {string} routingKey - 该消息的路由键
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#93a1a1;font-style:italic"> * @param {string} content - 消息内容
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#93a1a1;font-style:italic"> */</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#268bd2">channel</span>.<span style="color:#268bd2">publish</span>(<span style="color:#268bd2">exchange</span>, <span style="color:#268bd2">routingKey</span>, <span style="color:#268bd2">content</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#93a1a1;font-style:italic">/**
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#93a1a1;font-style:italic"> * 将队列与交换机进行绑定
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#93a1a1;font-style:italic"> * @param {string} queue - 队列名
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#93a1a1;font-style:italic"> * @param {string} exchange - 交换机名
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#93a1a1;font-style:italic"> * @param {string} bindingKey - 绑定路由
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#93a1a1;font-style:italic"> */</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#268bd2">change</span>.<span style="color:#268bd2">bindQueue</span>(<span style="color:#268bd2">queue</span>, <span style="color:#268bd2">exchange</span>, <span style="color:#268bd2">bindingKey</span>);
+</span></span></code></pre></div><h2 id="fanout">fanout</h2>
+<p>fanout 翻译成扇形，如同其外形，该类型交换机只是将接收到的所有消息广播给与它绑定的所有队列</p>
+<p>对于 fanout 交换机，<code>publish</code> 会无视 <code>routingKey</code> 参数，<code>bindQueue</code> 会无视 <code>bindingKey</code> 参数</p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/exchanges.png" alt="exchanges.png"></p>
+<p>X 会将收到的消息，无条件转发到所有与其绑定的队列</p>
+<h2 id="direct">direct</h2>
+<p>该类型交换机将会对绑定路由 (bindingKey) 和路由键 (routingKey) 进行精确匹配，从而确定消息该分发到哪个队列</p>
+<p><img src="https://www.rabbitmq.com/img/tutorials/direct-exchange.png" alt="direct-exchange.png"></p>
+<p>X 有两个队列与其绑定，Q1 用 <code>orange</code> 绑定，Q2 则同时用 <code>black</code>, <code>green</code> 绑定</p>
+<p>此时，所有发送到 X 交换机的消息有以下四种结果：</p>
+<ol>
+<li>路由键为 <code>orange</code> 的消息转发到 Q1</li>
+<li>路由键为 <code>black</code> 的消息转发到 Q2</li>
+<li>路由键为 <code>green</code> 的消息转发到 Q2</li>
+<li>路由键为其它的消息则丢弃，因为没有满足条件的队列</li>
+</ol>
+<p><img src="https://www.rabbitmq.com/img/tutorials/direct-exchange-multiple.png" alt="direct-exchange-multiple.png"></p>
+<p>多个队列使用相同的绑定键是合法的。</p>
+<p>图例中，X 与 Q1 的绑定路由为 <code>black</code>, X 与 Q2 的绑定路由也为 <code>black</code></p>
+<p>路由键为 <code>black</code> 的消息会同时转发到 Q1 和 Q2 中</p>
+<h2 id="topic">topic</h2>
+<p>topic 与 direct 类似，也是对绑定路由 (bindingKey) 和路由键 (routingKey) 进行匹配，但可支持模式匹配</p>
+<p>RabbitMQ 的模式有两个特殊字符：</p>
+<ul>
+<li><code>*</code> 代表一个单词 (word)</li>
+<li><code>#</code> 代表零个或多个单词 (word)</li>
+</ul>
+<p><img src="https://www.rabbitmq.com/img/tutorials/python-five.png" alt="python-five"></p>
+<p>X 与 Q1 的绑定路由为 <code>*.orange.*</code>, X 与 Q2 的绑定路由为 <code>*.*.rabbit</code> 和 <code>lazy.#</code></p>
+<ol>
+<li>路由键为 <code>quick.orange.rabbit</code> 的消息转发到 Q1 和 Q2</li>
+<li>路由键为 <code>lazy.orange.elephant</code> 的消息转发到 Q1 和 Q2</li>
+<li>路由键为 <code>quick.orange.fox</code> 的消息转发到 Q1</li>
+<li>路由键为 <code>lazy.brown.fox</code> 的消息转发到 Q2</li>
+<li>路由键为 <code>lazy.pink.rabbit</code> 的消息仅转发一次到 Q2, 尽管它同时满足 <code>*.*.rabbit</code> 和 <code>lazy.#</code></li>
+<li>路由键为 <code>quick.brown.fox</code> 的消息丢弃</li>
+</ol>
+<p>topic 交换机非常强大，因为它也可以实现 fanout, direct 的功能</p>
+<ul>
+<li>当绑定路由为 <code>#</code> 时，它表现行为与 fanout 一样</li>
+<li>当绑定路由不包含 <code>*</code> 和 <code>#</code> 时，它表现行为与 direct 一样</li>
+</ul>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

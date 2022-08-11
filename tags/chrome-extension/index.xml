@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>chrome-extension on Legen—wait for it—dary! Legendary!</title>
+    <title>chrome-extension on Awesome</title>
     <link>https://csyakamoz.github.io/tags/chrome-extension/</link>
-    <description>Recent content in chrome-extension on Legen—wait for it—dary! Legendary!</description>
+    <description>Recent content in chrome-extension on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 26 Jul 2021 00:43:00 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/chrome-extension/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用软件记录</title>
-      <link>https://csyakamoz.github.io/post/software/</link>
+      <link>https://csyakamoz.github.io/post/2021/07/26/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 26 Jul 2021 00:43:00 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/software/</guid>
+      <guid>https://csyakamoz.github.io/post/2021/07/26/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E8%AE%B0%E5%BD%95/</guid>
       <description>记录个人常用的软件
 Application WezTerm: WezTerm is a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Excalidraw: Virtual whiteboard for sketching hand-drawn like diagrams.

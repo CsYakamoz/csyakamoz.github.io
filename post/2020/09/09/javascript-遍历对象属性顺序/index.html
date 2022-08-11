@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>JavaScript 遍历对象属性顺序 - Awesome</title>
+    <meta property="og:title" content="JavaScript 遍历对象属性顺序 - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="1/** 2* @param {object} obj 3* @returns {any[]} 4*/ 5function getValues(obj) { 6 // some code or none 7 return Object.values(obj); 8} 9 10const [val0, val1, ..., valN] = getValues(obj); &amp;hellip;">
+      <meta property="og:description" content="1/** 2* @param {object} obj 3* @returns {any[]} 4*/ 5function getValues(obj) { 6 // some code or none 7 return Object.values(obj); 8} 9 10const [val0, val1, ..., valN] = getValues(obj); &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>JavaScript 遍历对象属性顺序</h1>
+
+<h3>
+  2020-09-09</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h2 id="问题来源">问题来源</h2>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#93a1a1;font-style:italic">/**
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#93a1a1;font-style:italic"> * @param {object} obj
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#93a1a1;font-style:italic"> * @returns {any[]}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#93a1a1;font-style:italic"> */</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#859900">function</span> <span style="color:#268bd2">getValues</span>(<span style="color:#268bd2">obj</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#93a1a1;font-style:italic">// some code or none
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#93a1a1;font-style:italic"></span>    <span style="color:#859900">return</span> <span style="color:#cb4b16">Object</span>.<span style="color:#268bd2">values</span>(<span style="color:#268bd2">obj</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#859900">const</span> [<span style="color:#268bd2">val0</span>, <span style="color:#268bd2">val1</span>, ..., <span style="color:#268bd2">valN</span>] = <span style="color:#268bd2">getValues</span>(<span style="color:#268bd2">obj</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#268bd2">doSomethingFor0</span>(<span style="color:#268bd2">val0</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#268bd2">doSomethingFor1</span>(<span style="color:#268bd2">val1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>...
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#268bd2">doSomethingForN</span>(<span style="color:#268bd2">valN</span>);
+</span></span></code></pre></div><p><code>getValues</code> 函数参数是对象，返回值是数组</p>
+<p>调用者传入对象，再对函数返回的数组，进行如下操作：</p>
+<ul>
+<li>对下标为 0 的元素做某事 0</li>
+<li>对下标为 1 的元素做某事 1</li>
+<li>&hellip;</li>
+<li>对下标为 N 的元素做某事 N</li>
+</ul>
+<p>在这里，调用者认为，该数组元素排序顺序会如预期所想（声明顺序，插入顺序等等）</p>
+<p>实际上，该数组元素排序顺序依赖于<strong>遍历对象属性顺序</strong>, 但遍历对象属性顺序有时并非等价于对象的声明（插入）顺序，故导致可能出现非预期结果</p>
+<h2 id="顺序规则">顺序规则</h2>
+<p>在 Google 查找相关资料后及个人测试，得到如下结果：</p>
+<p>先以三个区间划分，然后区间内再各自排序</p>
+<ol>
+<li>非负整数（不包括 <code>n.0</code> 这种）区间，按照从小到大排序</li>
+<li>普通的属性名区间，按照声明（插入）顺序排序</li>
+<li>Symbol 区间，按照声明（插入）顺序排序</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#93a1a1;font-style:italic">/**
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#93a1a1;font-style:italic"> * Object.values()
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#93a1a1;font-style:italic"> * Object.entries()
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#93a1a1;font-style:italic"> * for...in
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#93a1a1;font-style:italic"> * JSON.stringify()
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#93a1a1;font-style:italic"> * Object.keys() 得到的顺序与上面的相同
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#93a1a1;font-style:italic"> **/</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#93a1a1;font-style:italic">// Object.keys() is [1, foo, bar]
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">const</span> <span style="color:#268bd2">obj</span> = { <span style="color:#268bd2">foo</span>: <span style="color:#2aa198">&#34;foo&#34;</span>, <span style="color:#2aa198">&#34;1&#34;</span>: <span style="color:#2aa198">&#34;1&#34;</span>, <span style="color:#268bd2">bar</span>: <span style="color:#2aa198">&#34;bar&#34;</span> };
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#93a1a1;font-style:italic">/**
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#93a1a1;font-style:italic"> * Object.keys() is
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#93a1a1;font-style:italic"> * [
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#93a1a1;font-style:italic"> * &#39;0&#39;, &#39;1&#39;, &#39;2&#39;,
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#93a1a1;font-style:italic"> * &#39;10&#39;, &#39;m&#39;, &#39;b&#39;,
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#93a1a1;font-style:italic"> * &#39;-1&#39;, &#39;a&#39;, &#39;0.0&#39;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#93a1a1;font-style:italic"> * ]
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#93a1a1;font-style:italic"> *
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#93a1a1;font-style:italic"> * 注意：symbol 无法通过 keys() 得到，因为其是不可枚举
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#93a1a1;font-style:italic"> * 需要通过遍历 “Object.getOwnPropertySymbols()” 返回的数组来引用
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span><span style="color:#93a1a1;font-style:italic"> * 但直接通过 console.log 打印该对象，可看到 symbol 排在最后
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="color:#93a1a1;font-style:italic"> **/</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span><span style="color:#859900">const</span> <span style="color:#268bd2">someObj</span> = {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>  <span style="color:#268bd2">m</span>: { <span style="color:#268bd2">value</span>: <span style="color:#859900">function</span> () {}, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>  <span style="color:#2aa198;font-weight:bold">2</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;2&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>  <span style="color:#268bd2">b</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;b&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>  <span style="color:#2aa198;font-weight:bold">0</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>  [<span style="color:#268bd2">Symbol</span>()]: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;sym&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">false</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>  <span style="color:#2aa198;font-weight:bold">1</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;1&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>  <span style="color:#2aa198">&#34;-1&#34;</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;-1&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>  <span style="color:#268bd2">a</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;a&#34;</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>  <span style="color:#2aa198">&#34;10&#34;</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198;font-weight:bold">10</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>  <span style="color:#2aa198">&#34;0.0&#34;</span>: { <span style="color:#268bd2">value</span>: <span style="color:#2aa198;font-weight:bold">0.0</span>, <span style="color:#268bd2">enumerable</span>: <span style="color:#859900;font-weight:bold">true</span> },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>};
+</span></span></code></pre></div><h2 id="解决方案">解决方案</h2>
+<ol>
+<li>
+<p>不编写依赖遍历对象属性顺序的代码</p>
+</li>
+<li>
+<p>使用 <code>Map</code>, 根据 MDN 文档</p>
+<blockquote>
+<p>Map 中的键值是有序的，而添加到对象中的键则不是。因此，当对它进行遍历时，Map 对象是按插入的顺序返回键值</p>
+</blockquote>
+</li>
+<li>
+<p>在插入的时候，额外增加一个字段以作排序根据</p>
+<p>插入的元素结构可以为：<code>{ createdAt: 时间戳 value: ... }</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#859900">const</span> <span style="color:#268bd2">obj1</span> = {};
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#268bd2">obj1</span>.<span style="color:#268bd2">a</span> = <span style="color:#2aa198">&#34;a&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#268bd2">obj1</span>[<span style="color:#2aa198">&#34;1&#34;</span>] = <span style="color:#2aa198">&#34;1&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#268bd2">obj1</span>[<span style="color:#2aa198">&#34;0&#34;</span>] = <span style="color:#2aa198">&#34;0&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#268bd2">obj1</span>[<span style="color:#2aa198">&#34;3&#34;</span>] = <span style="color:#2aa198">&#34;3&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#cb4b16">Object</span>.<span style="color:#268bd2">values</span>(<span style="color:#268bd2">obj1</span>)); <span style="color:#93a1a1;font-style:italic">// [ &#39;0&#39;, &#39;1&#39;, &#39;3&#39;, &#39;a&#39; ]
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#93a1a1;font-style:italic"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#859900">const</span> <span style="color:#268bd2">R</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#34;ramda&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#859900">const</span> <span style="color:#268bd2">getValues</span> = <span style="color:#268bd2">R</span>.<span style="color:#268bd2">pipe</span>(
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  <span style="color:#268bd2">R</span>.<span style="color:#268bd2">toPairs</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  <span style="color:#268bd2">R</span>.<span style="color:#268bd2">sort</span>(<span style="color:#268bd2">R</span>.<span style="color:#268bd2">ascend</span>(<span style="color:#268bd2">R</span>.<span style="color:#268bd2">path</span>([<span style="color:#2aa198">&#34;1&#34;</span>, <span style="color:#2aa198">&#34;createdAt&#34;</span>]))),
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  <span style="color:#268bd2">R</span>.<span style="color:#268bd2">map</span>(<span style="color:#268bd2">R</span>.<span style="color:#268bd2">pipe</span>(<span style="color:#268bd2">R</span>.<span style="color:#268bd2">last</span>, <span style="color:#268bd2">R</span>.<span style="color:#268bd2">prop</span>(<span style="color:#2aa198">&#34;value&#34;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#859900">const</span> <span style="color:#268bd2">obj2</span> = {};
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#268bd2">obj2</span>.<span style="color:#268bd2">a</span> = { <span style="color:#268bd2">createdAt</span>: <span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;a&#34;</span> };
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#268bd2">obj2</span>[<span style="color:#2aa198">&#34;1&#34;</span>] = { <span style="color:#268bd2">createdAt</span>: <span style="color:#2aa198;font-weight:bold">2</span>, <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;1&#34;</span> };
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#268bd2">obj2</span>[<span style="color:#2aa198">&#34;0&#34;</span>] = { <span style="color:#268bd2">createdAt</span>: <span style="color:#2aa198;font-weight:bold">3</span>, <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;0&#34;</span> };
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#268bd2">obj2</span>[<span style="color:#2aa198">&#34;3&#34;</span>] = { <span style="color:#268bd2">createdAt</span>: <span style="color:#2aa198;font-weight:bold">4</span>, <span style="color:#268bd2">value</span>: <span style="color:#2aa198">&#34;3&#34;</span> };
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">getValues</span>(<span style="color:#268bd2">obj2</span>)); <span style="color:#93a1a1;font-style:italic">// [ &#39;a&#39;, &#39;1&#39;, &#39;0&#39;, &#39;3&#39; ]
+</span></span></span></code></pre></div></li>
+</ol>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/5525795/does-javascript-guarantee-object-property-order">Does JavaScript Guarantee Object Property Order?</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map">MDN Map</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol">MDN Symbol</a></li>
+</ul>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

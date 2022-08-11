@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mac on Legen—wait for it—dary! Legendary!</title>
+    <title>mac on Awesome</title>
     <link>https://csyakamoz.github.io/tags/mac/</link>
-    <description>Recent content in mac on Legen—wait for it—dary! Legendary!</description>
+    <description>Recent content in mac on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Sep 2020 11:32:06 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MacOS 修复音视频无法正常播放问题</title>
-      <link>https://csyakamoz.github.io/post/mac-fix-sound/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/macos-%E4%BF%AE%E5%A4%8D%E9%9F%B3%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 09 Sep 2020 11:32:06 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/mac-fix-sound/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/macos-%E4%BF%AE%E5%A4%8D%E9%9F%B3%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%E9%97%AE%E9%A2%98/</guid>
       <description>内容来源：mac 音频及视频均无法正常播放，怎么解决？
 表现现象：
   音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常

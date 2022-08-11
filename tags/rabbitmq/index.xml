@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rabbitmq on Legen—wait for it—dary! Legendary!</title>
+    <title>rabbitmq on Awesome</title>
     <link>https://csyakamoz.github.io/tags/rabbitmq/</link>
-    <description>Recent content in rabbitmq on Legen—wait for it—dary! Legendary!</description>
+    <description>Recent content in rabbitmq on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Sep 2020 16:38:46 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RabbitMQ 交换机类型</title>
-      <link>https://csyakamoz.github.io/post/rabbitmq/exchange-type/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Wed, 09 Sep 2020 16:38:46 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/rabbitmq/exchange-type/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%B1%BB%E5%9E%8B/</guid>
       <description>RabbitMQ 的交换机共有四种类型。
  fanout - 扇形 direct - 直连 topic - 主题 headers - 头（尚未了解，此文不说明）  1/** 2* 发布消息到指定交换机 3* @param {string} exchange - 交换机名 4* @param {string} routingKey - 该消息的路由键 5* @param {string} content - 消息内容 6*/ 7channel.publish(exchange, routingKey, content); 8 9/** 10* 将队列与交换机进行绑定 11* @param {string} queue - 队列名 12* @param {string} exchange - 交换机名 13* @param {string} bindingKey - 绑定路由 14*/ 15change.bindQueue(queue, exchange, bindingKey); fanout fanout 翻译成扇形，如同其外形，该类型交换机只是将接收到的所有消息广播给与它绑定的所有队列</description>
     </item>
     
     <item>
       <title>RabbitMQ 笔记</title>
-      <link>https://csyakamoz.github.io/post/rabbitmq/note/</link>
+      <link>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 09 Sep 2020 16:35:55 +0800</pubDate>
       
-      <guid>https://csyakamoz.github.io/post/rabbitmq/note/</guid>
+      <guid>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E7%AC%94%E8%AE%B0/</guid>
       <description>RabbitMQ 官方教程
 名词 生产者 (Producing): 发送消息到交换机
 路由键 (Routing Key): 消息属性，由生产者在发送消息时声明
