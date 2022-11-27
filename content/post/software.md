@@ -16,8 +16,6 @@ tags: ["software", "chrome-extension"]
 
 [Xnip](https://xnipapp.com/): Handy Screenshot App for Mac
 
-[Raycast](https://www.raycast.com/): Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.
-
 [Notion](https://www.notion.so/): All-in-one workspace.
 
 [Magnet](https://magnet.crowdcafe.com/): Window manager for Mac.
@@ -52,13 +50,11 @@ tags: ["software", "chrome-extension"]
 
 [qBittorrnet](https://www.qbittorrent.org): The qBittorrent project aims to provide an open-source software alternative to µTorrent.
 
-[AnyDesk](https://anydesk.com/remote-desktop): Remote Desktop Software That Actually Works.
-
 [LICEcap](https://www.cockos.com/licecap/): simple animated screen captures.
 
 [Hidden Bar](https://github.com/dwarvesf/hidden): An ultra-light MacOS utility that helps hide menu bar icons.
 
-[Stats](https://github.com/exelban/stats): macOS system monitor in your menu bar.
+[Maccy](https://maccy.app/): Lightweight clipboard manager for macOS.
 
 ## Command Line Tool
 
@@ -205,11 +201,15 @@ xxd
 
 ~~[Alfred](https://www.alfredapp.com/): Alfred is an award-winning app for macOS which boosts your efficiency with hotkeys, keywords, text expansion and more.~~
 
-~~[Maccy](https://maccy.app/): Lightweight clipboard manager for macOS.~~
-
 ~~[QSpace](https://apps.apple.com/cn/app/qspace/id1469774098?mt=12): QSpace is a clean and efficient Multi-view File Manager, also can be a FTP/SFTP/WebDAV client.~~
 
 ~~[foobar2000](https://www.foobar2000.org/): foobar2000 is an advanced freeware audio player for the Windows platform.~~
+
+~~[Raycast](https://www.raycast.com/): Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.~~
+
+~~[Stats](https://github.com/exelban/stats): macOS system monitor in your menu bar.~~
+
+~~[AnyDesk](https://anydesk.com/remote-desktop): Remote Desktop Software That Actually Works.~~
 
 ## 参考
 

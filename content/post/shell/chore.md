@@ -88,3 +88,18 @@ cp filename{,.bak}
 ```
 
 这里使用了 [Bash 的模式扩展](https://wangdoc.com/bash/expansion.html#%E5%A4%A7%E6%8B%AC%E5%8F%B7%E6%89%A9%E5%B1%95)
+
+## "并发"
+
+来源: [Concurrency in Shell Scripts](https://stackoverflow.com/questions/24843570/concurrency-in-shell-scripts)
+
+```
+cmd0 &
+cmd1 &
+cmd2 &
+wait
+```
+
+With no parameters it waits for all background processes to finish.
+
+With a PID it waits for the specific process.

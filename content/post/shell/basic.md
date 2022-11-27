@@ -250,7 +250,7 @@ echo $((a / b)) # 4
 1. 运算符号两边要有空格
 2. 引用变量时需要使用 `$`
 3. `*` 需要额外加个 `\`
-4. [expr is antiquated. Consider rewriting this using $((..)), ${} or](https://github.com/koalaman/shellcheck/wiki/SC2003)
+4. [expr is antiquated. Consider rewriting this using `$((..))`, `${}` or `[[ ]]`](https://github.com/koalaman/shellcheck/wiki/SC2003)
 
 ## for 语句
 
