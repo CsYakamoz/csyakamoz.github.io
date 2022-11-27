@@ -18,9 +18,10 @@ Application WezTerm: WezTerm is a GPU-accelerated cross-platform terminal emulat
 Excalidraw: Virtual whiteboard for sketching hand-drawn like diagrams.
 draw.io: diagrams.net (formerly draw.io) is free online diagram software.
 Xnip: Handy Screenshot App for Mac
-Raycast: Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.
 Notion: All-in-one workspace.
-Magnet: Window manager for Mac.</description>
+Magnet: Window manager for Mac.
+Karabiner-Elements: A powerful and stable keyboard customizer for macOS.
+Go2Shell: Opens a terminal window to the current directory in Finder.</description>
     </item>
     
     <item>
@@ -30,9 +31,10 @@ Magnet: Window manager for Mac.</description>
       
       <guid>https://csyakamoz.github.io/post/2021/05/04/favorite/</guid>
       <description>My Favorite
- Movies The Intouchables - 触不可及
+Movies The Intouchables - 触不可及
 Green Book - 绿皮书
-Begin Again</description>
+Begin Again
+Anime 恋は雨上がりのように</description>
     </item>
     
     <item>
@@ -42,14 +44,14 @@ Begin Again</description>
       
       <guid>https://csyakamoz.github.io/post/2021/04/02/nodejs-%E4%B8%8E-java-%E7%9A%84%E5%8A%A0%E8%A7%A3%E5%AF%86/</guid>
       <description>问题 最近在对接第三方接口, 对方是用 Java 写的 rsa 加密;
- 其提供的加解密 Demo 类似于此链接中的 RSAUtils 类
- 个人选择使用 node-rsa 进行解密;
+其提供的加解密 Demo 类似于此链接中的 RSAUtils 类
+个人选择使用 node-rsa 进行解密;
 然而, 在尝试解密过程中, 总是报各种错误, 且根据错误去 google 也无法找到解决方案;
 最后无意中找到一篇文章, 其说明了为什么解密失败;
- 吐槽下, google 关键词居然是 Node RSA Java, 难以置信 😑
- 原因 node-rsa for javascript 1new NodeRSA([keyData, [format]], [options]); options 参数中的 encryptionScheme 是用来指定 padding;
+吐槽下, google 关键词居然是 Node RSA Java, 难以置信 😑
+原因 node-rsa for javascript 1new NodeRSA([keyData, [format]], [options]); options 参数中的 encryptionScheme 是用来指定 padding;
 其支持两种: pkcs1_oaep 和 pkcs1, 若未指定, 则默认是前者;
-Cipher for Java 1// Demo 中所指定的加密方案 2KeyFactory keyFactory = KeyFactory.getInstance(&amp;#34;RSA&amp;#34;); 3 4// keyFactory.getAlgorithm() 返回 &amp;#34;RSA&amp;#34; 5Cipher cipher = Cipher.</description>
+Cipher for Java 1// Demo 中所指定的加密方案 2KeyFactory keyFactory = KeyFactory.getInstance(&amp;#34;RSA&amp;#34;); 3 4// keyFactory.getAlgorithm() 返回 &amp;#34;RSA&amp;#34; 5Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm()); Cipher 文档如下:</description>
     </item>
     
     <item>
@@ -60,12 +62,12 @@ Cipher for Java 1// Demo 中所指定的加密方案 2KeyFactory keyFactory = Ke
       <guid>https://csyakamoz.github.io/post/2021/03/18/what-did-the-require-do-in-node.js/</guid>
       <description>Warning: 最新版本的 Node.js 已经更新了 require 的逻辑, 此文章的相关代码已过时, 但逻辑总体上不变;
 或者直接看源码 node/lib/internal/modules/cjs/
- Environment Node Version: v11.1.0
+Environment Node Version: v11.1.0
 Prepare We have two file in /home/csyakamoz/Desktop/test directory.
 index.js
 1require(&amp;#34;./a&amp;#34;); a.js
 1let i = 0; 2 3module.exports = () =&amp;gt; { 4 console.log(++i); 5}; Start makeRequireFunction Notice:
- mod is the module object of index.js  1function makeRequireFunction(mod) { 2 const Module = mod.constructor; 3 4 function require(path) { 5 // 👉 start here, and path is &amp;#34;.</description>
+mod is the module object of index.js 1function makeRequireFunction(mod) { 2 const Module = mod.constructor; 3 4 function require(path) { 5 // 👉 start here, and path is &amp;#34;.</description>
     </item>
     
     <item>
@@ -81,21 +83,6 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
     </item>
     
     <item>
-      <title>面试题目 - 1</title>
-      <link>https://csyakamoz.github.io/post/2021/03/15/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE-1/</link>
-      <pubDate>Mon, 15 Mar 2021 23:10:33 +0800</pubDate>
-      
-      <guid>https://csyakamoz.github.io/post/2021/03/15/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE-1/</guid>
-      <description>记录一次笔试中的题目
- MySQL 中 truncate, drop, delete 的区别 摘自 TRUNCATE TABLE vs. DELETE vs. DROP TABLE: Removing Tables and Data in SQL
- google 关键词: truncate drop delete mysql
- delete delete 是 DML (Data Manipulation Language) 命令;
-此命令从表中删除记录; 它只用于从表中删除记录, 而不是从数据库中删除表;
-语法:
-1-- 删除表 tb_name 中的所有记录 2delete from tb_name; 3 4-- 删除表 tb_name 中满足 condition 条件的记录 5delete from tb_name where condition  如果你不想删除表结构或者仅想删除特定记录, 可使用 delete; 此命令可以删除一个, 一些或全部记录; 该命令执行成功时, 会返回此次执行中被删除记录数; delete 命令在执行中会使用行锁且可回滚; 每个被删除的记录都会被锁; delete 会保持自增 ID(auto-increment ID) 的值; 例如删除了最新的记录, 其 ID 为 20, 然后再次插入新记录, 则该记录的 ID 为 21 - 即使它前面那条记录是 19;  truncate truncate 类似于 delete, 但它是 DDL (Data Definition Language) 命令;</description>
-    </item>
-    
-    <item>
       <title>Shell 零碎笔记</title>
       <link>https://csyakamoz.github.io/post/2021/01/22/shell-%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 22 Jan 2021 00:19:44 +0800</pubDate>
@@ -106,7 +93,7 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
 如何编写 bash 自动补全脚本
 检查某命令是否存在 来源: How can I check if a program exists from a Bash script?
 1command -v &amp;lt;the_command&amp;gt; 例子:
-1if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null 2then 3 echo &amp;#34;COMMAND could not be found&amp;#34; 4 exit 5fi  &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
+1if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null 2then 3 echo &amp;#34;COMMAND could not be found&amp;#34; 4 exit 5fi &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
     </item>
     
     <item>
@@ -116,7 +103,7 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/rabbitmq-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%B1%BB%E5%9E%8B/</guid>
       <description>RabbitMQ 的交换机共有四种类型。
- fanout - 扇形 direct - 直连 topic - 主题 headers - 头（尚未了解，此文不说明）  1/** 2* 发布消息到指定交换机 3* @param {string} exchange - 交换机名 4* @param {string} routingKey - 该消息的路由键 5* @param {string} content - 消息内容 6*/ 7channel.publish(exchange, routingKey, content); 8 9/** 10* 将队列与交换机进行绑定 11* @param {string} queue - 队列名 12* @param {string} exchange - 交换机名 13* @param {string} bindingKey - 绑定路由 14*/ 15change.bindQueue(queue, exchange, bindingKey); fanout fanout 翻译成扇形，如同其外形，该类型交换机只是将接收到的所有消息广播给与它绑定的所有队列</description>
+fanout - 扇形 direct - 直连 topic - 主题 headers - 头（尚未了解，此文不说明） 1/** 2 * 发布消息到指定交换机 3 * @param {string} exchange - 交换机名 4 * @param {string} routingKey - 该消息的路由键 5 * @param {string} content - 消息内容 6 */ 7channel.publish(exchange, routingKey, content); 8 9/** 10 * 将队列与交换机进行绑定 11 * @param {string} queue - 队列名 12 * @param {string} exchange - 交换机名 13 * @param {string} bindingKey - 绑定路由 14 */ 15change.</description>
     </item>
     
     <item>
@@ -133,12 +120,12 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
 队列 (Queue): 消息存储的地方；接受来自交换机的消息，并在存有消费者的情况下，将消息发给消费者
 消费者 (Consuming): 从队列中接收消息，并做对应的处理
 消息传递流程 生产者 -&amp;gt; 交换机 -&amp;gt; 队列 -&amp;gt; 消费者
-  生产者的每个消息只能发给一个交换机；生成者发送的时候，可指定该消息的路由键
-  交换机每收到一个消息，则将该消息发送给满足条件的队列；若没有队列满足条件，则丢弃该消息
+生产者的每个消息只能发给一个交换机；生成者发送的时候，可指定该消息的路由键
+交换机每收到一个消息，则将该消息发送给满足条件的队列；若没有队列满足条件，则丢弃该消息
 交换机是否转发给队列，由交换机类型，交换机队列的绑定路由共同决定
 交换机可以跟多个队列使用绑定路由，也可以跟同个队列绑定不同的绑定路由
-  队列收到消息后，会存储该消息，直到有消费者订阅该队列
-  代码样例 1// Producing 2 3const amqp = require(&amp;#34;amqplib&amp;#34;); 4 5const ExchangeName = &amp;#34;exchange-name&amp;#34;; 6const ExchangeType = &amp;#34;exchange-type&amp;#34;; // fanout | direct | topic | headers 7 8const MsgRoutingKey = &amp;#34;msg-routing-key&amp;#34;; 9 10(async () =&amp;gt; { 11 const connection = await amqp.</description>
+队列收到消息后，会存储该消息，直到有消费者订阅该队列
+代码样例 1// Producing 2 3const amqp = require(&amp;#34;amqplib&amp;#34;); 4 5const ExchangeName = &amp;#34;exchange-name&amp;#34;; 6const ExchangeType = &amp;#34;exchange-type&amp;#34;; // fanout | direct | topic | headers 7 8const MsgRoutingKey = &amp;#34;msg-routing-key&amp;#34;; 9 10(async () =&amp;gt; { 11 const connection = await amqp.</description>
     </item>
     
     <item>
@@ -147,11 +134,14 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
       <pubDate>Wed, 09 Sep 2020 16:29:42 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/git-%E7%AC%94%E8%AE%B0/</guid>
-      <description>初始化 1git config --global user.name &amp;#34;your name&amp;#34; 2git config --global user.email &amp;#34;yourEmail@example.com&amp;#34; 文件的状态  未跟踪 (untracked) 已跟踪 (tracked)  未修改 (unmodified) 已修改 (modified) 已暂存 (staged) 已提交 (committed)     未修改和已提交本质上是同一种状态
- 三个工作区域  工作目录 (Working Directory) 暂存区域 (Staging Area) 仓库 (Repository)  gitignore   开头结尾皆无 /, 表示忽略所有符合规则的文件或目录；
-  以 / 结尾表示忽略目录，dist/ 即忽略所有 dist 目录；
-  以 / 开头表示忽略相对于根目录的目标，/.setting 即忽略根目录下的 .setting 文件或目录，/dist/ 即忽略根目录下的 dist 目录；
-  !</description>
+      <description>初始化 1git config --global user.name &amp;#34;your name&amp;#34; 2git config --global user.email &amp;#34;yourEmail@example.com&amp;#34; 文件的状态 未跟踪 (untracked) 已跟踪 (tracked) 未修改 (unmodified) 已修改 (modified) 已暂存 (staged) 已提交 (committed) 未修改和已提交本质上是同一种状态
+三个工作区域 工作目录 (Working Directory) 暂存区域 (Staging Area) 仓库 (Repository) gitignore 开头结尾皆无 /, 表示忽略所有符合规则的文件或目录；
+以 / 结尾表示忽略目录，dist/ 即忽略所有 dist 目录；
+以 / 开头表示忽略相对于根目录的目标，/.setting 即忽略根目录下的 .setting 文件或目录，/dist/ 即忽略根目录下的 dist 目录；
+! 开头表示取反，即忽略指定模式以外的文件或目录；
+glob * 匹配任意数量的任意字符：
+Law*, 匹配 Law, Laws, Lawyer, 但不匹配 GrokLaw, La, aw
+? 匹配任意一个字符：</description>
     </item>
     
     <item>
@@ -183,14 +173,15 @@ Number.isNaN: 仅判断参数是否为 NaN 本身(完全匹配, 类似于 ===).
       <guid>https://csyakamoz.github.io/post/2020/09/09/xor-cipher-%E5%BC%82%E6%88%96%E5%8A%A0%E5%AF%86%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B9%8B%E4%B8%80/</guid>
       <description>异或加密是一种简单的加密算法。
 具体内容请看下列文章：
- XOR cipher XOR 加密简介  本文只讨论个人所应用到的场景。
+XOR cipher XOR 加密简介 本文只讨论个人所应用到的场景。
 需求 在工作中，个人经常遇到使用 UUID 作为各种对象 ID 的场景。
 例如：对于每一个 song，我们都为其生成唯一的 quiz，song &amp;amp; quiz 的 ID 都是 uuid；因此，每一个 song 都和其唯一的 quiz 绑定。
 需求是：songId &amp;amp; quizId 可以双向查找；即，可通过 songId 查找到对应的 quizId，也可通过 quizId 查找到对应的 songId。
 解决方案 方案 0 - 数据库存储映射 两种存储方式：
- song 表添加 quizId 列，quiz 表则添加 songId 列 建立新表 song-quiz, songId 和 quizId 作为联合主键  方案 2 - 异或加密当作映射 如果不想将映射关系存到数据库中，则可以使用异或加密。
+song 表添加 quizId 列，quiz 表则添加 songId 列 建立新表 song-quiz, songId 和 quizId 作为联合主键 方案 2 - 异或加密当作映射 如果不想将映射关系存到数据库中，则可以使用异或加密。
 使用异或后，我们所需存储的仅有 key。
-Wiki 上有 python 的实现方案，这里则展示 Node.</description>
+Wiki 上有 python 的实现方案，这里则展示 Node.js 的实现方案。
+1/** 2 * @param {&amp;#39;ascii&amp;#39; | &amp;#39;utf8&amp;#39; | &amp;#39;utf16le&amp;#39; | &amp;#39;ucs2&amp;#39; | &amp;#39;base64&amp;#39; | &amp;#39;latin1&amp;#39; | &amp;#39;binary&amp;#39; | &amp;#39;hex&amp;#39;} encoding 编码格式 3 * @param {string} key 密钥 4 * @param {string} text 待加密（解密）的文本 5 * @returns {string} 加密（解密）后的文本 6 */ 7function XorCipher(encoding, key, text) { 8 if (typeof text !</description>
     </item>
     
     <item>
@@ -200,14 +191,14 @@ Wiki 上有 python 的实现方案，这里则展示 Node.</description>
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%9F%BA%E7%A1%80/</guid>
       <description>Manual Bash Reference Manual
-Lint  ShellCheck, a static analysis tool for shell scripts
- 建议使用 ShellCheck, 以检查脚本中潜在的问题
+Lint ShellCheck, a static analysis tool for shell scripts
+建议使用 ShellCheck, 以检查脚本中潜在的问题
 Shebang shebang 即 #! , 其后面跟的是解释当前脚本的解释器路径
 e.g.
- #!/bin/bash #!/usr/bin/bash #!/usr/bin/env bash  个人习惯用 #!/usr/bin/env NAME 而不是 #!/usr/bin/NAME
+#!/bin/bash #!/usr/bin/bash #!/usr/bin/env bash 个人习惯用 #!/usr/bin/env NAME 而不是 #!/usr/bin/NAME
 原因请看此：Why is it better to use “#!/usr/bin/env NAME” instead of “#!/path/to/NAME” as my shebang?
 变量 定义 variable=value
- 不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等 等号两侧不能有空格  使用  $variable ${variable}  {} 是可选的，但建议加上，{} 是为了帮助解释器识别变量的边界
+不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等 等号两侧不能有空格 使用 $variable ${variable} {} 是可选的，但建议加上，{} 是为了帮助解释器识别变量的边界
 1for skill in Ada Coffee Action Java; do 2 echo &amp;#34;I am good at ${skill}Script&amp;#34; 3done 如果不给 skill 加上花括号，解释器会把 skillScript 当作变量，在上面的情况下，其值为空</description>
     </item>
     
@@ -219,11 +210,11 @@ e.g.
       <guid>https://csyakamoz.github.io/post/2020/09/09/macos-%E4%BF%AE%E5%A4%8D%E9%9F%B3%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%E9%97%AE%E9%A2%98/</guid>
       <description>内容来源：mac 音频及视频均无法正常播放，怎么解决？
 表现现象：
-  音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常
-  BiliBili 也无法播放音频，进度条同上，但网络是正常
-  任何可以让 mac 发出声音的行为均不出声
-  重启一切正常
-  解决办法：terminal 下输入 sudo killall coreaudiod</description>
+音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常
+BiliBili 也无法播放音频，进度条同上，但网络是正常
+任何可以让 mac 发出声音的行为均不出声
+重启一切正常
+解决办法：terminal 下输入 sudo killall coreaudiod</description>
     </item>
     
     <item>
@@ -232,8 +223,8 @@ e.g.
       <pubDate>Wed, 09 Sep 2020 11:26:08 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/tmux-%E7%AC%94%E8%AE%B0/</guid>
-      <description>Tmux with iTerm2  iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence.
- MacOS 用户建议使用 iTerm2 的 Tmux 特性
+      <description>Tmux with iTerm2 iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence.
+MacOS 用户建议使用 iTerm2 的 Tmux 特性
 使用方法，请看文档：https://www.iterm2.com/documentation-tmux-integration.html
 Notice: 远程服务器也能使用，但 tmux 版本至少为 1.8, 但推荐 2.3 及之后
 配置 有时候需要使用原生 tmux, 此时使用该配置
@@ -310,13 +301,14 @@ BS, Ctrl + h, 删除光标左边的字符
 Del, Ctrl + d, 删除光标右边的字符
 Home, Ctrl + a, 跳转到行首
 End, Ctrl + e, 跳转到行尾
- 以上快捷键可在 Mac 中的大多数文本编辑区域使用
+以上快捷键可在 Mac 中的大多数文本编辑区域使用
 e.g.
- Google Chrome 的地址栏 Wechat 的聊天内容输入框   Ctrl + w, 删除光标左边一个单词
+Google Chrome 的地址栏 Wechat 的聊天内容输入框 Ctrl + w, 删除光标左边一个单词
 Alt + b, 光标向左移动一个单词
 Alt + f, 光标向右移动一个单词
 Alt + d, 删除光标右边的一个单词
-Alt + BS, 删除光标左边的一个单词</description>
+Alt + BS, 删除光标左边的一个单词
+Ctrl + k, 删除光标到行尾的文本</description>
     </item>
     
     <item>
@@ -334,11 +326,11 @@ Solution One 使用 module-alias, 简洁且易用
 个人认为只有一个缺点 - 它更改 Module._resolveFilename 方法
 Solution Two npm 和 yarn 现已支持安装本地模块
 首先需要为本地模块添加 package.json 文件
- 对于 package.json, 其 name, version 是必需的
- 本地模块的名字为 package.json 的 name 字段，而不是本地模块所处目录名
+对于 package.json, 其 name, version 是必需的
+本地模块的名字为 package.json 的 name 字段，而不是本地模块所处目录名
 假设本地模块相对于项目根目录的路径是 ./local-package-dir, 其在 package.json 文件中的 name 为 local-package
 则安装本地模块的方法如下：
-1 2# 在 node_modules 中创建软链 local-package 指向 ../local-package-dir 3npm install .</description>
+1 2# 在 node_modules 中创建软链 local-package 指向 ../local-package-dir 3npm install ./local-package-dir 4 5# 拷贝 .</description>
     </item>
     
     <item>
@@ -348,7 +340,7 @@ Solution Two npm 和 yarn 现已支持安装本地模块
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/javascript-%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E7%B1%BB%E5%9E%8B/</guid>
       <description>曾经我一度将 javascript 函数传参类型分为两种：
- 基本类型：值传递 引用类型：引用传递  后来我发现，其实都是值传递;
+基本类型：值传递 引用类型：引用传递 后来我发现，其实都是值传递;
 先说明为啥曾经认为引用类型，是引用传递：
 1function demo(obj) { 2 obj.foo = &amp;#34;foo&amp;#34;; 3} 4 5let variable = {}; 6 7console.log(variable); // {} 8 9demo(variable); 10 11console.log(variable); // { foo: &amp;#39;foo&amp;#39; } 外部向函数 demo 传递实参 (variable);
 函数进行操作：向形参 (obj) 添加一个属性 (foo), 其值为 foo;
@@ -362,13 +354,13 @@ um&amp;hellip;, 函数内部的操作，会影响外部的变量，这是很像�
       <pubDate>Wed, 09 Sep 2020 10:37:51 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/javascript-%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E9%A1%BA%E5%BA%8F/</guid>
-      <description>问题来源 1/** 2* @param {object} obj 3* @returns {any[]} 4*/ 5function getValues(obj) { 6 // some code or none 7 return Object.values(obj); 8} 9 10const [val0, val1, ..., valN] = getValues(obj); 11doSomethingFor0(val0); 12doSomethingFor1(val1); 13... 14doSomethingForN(valN); getValues 函数参数是对象，返回值是数组
+      <description>问题来源 1/** 2 * @param {object} obj 3 * @returns {any[]} 4 */ 5function getValues(obj) { 6 // some code or none 7 return Object.values(obj); 8} 9 10const [val0, val1, ..., valN] = getValues(obj); 11doSomethingFor0(val0); 12doSomethingFor1(val1); 13... 14doSomethingForN(valN); getValues 函数参数是对象，返回值是数组
 调用者传入对象，再对函数返回的数组，进行如下操作：
- 对下标为 0 的元素做某事 0 对下标为 1 的元素做某事 1 &amp;hellip; 对下标为 N 的元素做某事 N  在这里，调用者认为，该数组元素排序顺序会如预期所想（声明顺序，插入顺序等等）
+对下标为 0 的元素做某事 0 对下标为 1 的元素做某事 1 &amp;hellip; 对下标为 N 的元素做某事 N 在这里，调用者认为，该数组元素排序顺序会如预期所想（声明顺序，插入顺序等等）
 实际上，该数组元素排序顺序依赖于遍历对象属性顺序, 但遍历对象属性顺序有时并非等价于对象的声明（插入）顺序，故导致可能出现非预期结果
 顺序规则 在 Google 查找相关资料后及个人测试，得到如下结果：
 先以三个区间划分，然后区间内再各自排序
- 非负整数（不包括 n.0 这种）区间，按照从小到大排序 普通的属性名区间，按照声明（插入）顺序排序 Symbol 区间，按照声明（插入）顺序排序  1/** 2* Object.</description>
+非负整数（不包括 n.0 这种）区间，按照从小到大排序 普通的属性名区间，按照声明（插入）顺序排序 Symbol 区间，按照声明（插入）顺序排序 1/** 2 * Object.</description>
     </item>
     
     <item>
@@ -377,15 +369,15 @@ um&amp;hellip;, 函数内部的操作，会影响外部的变量，这是很像�
       <pubDate>Wed, 09 Sep 2020 10:32:18 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</guid>
-      <description>ESLint  ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
- 以下风格都会尽量补充对应的 eslint 规则（如果有且被我发现的话 😑
+      <description>ESLint ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+以下风格都会尽量补充对应的 eslint 规则（如果有且被我发现的话 😑
 Notice: 请优先以团队约定为准！
 缩进使用空格而不是制表符 尽管制表符更省空间，但还是更喜欢空格
- one tab is equal to 2, 4, 8 space
-  no-tabs  坚持使用分号 纵然很多人依旧坚持不使用分号，但我就喜欢加分号，就这么滴。
- semi  坚持使用大括号 即使只有一条语句，也依旧要使用大括号；
+one tab is equal to 2, 4, 8 space
+no-tabs 坚持使用分号 纵然很多人依旧坚持不使用分号，但我就喜欢加分号，就这么滴。
+semi 坚持使用大括号 即使只有一条语句，也依旧要使用大括号；
 同时，else 与 if 的 } 处在统一行；
-1// bad 2if (test) return false; 3else return true; 4 5// bad 6if (test) 7 return false; 8else 9 return true; 10 11// bad 12if (test) { 13 return false; 14} 15else { 16 return true; 17} 18 19// good 20if (test) { 21 return false; 22} else { 23 return true; 24}  curly brace-style nonblock-statement-body-position  const 优于 let, 弃用 var var 的坏处，此处不一一阐述；</description>
+1// bad 2if (test) return false; 3else return true; 4 5// bad 6if (test) 7 return false; 8else 9 return true; 10 11// bad 12if (test) { 13 return false; 14} 15else { 16 return true; 17} 18 19// good 20if (test) { 21 return false; 22} else { 23 return true; 24} curly brace-style nonblock-statement-body-position const 优于 let, 弃用 var var 的坏处，此处不一一阐述；</description>
     </item>
     
     <item>
@@ -403,7 +395,7 @@ Notice: 请优先以团队约定为准！
       <pubDate>Wed, 09 Sep 2020 10:19:07 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/node.js-%E6%94%AF%E6%8C%81%E7%9A%84%E7%BC%96%E7%A0%81/</guid>
-      <description> ascii utf8 utf16le ucs2: alias of utf16le base64 latin1 binary: alias for latin1 hex  参考  List of encodings that Node.js supports Buffers and Character Encodings  </description>
+      <description> ascii utf8 utf16le ucs2: alias of utf16le base64 latin1 binary: alias for latin1 hex 参考 List of encodings that Node.js supports Buffers and Character Encodings </description>
     </item>
     
     <item>

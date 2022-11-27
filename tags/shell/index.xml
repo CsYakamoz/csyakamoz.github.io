@@ -18,7 +18,7 @@
 如何编写 bash 自动补全脚本
 检查某命令是否存在 来源: How can I check if a program exists from a Bash script?
 1command -v &amp;lt;the_command&amp;gt; 例子:
-1if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null 2then 3 echo &amp;#34;COMMAND could not be found&amp;#34; 4 exit 5fi  &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
+1if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null 2then 3 echo &amp;#34;COMMAND could not be found&amp;#34; 4 exit 5fi &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
     </item>
     
     <item>
@@ -28,14 +28,14 @@
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%9F%BA%E7%A1%80/</guid>
       <description>Manual Bash Reference Manual
-Lint  ShellCheck, a static analysis tool for shell scripts
- 建议使用 ShellCheck, 以检查脚本中潜在的问题
+Lint ShellCheck, a static analysis tool for shell scripts
+建议使用 ShellCheck, 以检查脚本中潜在的问题
 Shebang shebang 即 #! , 其后面跟的是解释当前脚本的解释器路径
 e.g.
- #!/bin/bash #!/usr/bin/bash #!/usr/bin/env bash  个人习惯用 #!/usr/bin/env NAME 而不是 #!/usr/bin/NAME
+#!/bin/bash #!/usr/bin/bash #!/usr/bin/env bash 个人习惯用 #!/usr/bin/env NAME 而不是 #!/usr/bin/NAME
 原因请看此：Why is it better to use “#!/usr/bin/env NAME” instead of “#!/path/to/NAME” as my shebang?
 变量 定义 variable=value
- 不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等 等号两侧不能有空格  使用  $variable ${variable}  {} 是可选的，但建议加上，{} 是为了帮助解释器识别变量的边界
+不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等 等号两侧不能有空格 使用 $variable ${variable} {} 是可选的，但建议加上，{} 是为了帮助解释器识别变量的边界
 1for skill in Ada Coffee Action Java; do 2 echo &amp;#34;I am good at ${skill}Script&amp;#34; 3done 如果不给 skill 加上花括号，解释器会把 skillScript 当作变量，在上面的情况下，其值为空</description>
     </item>
     
@@ -108,13 +108,14 @@ BS, Ctrl + h, 删除光标左边的字符
 Del, Ctrl + d, 删除光标右边的字符
 Home, Ctrl + a, 跳转到行首
 End, Ctrl + e, 跳转到行尾
- 以上快捷键可在 Mac 中的大多数文本编辑区域使用
+以上快捷键可在 Mac 中的大多数文本编辑区域使用
 e.g.
- Google Chrome 的地址栏 Wechat 的聊天内容输入框   Ctrl + w, 删除光标左边一个单词
+Google Chrome 的地址栏 Wechat 的聊天内容输入框 Ctrl + w, 删除光标左边一个单词
 Alt + b, 光标向左移动一个单词
 Alt + f, 光标向右移动一个单词
 Alt + d, 删除光标右边的一个单词
-Alt + BS, 删除光标左边的一个单词</description>
+Alt + BS, 删除光标左边的一个单词
+Ctrl + k, 删除光标到行尾的文本</description>
     </item>
     
   </channel>

@@ -144,6 +144,14 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#93a1a1;font-style:italic"># 等价于 cp filename filename.bak</span>
 </span></span></code></pre></div><p>这里使用了 <a href="https://wangdoc.com/bash/expansion.html#%E5%A4%A7%E6%8B%AC%E5%8F%B7%E6%89%A9%E5%B1%95">Bash 的模式扩展</a></p>
+<h2 id="并发">&ldquo;并发&rdquo;</h2>
+<p>来源: <a href="https://stackoverflow.com/questions/24843570/concurrency-in-shell-scripts">Concurrency in Shell Scripts</a></p>
+<pre tabindex="0"><code>cmd0 &amp;
+cmd1 &amp;
+cmd2 &amp;
+wait
+</code></pre><p>With no parameters it waits for all background processes to finish.</p>
+<p>With a PID it waits for the specific process.</p>
 
 
 

@@ -18,9 +18,10 @@ Application WezTerm: WezTerm is a GPU-accelerated cross-platform terminal emulat
 Excalidraw: Virtual whiteboard for sketching hand-drawn like diagrams.
 draw.io: diagrams.net (formerly draw.io) is free online diagram software.
 Xnip: Handy Screenshot App for Mac
-Raycast: Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.
 Notion: All-in-one workspace.
-Magnet: Window manager for Mac.</description>
+Magnet: Window manager for Mac.
+Karabiner-Elements: A powerful and stable keyboard customizer for macOS.
+Go2Shell: Opens a terminal window to the current directory in Finder.</description>
     </item>
     
     <item>
@@ -29,8 +30,8 @@ Magnet: Window manager for Mac.</description>
       <pubDate>Wed, 09 Sep 2020 11:26:08 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/post/2020/09/09/tmux-%E7%AC%94%E8%AE%B0/</guid>
-      <description>Tmux with iTerm2  iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence.
- MacOS 用户建议使用 iTerm2 的 Tmux 特性
+      <description>Tmux with iTerm2 iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence.
+MacOS 用户建议使用 iTerm2 的 Tmux 特性
 使用方法，请看文档：https://www.iterm2.com/documentation-tmux-integration.html
 Notice: 远程服务器也能使用，但 tmux 版本至少为 1.8, 但推荐 2.3 及之后
 配置 有时候需要使用原生 tmux, 此时使用该配置

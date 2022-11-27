@@ -362,7 +362,7 @@ e.g.
 <li>运算符号两边要有空格</li>
 <li>引用变量时需要使用 <code>$</code></li>
 <li><code>*</code> 需要额外加个 <code>\</code></li>
-<li><a href="https://github.com/koalaman/shellcheck/wiki/SC2003">expr is antiquated. Consider rewriting this using $((..)), ${} or</a></li>
+<li><a href="https://github.com/koalaman/shellcheck/wiki/SC2003">expr is antiquated. Consider rewriting this using <code>$((..))</code>, <code>${}</code> or <code>[[ ]]</code></a></li>
 </ol>
 <h2 id="for-语句">for 语句</h2>
 <div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#859900">for</span> (( <span style="color:#268bd2">i</span> = 0; i &lt; count; i++ )); <span style="color:#859900">do</span>

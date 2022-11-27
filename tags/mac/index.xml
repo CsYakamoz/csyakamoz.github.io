@@ -15,11 +15,11 @@
       <guid>https://csyakamoz.github.io/post/2020/09/09/macos-%E4%BF%AE%E5%A4%8D%E9%9F%B3%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%E9%97%AE%E9%A2%98/</guid>
       <description>内容来源：mac 音频及视频均无法正常播放，怎么解决？
 表现现象：
-  音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常
-  BiliBili 也无法播放音频，进度条同上，但网络是正常
-  任何可以让 mac 发出声音的行为均不出声
-  重启一切正常
-  解决办法：terminal 下输入 sudo killall coreaudiod</description>
+音乐播放器无法播放，进度条停留在起始点，且为缓冲状态，但网络是正常
+BiliBili 也无法播放音频，进度条同上，但网络是正常
+任何可以让 mac 发出声音的行为均不出声
+重启一切正常
+解决办法：terminal 下输入 sudo killall coreaudiod</description>
     </item>
     
   </channel>
