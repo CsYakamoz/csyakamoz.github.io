@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Shell 参数 - Awesome</title>
+    <meta property="og:title" content="Shell 参数 - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="$n, n 代表数字，从 1 开始，1 代表第一个参数，2 代表第二个参数，以此类推&amp;hellip;
+[&amp;hellip;] 当它们不被 &amp;quot; 包含时，它们都相当于 &amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; ... &amp;quot;$n&amp;quot;
+当它们被 &amp;quot; 包含时，&amp;quot;$*&amp;quot; 相当于 &amp;quot;$1 $2 ... $n&amp;quot;, &amp;hellip;">
+      <meta property="og:description" content="$n, n 代表数字，从 1 开始，1 代表第一个参数，2 代表第二个参数，以此类推&amp;hellip;
+[&amp;hellip;] 当它们不被 &amp;quot; 包含时，它们都相当于 &amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; ... &amp;quot;$n&amp;quot;
+当它们被 &amp;quot; 包含时，&amp;quot;$*&amp;quot; 相当于 &amp;quot;$1 $2 ... $n&amp;quot;, &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Shell 参数</h1>
+
+<h3>
+  2022-11-27</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h2 id="parameter">Parameter</h2>
+<h3 id="特殊参数">特殊参数</h3>
+<ul>
+<li><code>$0</code>, 为当前脚本文件名</li>
+<li><code>$?</code>, 上一个命令的退出状态，或函数的返回值</li>
+<li><code>$$</code>, 当前 Shell 进程 ID</li>
+</ul>
+<h3 id="脚本或函数参数">脚本或函数参数</h3>
+<p><code>$n</code>, n 代表数字，从 1 开始，1 代表第一个参数，2 代表第二个参数，以此类推&hellip;</p>
+<ul>
+<li><code>$#</code>, 传递到脚本或函数的参数个数</li>
+<li><code>$@</code>, 传递给脚本或函数的所有参数，<code>&quot;$1&quot; &quot;$2&quot; ... &quot;$n&quot;</code></li>
+<li><code>$*</code>, 传递给脚本或函数的所有参数，与 <code>$@</code> 类似，但被 <code>&quot;</code> 包含时，与 <code>$@</code> 不同</li>
+</ul>
+<h3 id="-与--的区别">$* 与 $@ 的区别</h3>
+<p>当它们不被 <code>&quot;</code> 包含时，它们都相当于 <code>&quot;$1&quot; &quot;$2&quot; ... &quot;$n&quot;</code></p>
+<p>当它们被 <code>&quot;</code> 包含时，<code>&quot;$*&quot;</code> 相当于 <code>&quot;$1 $2 ... $n&quot;</code>, <code>&quot;$@&quot;</code> 则不变</p>
+
+
+
+  <footer>
+  
+  
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

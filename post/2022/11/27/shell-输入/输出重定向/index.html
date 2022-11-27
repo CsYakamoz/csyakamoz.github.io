@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Shell 输入/输出重定向 - Awesome</title>
+    <meta property="og:title" content="Shell 输入/输出重定向 - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="输入/输出重定向
+[&amp;hellip;] &amp;lt; 是输入重定向
+&amp;gt; 是输出重定向
+[&amp;hellip;] 输入从 filename 中读取
+[&amp;hellip;] N 是一个文件描述符
+输入从 N 中读取
+[&amp;hellip;] Warning: M 和 &amp;gt; 之间不能有空格
+[&amp;hellip;] M 是一个文件描述符，省略则默认是 1
+将 M 的输出重定向到 filename, &amp;hellip;">
+      <meta property="og:description" content="输入/输出重定向
+[&amp;hellip;] &amp;lt; 是输入重定向
+&amp;gt; 是输出重定向
+[&amp;hellip;] 输入从 filename 中读取
+[&amp;hellip;] N 是一个文件描述符
+输入从 N 中读取
+[&amp;hellip;] Warning: M 和 &amp;gt; 之间不能有空格
+[&amp;hellip;] M 是一个文件描述符，省略则默认是 1
+将 M 的输出重定向到 filename, &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Shell 输入/输出重定向</h1>
+
+<h3>
+  2022-11-27</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h2 id="inputoutput-redirection">Input/Output Redirection</h2>
+<blockquote>
+<p>输入/输出重定向</p>
+</blockquote>
+<h3 id="标准输入输出错误输出">标准输入/输出/错误输出</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">文件描述符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">输入文件 - 标准输入</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">输出文件 - 标准输出</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">错误输出文件 - 标准错误输出</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">&lt;, &gt;</h3>
+<p><code>&lt;</code> 是输入重定向</p>
+<p><code>&gt;</code> 是输出重定向</p>
+<h3 id="-filename">&lt; filename</h3>
+<p>输入从 filename 中读取</p>
+<h3 id="n">&lt;&amp;N</h3>
+<p>N 是一个文件描述符</p>
+<p>输入从 N 中读取</p>
+<h3 id="m-filename">[M]&gt; filename</h3>
+<blockquote>
+<p>Warning: M 和 &gt; 之间不能有空格</p>
+</blockquote>
+<p>M 是一个文件描述符，省略则默认是 1</p>
+<p>将 M 的输出重定向到 filename, 若 filename 不存在，则创建，否则覆盖</p>
+<h3 id="m-filename-1">[M]&gt;&gt; filename</h3>
+<blockquote>
+<p>Warning: M 和 &gt; 之间不能有空格</p>
+</blockquote>
+<p>M 是一个文件描述符，省略则默认是 1</p>
+<p>将 M 的输出重定向到 filename; 若 filename 不存在，则创建，否则追加到 N 的最后</p>
+<h3 id="mn">[M]&gt;&amp;N</h3>
+<blockquote>
+<p>Warning: M 和 &gt; 之间不能有空格</p>
+</blockquote>
+<p>M 是一个文件描述符，省略则默认是 1</p>
+<p>N 是另外一个文件描述符</p>
+<p>即将 M 的输出重定向到 N</p>
+<h3 id="样例">样例</h3>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#93a1a1;font-style:italic"># command 的标准输出重定向到 filename</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#cb4b16">command</span> &gt; filename
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#93a1a1;font-style:italic"># or</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#cb4b16">command</span> 1&gt; filename
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#93a1a1;font-style:italic"># command 的标准输出重定向到 filename（追加形式）</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#cb4b16">command</span> &gt;&gt; filename
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#93a1a1;font-style:italic"># or</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#cb4b16">command</span> 1&gt;&gt; filename
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#93a1a1;font-style:italic"># command 的标准输出重定向到 filename, 同时标准错误也重定向到标准输出</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#cb4b16">command</span> &gt; filename 2&gt;&amp;<span style="color:#2aa198;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#93a1a1;font-style:italic"># command 的输出重定向到 /dev/null, 相当于禁止输出的效果</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#cb4b16">command</span> &gt; /dev/null
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#93a1a1;font-style:italic"># 屏蔽 command 的输出以及错误输出</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#cb4b16">command</span> &gt; /dev/null 2&gt;&amp;<span style="color:#2aa198;font-weight:bold">1</span>
+</span></span></code></pre></div><h3 id="为何-21-要写在后面">为何 <code>2&gt;&amp;1</code> 要写在后面？</h3>
+<p>内容来源：<a href="https://www.cnblogs.com/caolisong/archive/2007/04/25/726896.html">linux shell 中 &ldquo;2&gt;&amp;1&rdquo; 含义</a></p>
+<p>对于 <code>command &gt; filename 2&gt;&amp;1</code></p>
+<p>command &gt; filename, 将标准输出重定向到 filename</p>
+<p>2&gt;&amp;1 则将标准错误重定向到标准输出，但此时标准输出指向 filename, 故标准错误输出也指向 filename</p>
+<p>对于 <code>command 2&gt;&amp;1 &gt; filename</code></p>
+<p>2&gt;&amp;1 将标准错误输出重定向到标准输出，但此时标准输出指向终端，故标准错误输出也指向终端</p>
+<p>&gt; filename, 将标准输出重定向到 filename, 但并没有更改标准错误输出的行为，故标准错误输出还是指向终端</p>
+<h2 id="参考">参考</h2>
+<p><a href="http://c.biancheng.net/view/942.html">Linux Shell 重定向（输入输出重定向）精讲</a></p>
+<p><a href="https://www.runoob.com/linux/linux-shell-io-redirections.html">Shell 输入 / 输出重定向</a></p>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

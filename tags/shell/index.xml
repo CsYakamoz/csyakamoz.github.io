@@ -6,7 +6,50 @@
     <description>Recent content in shell on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2021 00:19:44 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Nov 2022 23:48:08 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell 参数</title>
+      <link>https://csyakamoz.github.io/post/2022/11/27/shell-%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Sun, 27 Nov 2022 23:48:08 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2022/11/27/shell-%E5%8F%82%E6%95%B0/</guid>
+      <description>Parameter 特殊参数 $0, 为当前脚本文件名 $?, 上一个命令的退出状态，或函数的返回值 $$, 当前 Shell 进程 ID 脚本或函数参数 $n, n 代表数字，从 1 开始，1 代表第一个参数，2 代表第二个参数，以此类推&amp;hellip;
+$#, 传递到脚本或函数的参数个数 $@, 传递给脚本或函数的所有参数，&amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; ... &amp;quot;$n&amp;quot; $*, 传递给脚本或函数的所有参数，与 $@ 类似，但被 &amp;quot; 包含时，与 $@ 不同 $* 与 $@ 的区别 当它们不被 &amp;quot; 包含时，它们都相当于 &amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; ... &amp;quot;$n&amp;quot;
+当它们被 &amp;quot; 包含时，&amp;quot;$*&amp;quot; 相当于 &amp;quot;$1 $2 ... $n&amp;quot;, &amp;quot;$@&amp;quot; 则不变</description>
+    </item>
+    
+    <item>
+      <title>Shell 输入/输出重定向</title>
+      <link>https://csyakamoz.github.io/post/2022/11/27/shell-%E8%BE%93%E5%85%A5/%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91/</link>
+      <pubDate>Sun, 27 Nov 2022 23:15:09 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2022/11/27/shell-%E8%BE%93%E5%85%A5/%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91/</guid>
+      <description>Input/Output Redirection 输入/输出重定向
+标准输入/输出/错误输出 文件描述符 说明 0 输入文件 - 标准输入 1 输出文件 - 标准输出 2 错误输出文件 - 标准错误输出 &amp;lt;, &amp;gt; &amp;lt; 是输入重定向
+&amp;gt; 是输出重定向
+&amp;lt; filename 输入从 filename 中读取
+&amp;lt;&amp;amp;N N 是一个文件描述符
+输入从 N 中读取
+[M]&amp;gt; filename Warning: M 和 &amp;gt; 之间不能有空格
+M 是一个文件描述符，省略则默认是 1
+将 M 的输出重定向到 filename, 若 filename 不存在，则创建，否则覆盖
+[M]&amp;gt;&amp;gt; filename Warning: M 和 &amp;gt; 之间不能有空格
+M 是一个文件描述符，省略则默认是 1
+将 M 的输出重定向到 filename; 若 filename 不存在，则创建，否则追加到 N 的最后</description>
+    </item>
+    
+    <item>
+      <title>Shell 中 while 循环变量引发的问题</title>
+      <link>https://csyakamoz.github.io/post/2021/03/18/shell-%E4%B8%AD-while-%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 18 Mar 2021 00:11:44 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2021/03/18/shell-%E4%B8%AD-while-%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>bash-version: GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin18)
+样例 样例 1:
+1#!/usr/bin/env bash 2i=0 3echo -e &amp;#34;foo\nbar\nzed&amp;#34; | while read line; do 4 i=$((i + 1)) 5 echo &amp;#34;in loop, i is ${i}&amp;#34; 6done 7 8echo &amp;#34;out loop, i is ${i}&amp;#34; 9 10# output: 11# in loop, i is 1 12# in loop, i is 2 13# in loop, i is 3 14# out loop, i is 0 样例 2:
+1#!/usr/bin/env bash 2i=0 3for line in $(echo -e &amp;#34;foo\nbar\nzed&amp;#34;) ; do 4 i=$((i + 1)) 5 echo &amp;#34;in loop, i is ${i}&amp;#34; 6done 7 8echo &amp;#34;out loop, i is ${i}&amp;#34; 9 10# output: 11# in loop, i is 1 12# in loop, i is 2 13# in loop, i is 3 14# out loop, i is 3 问题 为何样例 1 中, 最后打印的 i 的值为 0, 而样例 2 却是 3 ?</description>
+    </item>
+    
     <item>
       <title>Shell 零碎笔记</title>
       <link>https://csyakamoz.github.io/post/2021/01/22/shell-%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/</link>
