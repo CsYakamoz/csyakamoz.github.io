@@ -8,6 +8,14 @@ tags: ["software", "chrome-extension"]
 
 ## Application
 
+[Spotify](https://open.spotify.com/): Spotify is a digital music service that gives you access to millions of songs.
+
+[Telegram](https://telegram.org/): a new era of messaging
+
+[KeyCastr](https://github.com/keycastr/keycastr): KeyCastr, an open-source keystroke visualizer
+
+[Bob](https://github.com/ripperhe/Bob): Bob 是一款 macOS 平台翻译和 OCR 软件。
+
 [WezTerm](https://wezfurlong.org/wezterm/): WezTerm is a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
 [Excalidraw](https://github.com/excalidraw/excalidraw): Virtual whiteboard for sketching hand-drawn like diagrams.
@@ -191,25 +199,25 @@ xxd
 
 ## Deprecated
 
-~~[Typora](https://typora.io/): Typora is a minimal markdown editor, providing new ways for reading and writing markdown.~~
+[Typora](https://typora.io/): Typora is a minimal markdown editor, providing new ways for reading and writing markdown.
 
-~~[iTerm2](https://www.iterm2.com/): iTerm2 is a replacement for Terminal and the successor to iTerm.~~
+[iTerm2](https://www.iterm2.com/): iTerm2 is a replacement for Terminal and the successor to iTerm.
 
-~~[Snipaste](https://www.snipaste.com/): Snipaste is a simple but powerful snipping tool, and also allows you to pin the screenshot back onto the screen.~~
+[Snipaste](https://www.snipaste.com/): Snipaste is a simple but powerful snipping tool, and also allows you to pin the screenshot back onto the screen.
 
-~~[Dash](https://kapeli.com/dash): Dash gives your Mac instant offline access to 200+ API documentation sets.~~
+[Dash](https://kapeli.com/dash): Dash gives your Mac instant offline access to 200+ API documentation sets.
 
-~~[Alfred](https://www.alfredapp.com/): Alfred is an award-winning app for macOS which boosts your efficiency with hotkeys, keywords, text expansion and more.~~
+[Alfred](https://www.alfredapp.com/): Alfred is an award-winning app for macOS which boosts your efficiency with hotkeys, keywords, text expansion and more.
 
-~~[QSpace](https://apps.apple.com/cn/app/qspace/id1469774098?mt=12): QSpace is a clean and efficient Multi-view File Manager, also can be a FTP/SFTP/WebDAV client.~~
+[QSpace](https://apps.apple.com/cn/app/qspace/id1469774098?mt=12): QSpace is a clean and efficient Multi-view File Manager, also can be a FTP/SFTP/WebDAV client.
 
-~~[foobar2000](https://www.foobar2000.org/): foobar2000 is an advanced freeware audio player for the Windows platform.~~
+[foobar2000](https://www.foobar2000.org/): foobar2000 is an advanced freeware audio player for the Windows platform.
 
-~~[Raycast](https://www.raycast.com/): Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.~~
+[Raycast](https://www.raycast.com/): Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.
 
-~~[Stats](https://github.com/exelban/stats): macOS system monitor in your menu bar.~~
+[Stats](https://github.com/exelban/stats): macOS system monitor in your menu bar.
 
-~~[AnyDesk](https://anydesk.com/remote-desktop): Remote Desktop Software That Actually Works.~~
+[AnyDesk](https://anydesk.com/remote-desktop): Remote Desktop Software That Actually Works.
 
 ## 参考
 

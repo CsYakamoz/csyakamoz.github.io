@@ -2,7 +2,6 @@
 title: "Shell 中 while 循环变量引发的问题"
 date: 2021-03-18T00:11:44+08:00
 tags: ["shell"]
-draft: true
 ---
 
 > bash-version: GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin18)

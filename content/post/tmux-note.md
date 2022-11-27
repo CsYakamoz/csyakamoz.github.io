@@ -1,7 +1,7 @@
 ---
 title: "Tmux 笔记"
 date: 2020-09-09T11:26:08+08:00
-tags: ["tmux", "software"]
+tags: ["tmux"]
 ---
 
 ## Tmux with iTerm2
@@ -10,19 +10,15 @@ tags: ["tmux", "software"]
 
 MacOS 用户建议使用 iTerm2 的 Tmux 特性
 
-使用方法，请看文档：https://www.iterm2.com/documentation-tmux-integration.html
+使用方法, 请看文档:[tmux Integration](https://www.iterm2.com/documentation-tmux-integration.html)
 
-**Notice**: 远程服务器也能使用，但 tmux 版本至少为 **1.8**, 但推荐 2.3 及之后
+**Notice**: 远程服务器也能使用, 但 tmux 版本至少为 **1.8**, 但推荐 2.3 及之后
+
+> Notice: 个人已不再使用 iTerm2 🐶
 
 ## 配置
 
-有时候需要使用原生 tmux, 此时使用该[配置](https://github.com/CsYakamoz/config/blob/master/tmux/tmux.conf)
-
-## 安装
-
-```sh
-curl 'https://raw.githubusercontent.com/CsYakamoz/config/master/tmux/.tmux.conf' -o "${HOME}/.tmux.conf"
-```
+有时候需要使用原生 tmux, 此时使用该[配置](https://github.com/CsYakamoz/config/blob/master/tmux/README.md)
 
 ## 常用命令和快捷键
 
