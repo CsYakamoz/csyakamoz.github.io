@@ -47,7 +47,12 @@ Field int `json:"-"`
 Field int `json:"-,"`
 ```
 
-empty 指: false, 0, nil pointer, nil interface value, empty array, slice, map or string
+注意:
+
+1. empty 指: false, 0, nil pointer, nil interface value, empty array, slice, map or string
+2. 如果 key-name 是仅由 Unicode 字母、数字和 ASCII 标点符号（引号、反斜杠和逗号除外）组成的非空字符串, 则使用该 key-name, 否则使用 field-name
+
+TODO: JSON Tag 支持 `string`, 即 `json:",string"`, 尚未清楚其作用
 
 ## 序列化
 
