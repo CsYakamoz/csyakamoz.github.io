@@ -3,18 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://csyakamoz.github.io/</loc>
-    <lastmod>2022-11-27T23:48:08+08:00</lastmod>
+    <lastmod>2023-02-27T00:50:45+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/tags/golang/</loc>
+    <lastmod>2023-02-27T00:50:45+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/post/2023/02/27/golang-http-roundtripper/</loc>
+    <lastmod>2023-02-27T00:50:45+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/tags/http/</loc>
+    <lastmod>2023-02-27T00:50:45+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/post/</loc>
-    <lastmod>2022-11-27T23:48:08+08:00</lastmod>
+    <lastmod>2023-02-27T00:50:45+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/tags/</loc>
+    <lastmod>2023-02-27T00:50:45+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/tags/json/</loc>
+    <lastmod>2023-02-24T20:40:35+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/post/2023/02/24/json-in-golang/</loc>
+    <lastmod>2023-02-24T20:40:35+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/tags/shell/</loc>
     <lastmod>2022-11-27T23:48:08+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/post/2022/11/27/shell-%E5%8F%82%E6%95%B0/</loc>
-    <lastmod>2022-11-27T23:48:08+08:00</lastmod>
-  </url><url>
-    <loc>https://csyakamoz.github.io/tags/</loc>
     <lastmod>2022-11-27T23:48:08+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/post/2022/11/27/shell-%E8%BE%93%E5%85%A5/%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91/</loc>

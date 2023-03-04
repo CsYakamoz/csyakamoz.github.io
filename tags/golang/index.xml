@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on Awesome</title>
+    <link>https://csyakamoz.github.io/tags/golang/</link>
+    <description>Recent content in golang on Awesome</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Feb 2023 00:50:45 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Http RoundTripper</title>
+      <link>https://csyakamoz.github.io/post/2023/02/27/golang-http-roundtripper/</link>
+      <pubDate>Mon, 27 Feb 2023 00:50:45 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2023/02/27/golang-http-roundtripper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Json In Golang</title>
+      <link>https://csyakamoz.github.io/post/2023/02/24/json-in-golang/</link>
+      <pubDate>Fri, 24 Feb 2023 20:40:35 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2023/02/24/json-in-golang/</guid>
+      <description>这里仅记录个人认为重要的点:)
+更详细的说明, 请查阅官方文档: encoding/json
+基本知识 默认的类型映射:
+Boolean -&amp;gt; JSON booleans Floating point, integer -&amp;gt; JSON numbers String -&amp;gt; JSON strings Array, slice -&amp;gt; JSON arrays []byte -&amp;gt; base64-encoded string nil slice -&amp;gt; JSON null Struct -&amp;gt; JSON objects Struct Field&amp;rsquo;s Tag with JSON 序列化 Struct 时, 只处理 Exported Field, 即首字母大写的字段
+默认情况下, json 的 key 等价于字段名, 其他情况看如下说明:
+1// Field appears in JSON as key &amp;#34;myName&amp;#34;. 2Field int `json:&amp;#34;myName&amp;#34;` 3 4// Field appears in JSON as key &amp;#34;myName&amp;#34; and 5// the field is omitted from the object if its value is empty, 6// as defined above.</description>
+    </item>
+    
+  </channel>
+</rss>

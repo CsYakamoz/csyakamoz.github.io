@@ -6,7 +6,30 @@
     <description>Recent content in Posts on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Nov 2022 23:48:08 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Feb 2023 00:50:45 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Http RoundTripper</title>
+      <link>https://csyakamoz.github.io/post/2023/02/27/golang-http-roundtripper/</link>
+      <pubDate>Mon, 27 Feb 2023 00:50:45 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2023/02/27/golang-http-roundtripper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Json In Golang</title>
+      <link>https://csyakamoz.github.io/post/2023/02/24/json-in-golang/</link>
+      <pubDate>Fri, 24 Feb 2023 20:40:35 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2023/02/24/json-in-golang/</guid>
+      <description>这里仅记录个人认为重要的点:)
+更详细的说明, 请查阅官方文档: encoding/json
+基本知识 默认的类型映射:
+Boolean -&amp;gt; JSON booleans Floating point, integer -&amp;gt; JSON numbers String -&amp;gt; JSON strings Array, slice -&amp;gt; JSON arrays []byte -&amp;gt; base64-encoded string nil slice -&amp;gt; JSON null Struct -&amp;gt; JSON objects Struct Field&amp;rsquo;s Tag with JSON 序列化 Struct 时, 只处理 Exported Field, 即首字母大写的字段
+默认情况下, json 的 key 等价于字段名, 其他情况看如下说明:
+1// Field appears in JSON as key &amp;#34;myName&amp;#34;. 2Field int `json:&amp;#34;myName&amp;#34;` 3 4// Field appears in JSON as key &amp;#34;myName&amp;#34; and 5// the field is omitted from the object if its value is empty, 6// as defined above.</description>
+    </item>
+    
     <item>
       <title>Shell 参数</title>
       <link>https://csyakamoz.github.io/post/2022/11/27/shell-%E5%8F%82%E6%95%B0/</link>
@@ -346,12 +369,11 @@ Home, Ctrl + a, 跳转到行首
 End, Ctrl + e, 跳转到行尾
 以上快捷键可在 Mac 中的大多数文本编辑区域使用
 e.g.
-Google Chrome 的地址栏 Wechat 的聊天内容输入框 Ctrl + w, 删除光标左边一个单词
+Google Chrome 的地址栏 Wechat 的聊天内容输入框 Ctrl + m, Ctrl + j, 回车
+Ctrl + i, 等价于 Tab
+Ctrl + w, 删除光标左边一个单词
 Alt + b, 光标向左移动一个单词
-Alt + f, 光标向右移动一个单词
-Alt + d, 删除光标右边的一个单词
-Alt + BS, 删除光标左边的一个单词
-Ctrl + k, 删除光标到行尾的文本</description>
+Alt + f, 光标向右移动一个单词</description>
     </item>
     
     <item>

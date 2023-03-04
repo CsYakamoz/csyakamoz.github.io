@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Json In Golang - Awesome</title>
+    <meta property="og:title" content="Json In Golang - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="这里仅记录个人认为重要的点:)
+更详细的说明, 请查阅官方文档: encoding/json
+[&amp;hellip;] 默认的类型映射:
+[&amp;hellip;] 序列化 Struct 时, 只处理 Exported Field, 即首字母大写的字段
+默认情况下, json 的 key 等价于字段名, 其他情况看如下说明:
+[&amp;hellip;] 1// Field appears in JSON as &amp;hellip;">
+      <meta property="og:description" content="这里仅记录个人认为重要的点:)
+更详细的说明, 请查阅官方文档: encoding/json
+[&amp;hellip;] 默认的类型映射:
+[&amp;hellip;] 序列化 Struct 时, 只处理 Exported Field, 即首字母大写的字段
+默认情况下, json 的 key 等价于字段名, 其他情况看如下说明:
+[&amp;hellip;] 1// Field appears in JSON as &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Json In Golang</h1>
+
+<h3>
+  2023-02-24</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>这里仅记录个人认为重要的点:)</p>
+<p>更详细的说明, 请查阅官方文档: <a href="https://pkg.go.dev/encoding/json"><code>encoding/json</code></a></p>
+<h2 id="基本知识">基本知识</h2>
+<p>默认的类型映射:</p>
+<ul>
+<li>Boolean -&gt; JSON booleans</li>
+<li>Floating point, integer -&gt; JSON numbers</li>
+<li>String -&gt; JSON strings</li>
+<li>Array, slice -&gt; JSON arrays
+<ul>
+<li>[]byte -&gt; base64-encoded string</li>
+<li>nil slice -&gt; JSON null</li>
+</ul>
+</li>
+<li>Struct -&gt; JSON objects</li>
+</ul>
+<h3 id="struct-fields-tag-with-json">Struct Field&rsquo;s Tag with JSON</h3>
+<p>序列化 Struct 时, 只处理 <code>Exported Field</code>, 即首字母大写的字段</p>
+<p>默认情况下, json 的 key 等价于字段名, 其他情况看如下说明:</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>// Field appears in JSON as key &#34;myName&#34;.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>Field int `json:&#34;myName&#34;`
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>// Field appears in JSON as key &#34;myName&#34; and
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>// the field is omitted from the object if its value is empty,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>// as defined above.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>Field int `json:&#34;myName,omitempty&#34;`
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>// Field appears in JSON as key &#34;Field&#34; (the default), but
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>// the field is skipped if empty.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>// Note the leading comma.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>Field int `json:&#34;,omitempty&#34;`
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>// Field is ignored by this package.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>Field int `json:&#34;-&#34;`
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>// Field appears in JSON as key &#34;-&#34;.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>Field int `json:&#34;-,&#34;`
+</span></span></code></pre></div><p>注意:</p>
+<ol>
+<li>empty 指: false, 0, nil pointer, nil interface value, empty array, slice, map or string</li>
+<li>如果 key-name 是仅由 Unicode 字母、数字和 ASCII 标点符号（引号、反斜杠和逗号除外）组成的非空字符串, 则使用该 key-name, 否则使用 field-name</li>
+</ol>
+<p>TODO: JSON Tag 支持 <code>string</code>, 即 <code>json:&quot;,string&quot;</code>, 尚未清楚其作用</p>
+<h2 id="序列化">序列化</h2>
+<h3 id="jsonmarshal"><code>json.Marshal</code></h3>
+<p>sig: <code>func Marshal(v any) ([]byte, error)</code></p>
+<p>使用场景: 返回 <code>v</code> 的 JSON 编码</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">Message</span> <span style="color:#859900">struct</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#268bd2">Name</span> <span style="color:#859900;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#268bd2">Body</span> <span style="color:#859900;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#268bd2">Time</span> <span style="color:#859900;font-weight:bold">int64</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#859900">func</span> <span style="color:#268bd2">main</span>() {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#268bd2">msg</span> := <span style="color:#268bd2">Message</span>{<span style="color:#2aa198">&#34;Alice&#34;</span>, <span style="color:#2aa198">&#34;Hello&#34;</span>, <span style="color:#2aa198;font-weight:bold">8008208820</span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#268bd2">jsonBytes</span>, <span style="color:#268bd2">_</span> := <span style="color:#268bd2">json</span>.<span style="color:#268bd2">Marshal</span>(<span style="color:#268bd2">msg</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#268bd2">fmt</span>.<span style="color:#268bd2">Println</span>(<span style="color:#cb4b16">string</span>(<span style="color:#268bd2">jsonBytes</span>)) <span style="color:#93a1a1;font-style:italic">// {&#34;Name&#34;:&#34;Alice&#34;,&#34;Body&#34;:&#34;Hello&#34;,&#34;Time&#34;:8008208820}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#93a1a1;font-style:italic"></span>}
+</span></span></code></pre></div><h3 id="jsonnewencoder"><code>json.NewEncoder</code></h3>
+<p>sig: <code>func NewEncoder(w io.Writer) *Encoder</code></p>
+<p>使用场景: 将 <code>v</code> 的 JSON 编码写到 <code>w</code> 中</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">Message</span> <span style="color:#859900">struct</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#268bd2">Name</span> <span style="color:#859900;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#268bd2">Body</span> <span style="color:#859900;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#268bd2">Time</span> <span style="color:#859900;font-weight:bold">int64</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#859900">func</span> <span style="color:#268bd2">main</span>() {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#268bd2">msg</span> := <span style="color:#268bd2">Message</span>{<span style="color:#2aa198">&#34;Alice&#34;</span>, <span style="color:#2aa198">&#34;Hello&#34;</span>, <span style="color:#2aa198;font-weight:bold">8008208820</span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#268bd2">encoder</span> := <span style="color:#268bd2">json</span>.<span style="color:#268bd2">NewEncoder</span>(<span style="color:#268bd2">os</span>.<span style="color:#268bd2">Stdout</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#268bd2">_</span> = <span style="color:#268bd2">encoder</span>.<span style="color:#268bd2">Encode</span>(&amp;<span style="color:#268bd2">msg</span>) <span style="color:#93a1a1;font-style:italic">// {&#34;Name&#34;:&#34;Alice&#34;,&#34;Body&#34;:&#34;Hello&#34;,&#34;Time&#34;:8008208820}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#93a1a1;font-style:italic"></span>}
+</span></span></code></pre></div><h2 id="反序列化">反序列化</h2>
+<h3 id="jsonunmarshal"><code>json.Unmarshal</code></h3>
+<p>sig : <code>func Unmarshal(data []byte, v any) error</code></p>
+<p>使用场景: 解析 JSON 编码数据并将结果存储到 <code>v</code> 指向的值</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">Message</span> <span style="color:#859900">struct</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#268bd2">Name</span> <span style="color:#859900;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#268bd2">Body</span> <span style="color:#859900;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#268bd2">Time</span> <span style="color:#859900;font-weight:bold">int64</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#859900">func</span> <span style="color:#268bd2">main</span>() {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#268bd2">jsonData</span> := []<span style="color:#cb4b16">byte</span>(<span style="color:#2aa198">`{&#34;Name&#34;:&#34;Alice&#34;,&#34;Body&#34;:&#34;Hello&#34;,&#34;Time&#34;:8008208820}`</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#859900">var</span> <span style="color:#268bd2">msg</span> <span style="color:#268bd2">Message</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#268bd2">_</span> = <span style="color:#268bd2">json</span>.<span style="color:#268bd2">Unmarshal</span>(<span style="color:#268bd2">jsonData</span>, &amp;<span style="color:#268bd2">msg</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#268bd2">fmt</span>.<span style="color:#268bd2">Println</span>(<span style="color:#268bd2">msg</span>) <span style="color:#93a1a1;font-style:italic">// {Alice Hello 8008208820}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#93a1a1;font-style:italic"></span>}
+</span></span></code></pre></div><h3 id="jsonnewdecoder"><code>json.NewDecoder</code></h3>
+<p>sig: <code>func NewDecoder(r io.Reader) *Decoder</code></p>
+<p>使用场景: 从 <code>r</code> 读取并解析 JSON 编码数据</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#859900">func</span> <span style="color:#268bd2">main</span>() {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#859900">const</span> <span style="color:#268bd2">jsonStream</span> = <span style="color:#2aa198">`
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#2aa198">	{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Knock knock.&#34;}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#2aa198">	{&#34;Name&#34;: &#34;Sam&#34;, &#34;Text&#34;: &#34;Who&#39;s there?&#34;}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#2aa198">	{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Go fmt.&#34;}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#2aa198">	{&#34;Name&#34;: &#34;Sam&#34;, &#34;Text&#34;: &#34;Go fmt who?&#34;}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#2aa198">	{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Go fmt yourself!&#34;}
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#2aa198">`</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#859900">type</span> <span style="color:#268bd2">Message</span> <span style="color:#859900">struct</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>		<span style="color:#268bd2">Name</span>, <span style="color:#268bd2">Text</span> <span style="color:#859900;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	<span style="color:#268bd2">dec</span> := <span style="color:#268bd2">json</span>.<span style="color:#268bd2">NewDecoder</span>(<span style="color:#268bd2">strings</span>.<span style="color:#268bd2">NewReader</span>(<span style="color:#268bd2">jsonStream</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>	<span style="color:#859900">for</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>		<span style="color:#859900">var</span> <span style="color:#268bd2">m</span> <span style="color:#268bd2">Message</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>		<span style="color:#859900">if</span> <span style="color:#268bd2">err</span> := <span style="color:#268bd2">dec</span>.<span style="color:#268bd2">Decode</span>(&amp;<span style="color:#268bd2">m</span>); <span style="color:#268bd2">err</span> == <span style="color:#268bd2">io</span>.<span style="color:#268bd2">EOF</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>			<span style="color:#859900">break</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>		} <span style="color:#859900">else</span> <span style="color:#859900">if</span> <span style="color:#268bd2">err</span> != <span style="color:#859900;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>			<span style="color:#268bd2">log</span>.<span style="color:#268bd2">Fatal</span>(<span style="color:#268bd2">err</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>		}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>		<span style="color:#268bd2">fmt</span>.<span style="color:#268bd2">Printf</span>(<span style="color:#2aa198">&#34;%s: %s\n&#34;</span>, <span style="color:#268bd2">m</span>.<span style="color:#268bd2">Name</span>, <span style="color:#268bd2">m</span>.<span style="color:#268bd2">Text</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>}
+</span></span></code></pre></div><p>output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Ed: Knock knock.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Sam: Who&#39;s there?
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Ed: Go fmt.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>Sam: Go fmt who?
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>Ed: Go fmt yourself!
+</span></span></code></pre></div><blockquote>
+<p>来源: <a href="https://pkg.go.dev/encoding/json#example-Decoder">Example-Decoder</a></p>
+</blockquote>
+<h2 id="indent">Indent</h2>
+<blockquote>
+<p>以下不做过多解释</p>
+</blockquote>
+<h3 id="jsonmarshalindent"><code>json.MarshalIndent</code></h3>
+<p>sig: <code>func MarshalIndent(v any, prefix, indent string) ([]byte, error)</code></p>
+<h3 id="jsonindent"><code>json.Indent</code></h3>
+<p>sig: <code>func Indent(dst *bytes.Buffer, src []byte, prefix, indent string) error</code></p>
+<h3 id="setindent"><code>SetIndent</code>:</h3>
+<p>sig :<code>func (enc *Encoder) SetIndent(prefix, indent string)</code></p>
+<h2 id="自定义序列化反序列化函数">自定义序列化/反序列化函数</h2>
+<p>根据需求分别实现对应 interface 即可:</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">Marshaler</span> <span style="color:#859900">interface</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#268bd2">MarshalJSON</span>() ([]<span style="color:#859900;font-weight:bold">byte</span>, <span style="color:#859900;font-weight:bold">error</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">Unmarshaler</span> <span style="color:#859900">interface</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>	<span style="color:#268bd2">UnmarshalJSON</span>([]<span style="color:#859900;font-weight:bold">byte</span>) <span style="color:#859900;font-weight:bold">error</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>}
+</span></span></code></pre></div><h3 id="使用场景举例">使用场景举例</h3>
+<p>序列化/反序列化 <code>time.Time</code> 类型, 但希望时间字符串不是 <a href="https://rfc-editor.org/rfc/rfc3339.html">RFC 3339</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">Demo</span> <span style="color:#859900">struct</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#268bd2">Created</span> <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#859900">func</span> <span style="color:#268bd2">main</span>() {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	<span style="color:#268bd2">jsonData</span> := []<span style="color:#cb4b16">byte</span>(<span style="color:#2aa198">`{&#34;created&#34;: &#34;2017-11-24 10:47:49&#34;}`</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	<span style="color:#859900">var</span> <span style="color:#268bd2">d</span> <span style="color:#268bd2">Demo</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#268bd2">err</span> := <span style="color:#268bd2">json</span>.<span style="color:#268bd2">Unmarshal</span>(<span style="color:#268bd2">jsonData</span>, &amp;<span style="color:#268bd2">d</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#859900">if</span> <span style="color:#268bd2">err</span> != <span style="color:#859900;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>		<span style="color:#268bd2">log</span>.<span style="color:#268bd2">Fatal</span>(<span style="color:#268bd2">err</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>}
+</span></span></code></pre></div><p>运行如上代码, 将会得到类似如下的报错:</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>parsing time &#34;\&#34;2017-11-24 10:47:49\&#34;&#34; as &#34;\&#34;2006-01-02T15:04:05Z07:00\&#34;&#34;: cannot parse &#34; 10:47:49\&#34;&#34; as &#34;T&#34;
+</span></span></code></pre></div><p>解决方案:</p>
+<ol>
+<li>
+<p>新增 <code>FlexTime</code> 类型, 并实现 <code>Marshaler</code>, <code>Unmarshaler</code> 接口</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">FlexTime</span> <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#859900">func</span> (<span style="color:#268bd2">t</span> <span style="color:#268bd2">FlexTime</span>) <span style="color:#268bd2">MarshalJSON</span>() ([]<span style="color:#859900;font-weight:bold">byte</span>, <span style="color:#859900;font-weight:bold">error</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#268bd2">format</span> := <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span>(<span style="color:#268bd2">t</span>).<span style="color:#268bd2">Format</span>(<span style="color:#2aa198">`&#34;2006-01-02 15:04:05&#34;`</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#859900">return</span> []<span style="color:#cb4b16">byte</span>(<span style="color:#268bd2">format</span>), <span style="color:#859900;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#859900">func</span> (<span style="color:#268bd2">t</span> *<span style="color:#268bd2">FlexTime</span>) <span style="color:#268bd2">UnmarshalJSON</span>(<span style="color:#268bd2">data</span> []<span style="color:#859900;font-weight:bold">byte</span>) <span style="color:#859900;font-weight:bold">error</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#268bd2">original</span>, <span style="color:#268bd2">err</span> := <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Parse</span>(<span style="color:#2aa198">`&#34;2006-01-02 15:04:05&#34;`</span>, <span style="color:#cb4b16">string</span>(<span style="color:#268bd2">data</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#859900">if</span> <span style="color:#268bd2">err</span> != <span style="color:#859900;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>		<span style="color:#859900">return</span> <span style="color:#268bd2">err</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>	*<span style="color:#268bd2">t</span> = <span style="color:#268bd2">FlexTime</span>(<span style="color:#268bd2">original</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>	<span style="color:#859900">return</span> <span style="color:#859900;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#859900">func</span> (<span style="color:#268bd2">t</span> *<span style="color:#268bd2">FlexTime</span>) <span style="color:#268bd2">Time</span>() <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>	<span style="color:#859900">return</span> <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span>(*<span style="color:#268bd2">t</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><code>Created</code> 类型替换为 <code>FlexTime</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">Demo</span> <span style="color:#859900">struct</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#268bd2">Created</span> <span style="color:#268bd2">FlexTime</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>}
+</span></span></code></pre></div></li>
+</ol>
+<p>如此便可</p>
+<details>
+  <summary>点击查看完整代码</summary>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">FlexTime</span> <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#859900">func</span> (<span style="color:#268bd2">t</span> <span style="color:#268bd2">FlexTime</span>) <span style="color:#268bd2">MarshalJSON</span>() ([]<span style="color:#859900;font-weight:bold">byte</span>, <span style="color:#859900;font-weight:bold">error</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#268bd2">format</span> := <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span>(<span style="color:#268bd2">t</span>).<span style="color:#268bd2">Format</span>(<span style="color:#2aa198">`&#34;2006-01-02 15:04:05&#34;`</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#859900">return</span> []<span style="color:#cb4b16">byte</span>(<span style="color:#268bd2">format</span>), <span style="color:#859900;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#859900">func</span> (<span style="color:#268bd2">t</span> *<span style="color:#268bd2">FlexTime</span>) <span style="color:#268bd2">UnmarshalJSON</span>(<span style="color:#268bd2">data</span> []<span style="color:#859900;font-weight:bold">byte</span>) <span style="color:#859900;font-weight:bold">error</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#268bd2">original</span>, <span style="color:#268bd2">err</span> := <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Parse</span>(<span style="color:#2aa198">`&#34;2006-01-02 15:04:05&#34;`</span>, <span style="color:#cb4b16">string</span>(<span style="color:#268bd2">data</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#859900">if</span> <span style="color:#268bd2">err</span> != <span style="color:#859900;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>		<span style="color:#859900">return</span> <span style="color:#268bd2">err</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>	*<span style="color:#268bd2">t</span> = <span style="color:#268bd2">FlexTime</span>(<span style="color:#268bd2">original</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>	<span style="color:#859900">return</span> <span style="color:#859900;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#859900">func</span> (<span style="color:#268bd2">t</span> *<span style="color:#268bd2">FlexTime</span>) <span style="color:#268bd2">Time</span>() <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>	<span style="color:#859900">return</span> <span style="color:#268bd2">time</span>.<span style="color:#268bd2">Time</span>(*<span style="color:#268bd2">t</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span><span style="color:#859900">type</span> <span style="color:#268bd2">Demo</span> <span style="color:#859900">struct</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>	<span style="color:#268bd2">Created</span> <span style="color:#268bd2">FlexTime</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#859900">func</span> <span style="color:#268bd2">main</span>() {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>	<span style="color:#268bd2">jsonData</span> := []<span style="color:#cb4b16">byte</span>(<span style="color:#2aa198">`{&#34;created&#34;: &#34;2017-11-24 10:47:49&#34;}`</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>	<span style="color:#859900">var</span> <span style="color:#268bd2">d</span> <span style="color:#268bd2">Demo</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>	<span style="color:#268bd2">err</span> := <span style="color:#268bd2">json</span>.<span style="color:#268bd2">Unmarshal</span>(<span style="color:#268bd2">jsonData</span>, &amp;<span style="color:#268bd2">d</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>	<span style="color:#859900">if</span> <span style="color:#268bd2">err</span> != <span style="color:#859900;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>		<span style="color:#268bd2">log</span>.<span style="color:#268bd2">Fatal</span>(<span style="color:#268bd2">err</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>	<span style="color:#268bd2">fmt</span>.<span style="color:#268bd2">Printf</span>(<span style="color:#2aa198">&#34;d.Created.Time(): %v\n&#34;</span>, <span style="color:#268bd2">d</span>.<span style="color:#268bd2">Created</span>.<span style="color:#268bd2">Time</span>())
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>	<span style="color:#268bd2">jsonData</span>, <span style="color:#268bd2">err</span> = <span style="color:#268bd2">json</span>.<span style="color:#268bd2">MarshalIndent</span>(&amp;<span style="color:#268bd2">d</span>, <span style="color:#2aa198">&#34;&#34;</span>, <span style="color:#2aa198">&#34;    &#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>	<span style="color:#859900">if</span> <span style="color:#268bd2">err</span> != <span style="color:#859900;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>		<span style="color:#268bd2">log</span>.<span style="color:#268bd2">Fatal</span>(<span style="color:#268bd2">err</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>	<span style="color:#268bd2">fmt</span>.<span style="color:#268bd2">Printf</span>(<span style="color:#2aa198">&#34;jsonData: %v\n&#34;</span>, <span style="color:#cb4b16">string</span>(<span style="color:#268bd2">jsonData</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>}
+</span></span></code></pre></div><p>运行代码可得如下输出:</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>d.Created.Time(): 2017-11-24 10:47:49 +0000 UTC
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>jsonData: {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    &#34;Created&#34;: &#34;2017-11-24 10:47:49&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>}
+</span></span></code></pre></div></details>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

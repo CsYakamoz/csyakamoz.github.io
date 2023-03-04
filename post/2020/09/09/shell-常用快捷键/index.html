@@ -108,6 +108,8 @@ End, Ctrl &#43; e, 跳 &amp;hellip;">
 <li>Wechat 的聊天内容输入框</li>
 </ul>
 </blockquote>
+<p>Ctrl + m, Ctrl + j, 回车</p>
+<p>Ctrl + i, 等价于 Tab</p>
 <p>Ctrl + w, 删除光标左边一个单词</p>
 <p>Alt + b, 光标向左移动一个单词</p>
 <p>Alt + f, 光标向右移动一个单词</p>
@@ -115,18 +117,26 @@ End, Ctrl &#43; e, 跳 &amp;hellip;">
 <p>Alt + BS, 删除光标左边的一个单词</p>
 <p>Ctrl + k, 删除光标到行尾的文本</p>
 <p>Ctrl + u, 删除光标到行首的文本</p>
+<blockquote>
+<p>Warn: 在 zsh 则是删除整行, 参考 <a href="https://stackoverflow.com/questions/3483604/which-shortcut-in-zsh-does-the-same-as-ctrl-u-in-bash">Which shortcut in Zsh does the same as Ctrl-U in Bash?</a></p>
+</blockquote>
+<p>Ctrl + g, 取消(与 Ctrl + c 不同, 个人体验是按 Tab 补全时, 按 Ctrl + R 搜索时)</p>
 <hr>
 <p>Ctrl + c, 结束当前命令 / 进程</p>
 <p>Ctrl + l, 清屏</p>
 <p>Ctrl + z, 暂停前台进程返回 shell, 需要切换回前台进程时可使用 <code>fg</code></p>
 <p>Ctrl + r, 历史命令反向搜索，使用 <code>Ctrl + g</code> or <code>Ctrl + c</code> 退出搜索</p>
+<blockquote>
+<p>Warn: 建议使用 <code>Ctrl + g</code> 来退出搜索</p>
+</blockquote>
 <hr>
 <p>Ctrl + x, Ctrl + e, 使用指定编辑器编辑当前命令，常用在编辑长命令</p>
 <blockquote>
 <p>默认编辑器由环境变量 <code>EDITOR</code> 指定</p>
 </blockquote>
 <h2 id="参考">参考</h2>
-<p><a href="https://github.com/chzyer/readline/blob/master/doc/shortcut.md">Readline Shortcut</a></p>
+<p><a href="https://github.com/chzyer/readline/blob/master/doc/shortcut.md">Readline Shortcut</a>
+<a href="https://wiki.archlinux.org/title/readline">Arch Wiki - Readline</a></p>
 
 
 

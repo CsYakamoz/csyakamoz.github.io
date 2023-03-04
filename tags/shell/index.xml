@@ -153,12 +153,11 @@ Home, Ctrl + a, 跳转到行首
 End, Ctrl + e, 跳转到行尾
 以上快捷键可在 Mac 中的大多数文本编辑区域使用
 e.g.
-Google Chrome 的地址栏 Wechat 的聊天内容输入框 Ctrl + w, 删除光标左边一个单词
+Google Chrome 的地址栏 Wechat 的聊天内容输入框 Ctrl + m, Ctrl + j, 回车
+Ctrl + i, 等价于 Tab
+Ctrl + w, 删除光标左边一个单词
 Alt + b, 光标向左移动一个单词
-Alt + f, 光标向右移动一个单词
-Alt + d, 删除光标右边的一个单词
-Alt + BS, 删除光标左边的一个单词
-Ctrl + k, 删除光标到行尾的文本</description>
+Alt + f, 光标向右移动一个单词</description>
     </item>
     
   </channel>
