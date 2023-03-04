@@ -27,6 +27,10 @@ End, Ctrl + e, 跳转到行尾
 > - Google Chrome 的地址栏
 > - Wechat 的聊天内容输入框
 
+Ctrl + m, Ctrl + j, 回车
+
+Ctrl + i, 等价于 Tab
+
 Ctrl + w, 删除光标左边一个单词
 
 Alt + b, 光标向左移动一个单词
@@ -41,6 +45,10 @@ Ctrl + k, 删除光标到行尾的文本
 
 Ctrl + u, 删除光标到行首的文本
 
+> Warn: 在 zsh 则是删除整行, 参考 [Which shortcut in Zsh does the same as Ctrl-U in Bash?](https://stackoverflow.com/questions/3483604/which-shortcut-in-zsh-does-the-same-as-ctrl-u-in-bash)
+
+Ctrl + g, 取消(与 Ctrl + c 不同, 个人体验是按 Tab 补全时, 按 Ctrl + R 搜索时)
+
 ---
 
 Ctrl + c, 结束当前命令 / 进程
@@ -51,6 +59,8 @@ Ctrl + z, 暂停前台进程返回 shell, 需要切换回前台进程时可使�
 
 Ctrl + r, 历史命令反向搜索，使用 `Ctrl + g` or `Ctrl + c` 退出搜索
 
+> Warn: 建议使用 `Ctrl + g` 来退出搜索
+
 ---
 
 Ctrl + x, Ctrl + e, 使用指定编辑器编辑当前命令，常用在编辑长命令
@@ -60,3 +70,4 @@ Ctrl + x, Ctrl + e, 使用指定编辑器编辑当前命令，常用在编辑长
 ## 参考
 
 [Readline Shortcut](https://github.com/chzyer/readline/blob/master/doc/shortcut.md)
+[Arch Wiki - Readline](https://wiki.archlinux.org/title/readline)
