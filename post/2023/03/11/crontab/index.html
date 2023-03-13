@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Crontab - Awesome</title>
+    <meta property="og:title" content="Crontab - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="推荐网站: Crontab.guru
+[&amp;hellip;] 由于空格是可选的, 如想保留 leading/trailing 空格, 请使用单引号或双引号
+[&amp;hellip;] how to use TimeZone with Cron tab
+[&amp;hellip;] 在 crontab 命令中, % 是个特殊符号
+参考 man crontab:
+[&amp;hellip;] The &amp;hellip;">
+      <meta property="og:description" content="推荐网站: Crontab.guru
+[&amp;hellip;] 由于空格是可选的, 如想保留 leading/trailing 空格, 请使用单引号或双引号
+[&amp;hellip;] how to use TimeZone with Cron tab
+[&amp;hellip;] 在 crontab 命令中, % 是个特殊符号
+参考 man crontab:
+[&amp;hellip;] The &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Crontab</h1>
+
+<h3>
+  2023-03-11</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<blockquote>
+<p>推荐网站: <a href="https://crontab.guru/">Crontab.guru</a></p>
+</blockquote>
+<h1 id="mark">Mark</h1>
+<ul>
+<li>指定环境变量: <code>name = value</code>, <code>=</code> 左右两边的空格是可选的
+<blockquote>
+<p>由于空格是可选的, 如想保留 leading/trailing 空格, 请使用单引号或双引号</p>
+</blockquote>
+</li>
+<li>默认 Shell 是 <code>/bin/sh</code>, 可通过 <code>SHELL</code> 变量指定</li>
+<li>默认时区是本机时区, 也可通过 <code>CRON_TZ</code> 变量指定, 也可通过 <code>env</code> 命令为单个命令制定
+<blockquote>
+<p><a href="https://serverfault.com/questions/848829/how-to-use-timezone-with-cron-tab">how to use TimeZone with Cron tab</a></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="踩坑">踩坑</h1>
+<h2 id="-字符有着特殊性"><code>%</code> 字符有着特殊性</h2>
+<p>在 <code>crontab</code> 命令中, <code>%</code> 是个特殊符号</p>
+<p>参考 <a href="https://linux.die.net/man/5/crontab"><code>man crontab</code></a>:</p>
+<blockquote>
+<p>The &ldquo;sixth&rdquo; field (the rest of the line) specifies the command to be run.
+The entire command portion of the line, up to a newline or % character, will be executed by /bin/sh or by the shell specified in the SHELL variable of the cronfile.
+<em>Percent-signs (%) in the command, unless escaped with backslash (\), will be changed into newline characters</em>, and all data after the first % will be sent to the command as standard input.</p>
+</blockquote>
+<p>具体用例可参考:</p>
+<ul>
+<li><a href="https://serverfault.com/questions/339814/how-do-you-set-a-date-variable-to-use-in-a-log-for-crontab-output">How do you set a DATE variable to use in a log for crontab output?</a></li>
+<li><a href="https://unix.stackexchange.com/questions/29578/how-can-i-execute-date-inside-of-a-cron-tab-job">How can I execute <code>date</code> inside of a cron tab job?</a></li>
+</ul>
+
+
+
+  <footer>
+  
+  
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

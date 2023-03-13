@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Feb 2023 20:40:35 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Mar 2023 11:58:09 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>crontab</title>
+      <link>https://csyakamoz.github.io/tags/crontab/</link>
+      <pubDate>Sat, 11 Mar 2023 11:58:09 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/tags/crontab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://csyakamoz.github.io/tags/shell/</link>
+      <pubDate>Sat, 11 Mar 2023 11:58:09 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>golang</title>
       <link>https://csyakamoz.github.io/tags/golang/</link>
@@ -22,15 +40,6 @@
       <pubDate>Fri, 24 Feb 2023 20:40:35 +0800</pubDate>
       
       <guid>https://csyakamoz.github.io/tags/json/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>https://csyakamoz.github.io/tags/shell/</link>
-      <pubDate>Sun, 27 Nov 2022 23:48:08 +0800</pubDate>
-      
-      <guid>https://csyakamoz.github.io/tags/shell/</guid>
       <description></description>
     </item>
     

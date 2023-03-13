@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crontab on Awesome</title>
+    <link>https://csyakamoz.github.io/tags/crontab/</link>
+    <description>Recent content in crontab on Awesome</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Mar 2023 11:58:09 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crontab</title>
+      <link>https://csyakamoz.github.io/post/2023/03/11/crontab/</link>
+      <pubDate>Sat, 11 Mar 2023 11:58:09 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2023/03/11/crontab/</guid>
+      <description>推荐网站: Crontab.guru
+Mark 指定环境变量: name = value, = 左右两边的空格是可选的 由于空格是可选的, 如想保留 leading/trailing 空格, 请使用单引号或双引号
+默认 Shell 是 /bin/sh, 可通过 SHELL 变量指定 默认时区是本机时区, 也可通过 CRON_TZ 变量指定, 也可通过 env 命令为单个命令制定 how to use TimeZone with Cron tab
+踩坑 % 字符有着特殊性 在 crontab 命令中, % 是个特殊符号
+参考 man crontab:
+The &amp;ldquo;sixth&amp;rdquo; field (the rest of the line) specifies the command to be run. The entire command portion of the line, up to a newline or % character, will be executed by /bin/sh or by the shell specified in the SHELL variable of the cronfile.</description>
+    </item>
+    
+  </channel>
+</rss>
