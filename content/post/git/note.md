@@ -183,3 +183,34 @@ git branch -m <new-name>
 master/dev 分别管理着正式/测试环境的代码, main 主要用来进行 feature 开发;
 
 > 这三个 `working trees` 都连着同一个 git 仓库, 所以 stash 是**共同的**;
+
+### remove
+
+`git remove [--force] <worktree>`
+
+当 worktree 是干净时, 可以直接用该命令删除, 否则使用 `--force` 来强制删除
+
+> 干净的定义是无未跟踪的文件, 或者已跟踪的文件无修改
+
+## 常见的配合 shell 脚本使用的命令
+
+1. 获取仓库根目录
+
+   ```sh
+   git rev-parse --show-toplevel
+   ```
+
+2. 判断当前目录是否属于仓库
+
+   ```sh
+   git rev-parse --is-inside-work-tree
+   ```
+
+3. 获取当前分支名
+
+   ```sh
+   git rev-parse --abbrev-ref HEAD
+
+   # or with Git 2.22 and above
+   git branch --show-current
+   ```
