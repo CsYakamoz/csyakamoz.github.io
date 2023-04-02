@@ -3,21 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://csyakamoz.github.io/</loc>
-    <lastmod>2023-03-11T11:58:09+08:00</lastmod>
+    <lastmod>2023-03-27T23:40:30+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/post/</loc>
+    <lastmod>2023-03-27T23:40:30+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/tags/shell/</loc>
+    <lastmod>2023-03-27T23:40:30+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/post/2023/03/27/ssh_config/</loc>
+    <lastmod>2023-03-27T23:40:30+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/tags/</loc>
+    <lastmod>2023-03-27T23:40:30+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/tags/crontab/</loc>
     <lastmod>2023-03-11T11:58:09+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/post/2023/03/11/crontab/</loc>
-    <lastmod>2023-03-11T11:58:09+08:00</lastmod>
-  </url><url>
-    <loc>https://csyakamoz.github.io/post/</loc>
-    <lastmod>2023-03-11T11:58:09+08:00</lastmod>
-  </url><url>
-    <loc>https://csyakamoz.github.io/tags/shell/</loc>
-    <lastmod>2023-03-11T11:58:09+08:00</lastmod>
-  </url><url>
-    <loc>https://csyakamoz.github.io/tags/</loc>
     <lastmod>2023-03-11T11:58:09+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/tags/golang/</loc>

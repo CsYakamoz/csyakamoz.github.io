@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>ssh_config - Awesome</title>
+    <meta property="og:title" content="ssh_config - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="man ssh_config
+[&amp;hellip;] ssh_config – OpenSSH client configuration file
+ssh 从如下位置按顺序获取配置:
+[&amp;hellip;] Host: 指定对应的远程主机名或 IP 地址, 可以使用通配符 *;
+[&amp;hellip;] HostName: 指定远程主机的主机名或 IP 地址;
+[&amp;hellip;] User: 用户名; &amp;hellip;">
+      <meta property="og:description" content="man ssh_config
+[&amp;hellip;] ssh_config – OpenSSH client configuration file
+ssh 从如下位置按顺序获取配置:
+[&amp;hellip;] Host: 指定对应的远程主机名或 IP 地址, 可以使用通配符 *;
+[&amp;hellip;] HostName: 指定远程主机的主机名或 IP 地址;
+[&amp;hellip;] User: 用户名; &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>ssh_config</h1>
+
+<h3>
+  2023-03-27</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<blockquote>
+<p><code>man ssh_config</code></p>
+</blockquote>
+<p><code>ssh_config – OpenSSH client configuration file</code></p>
+<p>ssh 从如下位置<strong>按顺序</strong>获取配置:</p>
+<ol>
+<li>command-line options</li>
+<li>user&rsquo;s configuration file (~/.ssh/config)</li>
+<li>system-wide configuration file (/etc/ssh/ssh_config)</li>
+</ol>
+<h2 id="常见选项">常见选项</h2>
+<ul>
+<li>
+<p><code>Host</code>: 指定对应的远程主机名或 IP 地址, 可以使用通配符 <code>*</code>;</p>
+</li>
+<li>
+<p><code>HostName</code>: 指定远程主机的主机名或 IP 地址;</p>
+</li>
+<li>
+<p><code>User</code>: 用户名;</p>
+</li>
+<li>
+<p><code>Port</code>: 端口;</p>
+</li>
+<li>
+<p><code>IdentityFile</code>: 指定用于身份验证的私钥文件的路径;</p>
+</li>
+<li>
+<p><code>ControlMaster</code>: 是否启用 SSH 连接复用功能, 可选值为: <code>yes</code> or <code>no</code>, 默认为 <code>no</code>;</p>
+</li>
+<li>
+<p><code>ControlPath</code>: 指定用于保存 SSH 连接的 control-socket 路径;</p>
+</li>
+<li>
+<p><code>ControlPersist</code>: 所有 SSH 连接都关闭后, 是否保持 control-socket 开启, 值可以为: <code>yes</code> or <code>no</code> or <code>number</code>, 其中 number 是指秒数, 默认值为 <code>no</code>;</p>
+</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<pre tabindex="0"><code class="language-sshconfig" data-lang="sshconfig">Host foo
+    Hostname 127.0.0.1
+    User foo
+    Port 8888
+    IdentityFile ~/.ssh/foo_id_rsa
+    ControlMaster yes
+    ControlPath ~/.ssh/socket/%C
+    ControlPersist 60
+
+Host bar
+    Hostname 127.0.0.1
+    User bar
+    Port 9999
+    IdentityFile ~/.ssh/bar_id_rsa
+    ControlMaster yes
+    ControlPath ~/.ssh/socket/%C
+    ControlPersist 37
+</code></pre><p>此时我可以通过命令 <code>ssh foo</code> or <code>ssh bar</code> 登录对应的远程主机</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://deepzz.com/post/how-to-setup-ssh-config.html">SSH Config 那些你所知道和不知道的事</a></p>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

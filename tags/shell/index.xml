@@ -6,7 +6,26 @@
     <description>Recent content in shell on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Mar 2023 11:58:09 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Mar 2023 23:40:30 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ssh_config</title>
+      <link>https://csyakamoz.github.io/post/2023/03/27/ssh_config/</link>
+      <pubDate>Mon, 27 Mar 2023 23:40:30 +0800</pubDate>
+      
+      <guid>https://csyakamoz.github.io/post/2023/03/27/ssh_config/</guid>
+      <description>man ssh_config
+ssh_config – OpenSSH client configuration file
+ssh 从如下位置按顺序获取配置:
+command-line options user&amp;rsquo;s configuration file (~/.ssh/config) system-wide configuration file (/etc/ssh/ssh_config) 常见选项 Host: 指定对应的远程主机名或 IP 地址, 可以使用通配符 *;
+HostName: 指定远程主机的主机名或 IP 地址;
+User: 用户名;
+Port: 端口;
+IdentityFile: 指定用于身份验证的私钥文件的路径;
+ControlMaster: 是否启用 SSH 连接复用功能, 可选值为: yes or no, 默认为 no;
+ControlPath: 指定用于保存 SSH 连接的 control-socket 路径;
+ControlPersist: 所有 SSH 连接都关闭后, 是否保持 control-socket 开启, 值可以为: yes or no or number, 其中 number 是指秒数, 默认值为 no;</description>
+    </item>
+    
     <item>
       <title>Crontab</title>
       <link>https://csyakamoz.github.io/post/2023/03/11/crontab/</link>
