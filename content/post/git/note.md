@@ -214,3 +214,38 @@ master/dev 分别管理着正式/测试环境的代码, main 主要用来进行 
    # or with Git 2.22 and above
    git branch --show-current
    ```
+
+## 获取两个分支的最近公共 commit
+
+```sh
+git merge-base branch1 branch2
+```
+
+来源: [Git: Find the most recent common ancestor of two branches](https://stackoverflow.com/questions/1549146/git-find-the-most-recent-common-ancestor-of-two-branches)
+
+## 分支比较
+
+来源: [How To Compare Two Git Branches](https://devconnected.com/how-to-compare-two-git-branches/)
+
+```sh
+git diff branch1..branch2
+
+git diff branch1..branch2 -- <file-path>
+```
+
+```sh
+git diff branch1...branch2
+
+# equals to
+git diff $(git merge-base branch1 branch2) branch2
+
+git diff branch1...branch2 -- <file-path>
+```
+
+`..` 是比较两个分支 `HEAD` 的 commit 差别
+
+![two dots diff](https://devconnected.com/wp-content/uploads/2019/11/git-diff-double-dot.png "two dots diff")
+
+`...` 则是先找出两个分支的最近公共 commit, 则比较该 commit 与 branch2 `HEAD` 的差别
+
+![three dots diff](https://devconnected.com/wp-content/uploads/2019/11/triple-dot.png "three dots diff")
