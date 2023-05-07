@@ -14,6 +14,10 @@ tags: []
 
 [Begin Again](<https://en.wikipedia.org/wiki/Begin_Again_(film)>)
 
+[변호인 - 辩护人](https://en.wikipedia.org/wiki/The_Attorney)
+
+[Jai Bhim - 杰伊・比姆](https://en.wikipedia.org/wiki/Jai_Bhim_%28film%29)
+
 ## Anime
 
 [恋は雨上がりのように](https://www.koiame-anime.com/)
