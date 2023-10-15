@@ -64,6 +64,10 @@ tags: ["software", "chrome-extension"]
 
 [Maccy](https://maccy.app/): Lightweight clipboard manager for macOS.
 
+[OrbStack](https://orbstack.dev/): OrbStack is the fast, light, and easy way to run Docker containers and Linux. Develop at lightspeed with our Docker Desktop alternative.
+
+[Raycast](https://www.raycast.com/): Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.
+
 ## Command Line Tool
 
 ### Non-Built-In
@@ -214,8 +218,6 @@ xxd
 [QSpace](https://apps.apple.com/cn/app/qspace/id1469774098?mt=12): QSpace is a clean and efficient Multi-view File Manager, also can be a FTP/SFTP/WebDAV client.
 
 [foobar2000](https://www.foobar2000.org/): foobar2000 is an advanced freeware audio player for the Windows platform.
-
-[Raycast](https://www.raycast.com/): Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.
 
 [Stats](https://github.com/exelban/stats): macOS system monitor in your menu bar.
 
