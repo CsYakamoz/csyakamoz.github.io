@@ -25,3 +25,22 @@ tags: []
 [Clannad](https://en.wikipedia.org/wiki/List_of_Clannad_episodes)
 
 [One-Punch Man](https://en.wikipedia.org/wiki/One-Punch_Man)
+
+## Game
+
+[Hollow Knight](https://www.hollowknight.com/)
+
+[To the Moon](https://en.wikipedia.org/wiki/To_the_Moon)
+
+[Hades](<https://en.wikipedia.org/wiki/Hades_(video_game)>)
+
+[Xenoblade Chronicles 2](https://en.wikipedia.org/wiki/Xenoblade_Chronicles_2)
+
+Ori Game Series
+
+- [Ori and the Blind Forest](https://www.orithegame.com/blind-forest/)
+- [Ori and the Will of the Wisps](https://www.orithegame.com/)
+
+[Cuphead](https://en.wikipedia.org/wiki/Cuphead)
+
+[Celeste](<https://en.wikipedia.org/wiki/Celeste_(video_game)>)
