@@ -52,6 +52,8 @@ tags: ["software", "chrome-extension"]
 
 [Visual Studio Code](https://code.visualstudio.com/): Code editing. Redefined.
 
+[Neovim](https://neovim.io/): hyperextensible Vim-based text editor
+
 [eZip](https://ezip.awehunt.com/?locale=en-CN): 为 macOS 而设计的苹果系统压缩软件！
 
 [Charles](https://www.charlesproxy.com/): Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet.
@@ -88,7 +90,7 @@ tags: ["software", "chrome-extension"]
 
 [mycli](https://github.com/dbcli/mycli): A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting.
 
-[lrzsz](https://www.ohse.de/uwe/software/lrzsz.html): _lrzsz_ is a unix communication package providing the [ XMODEM, YMODEM](ftp://ftp.std.com/obi/Standards/FileTransfer/YMODEM8.DOC.1.Z), [ZMODEM](http://www.easysw.com/~mike/serial/zmodem.html) file transfer protocols.
+[lrzsz](https://www.ohse.de/uwe/software/lrzsz.html): _lrzsz_ is a unix communication package providing the [XMODEM, YMODEM](ftp://ftp.std.com/obi/Standards/FileTransfer/YMODEM8.DOC.1.Z), [ZMODEM](http://www.easysw.com/~mike/serial/zmodem.html) file transfer protocols.
 
 [ncdu](https://dev.yorhel.nl/ncdu): Ncdu is a disk usage analyzer with an ncurses interface.
 
@@ -98,9 +100,9 @@ tags: ["software", "chrome-extension"]
 
 [rg](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern.
 
-[tree](http://mama.indstate.edu/users/ice/tree/): **Tree** is a recursive directory listing command that produces a depth indented listing of files, which is colorized ala dircolors if the LS_COLORS environment variable is set and output is to tty.
+[fd](https://github.com/sharkdp/fd): A simple, fast and user-friendly alternative to 'find'
 
-[shellcheck](https://github.com/koalaman/shellcheck): ShellCheck, a static analysis tool for shell scripts.
+[tree](http://mama.indstate.edu/users/ice/tree/): **Tree** is a recursive directory listing command that produces a depth indented listing of files, which is colorized ala dircolors if the LS_COLORS environment variable is set and output is to tty.
 
 [htop](https://hisham.hm/htop/): An interactive process viewer for Unix.
 
@@ -113,6 +115,10 @@ tags: ["software", "chrome-extension"]
 [navi](https://github.com/denisidoro/navi): An interactive cheatsheet tool for the command-line.
 
 [graphviz](https://www.graphviz.org/): Graphviz is open source graph visualization software.
+
+[aria2](https://aria2.github.io/): aria2 is a lightweight multi-protocol & multi-source command-line download utility.
+
+[youtube-dl](https://github.com/ytdl-org/youtube-dl): youtube-dl - download videos from youtube.com or other video platforms
 
 ### Built-In
 

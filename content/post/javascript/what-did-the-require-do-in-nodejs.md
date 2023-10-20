@@ -1,7 +1,7 @@
 ---
 title: "What Did the require Do in Node.js"
 date: 2021-03-18T00:15:13+08:00
-tags: ["nodejs"]
+tags: ["javascript", "nodejs"]
 ---
 
 > **Warning**: 最新版本的 Node.js 已经更新了 `require` 的逻辑, 此文章的相关代码已过时, 但逻辑总体上不变;

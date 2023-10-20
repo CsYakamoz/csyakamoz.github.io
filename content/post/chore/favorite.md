@@ -21,3 +21,7 @@ tags: []
 ## Anime
 
 [恋は雨上がりのように](https://www.koiame-anime.com/)
+
+[Clannad](https://en.wikipedia.org/wiki/List_of_Clannad_episodes)
+
+[One-Punch Man](https://en.wikipedia.org/wiki/One-Punch_Man)
