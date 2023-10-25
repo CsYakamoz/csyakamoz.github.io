@@ -249,3 +249,53 @@ git diff branch1...branch2 -- <file-path>
 `...` 则是先找出两个分支的最近公共 commit, 则比较该 commit 与 branch2 `HEAD` 的差别
 
 ![three dots diff](https://devconnected.com/wp-content/uploads/2019/11/triple-dot.png "three dots diff")
+
+## Fixup 以及 AutoSquash
+
+作用: 快速将某个提交合并到之前的提交
+
+```sh
+$ git log --oneline
+d673912 (HEAD -> main) add blockquote
+8b877e3 add body          # <- 该提交有问题, 需要修复
+c7028e5 add title
+d97cf98 init
+```
+
+因此对代码进行修改, 并用以下语句提交
+
+```sh
+$ git commit --fixup=8b877e3
+[main 07d71fb] fixup! add body
+ 1 file changed, 1 deletion(-)
+```
+
+```sh
+$ git log --oneline
+07d71fb (HEAD -> main) fixup! add body
+d673912 add blockquote
+8b877e3 add body
+c7028e5 add title
+d97cf98 init
+```
+
+此时执行 `git rebase -i --autosquash d97cf98` 会进入如下页面:
+
+```git
+pick c7028e5 add title
+pick 8b877e3 add body
+fixup 07d71fb fixup! add body
+pick d673912 add blockquote
+```
+
+此时要做的就是保存并退出, 最后得到的结果是
+
+```sh
+$ git log --oneline
+8920e2c (HEAD -> main) add blockquote
+684552e add body
+c7028e5 add title
+d97cf98 init
+```
+
+参考: [GIT tip : Keep your branch clean with fixup and autosquash](https://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html)
