@@ -18,6 +18,12 @@ tags: []
 
 [Jai Bhim - 杰伊・比姆](https://en.wikipedia.org/wiki/Jai_Bhim_%28film%29)
 
+[三傻大闹宝莱坞](https://en.wikipedia.org/wiki/3_Idiots)
+
+[红猪](https://en.wikipedia.org/wiki/Porco_Rosso)
+
+[Oppenheimer - 奥本海默](<https://en.wikipedia.org/wiki/Oppenheimer_(film)>)
+
 ## Anime
 
 [恋は雨上がりのように](https://www.koiame-anime.com/)
@@ -25,6 +31,8 @@ tags: []
 [Clannad](https://en.wikipedia.org/wiki/List_of_Clannad_episodes)
 
 [One-Punch Man](https://en.wikipedia.org/wiki/One-Punch_Man)
+
+[Helck - 勇者赫鲁库](<https://en.wikipedia.org/wiki/Helck_(manga)>)
 
 ## Game
 
@@ -44,3 +52,8 @@ Ori Game Series
 [Cuphead](https://en.wikipedia.org/wiki/Cuphead)
 
 [Celeste](<https://en.wikipedia.org/wiki/Celeste_(video_game)>)
+
+[Monster Hunter](https://en.wikipedia.org/wiki/Monster_Hunter)
+
+- [Monster Hunter: World](https://en.wikipedia.org/wiki/Monster_Hunter:_World)
+- [Monster Hunter Rise](https://en.wikipedia.org/wiki/Monster_Hunter_Rise)
