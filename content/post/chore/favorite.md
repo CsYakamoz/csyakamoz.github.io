@@ -24,6 +24,8 @@ tags: []
 
 [Oppenheimer - 奥本海默](<https://en.wikipedia.org/wiki/Oppenheimer_(film)>)
 
+[Hidden Figures - 隐藏人物](https://en.wikipedia.org/wiki/Hidden_Figures)
+
 ## Anime
 
 [恋は雨上がりのように](https://www.koiame-anime.com/)
