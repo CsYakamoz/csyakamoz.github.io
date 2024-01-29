@@ -103,3 +103,29 @@ wait
 With no parameters it waits for all background processes to finish.
 
 With a PID it waits for the specific process.
+
+## man
+
+有时候在 `man command` 手册中会看到 `see command(number)`, 例如: `see crontab(5)`
+
+某次终于忍不住, 去搜了下, 才知道怪我根本没看过 `man man`, 对于上面的 `see crontab(5)`, 只需 `man 5 crontab` 即可.
+
+至于 `number` 的含义可见 `man man`, 以下纯粹拷贝过来:
+
+```man
+The sections of the manual are:
+      1.   General Commands Manual
+      2.   System Calls Manual
+      3.   Library Functions Manual
+      4.   Kernel Interfaces Manual
+      5.   File Formats Manual
+      6.   Games Manual
+      7.   Miscellaneous Information Manual
+      8.   System Manager's Manual
+      9.   Kernel Developer's Manual
+```
+
+参考:
+
+- [What does the number in parentheses shown after Unix command names in manpages mean?](https://stackoverflow.com/questions/62936/what-does-the-number-in-parentheses-shown-after-unix-command-names-in-manpages-m)
+- [What do the numbers in a man page mean?](https://unix.stackexchange.com/questions/3586/what-do-the-numbers-in-a-man-page-mean)

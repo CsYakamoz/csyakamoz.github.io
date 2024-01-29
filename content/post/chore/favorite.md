@@ -36,6 +36,10 @@ tags: []
 
 [Helck - 勇者赫鲁库](<https://en.wikipedia.org/wiki/Helck_(manga)>)
 
+## Comics
+
+[大剑](<https://en.wikipedia.org/wiki/Claymore_(manga)>)
+
 ## Game
 
 [Hollow Knight](https://www.hollowknight.com/)
@@ -59,3 +63,5 @@ Ori Game Series
 
 - [Monster Hunter: World](https://en.wikipedia.org/wiki/Monster_Hunter:_World)
 - [Monster Hunter Rise](https://en.wikipedia.org/wiki/Monster_Hunter_Rise)
+
+[神之天平（ASTLIBRA Revision）](https://store.steampowered.com/app/1718570/ASTLIBRA_Revision/)
