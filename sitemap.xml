@@ -3,18 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://csyakamoz.github.io/</loc>
-    <lastmod>2023-03-27T23:40:30+08:00</lastmod>
+    <lastmod>2023-11-05T01:03:34+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/post/</loc>
-    <lastmod>2023-03-27T23:40:30+08:00</lastmod>
+    <lastmod>2023-11-05T01:03:34+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/tags/</loc>
+    <lastmod>2023-11-05T01:03:34+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/tags/unix/</loc>
+    <lastmod>2023-11-05T01:03:34+08:00</lastmod>
+  </url><url>
+    <loc>https://csyakamoz.github.io/post/2023/11/05/%E4%B8%BA%E4%BD%95%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%BA%94%E8%AF%A5%E4%BB%A5%E6%8D%A2%E8%A1%8C%E7%AC%A6%E7%BB%93%E5%B0%BE/</loc>
+    <lastmod>2023-11-05T01:03:34+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/tags/shell/</loc>
     <lastmod>2023-03-27T23:40:30+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/post/2023/03/27/ssh_config/</loc>
-    <lastmod>2023-03-27T23:40:30+08:00</lastmod>
-  </url><url>
-    <loc>https://csyakamoz.github.io/tags/</loc>
     <lastmod>2023-03-27T23:40:30+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/tags/crontab/</loc>
@@ -59,14 +65,14 @@
     <loc>https://csyakamoz.github.io/post/2021/04/02/nodejs-%E4%B8%8E-java-%E7%9A%84%E5%8A%A0%E8%A7%A3%E5%AF%86/</loc>
     <lastmod>2021-04-02T23:55:18+08:00</lastmod>
   </url><url>
+    <loc>https://csyakamoz.github.io/tags/javascript/</loc>
+    <lastmod>2021-03-18T00:15:13+08:00</lastmod>
+  </url><url>
     <loc>https://csyakamoz.github.io/post/2021/03/18/what-did-the-require-do-in-node.js/</loc>
     <lastmod>2021-03-18T00:15:13+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/post/2021/03/18/shell-%E4%B8%AD-while-%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2021-03-18T00:11:44+08:00</lastmod>
-  </url><url>
-    <loc>https://csyakamoz.github.io/tags/javascript/</loc>
-    <lastmod>2021-03-16T14:37:33+08:00</lastmod>
   </url><url>
     <loc>https://csyakamoz.github.io/post/2021/03/16/javascript-%E4%B8%AD-isnan-%E5%92%8C-number.isnan-%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
     <lastmod>2021-03-16T14:37:33+08:00</lastmod>

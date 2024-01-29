@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>unix on Awesome</title>
+    <link>https://csyakamoz.github.io/tags/unix/</link>
+    <description>Recent content in unix on Awesome</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Nov 2023 01:03:34 +0800</lastBuildDate>
+    <atom:link href="https://csyakamoz.github.io/tags/unix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为何文本文件应该以换行符结尾?</title>
+      <link>https://csyakamoz.github.io/post/2023/11/05/%E4%B8%BA%E4%BD%95%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%BA%94%E8%AF%A5%E4%BB%A5%E6%8D%A2%E8%A1%8C%E7%AC%A6%E7%BB%93%E5%B0%BE/</link>
+      <pubDate>Sun, 05 Nov 2023 01:03:34 +0800</pubDate>
+      <guid>https://csyakamoz.github.io/post/2023/11/05/%E4%B8%BA%E4%BD%95%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%BA%94%E8%AF%A5%E4%BB%A5%E6%8D%A2%E8%A1%8C%E7%AC%A6%E7%BB%93%E5%B0%BE/</guid>
+      <description>很多 Linter 都会因文件不是以换行符结尾而做出 Warning/Error 提示&#xA;JavaScript_ESLint: eol-last&#xA;NewLine required at end of file but not found&#xA;PHP_PSR-2: Files&#xA;Expected 1 newline at end of file; 0 found&#xA;Git Commit or Log or Diff:&#xA;\ No newline at end of file 查了下资料, 原因是 Unix Standard 对于 Lines 的定义:&#xA;3.206 Line&#xA;A sequence of zero or more non- &amp;lt;newline&amp;gt; characters plus a terminating &amp;lt;newline&amp;gt; character.&#xA;基于以上定义, 如果文本文件不是以换行符结尾, 那么在某些工具上可能会出问题.&#xA;例如引用中所举的例子:&#xA;1$ cat a.txt 2foo 3 4$ cat b.</description>
+    </item>
+  </channel>
+</rss>

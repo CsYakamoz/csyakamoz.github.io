@@ -6,22 +6,14 @@
     <description>Recent content in tmux on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Sep 2020 11:26:08 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Sep 2020 11:26:08 +0800</lastBuildDate>
+    <atom:link href="https://csyakamoz.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmux 笔记</title>
       <link>https://csyakamoz.github.io/post/2020/09/09/tmux-%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 09 Sep 2020 11:26:08 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2020/09/09/tmux-%E7%AC%94%E8%AE%B0/</guid>
-      <description>Tmux with iTerm2 iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence.
-MacOS 用户建议使用 iTerm2 的 Tmux 特性
-使用方法, 请看文档:tmux Integration
-Notice: 远程服务器也能使用, 但 tmux 版本至少为 1.8, 但推荐 2.3 及之后
-Notice: 个人已不再使用 iTerm2 🐶
-配置 有时候需要使用原生 tmux, 此时使用该配置
-常用命令和快捷键 prefix- 则意味着需要先按 prefix 键
-Session 1# 创建新 session 2tmux [new -s session-name] 3 4# 恢复 session 5tmux a [-t session-name] 6 7# 列出所有 session 8tmux ls 9 10# 关闭特定的 session 11tmux kill-session -t session-name 12 13# 关闭所有 session 14tmux kill-server 1# 创建新 session 2prefix-:new [-s session-name] 3 4# 列出所有 session 5prefix-s 6 7# 重命名当前 session 8prefix-$ 9 10# 退出当前 session 11prefix-d Window 1# 创建新 window 2prefix-c 3 4# 列出所有 window 5prefix-w 6 7# 关闭当前 window 8prefix-&amp;amp; 9 10# 前一个 window 11prefix-p 12 13# 后一个 window 14prefix-n 15 16# 重命名当前 window 17prefix-, 18 19# 调整 window 排序 source 默认是当前窗口序号，target 是目标窗口序号 20prefix-:swap-window [-s source] -t target 21 22# 跳转到第 n 个 window 23prefix-n（数字） Pane 1# 垂直分割 2prefix-| 3 4# 水平分割 5prefix-- 6 7# 关闭当前 pane 8prefix-x 9 10# 显示 pane 编号，在编号消失前输入对应的数字可切换到相应的 pane 11prefix-q 12 13# 切换 pane 布局 14prefix-&amp;lt;space&amp;gt; 15 16# 光标移动到左，下，上，右方的 pane 17prefix-h, j, k, l 18 19# 当前窗格往左，下，上，右方扩大 5 格，^ 为 Ctrl 20prefix-^h, ^j, ^k, ^l 21 22# 临时最大化当前 pane, 再次使用则恢复 23prefix-z 24 25# 当前 pane 与上一个 pane 交换位置 26prefix-{ 27 28# 当前 pane 与下一个 pane 交换位置 29prefix-} 30 31# 当前 pane 移到新的 window 中 32prefix-!</description>
+      <description>Tmux with iTerm2 iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux&amp;rsquo;s persistence.&#xA;MacOS 用户建议使用 iTerm2 的 Tmux 特性&#xA;使用方法, 请看文档:tmux Integration&#xA;Notice: 远程服务器也能使用, 但 tmux 版本至少为 1.8, 但推荐 2.3 及之后&#xA;Notice: 个人已不再使用 iTerm2 🐶&#xA;配置 有时候需要使用原生 tmux, 此时使用该配置&#xA;常用命令和快捷键 prefix- 则意味着需要先按 prefix 键&#xA;Session 1# 创建新 session 2tmux [new -s session-name] 3 4# 恢复 session 5tmux a [-t session-name] 6 7# 列出所有 session 8tmux ls 9 10# 关闭特定的 session 11tmux kill-session -t session-name 12 13# 关闭所有 session 14tmux kill-server 1# 创建新 session 2prefix-:new [-s session-name] 3 4# 列出所有 session 5prefix-s 6 7# 重命名当前 session 8prefix-$ 9 10# 退出当前 session 11prefix-d Window 1# 创建新 window 2prefix-c 3 4# 列出所有 window 5prefix-w 6 7# 关闭当前 window 8prefix-&amp;amp; 9 10# 前一个 window 11prefix-p 12 13# 后一个 window 14prefix-n 15 16# 重命名当前 window 17prefix-, 18 19# 调整 window 排序 source 默认是当前窗口序号，target 是目标窗口序号 20prefix-:swap-window [-s source] -t target 21 22# 跳转到第 n 个 window 23prefix-n（数字） Pane 1# 垂直分割 2prefix-| 3 4# 水平分割 5prefix-- 6 7# 关闭当前 pane 8prefix-x 9 10# 显示 pane 编号，在编号消失前输入对应的数字可切换到相应的 pane 11prefix-q 12 13# 切换 pane 布局 14prefix-&amp;lt;space&amp;gt; 15 16# 光标移动到左，下，上，右方的 pane 17prefix-h, j, k, l 18 19# 当前窗格往左，下，上，右方扩大 5 格，^ 为 Ctrl 20prefix-^h, ^j, ^k, ^l 21 22# 临时最大化当前 pane, 再次使用则恢复 23prefix-z 24 25# 当前 pane 与上一个 pane 交换位置 26prefix-{ 27 28# 当前 pane 与下一个 pane 交换位置 29prefix-} 30 31# 当前 pane 移到新的 window 中 32prefix-!</description>
     </item>
-    
   </channel>
 </rss>

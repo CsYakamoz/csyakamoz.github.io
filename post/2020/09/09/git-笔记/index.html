@@ -270,6 +270,35 @@
 <p><img src="https://devconnected.com/wp-content/uploads/2019/11/git-diff-double-dot.png" alt="two dots diff" title="two dots diff"></p>
 <p><code>...</code> 则是先找出两个分支的最近公共 commit, 则比较该 commit 与 branch2 <code>HEAD</code> 的差别</p>
 <p><img src="https://devconnected.com/wp-content/uploads/2019/11/triple-dot.png" alt="three dots diff" title="three dots diff"></p>
+<h2 id="fixup-以及-autosquash">Fixup 以及 AutoSquash</h2>
+<p>作用: 快速将某个提交合并到之前的提交</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$ git log --oneline
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>d673912 (HEAD -&gt; main) add blockquote
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>8b877e3 add body          <span style="color:#93a1a1;font-style:italic"># &lt;- 该提交有问题, 需要修复</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>c7028e5 add title
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>d97cf98 init
+</span></span></code></pre></div><p>因此对代码进行修改, 并用以下语句提交</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$ git commit --fixup=8b877e3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>[main 07d71fb] fixup! add body
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span> <span style="color:#2aa198;font-weight:bold">1</span> file changed, <span style="color:#2aa198;font-weight:bold">1</span> deletion(-)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$ git log --oneline
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>07d71fb (HEAD -&gt; main) fixup! add body
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>d673912 add blockquote
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>8b877e3 add body
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>c7028e5 add title
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>d97cf98 init
+</span></span></code></pre></div><p>此时执行 <code>git rebase -i --autosquash d97cf98</code> 会进入如下页面:</p>
+<pre tabindex="0"><code class="language-git" data-lang="git">pick c7028e5 add title
+pick 8b877e3 add body
+fixup 07d71fb fixup! add body
+pick d673912 add blockquote
+</code></pre><p>此时要做的就是保存并退出, 最后得到的结果是</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$ git log --oneline
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>8920e2c (HEAD -&gt; main) add blockquote
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>684552e add body
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>c7028e5 add title
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>d97cf98 init
+</span></span></code></pre></div><p>参考: <a href="https://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html">GIT tip : Keep your branch clean with fixup and autosquash</a></p>
 
 
 

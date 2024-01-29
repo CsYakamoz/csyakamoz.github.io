@@ -6,192 +6,91 @@
     <description>Recent content in shell on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Mar 2023 23:40:30 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Mar 2023 23:40:30 +0800</lastBuildDate>
+    <atom:link href="https://csyakamoz.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ssh_config</title>
       <link>https://csyakamoz.github.io/post/2023/03/27/ssh_config/</link>
       <pubDate>Mon, 27 Mar 2023 23:40:30 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2023/03/27/ssh_config/</guid>
-      <description>man ssh_config
-ssh_config – OpenSSH client configuration file
-ssh 从如下位置按顺序获取配置:
-command-line options user&amp;rsquo;s configuration file (~/.ssh/config) system-wide configuration file (/etc/ssh/ssh_config) 常见选项 Host: 指定对应的远程主机名或 IP 地址, 可以使用通配符 *;
-HostName: 指定远程主机的主机名或 IP 地址;
-User: 用户名;
-Port: 端口;
-IdentityFile: 指定用于身份验证的私钥文件的路径;
-ControlMaster: 是否启用 SSH 连接复用功能, 可选值为: yes or no, 默认为 no;
-ControlPath: 指定用于保存 SSH 连接的 control-socket 路径;
-ControlPersist: 所有 SSH 连接都关闭后, 是否保持 control-socket 开启, 值可以为: yes or no or number, 其中 number 是指秒数, 默认值为 no;</description>
+      <description>man ssh_config&#xA;ssh_config – OpenSSH client configuration file&#xA;ssh 从如下位置按顺序获取配置:&#xA;command-line options user&amp;rsquo;s configuration file (~/.ssh/config) system-wide configuration file (/etc/ssh/ssh_config) 常见选项 Host: 指定对应的远程主机名或 IP 地址, 可以使用通配符 *;&#xA;HostName: 指定远程主机的主机名或 IP 地址;&#xA;User: 用户名;&#xA;Port: 端口;&#xA;IdentityFile: 指定用于身份验证的私钥文件的路径;&#xA;ControlMaster: 是否启用 SSH 连接复用功能, 可选值为: yes or no, 默认为 no;&#xA;ControlPath: 指定用于保存 SSH 连接的 control-socket 路径;&#xA;ControlPersist: 所有 SSH 连接都关闭后, 是否保持 control-socket 开启, 值可以为: yes or no or number, 其中 number 是指秒数, 默认值为 no;</description>
     </item>
-    
     <item>
       <title>Crontab</title>
       <link>https://csyakamoz.github.io/post/2023/03/11/crontab/</link>
       <pubDate>Sat, 11 Mar 2023 11:58:09 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2023/03/11/crontab/</guid>
-      <description>推荐网站: Crontab.guru
-Mark 指定环境变量: name = value, = 左右两边的空格是可选的 由于空格是可选的, 如想保留 leading/trailing 空格, 请使用单引号或双引号
-默认 Shell 是 /bin/sh, 可通过 SHELL 变量指定 默认时区是本机时区, 也可通过 CRON_TZ 变量指定, 也可通过 env 命令为单个命令制定 how to use TimeZone with Cron tab
-踩坑 % 字符有着特殊性 在 crontab 命令中, % 是个特殊符号
-参考 man crontab:
-The &amp;ldquo;sixth&amp;rdquo; field (the rest of the line) specifies the command to be run. The entire command portion of the line, up to a newline or % character, will be executed by /bin/sh or by the shell specified in the SHELL variable of the cronfile.</description>
+      <description>推荐网站: Crontab.guru&#xA;Mark 指定环境变量: name = value, = 左右两边的空格是可选的 由于空格是可选的, 如想保留 leading/trailing 空格, 请使用单引号或双引号&#xA;默认 Shell 是 /bin/sh, 可通过 SHELL 变量指定 默认时区是本机时区, 也可通过 CRON_TZ 变量指定, 也可通过 env 命令为单个命令制定 how to use TimeZone with Cron tab&#xA;踩坑 % 字符有着特殊性 在 crontab 命令中, % 是个特殊符号&#xA;参考 man crontab:&#xA;The &amp;ldquo;sixth&amp;rdquo; field (the rest of the line) specifies the command to be run. The entire command portion of the line, up to a newline or % character, will be executed by /bin/sh or by the shell specified in the SHELL variable of the cronfile.</description>
     </item>
-    
     <item>
       <title>Shell 参数</title>
       <link>https://csyakamoz.github.io/post/2022/11/27/shell-%E5%8F%82%E6%95%B0/</link>
       <pubDate>Sun, 27 Nov 2022 23:48:08 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2022/11/27/shell-%E5%8F%82%E6%95%B0/</guid>
-      <description>Parameter 特殊参数 $0, 为当前脚本文件名 $?, 上一个命令的退出状态，或函数的返回值 $$, 当前 Shell 进程 ID 脚本或函数参数 $n, n 代表数字，从 1 开始，1 代表第一个参数，2 代表第二个参数，以此类推&amp;hellip;
-$#, 传递到脚本或函数的参数个数 $@, 传递给脚本或函数的所有参数，&amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; ... &amp;quot;$n&amp;quot; $*, 传递给脚本或函数的所有参数，与 $@ 类似，但被 &amp;quot; 包含时，与 $@ 不同 $* 与 $@ 的区别 当它们不被 &amp;quot; 包含时，它们都相当于 &amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; ... &amp;quot;$n&amp;quot;
-当它们被 &amp;quot; 包含时，&amp;quot;$*&amp;quot; 相当于 &amp;quot;$1 $2 ... $n&amp;quot;, &amp;quot;$@&amp;quot; 则不变</description>
+      <description>Parameter 特殊参数 $0, 为当前脚本文件名 $?, 上一个命令的退出状态，或函数的返回值 $$, 当前 Shell 进程 ID 脚本或函数参数 $n, n 代表数字，从 1 开始，1 代表第一个参数，2 代表第二个参数，以此类推&amp;hellip;&#xA;$#, 传递到脚本或函数的参数个数 $@, 传递给脚本或函数的所有参数，&amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; ... &amp;quot;$n&amp;quot; $*, 传递给脚本或函数的所有参数，与 $@ 类似，但被 &amp;quot; 包含时，与 $@ 不同 $* 与 $@ 的区别 当它们不被 &amp;quot; 包含时，它们都相当于 &amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; ... &amp;quot;$n&amp;quot;&#xA;当它们被 &amp;quot; 包含时，&amp;quot;$*&amp;quot; 相当于 &amp;quot;$1 $2 ... $n&amp;quot;, &amp;quot;$@&amp;quot; 则不变</description>
     </item>
-    
     <item>
       <title>Shell 输入/输出重定向</title>
       <link>https://csyakamoz.github.io/post/2022/11/27/shell-%E8%BE%93%E5%85%A5/%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91/</link>
       <pubDate>Sun, 27 Nov 2022 23:15:09 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2022/11/27/shell-%E8%BE%93%E5%85%A5/%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91/</guid>
-      <description>Input/Output Redirection 输入/输出重定向
-标准输入/输出/错误输出 文件描述符 说明 0 输入文件 - 标准输入 1 输出文件 - 标准输出 2 错误输出文件 - 标准错误输出 &amp;lt;, &amp;gt; &amp;lt; 是输入重定向
-&amp;gt; 是输出重定向
-&amp;lt; filename 输入从 filename 中读取
-&amp;lt;&amp;amp;N N 是一个文件描述符
-输入从 N 中读取
-[M]&amp;gt; filename Warning: M 和 &amp;gt; 之间不能有空格
-M 是一个文件描述符，省略则默认是 1
-将 M 的输出重定向到 filename, 若 filename 不存在，则创建，否则覆盖
-[M]&amp;gt;&amp;gt; filename Warning: M 和 &amp;gt; 之间不能有空格
-M 是一个文件描述符，省略则默认是 1
-将 M 的输出重定向到 filename; 若 filename 不存在，则创建，否则追加到 N 的最后</description>
+      <description>Input/Output Redirection 输入/输出重定向&#xA;标准输入/输出/错误输出 文件描述符 说明 0 输入文件 - 标准输入 1 输出文件 - 标准输出 2 错误输出文件 - 标准错误输出 &amp;lt;, &amp;gt; &amp;lt; 是输入重定向&#xA;&amp;gt; 是输出重定向&#xA;&amp;lt; filename 输入从 filename 中读取&#xA;&amp;lt;&amp;amp;N N 是一个文件描述符&#xA;输入从 N 中读取&#xA;[M]&amp;gt; filename Warning: M 和 &amp;gt; 之间不能有空格&#xA;M 是一个文件描述符，省略则默认是 1&#xA;将 M 的输出重定向到 filename, 若 filename 不存在，则创建，否则覆盖&#xA;[M]&amp;gt;&amp;gt; filename Warning: M 和 &amp;gt; 之间不能有空格&#xA;M 是一个文件描述符，省略则默认是 1&#xA;将 M 的输出重定向到 filename; 若 filename 不存在，则创建，否则追加到 N 的最后</description>
     </item>
-    
     <item>
       <title>Shell 中 while 循环变量引发的问题</title>
       <link>https://csyakamoz.github.io/post/2021/03/18/shell-%E4%B8%AD-while-%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 18 Mar 2021 00:11:44 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2021/03/18/shell-%E4%B8%AD-while-%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>bash-version: GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin18)
-样例 样例 1:
-1#!/usr/bin/env bash 2i=0 3echo -e &amp;#34;foo\nbar\nzed&amp;#34; | while read line; do 4 i=$((i + 1)) 5 echo &amp;#34;in loop, i is ${i}&amp;#34; 6done 7 8echo &amp;#34;out loop, i is ${i}&amp;#34; 9 10# output: 11# in loop, i is 1 12# in loop, i is 2 13# in loop, i is 3 14# out loop, i is 0 样例 2:
-1#!/usr/bin/env bash 2i=0 3for line in $(echo -e &amp;#34;foo\nbar\nzed&amp;#34;) ; do 4 i=$((i + 1)) 5 echo &amp;#34;in loop, i is ${i}&amp;#34; 6done 7 8echo &amp;#34;out loop, i is ${i}&amp;#34; 9 10# output: 11# in loop, i is 1 12# in loop, i is 2 13# in loop, i is 3 14# out loop, i is 3 问题 为何样例 1 中, 最后打印的 i 的值为 0, 而样例 2 却是 3 ?</description>
+      <description>bash-version: GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin18)&#xA;样例 样例 1:&#xA;1#!/usr/bin/env bash 2i=0 3echo -e &amp;#34;foo\nbar\nzed&amp;#34; | while read line; do 4 i=$((i + 1)) 5 echo &amp;#34;in loop, i is ${i}&amp;#34; 6done 7 8echo &amp;#34;out loop, i is ${i}&amp;#34; 9 10# output: 11# in loop, i is 1 12# in loop, i is 2 13# in loop, i is 3 14# out loop, i is 0 样例 2:&#xA;1#!/usr/bin/env bash 2i=0 3for line in $(echo -e &amp;#34;foo\nbar\nzed&amp;#34;) ; do 4 i=$((i + 1)) 5 echo &amp;#34;in loop, i is ${i}&amp;#34; 6done 7 8echo &amp;#34;out loop, i is ${i}&amp;#34; 9 10# output: 11# in loop, i is 1 12# in loop, i is 2 13# in loop, i is 3 14# out loop, i is 3 问题 为何样例 1 中, 最后打印的 i 的值为 0, 而样例 2 却是 3 ?</description>
     </item>
-    
     <item>
       <title>Shell 零碎笔记</title>
       <link>https://csyakamoz.github.io/post/2021/01/22/shell-%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 22 Jan 2021 00:19:44 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2021/01/22/shell-%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/</guid>
-      <description>命令补全 官方文档: man bash, 按 /, 输入 Programmable Completion 回车
-团子的小窝 - 编写 Bash 补全脚本
-如何编写 bash 自动补全脚本
-检查某命令是否存在 来源: How can I check if a program exists from a Bash script?
-1command -v &amp;lt;the_command&amp;gt; 例子:
-1if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null 2then 3 echo &amp;#34;COMMAND could not be found&amp;#34; 4 exit 5fi &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
+      <description>命令补全 官方文档: man bash, 按 /, 输入 Programmable Completion 回车&#xA;团子的小窝 - 编写 Bash 补全脚本&#xA;如何编写 bash 自动补全脚本&#xA;检查某命令是否存在 来源: How can I check if a program exists from a Bash script?&#xA;1command -v &amp;lt;the_command&amp;gt; 例子:&#xA;1if ! command -v COMMAND &amp;amp;&amp;gt; /dev/null 2then 3 echo &amp;#34;COMMAND could not be found&amp;#34; 4 exit 5fi &amp;amp;&amp;gt; 的意思可见: What are the shell&amp;rsquo;s control and redirection operators? or What&amp;rsquo;s the accurate meaning of “exec &amp;amp;&amp;gt;/var/log/a.</description>
     </item>
-    
     <item>
       <title>Shell 基础</title>
       <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Wed, 09 Sep 2020 11:35:19 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%9F%BA%E7%A1%80/</guid>
-      <description>Manual Bash Reference Manual
-Lint ShellCheck, a static analysis tool for shell scripts
-建议使用 ShellCheck, 以检查脚本中潜在的问题
-Shebang shebang 即 #! , 其后面跟的是解释当前脚本的解释器路径
-e.g.
-#!/bin/bash #!/usr/bin/bash #!/usr/bin/env bash 个人习惯用 #!/usr/bin/env NAME 而不是 #!/usr/bin/NAME
-原因请看此：Why is it better to use “#!/usr/bin/env NAME” instead of “#!/path/to/NAME” as my shebang?
-变量 定义 variable=value
-不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等 等号两侧不能有空格 使用 $variable ${variable} {} 是可选的，但建议加上，{} 是为了帮助解释器识别变量的边界
-1for skill in Ada Coffee Action Java; do 2 echo &amp;#34;I am good at ${skill}Script&amp;#34; 3done 如果不给 skill 加上花括号，解释器会把 skillScript 当作变量，在上面的情况下，其值为空</description>
+      <description>Manual Bash Reference Manual&#xA;Lint ShellCheck, a static analysis tool for shell scripts&#xA;建议使用 ShellCheck, 以检查脚本中潜在的问题&#xA;Shebang shebang 即 #! , 其后面跟的是解释当前脚本的解释器路径&#xA;e.g.&#xA;#!/bin/bash #!/usr/bin/bash #!/usr/bin/env bash 个人习惯用 #!/usr/bin/env NAME 而不是 #!/usr/bin/NAME&#xA;原因请看此：Why is it better to use “#!/usr/bin/env NAME” instead of “#!/path/to/NAME” as my shebang?&#xA;变量 定义 variable=value&#xA;不需要指定变量类型，即不需要说明是整型类型，还是字符串类型等等 等号两侧不能有空格 使用 $variable ${variable} {} 是可选的，但建议加上，{} 是为了帮助解释器识别变量的边界&#xA;1for skill in Ada Coffee Action Java; do 2 echo &amp;#34;I am good at ${skill}Script&amp;#34; 3done 如果不给 skill 加上花括号，解释器会把 skillScript 当作变量，在上面的情况下，其值为空</description>
     </item>
-    
     <item>
       <title>Shell 序列表达式</title>
       <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%BA%8F%E5%88%97%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
       <pubDate>Wed, 09 Sep 2020 11:18:01 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%BA%8F%E5%88%97%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
-      <description>格式：{FIRST..LAST[..INCREMENT]}
-FIRST 和 LAST 是必需的，用 .. 分隔，中间没有空格，INCREMENT 是可选滴
-Example 1echo {1..3} # 1 2 3 2 3echo {3..1} # 3 2 1 4 5echo {0..20..5} # 0 5 10 15 20 6 7echo 0{8..10} # 08 09 010 8 9echo {08..10} # 08 09 10 10 11echo {a..f} # a b c d e f 12 13echo {f..a} # f e d c b a 14 15echo T-{a..f}-T # T-a-T T-b-T T-c-T T-d-T T-e-T T-f-T 16 17echo {A.</description>
+      <description>格式：{FIRST..LAST[..INCREMENT]}&#xA;FIRST 和 LAST 是必需的，用 .. 分隔，中间没有空格，INCREMENT 是可选滴&#xA;Example 1echo {1..3} # 1 2 3 2 3echo {3..1} # 3 2 1 4 5echo {0..20..5} # 0 5 10 15 20 6 7echo 0{8..10} # 08 09 010 8 9echo {08..10} # 08 09 10 10 11echo {a..f} # a b c d e f 12 13echo {f..a} # f e d c b a 14 15echo T-{a..f}-T # T-a-T T-b-T T-c-T T-d-T T-e-T T-f-T 16 17echo {A.</description>
     </item>
-    
     <item>
       <title>Shell 按行处理文本</title>
       <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E6%8C%89%E8%A1%8C%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC/</link>
       <pubDate>Wed, 09 Sep 2020 11:15:00 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E6%8C%89%E8%A1%8C%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC/</guid>
-      <description>内容来源：【Shell 脚本】逐行处理文本文件
-read 1cat data.dat | while read line 2do 3 echo &amp;#34;${line}&amp;#34; 4done 5 6# or 7 8while read line 9do 10 echo &amp;#34;${line}&amp;#34; 11done &amp;lt; data.dat awk 1cat data.dat | awk &amp;#39;{print $0}&amp;#39; for &amp;hellip; in &amp;hellip; for var in content 表示变量 var 在 content 中循环取值，取值的分隔符由 ${IFS} 确定
-1for line in $(cat data.dat) 2do 3 echo &amp;#34;${line}&amp;#34; 4done 如果输入文本每行中没有空格，则 line 在输入文本中按换行符分隔符循环取值。
-如果输入文本中包括空格或制表符，则不是换行读取，line 在输入文本中按空格分隔符或制表符或换行符循环取值。
-可以通过把 ${IFS} 设置为换行符来达到逐行读取的功能。
-${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）.</description>
+      <description>内容来源：【Shell 脚本】逐行处理文本文件&#xA;read 1cat data.dat | while read line 2do 3 echo &amp;#34;${line}&amp;#34; 4done 5 6# or 7 8while read line 9do 10 echo &amp;#34;${line}&amp;#34; 11done &amp;lt; data.dat awk 1cat data.dat | awk &amp;#39;{print $0}&amp;#39; for &amp;hellip; in &amp;hellip; for var in content 表示变量 var 在 content 中循环取值，取值的分隔符由 ${IFS} 确定&#xA;1for line in $(cat data.dat) 2do 3 echo &amp;#34;${line}&amp;#34; 4done 如果输入文本每行中没有空格，则 line 在输入文本中按换行符分隔符循环取值。&#xA;如果输入文本中包括空格或制表符，则不是换行读取，line 在输入文本中按空格分隔符或制表符或换行符循环取值。&#xA;可以通过把 ${IFS} 设置为换行符来达到逐行读取的功能。&#xA;${IFS} 的默认值为：空白 （包括：空格，制表符，换行符）.</description>
     </item>
-    
     <item>
       <title>Shell 使用模板文件生成文件</title>
       <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 09 Sep 2020 11:13:35 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6/</guid>
-      <description>需求来源 有个模板文件，其占位符格式为：${variable}
-现需要使用 shell 脚本来动态生成对应文件
-实现 假设模板文件内容如下：
-1#!/usr/bin/env bash 2 3version=&amp;#34;${version}&amp;#34; 4path=&amp;#34;${path}&amp;#34; 则动态生成对应文件的 shell 脚本可以如下：
-1#!/usr/bin/env bash 2 3version=&amp;#34;1.0.0&amp;#34; 4path=&amp;#34;oh my god&amp;#34; 5 6sed \ 7 -e &amp;#34;s/\${version}/${version}/g&amp;#34; \ 8 -e &amp;#34;s/\${path}/${path}/g&amp;#34; \ 9 path_to_template_file \ 10 &amp;gt; path_to_output_file 需要注意的坑 一般我们使用 / 作为 sed 的定界符，但若变量值中包含 /, 则会导致 sed 解析失败
-因此我们需要对 / 进行转义
-1#!/usr/bin/env bash 2 3function handlingSlash() { 4 echo &amp;#34;$1&amp;#34; | sed -e &amp;#34;s/\//\\\\\//g&amp;#34; 5} 6 7version=&amp;#34;1.0.0&amp;#34; 8path=$(handlingSlash &amp;#34;${HOME}/Desktop/avatar.jpeg&amp;#34;) 9 10sed \ 11 -e &amp;#34;s/\${version}/${version}/g&amp;#34; \ 12 -e &amp;#34;s/\${path}/${path}/g&amp;#34; \ 13 path_to_template_file \ 14 &amp;gt; path_to_output_file 参考 How to replace ${} placeholders in a text file?</description>
+      <description>需求来源 有个模板文件，其占位符格式为：${variable}&#xA;现需要使用 shell 脚本来动态生成对应文件&#xA;实现 假设模板文件内容如下：&#xA;1#!/usr/bin/env bash 2 3version=&amp;#34;${version}&amp;#34; 4path=&amp;#34;${path}&amp;#34; 则动态生成对应文件的 shell 脚本可以如下：&#xA;1#!/usr/bin/env bash 2 3version=&amp;#34;1.0.0&amp;#34; 4path=&amp;#34;oh my god&amp;#34; 5 6sed \ 7 -e &amp;#34;s/\${version}/${version}/g&amp;#34; \ 8 -e &amp;#34;s/\${path}/${path}/g&amp;#34; \ 9 path_to_template_file \ 10 &amp;gt; path_to_output_file 需要注意的坑 一般我们使用 / 作为 sed 的定界符，但若变量值中包含 /, 则会导致 sed 解析失败&#xA;因此我们需要对 / 进行转义&#xA;1#!/usr/bin/env bash 2 3function handlingSlash() { 4 echo &amp;#34;$1&amp;#34; | sed -e &amp;#34;s/\//\\\\\//g&amp;#34; 5} 6 7version=&amp;#34;1.0.0&amp;#34; 8path=$(handlingSlash &amp;#34;${HOME}/Desktop/avatar.jpeg&amp;#34;) 9 10sed \ 11 -e &amp;#34;s/\${version}/${version}/g&amp;#34; \ 12 -e &amp;#34;s/\${path}/${path}/g&amp;#34; \ 13 path_to_template_file \ 14 &amp;gt; path_to_output_file 参考 How to replace ${} placeholders in a text file?</description>
     </item>
-    
     <item>
       <title>Shell 打印彩色输出</title>
       <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E6%89%93%E5%8D%B0%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</link>
       <pubDate>Wed, 09 Sep 2020 11:12:07 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E6%89%93%E5%8D%B0%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</guid>
-      <description>格式说明 ESC[{attr1};...;{attrN}m
-ESC: 转义字符，可选项为 \033, \x1b, \e 表示
-m: 母鸡
-attr: 控制代码（参见下方表格）
-样例 简单的
-1echo -e &amp;#34;\033[0;31mRed\033[0m&amp;#34; 2echo -e &amp;#34;\033[0;32mGreen\033[0m&amp;#34; 3 4echo -e &amp;#34;\033[1;31mHighlight Red\033[0m&amp;#34; 5echo -e &amp;#34;\033[1;3;31mHighlight Italic Red\033[0m&amp;#34; 6echo -e &amp;#34;\033[1;3;4;31mHighlight Italic Underline Red\033[0m&amp;#34; 完整的
-1# https://askubuntu.com/questions/27314/script-to-display-all-terminal-colors 2for x in {0..8}; do 3 for i in {30..37}; do 4 for a in {40..47}; do 5 echo -ne &amp;#34;\e[$x;$i;$a&amp;#34;&amp;#34;m\\\e[$x;$i;$a&amp;#34;&amp;#34;m\e[0;37;40m &amp;#34; 6 done 7 echo 8 done 9done 10echo &amp;#34;&amp;#34; 参考 以下表格皆来自：ANSI 转义序列</description>
+      <description>格式说明 ESC[{attr1};...;{attrN}m&#xA;ESC: 转义字符，可选项为 \033, \x1b, \e 表示&#xA;m: 母鸡&#xA;attr: 控制代码（参见下方表格）&#xA;样例 简单的&#xA;1echo -e &amp;#34;\033[0;31mRed\033[0m&amp;#34; 2echo -e &amp;#34;\033[0;32mGreen\033[0m&amp;#34; 3 4echo -e &amp;#34;\033[1;31mHighlight Red\033[0m&amp;#34; 5echo -e &amp;#34;\033[1;3;31mHighlight Italic Red\033[0m&amp;#34; 6echo -e &amp;#34;\033[1;3;4;31mHighlight Italic Underline Red\033[0m&amp;#34; 完整的&#xA;1# https://askubuntu.com/questions/27314/script-to-display-all-terminal-colors 2for x in {0..8}; do 3 for i in {30..37}; do 4 for a in {40..47}; do 5 echo -ne &amp;#34;\e[$x;$i;$a&amp;#34;&amp;#34;m\\\e[$x;$i;$a&amp;#34;&amp;#34;m\e[0;37;40m &amp;#34; 6 done 7 echo 8 done 9done 10echo &amp;#34;&amp;#34; 参考 以下表格皆来自：ANSI 转义序列</description>
     </item>
-    
     <item>
       <title>Shell 常用快捷键</title>
       <link>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Wed, 09 Sep 2020 11:06:40 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2020/09/09/shell-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <description>Up, Ctrl + p, 向上移动光标或显示上一条命令
-Down, Ctrl + n, 向下移动或显示下一条命令
-Left, Ctrl + b, 光标向左移动一个字符
-Right, Ctrl + f, 光标向右移动一个字符
-BS, Ctrl + h, 删除光标左边的字符
-Del, Ctrl + d, 删除光标右边的字符
-Home, Ctrl + a, 跳转到行首
-End, Ctrl + e, 跳转到行尾
-以上快捷键可在 Mac 中的大多数文本编辑区域使用
-e.g.
-Google Chrome 的地址栏 Wechat 的聊天内容输入框 Ctrl + m, Ctrl + j, 回车
-Ctrl + i, 等价于 Tab
-Ctrl + w, 删除光标左边一个单词
-Alt + b, 光标向左移动一个单词
-Alt + f, 光标向右移动一个单词</description>
+      <description>Up, Ctrl + p, 向上移动光标或显示上一条命令&#xA;Down, Ctrl + n, 向下移动或显示下一条命令&#xA;Left, Ctrl + b, 光标向左移动一个字符&#xA;Right, Ctrl + f, 光标向右移动一个字符&#xA;BS, Ctrl + h, 删除光标左边的字符&#xA;Del, Ctrl + d, 删除光标右边的字符&#xA;Home, Ctrl + a, 跳转到行首&#xA;End, Ctrl + e, 跳转到行尾&#xA;以上快捷键可在 Mac 中的大多数文本编辑区域使用&#xA;e.g.&#xA;Google Chrome 的地址栏 Wechat 的聊天内容输入框 Ctrl + m, Ctrl + j, 回车&#xA;Ctrl + i, 等价于 Tab&#xA;Ctrl + w, 删除光标左边一个单词&#xA;Alt + b, 光标向左移动一个单词&#xA;Alt + f, 光标向右移动一个单词</description>
     </item>
-    
   </channel>
 </rss>

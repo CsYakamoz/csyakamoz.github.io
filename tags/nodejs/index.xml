@@ -6,39 +6,21 @@
     <description>Recent content in nodejs on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Apr 2021 23:55:18 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 23:55:18 +0800</lastBuildDate>
+    <atom:link href="https://csyakamoz.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nodejs 与 Java 的加解密</title>
       <link>https://csyakamoz.github.io/post/2021/04/02/nodejs-%E4%B8%8E-java-%E7%9A%84%E5%8A%A0%E8%A7%A3%E5%AF%86/</link>
       <pubDate>Fri, 02 Apr 2021 23:55:18 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2021/04/02/nodejs-%E4%B8%8E-java-%E7%9A%84%E5%8A%A0%E8%A7%A3%E5%AF%86/</guid>
-      <description>问题 最近在对接第三方接口, 对方是用 Java 写的 rsa 加密;
-其提供的加解密 Demo 类似于此链接中的 RSAUtils 类
-个人选择使用 node-rsa 进行解密;
-然而, 在尝试解密过程中, 总是报各种错误, 且根据错误去 google 也无法找到解决方案;
-最后无意中找到一篇文章, 其说明了为什么解密失败;
-吐槽下, google 关键词居然是 Node RSA Java, 难以置信 😑
-原因 node-rsa for javascript 1new NodeRSA([keyData, [format]], [options]); options 参数中的 encryptionScheme 是用来指定 padding;
-其支持两种: pkcs1_oaep 和 pkcs1, 若未指定, 则默认是前者;
-Cipher for Java 1// Demo 中所指定的加密方案 2KeyFactory keyFactory = KeyFactory.getInstance(&amp;#34;RSA&amp;#34;); 3 4// keyFactory.getAlgorithm() 返回 &amp;#34;RSA&amp;#34; 5Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm()); Cipher 文档如下:</description>
+      <description>问题 最近在对接第三方接口, 对方是用 Java 写的 rsa 加密;&#xA;其提供的加解密 Demo 类似于此链接中的 RSAUtils 类&#xA;个人选择使用 node-rsa 进行解密;&#xA;然而, 在尝试解密过程中, 总是报各种错误, 且根据错误去 google 也无法找到解决方案;&#xA;最后无意中找到一篇文章, 其说明了为什么解密失败;&#xA;吐槽下, google 关键词居然是 Node RSA Java, 难以置信 😑&#xA;原因 node-rsa for javascript 1new NodeRSA([keyData, [format]], [options]); options 参数中的 encryptionScheme 是用来指定 padding;&#xA;其支持两种: pkcs1_oaep 和 pkcs1, 若未指定, 则默认是前者;&#xA;Cipher for Java 1// Demo 中所指定的加密方案 2KeyFactory keyFactory = KeyFactory.getInstance(&amp;#34;RSA&amp;#34;); 3 4// keyFactory.getAlgorithm() 返回 &amp;#34;RSA&amp;#34; 5Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm()); Cipher 文档如下:</description>
     </item>
-    
     <item>
       <title>What Did the require Do in Node.js</title>
       <link>https://csyakamoz.github.io/post/2021/03/18/what-did-the-require-do-in-node.js/</link>
       <pubDate>Thu, 18 Mar 2021 00:15:13 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2021/03/18/what-did-the-require-do-in-node.js/</guid>
-      <description>Warning: 最新版本的 Node.js 已经更新了 require 的逻辑, 此文章的相关代码已过时, 但逻辑总体上不变;
-或者直接看源码 node/lib/internal/modules/cjs/
-Environment Node Version: v11.1.0
-Prepare We have two file in /home/csyakamoz/Desktop/test directory.
-index.js
-1require(&amp;#34;./a&amp;#34;); a.js
-1let i = 0; 2 3module.exports = () =&amp;gt; { 4 console.log(++i); 5}; Start makeRequireFunction Notice:
-mod is the module object of index.js 1function makeRequireFunction(mod) { 2 const Module = mod.constructor; 3 4 function require(path) { 5 // 👉 start here, and path is &amp;#34;.</description>
+      <description>Warning: 最新版本的 Node.js 已经更新了 require 的逻辑, 此文章的相关代码已过时, 但逻辑总体上不变;&#xA;或者直接看源码 node/lib/internal/modules/cjs/&#xA;Environment Node Version: v11.1.0&#xA;Prepare We have two file in /home/csyakamoz/Desktop/test directory.&#xA;index.js&#xA;1require(&amp;#34;./a&amp;#34;); a.js&#xA;1let i = 0; 2 3module.exports = () =&amp;gt; { 4 console.log(++i); 5}; Start makeRequireFunction Notice:&#xA;mod is the module object of index.js 1function makeRequireFunction(mod) { 2 const Module = mod.constructor; 3 4 function require(path) { 5 // 👉 start here, and path is &amp;#34;.</description>
     </item>
-    
   </channel>
 </rss>

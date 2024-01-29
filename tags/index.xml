@@ -6,141 +6,119 @@
     <description>Recent content in Tags on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Mar 2023 23:40:30 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 01:03:34 +0800</lastBuildDate>
+    <atom:link href="https://csyakamoz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>unix</title>
+      <link>https://csyakamoz.github.io/tags/unix/</link>
+      <pubDate>Sun, 05 Nov 2023 01:03:34 +0800</pubDate>
+      <guid>https://csyakamoz.github.io/tags/unix/</guid>
+      <description></description>
+    </item>
     <item>
       <title>shell</title>
       <link>https://csyakamoz.github.io/tags/shell/</link>
       <pubDate>Mon, 27 Mar 2023 23:40:30 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/shell/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>crontab</title>
       <link>https://csyakamoz.github.io/tags/crontab/</link>
       <pubDate>Sat, 11 Mar 2023 11:58:09 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/crontab/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>golang</title>
       <link>https://csyakamoz.github.io/tags/golang/</link>
       <pubDate>Fri, 24 Feb 2023 20:40:35 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/golang/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>json</title>
       <link>https://csyakamoz.github.io/tags/json/</link>
       <pubDate>Fri, 24 Feb 2023 20:40:35 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/json/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>chrome-extension</title>
       <link>https://csyakamoz.github.io/tags/chrome-extension/</link>
       <pubDate>Mon, 26 Jul 2021 00:43:00 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/chrome-extension/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>software</title>
       <link>https://csyakamoz.github.io/tags/software/</link>
       <pubDate>Mon, 26 Jul 2021 00:43:00 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/software/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>crypto</title>
       <link>https://csyakamoz.github.io/tags/crypto/</link>
       <pubDate>Fri, 02 Apr 2021 23:55:18 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/crypto/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>nodejs</title>
       <link>https://csyakamoz.github.io/tags/nodejs/</link>
       <pubDate>Fri, 02 Apr 2021 23:55:18 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/nodejs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>javascript</title>
       <link>https://csyakamoz.github.io/tags/javascript/</link>
-      <pubDate>Tue, 16 Mar 2021 14:37:33 +0800</pubDate>
-      
+      <pubDate>Thu, 18 Mar 2021 00:15:13 +0800</pubDate>
       <guid>https://csyakamoz.github.io/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>rabbitmq</title>
       <link>https://csyakamoz.github.io/tags/rabbitmq/</link>
       <pubDate>Wed, 09 Sep 2020 16:38:46 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/rabbitmq/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>git</title>
       <link>https://csyakamoz.github.io/tags/git/</link>
       <pubDate>Wed, 09 Sep 2020 16:29:42 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/git/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>algorithm</title>
       <link>https://csyakamoz.github.io/tags/algorithm/</link>
       <pubDate>Wed, 09 Sep 2020 13:24:09 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/algorithm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>mac</title>
       <link>https://csyakamoz.github.io/tags/mac/</link>
       <pubDate>Wed, 09 Sep 2020 11:32:06 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/mac/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>tmux</title>
       <link>https://csyakamoz.github.io/tags/tmux/</link>
       <pubDate>Wed, 09 Sep 2020 11:26:08 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/tmux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>coding-style</title>
       <link>https://csyakamoz.github.io/tags/coding-style/</link>
       <pubDate>Wed, 09 Sep 2020 10:32:18 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/tags/coding-style/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

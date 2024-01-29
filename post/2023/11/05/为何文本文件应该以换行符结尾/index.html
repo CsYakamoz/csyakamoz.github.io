@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>为何文本文件应该以换行符结尾? - Awesome</title>
+    <meta property="og:title" content="为何文本文件应该以换行符结尾? - Awesome">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="很多 Linter 都会因文件不是以换行符结尾而做出 Warning/Error 提示
+[&amp;hellip;] JavaScript_ESLint: eol-last
+[&amp;hellip;] NewLine required at end of file but not found
+[&amp;hellip;] PHP_PSR-2: Files
+[&amp;hellip;] Expected 1 newline at &amp;hellip;">
+      <meta property="og:description" content="很多 Linter 都会因文件不是以换行符结尾而做出 Warning/Error 提示
+[&amp;hellip;] JavaScript_ESLint: eol-last
+[&amp;hellip;] NewLine required at end of file but not found
+[&amp;hellip;] PHP_PSR-2: Files
+[&amp;hellip;] Expected 1 newline at &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Awesome</a></h1>
+
+<p class="tagline">Suit up!</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>为何文本文件应该以换行符结尾?</h1>
+
+<h3>
+  2023-11-05</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>很多 Linter 都会因文件不是以换行符结尾而做出 Warning/Error 提示</p>
+<ul>
+<li>
+<p>JavaScript_ESLint: <a href="https://eslint.style/rules/js/eol-last">eol-last</a></p>
+<blockquote>
+<p>NewLine required at end of file but not found</p>
+</blockquote>
+</li>
+<li>
+<p>PHP_PSR-2: <a href="https://www.php-fig.org/psr/psr-2/#22-files">Files</a></p>
+<blockquote>
+<p>Expected 1 newline at end of file; 0 found</p>
+</blockquote>
+</li>
+<li>
+<p>Git Commit or Log or Diff:</p>
+<pre tabindex="0"><code>\ No newline at end of file
+</code></pre></li>
+</ul>
+<p>查了下资料, 原因是 Unix Standard 对于 Lines 的定义:</p>
+<blockquote>
+<p>3.206 Line</p>
+<p>A sequence of zero or more non- &lt;newline&gt; characters plus a terminating &lt;newline&gt; character.</p>
+</blockquote>
+<p>基于以上定义, 如果文本文件不是以换行符结尾, 那么在某些工具上可能会出问题.</p>
+<p>例如引用中所举的例子:</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>$ cat a.txt
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>foo
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>$ cat b.txt
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>bar
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>$ cat c.txt
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>baz
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>$ cat {a,b,c}.txt
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>foo
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>barbaz
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>$ wc -l b.txt
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#2aa198;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>$ cat {a,b,c}.txt | wc -l
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#2aa198;font-weight:bold">2</span>
+</span></span></code></pre></div><p>Reference:</p>
+<ul>
+<li><a href="https://gist.github.com/OleksiyRudenko/d51388345ea55767b7672307fe35adf3">Why should text files end with a newline?</a></li>
+<li><a href="https://gcc.gnu.org/legacy-ml/gcc/2001-07/msg01120.html">Mail Archive - Re: no newline at end of file</a></li>
+</ul>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/csyakamoz">CsYakamoz</a> 2020</div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

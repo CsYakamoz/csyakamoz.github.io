@@ -6,25 +6,14 @@
     <description>Recent content in algorithm on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Sep 2020 13:24:09 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Sep 2020 13:24:09 +0800</lastBuildDate>
+    <atom:link href="https://csyakamoz.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xor Cipher - 异或加密的应用场景之一</title>
       <link>https://csyakamoz.github.io/post/2020/09/09/xor-cipher-%E5%BC%82%E6%88%96%E5%8A%A0%E5%AF%86%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B9%8B%E4%B8%80/</link>
       <pubDate>Wed, 09 Sep 2020 13:24:09 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2020/09/09/xor-cipher-%E5%BC%82%E6%88%96%E5%8A%A0%E5%AF%86%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B9%8B%E4%B8%80/</guid>
-      <description>异或加密是一种简单的加密算法。
-具体内容请看下列文章：
-XOR cipher XOR 加密简介 本文只讨论个人所应用到的场景。
-需求 在工作中，个人经常遇到使用 UUID 作为各种对象 ID 的场景。
-例如：对于每一个 song，我们都为其生成唯一的 quiz，song &amp;amp; quiz 的 ID 都是 uuid；因此，每一个 song 都和其唯一的 quiz 绑定。
-需求是：songId &amp;amp; quizId 可以双向查找；即，可通过 songId 查找到对应的 quizId，也可通过 quizId 查找到对应的 songId。
-解决方案 方案 0 - 数据库存储映射 两种存储方式：
-song 表添加 quizId 列，quiz 表则添加 songId 列 建立新表 song-quiz, songId 和 quizId 作为联合主键 方案 2 - 异或加密当作映射 如果不想将映射关系存到数据库中，则可以使用异或加密。
-使用异或后，我们所需存储的仅有 key。
-Wiki 上有 python 的实现方案，这里则展示 Node.js 的实现方案。
-1/** 2 * @param {&amp;#39;ascii&amp;#39; | &amp;#39;utf8&amp;#39; | &amp;#39;utf16le&amp;#39; | &amp;#39;ucs2&amp;#39; | &amp;#39;base64&amp;#39; | &amp;#39;latin1&amp;#39; | &amp;#39;binary&amp;#39; | &amp;#39;hex&amp;#39;} encoding 编码格式 3 * @param {string} key 密钥 4 * @param {string} text 待加密（解密）的文本 5 * @returns {string} 加密（解密）后的文本 6 */ 7function XorCipher(encoding, key, text) { 8 if (typeof text !</description>
+      <description>异或加密是一种简单的加密算法。&#xA;具体内容请看下列文章：&#xA;XOR cipher XOR 加密简介 本文只讨论个人所应用到的场景。&#xA;需求 在工作中，个人经常遇到使用 UUID 作为各种对象 ID 的场景。&#xA;例如：对于每一个 song，我们都为其生成唯一的 quiz，song &amp;amp; quiz 的 ID 都是 uuid；因此，每一个 song 都和其唯一的 quiz 绑定。&#xA;需求是：songId &amp;amp; quizId 可以双向查找；即，可通过 songId 查找到对应的 quizId，也可通过 quizId 查找到对应的 songId。&#xA;解决方案 方案 0 - 数据库存储映射 两种存储方式：&#xA;song 表添加 quizId 列，quiz 表则添加 songId 列 建立新表 song-quiz, songId 和 quizId 作为联合主键 方案 2 - 异或加密当作映射 如果不想将映射关系存到数据库中，则可以使用异或加密。&#xA;使用异或后，我们所需存储的仅有 key。&#xA;Wiki 上有 python 的实现方案，这里则展示 Node.js 的实现方案。&#xA;1/** 2 * @param {&amp;#39;ascii&amp;#39; | &amp;#39;utf8&amp;#39; | &amp;#39;utf16le&amp;#39; | &amp;#39;ucs2&amp;#39; | &amp;#39;base64&amp;#39; | &amp;#39;latin1&amp;#39; | &amp;#39;binary&amp;#39; | &amp;#39;hex&amp;#39;} encoding 编码格式 3 * @param {string} key 密钥 4 * @param {string} text 待加密（解密）的文本 5 * @returns {string} 加密（解密）后的文本 6 */ 7function XorCipher(encoding, key, text) { 8 if (typeof text !</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,22 +6,14 @@
     <description>Recent content in software on Awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Jul 2021 00:43:00 +0800</lastBuildDate><atom:link href="https://csyakamoz.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jul 2021 00:43:00 +0800</lastBuildDate>
+    <atom:link href="https://csyakamoz.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用软件记录</title>
       <link>https://csyakamoz.github.io/post/2021/07/26/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 26 Jul 2021 00:43:00 +0800</pubDate>
-      
       <guid>https://csyakamoz.github.io/post/2021/07/26/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E8%AE%B0%E5%BD%95/</guid>
-      <description>记录个人常用的软件
-Application Spotify: Spotify is a digital music service that gives you access to millions of songs.
-Telegram: a new era of messaging
-KeyCastr: KeyCastr, an open-source keystroke visualizer
-Bob: Bob 是一款 macOS 平台翻译和 OCR 软件。
-WezTerm: WezTerm is a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
-Excalidraw: Virtual whiteboard for sketching hand-drawn like diagrams.
-draw.io: diagrams.net (formerly draw.io) is free online diagram software.</description>
+      <description>记录个人常用的软件&#xA;Application Spotify: Spotify is a digital music service that gives you access to millions of songs.&#xA;Telegram: a new era of messaging&#xA;KeyCastr: KeyCastr, an open-source keystroke visualizer&#xA;Bob: Bob 是一款 macOS 平台翻译和 OCR 软件。&#xA;WezTerm: WezTerm is a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust&#xA;Excalidraw: Virtual whiteboard for sketching hand-drawn like diagrams.&#xA;draw.io: diagrams.net (formerly draw.io) is free online diagram software.</description>
     </item>
-    
   </channel>
 </rss>
