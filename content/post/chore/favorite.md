@@ -20,7 +20,7 @@ tags: []
 
 [三傻大闹宝莱坞](https://en.wikipedia.org/wiki/3_Idiots)
 
-[红猪](https://en.wikipedia.org/wiki/Porco_Rosso)
+[红猪 - 紅の豚](https://en.wikipedia.org/wiki/Porco_Rosso)
 
 [Oppenheimer - 奥本海默](<https://en.wikipedia.org/wiki/Oppenheimer_(film)>)
 
