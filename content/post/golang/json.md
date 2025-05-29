@@ -52,7 +52,32 @@ Field int `json:"-,"`
 1. empty 指: false, 0, nil pointer, nil interface value, empty array, slice, map or string
 2. 如果 key-name 是仅由 Unicode 字母、数字和 ASCII 标点符号（引号、反斜杠和逗号除外）组成的非空字符串, 则使用该 key-name, 否则使用 field-name
 
-TODO: JSON Tag 支持 `string`, 即 `json:",string"`, 尚未清楚其作用
+Updated: JSON Tag 支持 `string`, 即 `json:",string"`, 作用如下:
+
+1. 字段输出结果为字符串
+2. 仅适用于字符串, 浮点型, 整型, 布尔型
+3. 偶尔跟 JavaScript 程序通信时用得到
+
+<details>
+  <summary>样例:</summary>
+
+```go
+type StringOptionSignals struct {
+	StringString  string  `json:",string"`
+	Int64String   int64   `json:",string"`
+	Float64String float64 `json:",string"`
+	BoolString    bool    `json:",string"`
+}
+
+func main() {
+	msg := StringOptionSignals{`string`, 8008208820, 800.820, false}
+	jsonBytes, _ := json.Marshal(msg)
+	fmt.Println(string(jsonBytes))
+    // output: {"StringString":"\"string\"","Int64String":"8008208820","Float64String":"800.82","BoolString":"false"}
+}
+```
+
+</details>
 
 ## 序列化
 
